@@ -1,0 +1,38 @@
+[
+  {
+    "id": 20001,
+    "Name": "猎狗",
+    "AttackPower": 3,
+    "AttackPreCD": 12,
+    "AttackPostCD": 55,
+    "AttackRange": 2,
+    "AttackRecover": 2,
+    "Speed": 33,
+    "InitialHP": 25,
+    "CriticalHitRate": 0.2,
+    "CriticalDamage": 2,
+    "HitRate": 0.9,
+    "DodgeRate": 0.1,
+    "Armor": 0,
+    "MagicResist": 0,
+    "HitDecreaseRate": 0.9
+  },
+  {
+    "id": 20002,
+    "Name": "铁骑士",
+    "AttackPower": 3,
+    "AttackPreCD": 12,
+    "AttackPostCD": 55,
+    "AttackRange": 2,
+    "AttackRecover": 2,
+    "Speed": 33,
+    "InitialHP": 25,
+    "CriticalHitRate": 0.2,
+    "CriticalDamage": 2,
+    "HitRate": 0.9,
+    "DodgeRate": 0.1,
+    "Armor": 0,
+    "MagicResist": 0,
+    "HitDecreaseRate": 0.9
+  }
+]

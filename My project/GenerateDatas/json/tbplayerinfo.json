@@ -1,0 +1,26 @@
+[
+  {
+    "id": 10001,
+    "Name": "周周",
+    "AttackPower": "3",
+    "AttackPreCD": 12,
+    "AttackPostCD": 55,
+    "AttackRange": 2,
+    "AttackRecover": 2,
+    "Speed": 33,
+    "InitialHP": 25,
+    "CriticalHitRate": 0.2,
+    "CriticalDamage": 2,
+    "HitRate": 0.9,
+    "DodgeRate": 0.1,
+    "Armor": 0,
+    "MagicResist": 0,
+    "InitialCards": [
+      101,
+      102,
+      103
+    ],
+    "Passives": 0,
+    "HitDecreaseRate": 0.9
+  }
+]

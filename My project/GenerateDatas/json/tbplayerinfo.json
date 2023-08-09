@@ -16,10 +16,11 @@
     "Armor": 0,
     "MagicResist": 0,
     "InitialCards": [
-      101,
-      102,
-      103
+      106,
+      107,
+      108
     ],
+    "NormalAttackCard": 100,
     "Passives": 0,
     "HitDecreaseRate": 0.9
   }

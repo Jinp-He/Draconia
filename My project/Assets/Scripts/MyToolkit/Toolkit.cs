@@ -10,6 +10,10 @@ namespace Utility
 {
     public static class Utils
     {
+        public static void Swap<T>(IList<T> list, int indexA, int indexB)
+        {
+            (list[indexA], list[indexB]) = (list[indexB], list[indexA]);
+        }
         public static int GetRandomWithExclusion(int start, int end, int[] exclude)
         {
             //var range = Enumerable.Range(start, end-1).Where(i => !exclude.Contains(i));
@@ -58,5 +62,7 @@ namespace Utility
     {
         
     }
+    
+    
     
 }

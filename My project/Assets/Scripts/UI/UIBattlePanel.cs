@@ -1,10 +1,14 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using cfg;
 using Draconia.Controller;
 using Draconia.ViewController;
 using UnityEngine;
 using UnityEngine.UI;
 using QFramework;
+using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 namespace Draconia.UI
 {
@@ -40,7 +44,63 @@ namespace Draconia.UI
 				enemy.Init(enemyInfo);
 				Enemies.Add(enemy);
 			}
+			SettingBtn.onClick.AddListener(() =>
+			{
+				UIKit.OpenPanel<UISettingPanel>();
+			});
 
+			
+		}
+
+		public void ChosenAll()
+		{
+			foreach (var character in Characters)
+			{
+				character.Chosen();
+			}
+
+			foreach (var enemy in Enemies)
+			{
+				enemy.Chosen();
+			}
+		}
+
+		public void UnchosenAll()
+		{
+			foreach (var character in Characters)
+			{
+				character.Unchosen();
+			}
+
+			foreach (var enemy in Enemies)
+			{
+				enemy.Unchosen();
+			}
+		}
+
+		public void ChoseAllAlly()
+		{
+			foreach (var character in Characters)
+			{
+				character.Chosen();
+			}
+		}
+		
+		public void ChoseAllEnemies()
+		{
+			foreach (var enemy in Enemies)
+			{
+				enemy.Chosen();
+			}
+		}
+		GraphicRaycaster mRaycaster;
+		PointerEventData _mPointerEventData;
+		public Enemy ChosenEnemy;
+		public Character ChosenCharacter;
+
+
+		public void Update()
+		{
 			
 		}
 

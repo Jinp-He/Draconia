@@ -25,12 +25,21 @@ namespace Draconia.Controller
 
 namespace Draconia.ViewController
 {
-	public partial class Character : QFramework.ViewController, ICharacter, IPointerEnterHandler, IPointerExitHandler
+	public partial class Character : MyViewController, ICharacter, IPointerEnterHandler, IPointerExitHandler
 	{
 		public SpriteAtlas CharacterAtlas;
 		public Pointer MyPointer;
 		public PlayerInfo PlayerInfo;
 		public List<CardInfo> Cards;
+		
+		public int Position 
+		{
+			get
+			{
+				return BattleSystem.Characters.FindIndex(a => a = this);
+
+			}
+		}
 		private string CharacterName;
 		public CharacterAnimator _characterAnimator;
 		private int CurrHP;
@@ -78,12 +87,46 @@ namespace Draconia.ViewController
 		}
 		public void OnPointerEnter(PointerEventData eventData)
 		{
-			
+			Chosen();
+			UIKit.GetPanel<UIBattlePanel>().ChosenCharacter = this;
 		}
 
 		public void OnPointerExit(PointerEventData eventData)
 		{
-			
+			Unchosen();
+			UIKit.GetPanel<UIBattlePanel>().ChosenCharacter = null;
+		}
+
+		public void Chosen()
+		{
+			ChooseBracelet.gameObject.SetActive(true);
+		}
+
+		public void Unchosen()
+		{
+			ChooseBracelet.gameObject.SetActive(false);
+		}
+		
+		public void Move(int position)
+		{
+			List<Character> characters = BattleSystem.Characters;
+			int pos = characters.FindIndex(a => a = this);
+			int finalPos = pos + position;
+            
+			//TODO best practice of this
+			if (finalPos < 0)
+			{
+				finalPos = 0;
+			}
+
+			if (finalPos >= characters.Count)
+			{
+				finalPos = characters.Count;
+			}
+
+			GetComponent<CharacterAnimator>().Move(characters[finalPos]);
+			(characters[pos], characters[finalPos]) = (characters[finalPos], characters[pos]);
+
 		}
 	}
 }

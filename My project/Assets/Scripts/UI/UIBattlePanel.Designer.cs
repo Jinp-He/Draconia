@@ -6,27 +6,19 @@ using QFramework;
 
 namespace Draconia.UI
 {
-	// Generate Id:d3575b69-0955-47a9-a6c9-2beb7304c106
+	// Generate Id:a63b4da4-2004-4a7d-8837-0fc144068bea
 	public partial class UIBattlePanel
 	{
 		public const string Name = "UIBattlePanel";
 		
 		[SerializeField]
-		public UnityEngine.UI.Image CardArea;
+		public UnityEngine.UI.Button SettingBtn;
 		[SerializeField]
-		public Hands Hands;
+		public TimeBar TimeBar;
 		[SerializeField]
-		public UnityEngine.UI.Image GlowEffect;
+		public RectTransform PlayerSlot;
 		[SerializeField]
-		public TMPro.TextMeshProUGUI CardName;
-		[SerializeField]
-		public UnityEngine.UI.Image CardImage;
-		[SerializeField]
-		public TMPro.TextMeshProUGUI CardType;
-		[SerializeField]
-		public TMPro.TextMeshProUGUI CardCost;
-		[SerializeField]
-		public TMPro.TextMeshProUGUI CardDesc;
+		public RectTransform EnemySlot;
 		[SerializeField]
 		public UnityEngine.UI.Image PlayerArea;
 		[SerializeField]
@@ -34,9 +26,15 @@ namespace Draconia.UI
 		[SerializeField]
 		public UnityEngine.UI.Slider HPBar;
 		[SerializeField]
+		public UnityEngine.UI.Slider HPBarSlider;
+		[SerializeField]
+		public TMPro.TextMeshProUGUI HPText;
+		[SerializeField]
 		public RectTransform EnergyBar;
 		[SerializeField]
 		public TMPro.TextMeshProUGUI RestCardNum;
+		[SerializeField]
+		public RectTransform ChooseBracelet;
 		[SerializeField]
 		public UnityEngine.UI.Image EnemyArea;
 		[SerializeField]
@@ -44,38 +42,43 @@ namespace Draconia.UI
 		[SerializeField]
 		public RectTransform EnemyBar;
 		[SerializeField]
-		public RectTransform ChooseBracelet;
+		public UnityEngine.UI.Image CardArea;
 		[SerializeField]
-		public TimeBar TimeBar;
+		public Hands Hands;
 		[SerializeField]
-		public RectTransform PlayerSlot;
+		public EnergyCounter EnergyCounter;
 		[SerializeField]
-		public RectTransform EnemySlot;
+		public UnityEngine.UI.Image EnergyCounterImage;
+		[SerializeField]
+		public TMPro.TextMeshProUGUI Energy;
+		[SerializeField]
+		public Utility.BelzierArrows.BezierArrows Bezier;
 		
 		private UIBattlePanelData mPrivateData = null;
 		
 		protected override void ClearUIComponents()
 		{
-			CardArea = null;
-			Hands = null;
-			GlowEffect = null;
-			CardName = null;
-			CardImage = null;
-			CardType = null;
-			CardCost = null;
-			CardDesc = null;
-			PlayerArea = null;
-			CharacterImage = null;
-			HPBar = null;
-			EnergyBar = null;
-			RestCardNum = null;
-			EnemyArea = null;
-			EnemyImage = null;
-			EnemyBar = null;
-			ChooseBracelet = null;
+			SettingBtn = null;
 			TimeBar = null;
 			PlayerSlot = null;
 			EnemySlot = null;
+			PlayerArea = null;
+			CharacterImage = null;
+			HPBar = null;
+			HPBarSlider = null;
+			HPText = null;
+			EnergyBar = null;
+			RestCardNum = null;
+			ChooseBracelet = null;
+			EnemyArea = null;
+			EnemyImage = null;
+			EnemyBar = null;
+			CardArea = null;
+			Hands = null;
+			EnergyCounter = null;
+			EnergyCounterImage = null;
+			Energy = null;
+			Bezier = null;
 			
 			mData = null;
 		}

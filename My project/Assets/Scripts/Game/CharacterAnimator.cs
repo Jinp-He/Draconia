@@ -9,6 +9,7 @@ namespace Draconia.ViewController
 {
     public class CharacterAnimator : MonoBehaviour
     {
+        private string _characterName;
         private Character _character;
         private Sprite _isHitSprite;
         private Sprite _idleSprite;
@@ -29,6 +30,13 @@ namespace Draconia.ViewController
                 .Callback(() => { _character.CharacterImage.sprite = _idleSprite; })
                 .Start(this);
         }
+        
+        public void Move(Character character)
+        {
+            _character.transform.DOMove(character.transform.position, 1f);
+            character.transform.DOMove(transform.position, 1f);
+        }
+
 
         public void IsChose()
         {

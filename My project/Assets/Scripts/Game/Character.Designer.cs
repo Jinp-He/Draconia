@@ -1,4 +1,4 @@
-// Generate Id:606d72ad-be77-4138-9d46-f2989c484038
+// Generate Id:9964f028-b0f7-4392-bbf2-61645677e1ea
 using UnityEngine;
 
 namespace Draconia.ViewController
@@ -10,11 +10,11 @@ namespace Draconia.ViewController
 
 		public UnityEngine.UI.Slider HPBar;
 
-		public TMPro.TextMeshProUGUI HPText;
-
 		public RectTransform EnergyBar;
 
 		public TMPro.TextMeshProUGUI RestCardNum;
+
+		public RectTransform ChooseBracelet;
 
 	}
 }

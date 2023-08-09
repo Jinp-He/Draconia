@@ -1,5 +1,17 @@
 [
   {
+    "id": 100,
+    "Name": "攻击",
+    "Desc": "造成100%物理伤害",
+    "Cost": 0,
+    "AttackPreCD": 0,
+    "AttackPostCD": 15,
+    "AttackRange": 1,
+    "AttackRecover": 15,
+    "Effect": [],
+    "SkillTargetType": 1
+  },
+  {
     "id": 101,
     "Name": "移海式",
     "Desc": "造成80%物理伤害，将敌方单位挪动一个单位，造成该敌方单位重心不稳，使其硬直增加。",
@@ -58,5 +70,53 @@
     "AttackRecover": 11,
     "Effect": [],
     "SkillTargetType": 1
+  },
+  {
+    "id": 106,
+    "Name": "绳索",
+    "Desc": "将一名敌人推进一格",
+    "Cost": 2,
+    "AttackPreCD": 13,
+    "AttackPostCD": 57,
+    "AttackRange": 0,
+    "AttackRecover": 0,
+    "Effect": [],
+    "SkillTargetType": 1
+  },
+  {
+    "id": 107,
+    "Name": "普通攻击",
+    "Desc": "造成100%物理伤害",
+    "Cost": 2,
+    "AttackPreCD": 23,
+    "AttackPostCD": 74,
+    "AttackRange": 4,
+    "AttackRecover": 11,
+    "Effect": [],
+    "SkillTargetType": 1
+  },
+  {
+    "id": 108,
+    "Name": "回气",
+    "Desc": "回复50%生命值",
+    "Cost": 2,
+    "AttackPreCD": 23,
+    "AttackPostCD": 74,
+    "AttackRange": 4,
+    "AttackRecover": 11,
+    "Effect": [],
+    "SkillTargetType": 2
+  },
+  {
+    "id": 109,
+    "Name": "见侮",
+    "Desc": "获得明心（下次攻击必定暴击）",
+    "Cost": 2,
+    "AttackPreCD": 23,
+    "AttackPostCD": 74,
+    "AttackRange": 4,
+    "AttackRecover": 11,
+    "Effect": [],
+    "SkillTargetType": 2
   }
 ]

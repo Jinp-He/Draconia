@@ -1,4 +1,4 @@
-// Generate Id:dc757801-d2c2-4fe6-aecb-9004a5e246f0
+// Generate Id:c4f2719f-e71a-4652-9531-5fa16ebcae46
 using UnityEngine;
 
 namespace Draconia.ViewController
@@ -6,7 +6,9 @@ namespace Draconia.ViewController
 	public partial class Card
 	{
 
-		public UnityEngine.UI.Image GlowEffect;
+		public UnityEngine.UI.Image ChosenEffect;
+
+		public UnityEngine.UI.Image UseEffect;
 
 		public TMPro.TextMeshProUGUI CardName;
 

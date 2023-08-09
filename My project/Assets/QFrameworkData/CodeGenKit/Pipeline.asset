@@ -20,28 +20,35 @@ MonoBehaviour:
     NameToFullName: []
     BindInfos:
     - TypeName: UnityEngine.UI.Image
-      PathToRoot: EnemyImage
-      MemberName: EnemyImage
-    - TypeName: RectTransform
-      PathToRoot: EnemyBar
-      MemberName: EnemyBar
-    - TypeName: Draconia.ViewController.HPBar
-      PathToRoot: EnemyBar/HPBar
-      MemberName: HPBar
-    - TypeName: RectTransform
-      PathToRoot: EnemyBar/EnemyEnergyArea/EnergyBar
-      MemberName: EnergyBar
-    - TypeName: RectTransform
-      PathToRoot: ChooseBracelet
-      MemberName: ChooseBracelet
+      PathToRoot: ChosenEffect
+      MemberName: ChosenEffect
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: UseEffect
+      MemberName: UseEffect
+    - TypeName: TMPro.TextMeshProUGUI
+      PathToRoot: CardName
+      MemberName: CardName
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: CardImage
+      MemberName: CardImage
+    - TypeName: TMPro.TextMeshProUGUI
+      PathToRoot: CardType
+      MemberName: CardType
+    - TypeName: TMPro.TextMeshProUGUI
+      PathToRoot: CardCost
+      MemberName: CardCost
+    - TypeName: TMPro.TextMeshProUGUI
+      PathToRoot: CardDesc
+      MemberName: CardDesc
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: Enemy
+    ClassName: Card
     Namespace: Draconia.ViewController
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace Draconia.ViewController\r\n{\r\n\tpublic
-      partial class Enemy : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class Card : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:674e9d51-3074-40d8-8614-da5a41ed1b13\r\nusing UnityEngine;\r\n\r\nnamespace
-      Draconia.ViewController\r\n{\r\n\tpublic partial class Enemy\r\n\t{\r\n\r\n\t\tpublic
-      UnityEngine.UI.Image EnemyImage;\r\n\r\n\t\tpublic RectTransform EnemyBar;\r\n\r\n\t\tpublic
-      Draconia.ViewController.HPBar HPBar;\r\n\r\n\t\tpublic RectTransform EnergyBar;\r\n\r\n\t\tpublic
-      RectTransform ChooseBracelet;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:c4f2719f-e71a-4652-9531-5fa16ebcae46\r\nusing UnityEngine;\r\n\r\nnamespace
+      Draconia.ViewController\r\n{\r\n\tpublic partial class Card\r\n\t{\r\n\r\n\t\tpublic
+      UnityEngine.UI.Image ChosenEffect;\r\n\r\n\t\tpublic UnityEngine.UI.Image UseEffect;\r\n\r\n\t\tpublic
+      TMPro.TextMeshProUGUI CardName;\r\n\r\n\t\tpublic UnityEngine.UI.Image CardImage;\r\n\r\n\t\tpublic
+      TMPro.TextMeshProUGUI CardType;\r\n\r\n\t\tpublic TMPro.TextMeshProUGUI CardCost;\r\n\r\n\t\tpublic
+      TMPro.TextMeshProUGUI CardDesc;\r\n\r\n\t}\r\n}\r\n"

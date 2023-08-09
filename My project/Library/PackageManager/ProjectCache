@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638224151609035584
-    m_Hash: 2745513046
+      ticks: 638253399236839948
+    m_Hash: 1751355093
   m_LockFileStatus:
     m_FilePath: C:/Users/lofnh/Documents/GitHub/Draconia/My project/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638224151943313156
-    m_Hash: 3125261499
+      ticks: 638253399236850030
+    m_Hash: 4219078396
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -323,12 +323,14 @@ m_ResolvedPackages:
     - 3.0.20
     - 3.0.21
     - 3.0.22
+    - 3.0.24
     compatible:
     - 3.0.18
     - 3.0.20
     - 3.0.21
     - 3.0.22
-    verified: 3.0.22
+    - 3.0.24
+    verified: 3.0.24
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -691,6 +693,7 @@ m_ResolvedPackages:
     - 1.3.4
     - 1.3.5
     - 1.3.7
+    - 1.3.8
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -705,6 +708,7 @@ m_ResolvedPackages:
     - 1.3.4
     - 1.3.5
     - 1.3.7
+    - 1.3.8
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -871,6 +875,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.2
     - 3.2.0-pre.3
     - 3.2.0-pre.4
+    - 3.2.0-pre.5
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
@@ -879,6 +884,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.2
     - 3.2.0-pre.3
     - 3.2.0-pre.4
+    - 3.2.0-pre.5
     verified: 3.0.6
   dependencies:
   - name: com.unity.ugui
@@ -1107,6 +1113,7 @@ m_ResolvedPackages:
     all:
     - 1.0.0
     - 3.0.0-exp.1
+    - 3.0.0-exp.3
     compatible:
     - 1.0.0
     verified: 1.0.0

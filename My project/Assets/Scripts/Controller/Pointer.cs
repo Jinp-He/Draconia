@@ -28,7 +28,7 @@ namespace Draconia.Controller
         {
             _mEnemy = enemy;
             _speed = _mEnemy.EnemyInfo.Speed;
-            //PointerImage.sprite = character.CharacterAtlas.GetSprite("Pointer");
+            PointerImage.sprite = _mEnemy.EnemyAtlas.GetSprite("dog01_Pointer");
         }
 
 
@@ -66,7 +66,7 @@ namespace Draconia.Controller
                 }
                 else
                 {
-                    _mEnemy.Action();
+                    _mEnemy.EnemyStrategy.Action();
                 }
                 var localPosition = transform.localPosition;
                 transform.localPosition = new Vector3(0, localPosition.y, localPosition.z);

@@ -15,7 +15,9 @@
     "DodgeRate": 0.1,
     "Armor": 0,
     "MagicResist": 0,
-    "HitDecreaseRate": 0.9
+    "HitDecreaseRate": 0.9,
+    "EnemyStrategy": "",
+    "MaxEnergy": 3
   },
   {
     "id": 20002,
@@ -25,14 +27,16 @@
     "AttackPostCD": 55,
     "AttackRange": 2,
     "AttackRecover": 2,
-    "Speed": 33,
-    "InitialHP": 25,
+    "Speed": 10,
+    "InitialHP": 50,
     "CriticalHitRate": 0.2,
     "CriticalDamage": 2,
     "HitRate": 0.9,
     "DodgeRate": 0.1,
     "Armor": 0,
     "MagicResist": 0,
-    "HitDecreaseRate": 0.9
+    "HitDecreaseRate": 0.9,
+    "EnemyStrategy": "",
+    "MaxEnergy": 3
   }
 ]

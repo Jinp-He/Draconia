@@ -34,10 +34,12 @@ public sealed partial class EnemyInfo :  Bright.Config.BeanBase
         { if(!_json["Armor"].IsNumber) { throw new SerializationException(); }  Armor = _json["Armor"]; }
         { if(!_json["MagicResist"].IsNumber) { throw new SerializationException(); }  MagicResist = _json["MagicResist"]; }
         { if(!_json["HitDecreaseRate"].IsNumber) { throw new SerializationException(); }  HitDecreaseRate = _json["HitDecreaseRate"]; }
+        { if(!_json["EnemyStrategy"].IsString) { throw new SerializationException(); }  EnemyStrategy = _json["EnemyStrategy"]; }
+        { if(!_json["MaxEnergy"].IsNumber) { throw new SerializationException(); }  MaxEnergy = _json["MaxEnergy"]; }
         PostInit();
     }
 
-    public EnemyInfo(int id, string Name, int AttackPower, int AttackPreCD, int AttackPostCD, int AttackRange, int AttackRecover, int Speed, int InitialHP, float CriticalHitRate, float CriticalDamage, float HitRate, float DodgeRate, int Armor, int MagicResist, float HitDecreaseRate ) 
+    public EnemyInfo(int id, string Name, int AttackPower, int AttackPreCD, int AttackPostCD, int AttackRange, int AttackRecover, int Speed, int InitialHP, float CriticalHitRate, float CriticalDamage, float HitRate, float DodgeRate, int Armor, int MagicResist, float HitDecreaseRate, string EnemyStrategy, int MaxEnergy ) 
     {
         this.Id = id;
         this.Name = Name;
@@ -55,6 +57,8 @@ public sealed partial class EnemyInfo :  Bright.Config.BeanBase
         this.Armor = Armor;
         this.MagicResist = MagicResist;
         this.HitDecreaseRate = HitDecreaseRate;
+        this.EnemyStrategy = EnemyStrategy;
+        this.MaxEnergy = MaxEnergy;
         PostInit();
     }
 
@@ -127,6 +131,14 @@ public sealed partial class EnemyInfo :  Bright.Config.BeanBase
     /// 硬直系数
     /// </summary>
     public float HitDecreaseRate { get; private set; }
+    /// <summary>
+    /// 策略
+    /// </summary>
+    public string EnemyStrategy { get; private set; }
+    /// <summary>
+    /// 最大能量
+    /// </summary>
+    public int MaxEnergy { get; private set; }
 
     public const int __ID__ = 953467958;
     public override int GetTypeId() => __ID__;
@@ -159,6 +171,8 @@ public sealed partial class EnemyInfo :  Bright.Config.BeanBase
         + "Armor:" + Armor + ","
         + "MagicResist:" + MagicResist + ","
         + "HitDecreaseRate:" + HitDecreaseRate + ","
+        + "EnemyStrategy:" + EnemyStrategy + ","
+        + "MaxEnergy:" + MaxEnergy + ","
         + "}";
     }
     

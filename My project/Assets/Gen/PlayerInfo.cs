@@ -34,12 +34,13 @@ public sealed partial class PlayerInfo :  Bright.Config.BeanBase
         { if(!_json["Armor"].IsNumber) { throw new SerializationException(); }  Armor = _json["Armor"]; }
         { if(!_json["MagicResist"].IsNumber) { throw new SerializationException(); }  MagicResist = _json["MagicResist"]; }
         { var __json0 = _json["InitialCards"]; if(!__json0.IsArray) { throw new SerializationException(); } InitialCards = new System.Collections.Generic.List<int>(__json0.Count); foreach(JSONNode __e0 in __json0.Children) { int __v0;  { if(!__e0.IsNumber) { throw new SerializationException(); }  __v0 = __e0; }  InitialCards.Add(__v0); }   }
+        { if(!_json["NormalAttackCard"].IsNumber) { throw new SerializationException(); }  NormalAttackCard = _json["NormalAttackCard"]; }
         { if(!_json["Passives"].IsNumber) { throw new SerializationException(); }  Passives = _json["Passives"]; }
         { if(!_json["HitDecreaseRate"].IsNumber) { throw new SerializationException(); }  HitDecreaseRate = _json["HitDecreaseRate"]; }
         PostInit();
     }
 
-    public PlayerInfo(int id, string Name, string AttackPower, int AttackPreCD, int AttackPostCD, int AttackRange, int AttackRecover, int Speed, int InitialHP, float CriticalHitRate, float CriticalDamage, float HitRate, float DodgeRate, int Armor, int MagicResist, System.Collections.Generic.List<int> InitialCards, int Passives, float HitDecreaseRate ) 
+    public PlayerInfo(int id, string Name, string AttackPower, int AttackPreCD, int AttackPostCD, int AttackRange, int AttackRecover, int Speed, int InitialHP, float CriticalHitRate, float CriticalDamage, float HitRate, float DodgeRate, int Armor, int MagicResist, System.Collections.Generic.List<int> InitialCards, int NormalAttackCard, int Passives, float HitDecreaseRate ) 
     {
         this.Id = id;
         this.Name = Name;
@@ -57,6 +58,7 @@ public sealed partial class PlayerInfo :  Bright.Config.BeanBase
         this.Armor = Armor;
         this.MagicResist = MagicResist;
         this.InitialCards = InitialCards;
+        this.NormalAttackCard = NormalAttackCard;
         this.Passives = Passives;
         this.HitDecreaseRate = HitDecreaseRate;
         PostInit();
@@ -133,6 +135,11 @@ public sealed partial class PlayerInfo :  Bright.Config.BeanBase
     public System.Collections.Generic.List<int> InitialCards { get; private set; }
     public System.Collections.Generic.List<CardInfo> InitialCards_Ref { get; private set; }
     /// <summary>
+    /// 普通攻击卡
+    /// </summary>
+    public int NormalAttackCard { get; private set; }
+    public CardInfo NormalAttackCard_Ref { get; private set; }
+    /// <summary>
     /// 被动（暂时未添加）
     /// </summary>
     public int Passives { get; private set; }
@@ -147,6 +154,7 @@ public sealed partial class PlayerInfo :  Bright.Config.BeanBase
     public  void Resolve(Dictionary<string, object> _tables)
     {
         { TbCardInfo __table = (TbCardInfo)_tables["TbCardInfo"]; this.InitialCards_Ref = new System.Collections.Generic.List<CardInfo>(); foreach(var __e in InitialCards) { this.InitialCards_Ref.Add(__table.GetOrDefault(__e)); } }
+        this.NormalAttackCard_Ref = (_tables["TbCardInfo"] as TbCardInfo).GetOrDefault(NormalAttackCard);
         PostResolve();
     }
 
@@ -173,6 +181,7 @@ public sealed partial class PlayerInfo :  Bright.Config.BeanBase
         + "Armor:" + Armor + ","
         + "MagicResist:" + MagicResist + ","
         + "InitialCards:" + Bright.Common.StringUtil.CollectionToString(InitialCards) + ","
+        + "NormalAttackCard:" + NormalAttackCard + ","
         + "Passives:" + Passives + ","
         + "HitDecreaseRate:" + HitDecreaseRate + ","
         + "}";

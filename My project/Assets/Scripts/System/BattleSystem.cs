@@ -4,6 +4,7 @@ using System.Linq;
 using cfg;
 using Draconia.UI;
 using Draconia.ViewController;
+using Draconia.ViewController.Event;
 using QFramework;
 using Utility;
 using Debug = UnityEngine.Debug;
@@ -15,7 +16,7 @@ namespace Draconia.System
     {
         Stop, Player, Enemy, Ending
     }
-    public class BattleSystem : AbstractSystem
+    public class BattleSystem : AbstractSystem, ICanSendEvent
     {
         public Hands Hands;
         public List<Character> Characters;
@@ -42,10 +43,11 @@ namespace Draconia.System
             Energy.Register(e =>
             {
                 UIKit.GetPanel<UIBattlePanel>().EnergyCounter.Energy.text = e.ToString();
-                Debug.Log(Energy.Value);
+                //Debug.Log(Energy.Value);
             });
             Energy.Value = InitEnergy;
             BattleState = BattleState.Enemy;
+            this.SendEvent<BattleStartEvent>();
         }
 
         private BattleState PrevBattleState;
@@ -76,9 +78,10 @@ namespace Draconia.System
 
         public void DrawAttackCard(Character character)
         {
-            CardInfo NormalAttack = character.PlayerInfo.NormalAttackCard_Ref;
-            if(!Hands.HasCard(NormalAttack))
-                Hands.AddCard(character.PlayerInfo.NormalAttackCard_Ref,character);
+            foreach (var cardInfo in character.PlayerInfo.NormalAttackCard_Ref)
+            {
+                Hands.AddCard(cardInfo,character);
+            }
         }
         public void PlayerTurnStart(Character character)
         {
@@ -158,7 +161,7 @@ namespace Draconia.System
         
         
         
-        private void GameOver()
+        public void GameOver()
         {
             
         }

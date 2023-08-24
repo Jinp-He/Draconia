@@ -31,6 +31,10 @@ namespace cfg
         /// 所有友方
         /// </summary>
         AllAlly = 4,
+        /// <summary>
+        /// 自己周围
+        /// </summary>
+        AroundSelf = 5,
     }
 
 } 

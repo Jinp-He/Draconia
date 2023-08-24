@@ -36,10 +36,11 @@ public sealed partial class EnemyInfo :  Bright.Config.BeanBase
         { if(!_json["HitDecreaseRate"].IsNumber) { throw new SerializationException(); }  HitDecreaseRate = _json["HitDecreaseRate"]; }
         { if(!_json["EnemyStrategy"].IsString) { throw new SerializationException(); }  EnemyStrategy = _json["EnemyStrategy"]; }
         { if(!_json["MaxEnergy"].IsNumber) { throw new SerializationException(); }  MaxEnergy = _json["MaxEnergy"]; }
+        { var __json0 = _json["EnemyActions"]; if(!__json0.IsArray) { throw new SerializationException(); } EnemyActions = new System.Collections.Generic.List<EnemyAction>(__json0.Count); foreach(JSONNode __e0 in __json0.Children) { EnemyAction __v0;  { if(!__e0.IsObject) { throw new SerializationException(); }  __v0 = EnemyAction.DeserializeEnemyAction(__e0);  }  EnemyActions.Add(__v0); }   }
         PostInit();
     }
 
-    public EnemyInfo(int id, string Name, int AttackPower, int AttackPreCD, int AttackPostCD, int AttackRange, int AttackRecover, int Speed, int InitialHP, float CriticalHitRate, float CriticalDamage, float HitRate, float DodgeRate, int Armor, int MagicResist, float HitDecreaseRate, string EnemyStrategy, int MaxEnergy ) 
+    public EnemyInfo(int id, string Name, int AttackPower, int AttackPreCD, int AttackPostCD, int AttackRange, int AttackRecover, int Speed, int InitialHP, float CriticalHitRate, float CriticalDamage, float HitRate, float DodgeRate, int Armor, int MagicResist, float HitDecreaseRate, string EnemyStrategy, int MaxEnergy, System.Collections.Generic.List<EnemyAction> EnemyActions ) 
     {
         this.Id = id;
         this.Name = Name;
@@ -59,6 +60,7 @@ public sealed partial class EnemyInfo :  Bright.Config.BeanBase
         this.HitDecreaseRate = HitDecreaseRate;
         this.EnemyStrategy = EnemyStrategy;
         this.MaxEnergy = MaxEnergy;
+        this.EnemyActions = EnemyActions;
         PostInit();
     }
 
@@ -139,17 +141,23 @@ public sealed partial class EnemyInfo :  Bright.Config.BeanBase
     /// 最大能量
     /// </summary>
     public int MaxEnergy { get; private set; }
+    /// <summary>
+    /// 敌人行动
+    /// </summary>
+    public System.Collections.Generic.List<EnemyAction> EnemyActions { get; private set; }
 
     public const int __ID__ = 953467958;
     public override int GetTypeId() => __ID__;
 
     public  void Resolve(Dictionary<string, object> _tables)
     {
+        foreach(var _e in EnemyActions) { _e?.Resolve(_tables); }
         PostResolve();
     }
 
     public  void TranslateText(System.Func<string, string, string> translator)
     {
+        foreach(var _e in EnemyActions) { _e?.TranslateText(translator); }
     }
 
     public override string ToString()
@@ -173,6 +181,7 @@ public sealed partial class EnemyInfo :  Bright.Config.BeanBase
         + "HitDecreaseRate:" + HitDecreaseRate + ","
         + "EnemyStrategy:" + EnemyStrategy + ","
         + "MaxEnergy:" + MaxEnergy + ","
+        + "EnemyActions:" + Bright.Common.StringUtil.CollectionToString(EnemyActions) + ","
         + "}";
     }
     

@@ -83,18 +83,18 @@ namespace Draconia.ViewController
 
 		public void Die()
 		{
-			
+			BattleSystem.GameOver();
 		}
 		public void OnPointerEnter(PointerEventData eventData)
 		{
-			Chosen();
-			UIKit.GetPanel<UIBattlePanel>().ChosenCharacter = this;
+			// Chosen();
+			// UIKit.GetPanel<UIBattlePanel>().ChosenCharacter = this;
 		}
 
 		public void OnPointerExit(PointerEventData eventData)
 		{
-			Unchosen();
-			UIKit.GetPanel<UIBattlePanel>().ChosenCharacter = null;
+			// Unchosen();
+			// UIKit.GetPanel<UIBattlePanel>().ChosenCharacter = null;
 		}
 
 		public void Chosen()
@@ -127,6 +127,34 @@ namespace Draconia.ViewController
 			GetComponent<CharacterAnimator>().Move(characters[finalPos]);
 			(characters[pos], characters[finalPos]) = (characters[finalPos], characters[pos]);
 
+		}
+		public void Move(Character character)
+		{
+			List<Character> characters = BattleSystem.Characters;
+			int pos = characters.FindIndex(a => a = this);
+			int finalPos = characters.FindIndex(a => a = character);
+            
+			//TODO best practice of this
+			if (finalPos < 0)
+			{
+				finalPos = 0;
+			}
+
+			if (finalPos >= characters.Count)
+			{
+				finalPos = characters.Count;
+			}
+
+			GetComponent<CharacterAnimator>().Move(characters[finalPos]);
+			(characters[pos], characters[finalPos]) = (characters[finalPos], characters[pos]);
+
+		}
+
+		public int Distance(Character character)
+		{
+			List<Character> characters = BattleSystem.Characters;
+			return Math.Abs(characters.FindIndex(a => a = this)
+			- characters.FindIndex(a => a = character));
 		}
 	}
 }

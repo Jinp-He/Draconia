@@ -2,7 +2,7 @@
   {
     "id": 10001,
     "Name": "周周",
-    "AttackPower": "3",
+    "AttackPower": 3,
     "AttackPreCD": 12,
     "AttackPostCD": 55,
     "AttackRange": 2,
@@ -16,11 +16,17 @@
     "Armor": 0,
     "MagicResist": 0,
     "InitialCards": [
+      103,
+      104,
+      105,
       106,
-      107,
-      108
+      107
     ],
-    "NormalAttackCard": 100,
+    "NormalAttackCard": [
+      100,
+      101,
+      102
+    ],
     "Passives": 0,
     "HitDecreaseRate": 0.9
   }

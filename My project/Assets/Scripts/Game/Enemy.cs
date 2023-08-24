@@ -17,20 +17,42 @@ namespace Draconia.ViewController
 	public partial class Enemy : MyViewController, ICharacter,IPointerEnterHandler, IPointerExitHandler
 	{
 		public EnemyInfo EnemyInfo;
-		public int Energy;
+		private int _energy;
+
+		public int Energy
+		{
+			get => _energy;
+			set
+			{
+				_energy = value;
+				foreach (var bulb in _energyBulbs)
+				{
+					bulb.color = Color.white;
+
+				}
+
+				foreach (var bulb in _energyBulbs.GetRange(0, value))
+				{
+					bulb.color = Color.blue;
+				}
+
+			}
+
+		}
+	
 		public int Position 
 		{
 			get
 			{
-				return this.GetSystem<BattleSystem>().Enemies.FindIndex(a => a = this);
-
+				List<Enemy> enemies = this.GetSystem<BattleSystem>().Enemies;
+				int i = enemies.FindIndex(a => a = this);
+				
+				return i;
 			}
 		}
 
-		public EnemyStrategy EnemyStrategy
-		{
-			get { return _enemyStrategy; }
-		}
+		public EnemyStrategy EnemyStrategy => _enemyStrategy;
+
 
 		public BindableProperty<int> EnergyCount;
 		public Pointer MyPointer;
@@ -39,89 +61,74 @@ namespace Draconia.ViewController
 		public Image EnergyBulbPrefab;
 		private readonly List<Image> _energyBulbs = new List<Image>();
 		private EnemyStrategy _enemyStrategy;
+		private int CurrHP;
+		public EnemyAnimation EnemyAnimation;
 
-		public Enemy()
-		{
-			
-		}
 
 		public void Init(EnemyInfo enemyInfo)
 		{
-			_enemyStrategy = new EnemyStrategy(this);
 			EnemyInfo = enemyInfo;
-			Debug.Log(enemyInfo.Speed);
+			_enemyStrategy = EnemyStrategy.GetEnemyStrategy(this);
+			EnemyAnimation = GetComponent<EnemyAnimation>();
+			EnemyAnimation.Init(this);
 			EnemyImage.sprite = EnemyAtlas.GetSprite("dog01_Idle");
 			EnemyImage.SetNativeSize();
 			HPBar.Init(EnemyInfo.InitialHP,EnemyInfo.InitialHP);
+			CurrHP = EnemyInfo.InitialHP;
 			MyPointer = UIKit.GetPanel<UIBattlePanel>().TimeBar.AddEnemy(this);
-			EnergyCount = new BindableProperty<int>
-			{
-				Value = 0
-			};
+			// EnergyCount = new BindableProperty<int>
+			// {
+			// 	Value = 0
+			// };
 			for (int i = 0; i < enemyInfo.MaxEnergy; i++)
 			{
 				Image energyBulb = Instantiate(EnergyBulbPrefab, EnergyBar.transform);
 				_energyBulbs.Add(energyBulb);
 				energyBulb.gameObject.SetActive(true);
 			}
-			EnergyCount.Register(e =>
-			{
-				foreach (var bulb in _energyBulbs)
-				{
-					bulb.color = Color.white;
-					
-				}
-				foreach (var bulb in _energyBulbs.GetRange(0,e))
-				{
-					bulb.color = Color.blue;
-				}
-				
-			});
+			// EnergyCount.Register(e =>
+			// {
+			// 	foreach (var bulb in _energyBulbs)
+			// 	{
+			// 		bulb.color = Color.white;
+			// 		
+			// 	}
+			// 	foreach (var bulb in _energyBulbs.GetRange(0,e))
+			// 	{
+			// 		bulb.color = Color.blue;
+			// 	}
+			// 	
+			// });
 			_enemyAnimator.Init(this);
-		}
-
-		public void Move(int position)
-		{
-			List<Enemy> enemies = BattleSystem.Enemies;
-			int pos = enemies.FindIndex(a => a = this);
-			int finalPos = pos + position;
-            
-			//TODO best practice of this
-			if (finalPos < 0)
-			{
-				finalPos = 0;
-			}
-
-			if (finalPos >= enemies.Count)
-			{
-				finalPos = enemies.Count;
-			}
-
-			GetComponent<EnemyAnimator>().Move(enemies[finalPos]);
-			(enemies[pos], enemies[finalPos]) = (enemies[finalPos], enemies[pos]);
-
-		}
-
-		public void Chosen()
-		{
-			ChooseBracelet.gameObject.SetActive(true);
-		}
-
-		public void Unchosen()
-		{
-			ChooseBracelet.gameObject.SetActive(false);
 		}
 
 		public void OnPointerEnter(PointerEventData eventData)
 		{
-			Chosen();
-			UIKit.GetPanel<UIBattlePanel>().ChosenEnemy = this;
+			EnemyAnimation.OnPointerEnter(eventData);
 		}
 
 		public void OnPointerExit(PointerEventData eventData)
 		{
-			Unchosen();
-			UIKit.GetPanel<UIBattlePanel>().ChosenEnemy = null;
+			EnemyAnimation.OnPointerExit(eventData);
+		}
+		
+		public void IsHit(int damage)
+		{
+			//CharacterImage.sprite = CharacterAtlas.GetSprite("OnHit");
+			CurrHP -= damage;
+			if (CurrHP <= 0)
+			{
+				Die();
+			}
+			HPBar.GetComponent<HPBar>().SetHp(CurrHP);
+			_enemyAnimator.IsHit();
+
+		}
+
+		public void Die()
+		{
+			BattleSystem.Enemies.Remove(this);
+			Destroy(this);
 		}
 	}
 }

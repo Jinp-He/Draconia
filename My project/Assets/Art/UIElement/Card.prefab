@@ -397,6 +397,42 @@ MonoBehaviour:
   CustomComponentName: GlowEffect
   CustomComment: 
   mComponentName: UnityEngine.UI.Image
+--- !u!1 &4386859850986435111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3214636291085063303}
+  m_Layer: 5
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3214636291085063303
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4386859850986435111}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1358174228734903284}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 162.00027, y: 107.79999}
+  m_SizeDelta: {x: 100, y: 227.4438}
+  m_Pivot: {x: 0.4999992, y: 1.0000001}
 --- !u!1 &4399910676634173997
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,6 +597,7 @@ GameObject:
   - component: {fileID: 701863358023940621}
   - component: {fileID: 7208342943457068416}
   - component: {fileID: 7842945222931818247}
+  - component: {fileID: 4165009843774331135}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -587,6 +624,7 @@ RectTransform:
   - {fileID: 6348066842370073463}
   - {fileID: 3539745856900302243}
   - {fileID: 6969588245793338896}
+  - {fileID: 3214636291085063303}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -657,6 +695,30 @@ MonoBehaviour:
   CardType: {fileID: 8331749133798504553}
   CardCost: {fileID: 418484032390317317}
   CardDesc: {fileID: 6050741864578776755}
+--- !u!114 &4165009843774331135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5645331371730933292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db84f2849074869a68e544f9552344c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Namespace: Draconia.ViewController
+  ScriptName: Card
+  ScriptsFolder: Assets/Scripts/Game
+  GeneratePrefab: 0
+  PrefabFolder: Assets/Art/Prefab
+  TooltipPrefab: {fileID: 7377964538569953508, guid: df16e692f02ccd94587ceebdef2ea8e9, type: 3}
+  TooltipContainer: {fileID: 0}
+  TooltipPosition: {fileID: 3214636291085063303}
+  Tooltip: {fileID: 0}
+  Tooltips: []
+  LagDisplay: 0
+  MouseOverSec: 0
 --- !u!1 &5940894999998654092
 GameObject:
   m_ObjectHideFlags: 0

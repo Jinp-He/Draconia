@@ -11,6 +11,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Button = UnityEngine.UIElements.Button;
+using Common = cfg.Common;
 
 namespace Utility
 {
@@ -72,7 +73,6 @@ namespace Utility
             List<string> commons = new List<string>();
             foreach (Match match in m)
             {
-                Debug.Log("#DEBUGGGER#" + match);
                 commons.Add(match.ToString().Trim('{').Trim('}'));
             }
             
@@ -90,9 +90,9 @@ namespace Utility
             var res = new List<Tooltip>();
             foreach (var noun in commons)
             {
-                //Common c = ResLoadSystem.Table.TbCommon[noun];
-                //Tooltip list = new Tooltip(){Name = c.Name,Desc = c.Desc,Type = c.Type};
-                //res.Add(list);
+                Common c = ResLoadSystem.Table.TbCommon[noun];
+                Tooltip list = new Tooltip(){Name = c.Name,Desc = c.Desc,Type = c.Type};
+                res.Add(list);
             }
 
             InitTooltip(res);
@@ -120,9 +120,9 @@ namespace Utility
             var res = new List<Tooltip>();
             foreach (var noun in commons)
             {
-                // Common c = ResLoadSystem.Table.TbCommon[noun];
-                // Tooltip list = new Tooltip(){Name = c.Name,Desc = c.Desc,Type = c.Type};
-                // res.Add(list);
+                Common c = ResLoadSystem.Table.TbCommon[noun];
+                Tooltip list = new Tooltip(){Name = c.Name,Desc = c.Desc,Type = c.Type}; 
+                res.Add(list);
             }
 
             AddTooltip(res, Color.yellow);

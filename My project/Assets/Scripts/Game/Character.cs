@@ -9,7 +9,9 @@ using QFramework;
 using UnityEngine.EventSystems;
 using UnityEngine.U2D;
 using cfg;
+using Draconia.Game.Buff;
 using Draconia.MyComponent;
+using Draconia.ViewController.Event;
 using NotImplementedException = System.NotImplementedException;
 
 namespace Draconia.Controller
@@ -25,13 +27,19 @@ namespace Draconia.Controller
 
 namespace Draconia.ViewController
 {
-	public partial class Character : MyViewController, ICharacter, IPointerEnterHandler, IPointerExitHandler
+	public partial class Character : MyViewController, ICanRegisterEvent, ICharacter, IPointerEnterHandler, IPointerExitHandler
 	{
 		public SpriteAtlas CharacterAtlas;
 		public Pointer MyPointer;
 		public PlayerInfo PlayerInfo;
 		public List<CardInfo> Cards;
+
 		
+
+		private float _armorModifier;
+		private float _magicResistModifier;
+		private float _recoverModifier;
+		private Action NextTurn;
 		public int Position 
 		{
 			get
@@ -56,6 +64,11 @@ namespace Draconia.ViewController
 			Cards = new List<CardInfo>();
 			Cards.AddRange(PlayerInfo.InitialCards_Ref);
 			_characterAnimator.Init(this);
+			this.RegisterEvent<PlayerTurnStartEvent>((e) =>
+			{
+				NextTurn?.Invoke();
+				NextTurn = new Action(() => { });
+			});
 		}
 		
 		private void Update()               
@@ -155,6 +168,33 @@ namespace Draconia.ViewController
 			List<Character> characters = BattleSystem.Characters;
 			return Math.Abs(characters.FindIndex(a => a = this)
 			- characters.FindIndex(a => a = character));
+		}
+
+		public void Defense()
+		{
+			_magicResistModifier += 0.2f;
+			_armorModifier += 0.2f;
+			NextTurn += () =>
+			{
+				_magicResistModifier -= 0.2f;
+				_armorModifier -= 0.2f;
+			};
+		}
+
+		public void Refresh()
+		{
+			MyPointer.Refresh();
+		}
+
+		public void OnEndTurn()
+		{
+			Debug.Log("#DEBUG# Endturn");
+			BattleSystem.Hands.OnEndTurn(this);
+		}
+
+		public void AddBuff(string buffName, int stack)
+		{
+			GetComponent<BuffManager>().AddBuff(buffName, stack);
 		}
 	}
 }

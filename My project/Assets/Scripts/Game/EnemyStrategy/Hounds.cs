@@ -60,14 +60,14 @@ namespace Draconia.ViewController
         {
             base.UseUlt();
             _enemy.Energy = 0;
-            Debug.Log("#DEBUG# USe Ult");
+            //Debug.Log("#DEBUG# USe Ult");
         }
 
         protected override void UseNormalAttack()
         {
             base.UseNormalAttack();
             _enemy.Energy++;
-            Debug.Log("#DEBUG# USe Normal Attack");
+            //Debug.Log("#DEBUG# USe Normal Attack");
         }
     }
 }

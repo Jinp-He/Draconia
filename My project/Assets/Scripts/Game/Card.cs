@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using cfg;
 using DG.Tweening;
 using Draconia.Controller;
@@ -10,6 +11,7 @@ using QFramework;
 using Unity.VisualScripting;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Utility;
 using NotImplementedException = System.NotImplementedException;
 
 namespace Draconia.ViewController
@@ -28,6 +30,7 @@ namespace Draconia.ViewController
         public CardInfo _cardInfo;
         private Character CardPlayer;
         private UIBattlePanel UIBattlePanel;
+        private List<EnumCardProperty> _properties;
         
         void Start()
         {
@@ -39,11 +42,23 @@ namespace Draconia.ViewController
         public void Init(CardInfo cardInfo, Character character)
         {
             _cardInfo = cardInfo;
+            _properties = cardInfo.Properties;
+            var desc = _cardInfo.Desc;
+            MatchCollection m = Regex.Matches(desc, "\\{(.*?)\\}");
+            List<string> commons = new List<string>();
+            foreach (Match match in m)
+            {
+                commons.Add(match.ToString().Trim('{').Trim('}'));
+            }
+            desc = desc.Replace("{", "<color=yellow>").Replace("}", "</color>");
+
             CardName.text = _cardInfo.Name;
-            CardDesc.text = _cardInfo.Desc;
+            CardDesc.text = desc;
             CardCost.text = _cardInfo.Cost.ToString();
             CardType.text = _cardInfo.SkillTargetType.ToString();
             CardPlayer = character;
+            
+            GetComponent<MyTooltipManager>().InitWithCommons(commons);
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -116,6 +131,7 @@ namespace Draconia.ViewController
                 case SkillTarget.Self:
                     CardPlayer.Chosen();
                     Target.Add(CardPlayer);
+                    _characters.Add(CardPlayer);
                     break;
 
                 case SkillTarget.SingleAlly:
@@ -203,10 +219,18 @@ namespace Draconia.ViewController
             if (InThePlayerArea() && IsRightTarget())
             {
                 Play();
-                Destroy(this.gameObject);
+                if (_properties.Contains(EnumCardProperty.Flash))
+                {
+                    _hands.RemoveCard(this);
+                }
+               
                 BattleSystem.Energy.Value -= _cardInfo.Cost;
                 BattleSystem.BattleState = BattleState.Enemy;
                 BattleSystem.Continue();
+                
+                _hands.RemoveCard(this);
+                CardPlayer.OnEndTurn();
+                Destroy(gameObject);
                 _hands.Refresh();
             }
             else
@@ -241,28 +265,45 @@ namespace Draconia.ViewController
         {
             switch (_cardInfo.Id)
             {
-                case 101:
-                    _enemies[0].IsHit(CardPlayer.PlayerInfo.AttackPower);
+                case 100:
+                    BattleSystem.Attack(CardPlayer, _enemies[0],1);
                     break;
-                case 102:
+                case 101:
                     CardPlayer.Move(_characters[0]);
                     break;
+                case 102:
+                    CardPlayer.Defense();
+                    break;
                 case 103:
-
+                    BattleSystem.Attack(CardPlayer, _enemies[0],.9f);
+                    _enemies[0].Move(1);
+                    _enemies[0].AddBuff("重心不稳",1);
                     break;
                 case 104:
+                    CardPlayer.AddBuff("必定闪避", 1);
                     break;
                 case 105:
+                    BattleSystem.Attack(CardPlayer, _enemies[0],1.3f);
+                    CardPlayer.AddBuff("清风", 1);
                     break;
                 case 106:
+                    _characters[0].Refresh();
+                    CardPlayer.AddBuff("加速", 1);
                     break;
                 case 107:
+                    BattleSystem.Attack(CardPlayer, _enemies[0],1.8f);
+                    Card card = BattleSystem.DrawRandom(CardPlayer, 1)[0];
+                    //card._properties.Add(EnumCardProperty.Virtual);
                     break;
             }
         }
 
         public void OnEndTurn()
         {
+            if (_properties.Contains(EnumCardProperty.Virtual))
+            {
+                _hands.RemoveCard(this);
+            }
         }
         
         private Vector2 InitialPos;
@@ -286,6 +327,12 @@ namespace Draconia.ViewController
             }
 
             return true;
+        }
+        
+
+        public void Destroy()
+        {
+            Destroy(gameObject);
         }
     }
 }

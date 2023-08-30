@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using cfg;
 using Draconia.Controller;
+using Draconia.Game.Buff;
 using Draconia.MyComponent;
 using Draconia.System;
 using Draconia.UI;
@@ -124,11 +125,59 @@ namespace Draconia.ViewController
 			_enemyAnimator.IsHit();
 
 		}
+		public void Move(int position)
+		{
+			List<Enemy> enemies = BattleSystem.Enemies;
+			int pos = enemies.FindIndex(a => a = this);
+			int finalPos = pos + position;
+            
+			//TODO best practice of this
+			if (finalPos < 0)
+			{
+				finalPos = 0;
+			}
+
+			if (finalPos >= enemies.Count)
+			{
+				finalPos = enemies.Count;
+			}
+
+			GetComponent<EnemyAnimator>().Move(enemies[finalPos]);
+			(enemies[pos], enemies[finalPos]) = (enemies[finalPos], enemies[pos]);
+
+		}
+		public void Move(Enemy enemy)
+		{
+			List<Enemy> enemies = BattleSystem.Enemies;
+			int pos = enemies.FindIndex(a => a = this);
+			int finalPos = enemies.FindIndex(a => a = enemy);
+            
+			//TODO best practice of this
+			if (finalPos < 0)
+			{
+				finalPos = 0;
+			}
+
+			if (finalPos >= enemies.Count)
+			{
+				finalPos = enemies.Count;
+			}
+
+			GetComponent<EnemyAnimator>().Move(enemies[finalPos]);
+			(enemies[pos], enemies[finalPos]) = (enemies[finalPos], enemies[pos]);
+
+		}
+
 
 		public void Die()
 		{
 			BattleSystem.Enemies.Remove(this);
 			Destroy(this);
+		}
+
+		public void AddBuff(string buffName, int stack)
+		{
+			GetComponent<BuffManager>().AddBuff(buffName, stack);
 		}
 	}
 }

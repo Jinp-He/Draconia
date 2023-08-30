@@ -28,10 +28,12 @@ public sealed partial class CardInfo :  Bright.Config.BeanBase
         { if(!_json["AttackRecover"].IsNumber) { throw new SerializationException(); }  AttackRecover = _json["AttackRecover"]; }
         { var __json0 = _json["Effect"]; if(!__json0.IsArray) { throw new SerializationException(); } Effect = new System.Collections.Generic.List<BaseEffect>(__json0.Count); foreach(JSONNode __e0 in __json0.Children) { BaseEffect __v0;  { if(!__e0.IsObject) { throw new SerializationException(); }  __v0 = BaseEffect.DeserializeBaseEffect(__e0);  }  Effect.Add(__v0); }   }
         { if(!_json["SkillTargetType"].IsNumber) { throw new SerializationException(); }  SkillTargetType = (SkillTarget)_json["SkillTargetType"].AsInt; }
+        { if(!_json["BelongedCharacter"].IsNumber) { throw new SerializationException(); }  BelongedCharacter = _json["BelongedCharacter"]; }
+        { var __json0 = _json["Properties"]; if(!__json0.IsArray) { throw new SerializationException(); } Properties = new System.Collections.Generic.List<EnumCardProperty>(__json0.Count); foreach(JSONNode __e0 in __json0.Children) { EnumCardProperty __v0;  { if(!__e0.IsNumber) { throw new SerializationException(); }  __v0 = (EnumCardProperty)__e0.AsInt; }  Properties.Add(__v0); }   }
         PostInit();
     }
 
-    public CardInfo(int id, string Name, string Desc, int Cost, int AttackPreCD, int AttackPostCD, int AttackRange, int AttackRecover, System.Collections.Generic.List<BaseEffect> Effect, SkillTarget SkillTargetType ) 
+    public CardInfo(int id, string Name, string Desc, int Cost, int AttackPreCD, int AttackPostCD, int AttackRange, int AttackRecover, System.Collections.Generic.List<BaseEffect> Effect, SkillTarget SkillTargetType, int BelongedCharacter, System.Collections.Generic.List<EnumCardProperty> Properties ) 
     {
         this.Id = id;
         this.Name = Name;
@@ -43,6 +45,8 @@ public sealed partial class CardInfo :  Bright.Config.BeanBase
         this.AttackRecover = AttackRecover;
         this.Effect = Effect;
         this.SkillTargetType = SkillTargetType;
+        this.BelongedCharacter = BelongedCharacter;
+        this.Properties = Properties;
         PostInit();
     }
 
@@ -91,6 +95,15 @@ public sealed partial class CardInfo :  Bright.Config.BeanBase
     /// 技能对象
     /// </summary>
     public SkillTarget SkillTargetType { get; private set; }
+    /// <summary>
+    /// 从属英雄
+    /// </summary>
+    public int BelongedCharacter { get; private set; }
+    public PlayerInfo BelongedCharacter_Ref { get; private set; }
+    /// <summary>
+    /// 特性
+    /// </summary>
+    public System.Collections.Generic.List<EnumCardProperty> Properties { get; private set; }
 
     public const int __ID__ = 56078334;
     public override int GetTypeId() => __ID__;
@@ -98,6 +111,7 @@ public sealed partial class CardInfo :  Bright.Config.BeanBase
     public  void Resolve(Dictionary<string, object> _tables)
     {
         foreach(var _e in Effect) { _e?.Resolve(_tables); }
+        this.BelongedCharacter_Ref = (_tables["TbPlayerInfo"] as TbPlayerInfo).GetOrDefault(BelongedCharacter);
         PostResolve();
     }
 
@@ -119,6 +133,8 @@ public sealed partial class CardInfo :  Bright.Config.BeanBase
         + "AttackRecover:" + AttackRecover + ","
         + "Effect:" + Bright.Common.StringUtil.CollectionToString(Effect) + ","
         + "SkillTargetType:" + SkillTargetType + ","
+        + "BelongedCharacter:" + BelongedCharacter + ","
+        + "Properties:" + Bright.Common.StringUtil.CollectionToString(Properties) + ","
         + "}";
     }
     

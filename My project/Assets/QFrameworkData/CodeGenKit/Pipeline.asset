@@ -20,35 +20,14 @@ MonoBehaviour:
     NameToFullName: []
     BindInfos:
     - TypeName: UnityEngine.UI.Image
-      PathToRoot: ChosenEffect
-      MemberName: ChosenEffect
-    - TypeName: UnityEngine.UI.Image
-      PathToRoot: UseEffect
-      MemberName: UseEffect
-    - TypeName: TMPro.TextMeshProUGUI
-      PathToRoot: CardName
-      MemberName: CardName
-    - TypeName: UnityEngine.UI.Image
-      PathToRoot: CardImage
-      MemberName: CardImage
-    - TypeName: TMPro.TextMeshProUGUI
-      PathToRoot: CardType
-      MemberName: CardType
-    - TypeName: TMPro.TextMeshProUGUI
-      PathToRoot: CardCost
-      MemberName: CardCost
-    - TypeName: TMPro.TextMeshProUGUI
-      PathToRoot: CardDesc
-      MemberName: CardDesc
+      PathToRoot: IntentionImage
+      MemberName: IntentionImage
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: Card
+    ClassName: Intention
     Namespace: Draconia.ViewController
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace Draconia.ViewController\r\n{\r\n\tpublic
-      partial class Card : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class Intention : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:c4f2719f-e71a-4652-9531-5fa16ebcae46\r\nusing UnityEngine;\r\n\r\nnamespace
-      Draconia.ViewController\r\n{\r\n\tpublic partial class Card\r\n\t{\r\n\r\n\t\tpublic
-      UnityEngine.UI.Image ChosenEffect;\r\n\r\n\t\tpublic UnityEngine.UI.Image UseEffect;\r\n\r\n\t\tpublic
-      TMPro.TextMeshProUGUI CardName;\r\n\r\n\t\tpublic UnityEngine.UI.Image CardImage;\r\n\r\n\t\tpublic
-      TMPro.TextMeshProUGUI CardType;\r\n\r\n\t\tpublic TMPro.TextMeshProUGUI CardCost;\r\n\r\n\t\tpublic
-      TMPro.TextMeshProUGUI CardDesc;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:e0c1e900-15bf-47cb-9d99-b4f636f4b777\r\nusing UnityEngine;\r\n\r\nnamespace
+      Draconia.ViewController\r\n{\r\n\tpublic partial class Intention\r\n\t{\r\n\r\n\t\tpublic
+      UnityEngine.UI.Image IntentionImage;\r\n\r\n\t}\r\n}\r\n"

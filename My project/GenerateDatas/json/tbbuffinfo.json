@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "BuffName": "必定闪避",
+    "IsConsis": false,
+    "Description": "下次伤害必定闪避，获得一张周周技能卡"
+  },
+  {
+    "id": 2,
+    "BuffName": "清风",
+    "IsConsis": true,
+    "Description": "增加攻击力20%，最高可叠加3层。且3层后获得所有伤害百分之50真实伤害buff"
+  },
+  {
+    "id": 3,
+    "BuffName": "加速",
+    "IsConsis": false,
+    "Description": "提升自身速度20%"
+  },
+  {
+    "id": 4,
+    "BuffName": "重心不稳",
+    "IsConsis": true,
+    "Description": "受到硬直增加"
+  }
+]

@@ -19,8 +19,15 @@ namespace Draconia.UI
 			RestartBtn.onClick.AddListener(() => { this.GetSystem<BattleSystem>().Restart(); });
 			ExitBtn.onClick.AddListener(()=>
 			{
-				UnityEditor.EditorApplication.isPlaying = false;
+#if UNITY_EDITOR
+            Debug.Log("You have quit the game");
+            if (UnityEditor.EditorApplication.isPlaying == true)
+            {
+                UnityEditor.EditorApplication.isPlaying = false;
+            }
+#else
 				Application.Quit();
+				#endif
 			});
 		}
 		

@@ -13,26 +13,50 @@ namespace Draconia.ViewController
     {
         public Card CardPrefab;
         public List<Card> Cards;
+
+        private List<Card> tempRemovedCard;
+
         public void Start()
         {
+            tempRemovedCard = new List<Card>();
+            Refresh();
+            Cards = new List<Card>();
+        }
+
+        public Card AddCard(CardInfo cardInfo, Character character)
+        {
+            Card card = Instantiate(CardPrefab, transform);
+            card.Init(cardInfo, character);
+            Cards.Add(card);
+            Refresh();
+            return card;
+        }
+
+        public void RemoveCard(Card card)
+        {
+            Cards.Remove(card);
+            tempRemovedCard.Add(card);
+            card.gameObject.SetActive(false);
             Refresh();
         }
 
-        public void AddCard(CardInfo cardInfo, Character character)
+        private void CleanRemovedCard()
         {
-            Card card = Instantiate(CardPrefab, transform);
-            card.Init(cardInfo,character);
-            Refresh();
+            for (int i = 0; i < tempRemovedCard.Count; i++)
+            {
+                tempRemovedCard[i].Destroy();
+            }
         }
 
         public bool HasCard(CardInfo cardInfo)
         {
-            List<Card> cards = transform.GetComponentsInChildren<Card>().ToList();
-            return cards.Any(card => card._cardInfo == cardInfo);
+            return Cards.Any(card => card._cardInfo == cardInfo);
         }
-        private const float R = 2100.0f;//半径
-        private const float Y = 2000.0f;//圆心Y值
+
+        private const float R = 2100.0f; //半径
+        private const float Y = 2000.0f; //圆心Y值
         private const float CardRotateDegreeLimit = 10;
+
         /// <summary>
         /// 对所有的卡牌进行排序
         /// </summary>
@@ -42,42 +66,53 @@ namespace Draconia.ViewController
             const float position2 = -3.5f;
             const float allLength = 4.9f;
             float p0 = transform.position.x;
-            int count = transform.childCount;
-            float deg_space;
+            int count = Cards.Count;
+            float degSpace;
             if (count < 2)
             {
-                deg_space = 0;
+                degSpace = 0;
             }
             else
             {
-                deg_space = 2*CardRotateDegreeLimit/(count-1);
-                if (deg_space > 5) deg_space = 5;
+                degSpace = 2 * CardRotateDegreeLimit / (count - 1);
+                if (degSpace > 10) degSpace = 10;
             }
+
             int i = 0;
-            foreach (Transform tf in transform)
+            foreach (var card in transform.GetComponentsInChildren<Card>())
             {
+                Transform tf = card.transform;
                 //计算角度
-                float deg = (deg_space*i)-(deg_space*(count-1)/2);
+                float deg = (degSpace * i) - (degSpace * (count - 1) / 2);
                 //通过角度，计算坐标位置
-                float x = Mathf.Sin(deg*Mathf.Deg2Rad)*R+p0;
-                float y = Mathf.Cos(deg*Mathf.Deg2Rad)*R-Y;
+                float x = Mathf.Sin(deg * Mathf.Deg2Rad) * R + p0;
+                float y = Mathf.Cos(deg * Mathf.Deg2Rad) * R - Y;
                 //设置坐标位置
                 tf.localPosition = new Vector3(x, y, 0);
                 //设置角度
-                tf.rotation = Quaternion.Euler(new Vector3(0,0,-deg));
+                tf.rotation = Quaternion.Euler(new Vector3(0, 0, -deg));
                 i++;
             }
 
             foreach (var card in transform.GetComponentsInChildren<Card>())
             {
-                if (card._cardInfo.Cost <= this.GetSystem<BattleSystem>().Energy && this.GetSystem<BattleSystem>().BattleState == BattleState.Player)
+                if (card._cardInfo.Cost <= this.GetSystem<BattleSystem>().Energy &&
+                    this.GetSystem<BattleSystem>().BattleState == BattleState.Player)
                 {
                     card.UseEffect.gameObject.SetActive(true);
                 }
                 else
                 {
-                    card.UseEffect.gameObject.SetActive(false); 
+                    card.UseEffect.gameObject.SetActive(false);
                 }
+            }
+        }
+
+        public void OnEndTurn(Character character)
+        {
+            for (int i = 0; i < Cards.Count(); i++)
+            {
+                Cards[i].OnEndTurn();
             }
         }
 

@@ -17,6 +17,7 @@ namespace Draconia.ViewController
 			_Hp = currHp;
 			HPBarSlider.value = (float)_Hp / _maxHp;
 			HPText.text = _Hp + "/" + _maxHp;
+			HPText.gameObject.SetActive(true);
 		}
 
 		public void SetHp(int t)
@@ -33,7 +34,7 @@ namespace Draconia.ViewController
 
 		public void OnPointerExit(PointerEventData eventData)
 		{
-			HPText.gameObject.SetActive(false);
+			//HPText.gameObject.SetActive(false);
 		}
 	}
 }

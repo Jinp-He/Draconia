@@ -9,15 +9,44 @@
     "AttackRecover": 2,
     "Speed": 33,
     "InitialHP": 25,
-    "CriticalHitRate": 0.2,
+    "CriticalHitRate": 0,
     "CriticalDamage": 2,
-    "HitRate": 0.9,
-    "DodgeRate": 0.1,
+    "HitRate": 1,
+    "DodgeRate": 0,
     "Armor": 0,
     "MagicResist": 0,
     "HitDecreaseRate": 0.9,
     "EnemyStrategy": "",
-    "MaxEnergy": 3
+    "MaxEnergy": 2,
+    "EnemyActions": [
+      {
+        "Id": 0,
+        "Name": "移动",
+        "Desc": "移动一格",
+        "ActionType": 2,
+        "Attack": 0,
+        "Defense": 0,
+        "Magic": 0
+      },
+      {
+        "Id": 1,
+        "Name": "咬",
+        "Desc": "造成100%物理伤害。回复一点cost",
+        "ActionType": 0,
+        "Attack": 0,
+        "Defense": 0,
+        "Magic": 0
+      },
+      {
+        "Id": 2,
+        "Name": "扑咬",
+        "Desc": "造成130%物理伤害，击退单位一格。",
+        "ActionType": 3,
+        "Attack": 0,
+        "Defense": 0,
+        "Magic": 0
+      }
+    ]
   },
   {
     "id": 20002,
@@ -29,14 +58,43 @@
     "AttackRecover": 2,
     "Speed": 10,
     "InitialHP": 50,
-    "CriticalHitRate": 0.2,
+    "CriticalHitRate": 0,
     "CriticalDamage": 2,
-    "HitRate": 0.9,
-    "DodgeRate": 0.1,
+    "HitRate": 1,
+    "DodgeRate": 0,
     "Armor": 0,
     "MagicResist": 0,
     "HitDecreaseRate": 0.9,
     "EnemyStrategy": "",
-    "MaxEnergy": 3
+    "MaxEnergy": 3,
+    "EnemyActions": [
+      {
+        "Id": 0,
+        "Name": "移动",
+        "Desc": "移动一格",
+        "ActionType": 2,
+        "Attack": 0,
+        "Defense": 0,
+        "Magic": 0
+      },
+      {
+        "Id": 1,
+        "Name": "咬",
+        "Desc": "造成100%物理伤害。回复一点cost",
+        "ActionType": 0,
+        "Attack": 0,
+        "Defense": 0,
+        "Magic": 0
+      },
+      {
+        "Id": 2,
+        "Name": "扑咬",
+        "Desc": "造成130%物理伤害，击退单位一格。",
+        "ActionType": 3,
+        "Attack": 0,
+        "Defense": 0,
+        "Magic": 0
+      }
+    ]
   }
 ]

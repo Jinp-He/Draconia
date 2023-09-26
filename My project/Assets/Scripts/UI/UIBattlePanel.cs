@@ -4,6 +4,7 @@ using System.Linq;
 using cfg;
 using Draconia.Controller;
 using Draconia.ViewController;
+using Draconia.ViewController.Event;
 using UnityEngine;
 using UnityEngine.UI;
 using QFramework;
@@ -16,7 +17,7 @@ namespace Draconia.UI
 	{
 		public StageInfo StageInfo;
 	}
-	public partial class UIBattlePanel : UIPanel
+	public partial class UIBattlePanel : UIPanel, ICanSendEvent
 	{
 		public Character PlayerPrefab;
 		public Enemy EnemyPrefab;
@@ -48,6 +49,8 @@ namespace Draconia.UI
 			{
 				UIKit.OpenPanel<UISettingPanel>();
 			});
+			
+			
 
 			
 		}
@@ -61,7 +64,7 @@ namespace Draconia.UI
 
 			foreach (var enemy in Enemies)
 			{
-				enemy.Chosen();
+				enemy.EnemyAnimation.Chosen();
 			}
 		}
 
@@ -74,7 +77,7 @@ namespace Draconia.UI
 
 			foreach (var enemy in Enemies)
 			{
-				enemy.Unchosen();
+				enemy.EnemyAnimation.Unchosen();
 			}
 		}
 
@@ -90,7 +93,7 @@ namespace Draconia.UI
 		{
 			foreach (var enemy in Enemies)
 			{
-				enemy.Chosen();
+				enemy.EnemyAnimation.Chosen();
 			}
 		}
 		GraphicRaycaster mRaycaster;
@@ -119,6 +122,11 @@ namespace Draconia.UI
 		
 		protected override void OnClose()
 		{
+		}
+
+		public IArchitecture GetArchitecture()
+		{
+			return Draconia.Interface;
 		}
 	}
 }

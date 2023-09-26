@@ -4,6 +4,7 @@ using System.Linq;
 using cfg;
 using Draconia.UI;
 using Draconia.ViewController;
+using Draconia.ViewController.Event;
 using QFramework;
 using Utility;
 using Debug = UnityEngine.Debug;
@@ -15,7 +16,7 @@ namespace Draconia.System
     {
         Stop, Player, Enemy, Ending
     }
-    public class BattleSystem : AbstractSystem
+    public class BattleSystem : AbstractSystem, ICanSendEvent
     {
         public Hands Hands;
         public List<Character> Characters;
@@ -42,10 +43,11 @@ namespace Draconia.System
             Energy.Register(e =>
             {
                 UIKit.GetPanel<UIBattlePanel>().EnergyCounter.Energy.text = e.ToString();
-                Debug.Log(Energy.Value);
+                //Debug.Log(Energy.Value);
             });
             Energy.Value = InitEnergy;
             BattleState = BattleState.Enemy;
+            this.SendEvent<BattleStartEvent>();
         }
 
         private BattleState PrevBattleState;
@@ -64,22 +66,43 @@ namespace Draconia.System
             UIKit.OpenPanel<UIBattlePanel>().EnergyCounter.Continue();
         }
 
-        public void DrawCard(Character character, int num)
+        public List<Card> DrawCard(Character character, int num)
         {
             List<CardInfo> cards = character.Cards.PickRandom(num).ToList();
+            List<Card> res = new List<Card>();
             foreach (var cardInfo in cards)
             {
-                Hands.AddCard(cardInfo,character);
+                res.Add(Hands.AddCard(cardInfo,character));
             }
+
+            return res;
+        }
+        
+        
+        public List<Card> DrawRandom(Character character, int num)
+        {
+            List<CardInfo> cards = character.Cards.PickRandom(num).ToList();
+            List<Card> res = new List<Card>();
+            foreach (var cardInfo in cards)
+            {
+                res.Add(Hands.AddCard(cardInfo,character));
+            }
+
+            return res;
         }
         
 
-        public void DrawAttackCard(Character character)
+        public List<Card> DrawAttackCard(Character character)
         {
-            CardInfo NormalAttack = character.PlayerInfo.NormalAttackCard_Ref;
-            if(!Hands.HasCard(NormalAttack))
-                Hands.AddCard(character.PlayerInfo.NormalAttackCard_Ref,character);
+            List<Card> res = new List<Card>();
+            foreach (var cardInfo in character.PlayerInfo.NormalAttackCard_Ref)
+            {
+                res.Add(Hands.AddCard(cardInfo,character));
+            }
+
+            return res;
         }
+        
         public void PlayerTurnStart(Character character)
         {
             Energy.Value += 2;
@@ -142,10 +165,13 @@ namespace Draconia.System
             character.IsHit(enemy.EnemyInfo.AttackPower);
         }
 
-        public void Attack(Character character, Enemy enemy)
+        public void Attack(Character character, Enemy enemy, float attackModifier)
         {
-            
+            int dmg = (int)(character.PlayerInfo.AttackPower * attackModifier);
+            enemy.IsHit(dmg);
         }
+        
+        
 
         public void Restart()
         {
@@ -158,7 +184,7 @@ namespace Draconia.System
         
         
         
-        private void GameOver()
+        public void GameOver()
         {
             
         }

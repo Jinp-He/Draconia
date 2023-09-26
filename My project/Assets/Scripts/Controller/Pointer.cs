@@ -37,6 +37,14 @@ namespace Draconia.Controller
             
         }
 
+        /// <summary>
+        /// 立即开始回合
+        /// </summary>
+        public void Refresh()
+        {
+            transform.localPosition = new Vector3(500, transform.localPosition.y, transform.localPosition.z);
+        }
+
         public void Move()
         {
             

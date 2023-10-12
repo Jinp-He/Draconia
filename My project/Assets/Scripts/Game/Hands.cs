@@ -13,6 +13,7 @@ namespace Draconia.ViewController
     {
         public Card CardPrefab;
         public List<Card> Cards;
+        public RectTransform DisplayArea;
 
         private List<Card> tempRemovedCard;
 
@@ -23,10 +24,10 @@ namespace Draconia.ViewController
             Cards = new List<Card>();
         }
 
-        public Card AddCard(CardInfo cardInfo, Character character)
+        public Card AddCard(CardInfo cardInfo, Player player)
         {
             Card card = Instantiate(CardPrefab, transform);
-            card.Init(cardInfo, character);
+            card.Init(cardInfo, player);
             Cards.Add(card);
             Refresh();
             return card;
@@ -63,6 +64,24 @@ namespace Draconia.ViewController
         public void Refresh()
         {
             ReorderCard();
+            RecView();
+
+            foreach (var card in transform.GetComponentsInChildren<Card>())
+            {
+                if (card._cardInfo.Cost <= this.GetSystem<BattleSystem>().Energy &&
+                    this.GetSystem<BattleSystem>().BattleState == BattleState.Player)
+                {
+                    //card.UseEffect.gameObject.SetActive(true);
+                }
+                else
+                {
+                    //card.UseEffect.gameObject.SetActive(false);
+                }
+            }
+        }
+
+        private void ArcView()
+        {
             const float position2 = -3.5f;
             const float allLength = 4.9f;
             float p0 = transform.position.x;
@@ -93,22 +112,43 @@ namespace Draconia.ViewController
                 tf.rotation = Quaternion.Euler(new Vector3(0, 0, -deg));
                 i++;
             }
+        }
 
-            foreach (var card in transform.GetComponentsInChildren<Card>())
+        private const float Width = 1200f;
+        private const float IdealDist = 0f;
+        public void RecView()
+        {
+            float p0 = transform.position.x;
+            float dist = IdealDist + CardPrefab.GetComponent<RectTransform>().rect.width * CardPrefab.GetComponent<RectTransform>().Scale().y;
+            int count = Cards.Count;
+            float halfCount = (count - 1) / 2f;
+            int i = 0;
+            //计算初始位置
+            float pos = p0 - halfCount * dist;
+            if (Cards.Any(card => card.IsChosen))
+                pos -= 40f;
+            //如果超出了手牌transform范围
+            if (pos <= p0 - Width / 2)
             {
-                if (card._cardInfo.Cost <= this.GetSystem<BattleSystem>().Energy &&
-                    this.GetSystem<BattleSystem>().BattleState == BattleState.Player)
+                pos = p0 - Width / 2;
+                dist = Width / 2 / halfCount;
+            }
+            //Debug.LogFormat("Dist: {0}, pos : {1}, p0 : {2}",dist,pos,p0);
+            
+            foreach (var card in Cards)
+            {
+                Transform tf = card.transform;
+                tf.localPosition = new Vector3(pos, tf.localPosition.y, 0);
+                pos += dist;
+                if (card.IsChosen)
                 {
-                    card.UseEffect.gameObject.SetActive(true);
+                    pos += 20f;
                 }
-                else
-                {
-                    card.UseEffect.gameObject.SetActive(false);
-                }
+                i++;
             }
         }
 
-        public void OnEndTurn(Character character)
+        public void OnEndTurn(Player player)
         {
             for (int i = 0; i < Cards.Count(); i++)
             {
@@ -126,9 +166,11 @@ namespace Draconia.ViewController
             list.Sort((x, y) => x._cardInfo.Id - y._cardInfo.Id);
         }
 
+
         /// <summary>
         /// 
         /// </summary>
+        /// 
         public void Choose(Card currCard)
         {
             List<Card> cards = transform.GetComponentsInChildren<Card>().ToList();

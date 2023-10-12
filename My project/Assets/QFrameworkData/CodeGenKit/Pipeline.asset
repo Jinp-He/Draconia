@@ -19,15 +19,18 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos:
-    - TypeName: UnityEngine.UI.Image
-      PathToRoot: IntentionImage
-      MemberName: IntentionImage
+    - TypeName: Draconia.ViewController.HPBar
+      PathToRoot: HPBar
+      MemberName: HPBar
+    - TypeName: RectTransform
+      PathToRoot: EnemyEnergyArea/EnergyBar
+      MemberName: EnergyBar
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: Intention
+    ClassName: EnemyBar
     Namespace: Draconia.ViewController
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace Draconia.ViewController\r\n{\r\n\tpublic
-      partial class Intention : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class EnemyBar : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:e0c1e900-15bf-47cb-9d99-b4f636f4b777\r\nusing UnityEngine;\r\n\r\nnamespace
-      Draconia.ViewController\r\n{\r\n\tpublic partial class Intention\r\n\t{\r\n\r\n\t\tpublic
-      UnityEngine.UI.Image IntentionImage;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:cc00861b-395e-442f-8b9b-b3d2fe88d66e\r\nusing UnityEngine;\r\n\r\nnamespace
+      Draconia.ViewController\r\n{\r\n\tpublic partial class EnemyBar\r\n\t{\r\n\r\n\t\tpublic
+      Draconia.ViewController.HPBar HPBar;\r\n\r\n\t\tpublic RectTransform EnergyBar;\r\n\r\n\t}\r\n}\r\n"

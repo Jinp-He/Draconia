@@ -3,6 +3,7 @@ using cfg;
 using Draconia.System;
 using Draconia.ViewController.Event;
 using QFramework;
+using Unity.VisualScripting;
 using UnityEngine;
 using Utility;
 
@@ -12,6 +13,7 @@ namespace Draconia.ViewController
     {
         protected Enemy _enemy;
         protected EnemyAction _currentAction;
+        protected BattleSystem BattleSystem => this.GetSystem<BattleSystem>();
 
         protected Sprite Attack, Defense, Ult, Move;
         
@@ -70,23 +72,38 @@ namespace Draconia.ViewController
 
         protected virtual void ChooseIntention()
         {
+            if(_enemy.Intention == null)
+                Debug.LogError("IntentionNullity");
+            if (_enemy.Intention.GetComponent<Intention>() == null)
+            {
+                Debug.LogError("IntentionConponentNullity");
+                Debug.Log(_enemy.name);
+            }
+
+            if(_enemy.Intention.GetComponent<Intention>().IntentionImage == null)
+                Debug.LogError("IntentionImageNullity");
             switch (_currentAction.ActionType)
             {
                 case ActionType.Attack:
-                    _enemy.IntentionImage.sprite = Attack;
+                    _enemy.Intention.GetComponent<Intention>().IntentionImage.sprite = Attack;
                     break;
                 case ActionType.Defense:
-                    _enemy.IntentionImage.sprite = Defense;
+                    _enemy.Intention.GetComponent<Intention>().IntentionImage.sprite = Defense;
                     break;
                 case ActionType.Move:
-                    _enemy.IntentionImage.sprite = Move;
+                    _enemy.Intention.GetComponent<Intention>().IntentionImage.sprite = Move;
                     break;
                 case ActionType.Ult:
-                    _enemy.IntentionImage.sprite = Ult;
+                    _enemy.Intention.GetComponent<Intention>().IntentionImage.sprite = Ult;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+
+        protected virtual void ChooseTarget()
+        {
+            
         }
 
         public IArchitecture GetArchitecture()

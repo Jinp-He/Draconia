@@ -26,13 +26,13 @@ namespace Draconia.ViewController
 			set
 			{
 				_energy = value;
-				foreach (var bulb in _energyBulbs)
+				foreach (var bulb in EnemyBar._energyBulbs)
 				{
 					bulb.color = Color.white;
 
 				}
 
-				foreach (var bulb in _energyBulbs.GetRange(0, value))
+				foreach (var bulb in EnemyBar._energyBulbs.GetRange(0, value))
 				{
 					bulb.color = Color.blue;
 				}
@@ -55,12 +55,9 @@ namespace Draconia.ViewController
 		public EnemyStrategy EnemyStrategy => _enemyStrategy;
 
 
-		public BindableProperty<int> EnergyCount;
 		public Pointer MyPointer;
-		public SpriteAtlas EnemyAtlas;
+		//public SpriteAtlas EnemyAtlas;
 		public EnemyAnimator _enemyAnimator;
-		public Image EnergyBulbPrefab;
-		private readonly List<Image> _energyBulbs = new List<Image>();
 		private EnemyStrategy _enemyStrategy;
 		private int CurrHP;
 		public EnemyAnimation EnemyAnimation;
@@ -72,34 +69,12 @@ namespace Draconia.ViewController
 			_enemyStrategy = EnemyStrategy.GetEnemyStrategy(this);
 			EnemyAnimation = GetComponent<EnemyAnimation>();
 			EnemyAnimation.Init(this);
-			EnemyImage.sprite = EnemyAtlas.GetSprite("dog01_Idle");
+			//EnemyImage.sprite = EnemyAtlas.GetSprite("dog01_Idle");
 			EnemyImage.SetNativeSize();
-			HPBar.Init(EnemyInfo.InitialHP,EnemyInfo.InitialHP);
+			//HPBar.Init(EnemyInfo.InitialHP,EnemyInfo.InitialHP);
 			CurrHP = EnemyInfo.InitialHP;
 			MyPointer = UIKit.GetPanel<UIBattlePanel>().TimeBar.AddEnemy(this);
-			// EnergyCount = new BindableProperty<int>
-			// {
-			// 	Value = 0
-			// };
-			for (int i = 0; i < enemyInfo.MaxEnergy; i++)
-			{
-				Image energyBulb = Instantiate(EnergyBulbPrefab, EnergyBar.transform);
-				_energyBulbs.Add(energyBulb);
-				energyBulb.gameObject.SetActive(true);
-			}
-			// EnergyCount.Register(e =>
-			// {
-			// 	foreach (var bulb in _energyBulbs)
-			// 	{
-			// 		bulb.color = Color.white;
-			// 		
-			// 	}
-			// 	foreach (var bulb in _energyBulbs.GetRange(0,e))
-			// 	{
-			// 		bulb.color = Color.blue;
-			// 	}
-			// 	
-			// });
+
 			_enemyAnimator.Init(this);
 		}
 
@@ -116,14 +91,20 @@ namespace Draconia.ViewController
 		public void IsHit(int damage)
 		{
 			//CharacterImage.sprite = CharacterAtlas.GetSprite("OnHit");
+			GetComponent<EnemyAnimator>().HitText(damage.ToString());
 			CurrHP -= damage;
 			if (CurrHP <= 0)
 			{
 				Die();
 			}
-			HPBar.GetComponent<HPBar>().SetHp(CurrHP);
-			_enemyAnimator.IsHit();
+			EnemyBar.HPBar.GetComponent<HPBar>().SetHp(CurrHP);
+			_enemyAnimator.IsHitAnimation();
 
+		}
+
+		public void Miss()
+		{
+			GetComponent<EnemyAnimator>().HitText("Miss");
 		}
 		public void Move(int position)
 		{

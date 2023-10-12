@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using cfg;
 using Draconia.Controller;
+using Draconia.System;
 using Draconia.ViewController;
 using Draconia.ViewController.Event;
 using UnityEngine;
@@ -17,21 +18,21 @@ namespace Draconia.UI
 	{
 		public StageInfo StageInfo;
 	}
-	public partial class UIBattlePanel : UIPanel, ICanSendEvent
+	public partial class UIBattlePanel : UIPanel, ICanSendEvent, ICanGetSystem
 	{
-		public Character PlayerPrefab;
+		public Player PlayerPrefab;
 		public Enemy EnemyPrefab;
-		public List<Character> Characters;
+		public List<Player> Characters;
 		public List<Enemy> Enemies;
 		protected override void OnInit(IUIData uiData = null)
 		{
 			mData = uiData as UIBattlePanelData ?? new UIBattlePanelData();
-			Characters = new List<Character>();
+			Characters = new List<Player>();
 			Enemies = new List<Enemy>();
 			//please add init code here
 			foreach (var playerInfo in mData.StageInfo.CharacterList_Ref)
 			{
-				Character player = Instantiate(PlayerPrefab, PlayerArea.transform, true);
+				Player player = Instantiate(PlayerPrefab, PlayerArea.transform, true);
 				player.LocalScale(1);
 				player.LocalPosition(0, 0, 0);                                                                                                                                       
 				player.Init(playerInfo);
@@ -39,7 +40,10 @@ namespace Draconia.UI
 			}
 			foreach (var enemyInfo in mData.StageInfo.EnemyList_Ref)
 			{
-				Enemy enemy = Instantiate(EnemyPrefab, EnemyArea.transform, true);
+				Debug.Log(enemyInfo.Name);
+				ResKit.Init();
+				Enemy enemyPrefab = this.GetSystem<ResLoadSystem>().LoadSync<GameObject>(enemyInfo.Name).GetComponent<Enemy>();
+				Enemy enemy = Instantiate(enemyPrefab, EnemyArea.transform, true);
 				enemy.LocalScale(1);
 				enemy.LocalPosition(0, 0, 0);
 				enemy.Init(enemyInfo);
@@ -99,7 +103,7 @@ namespace Draconia.UI
 		GraphicRaycaster mRaycaster;
 		PointerEventData _mPointerEventData;
 		public Enemy ChosenEnemy;
-		public Character ChosenCharacter;
+		public Player ChosenPlayer;
 
 
 		public void Update()

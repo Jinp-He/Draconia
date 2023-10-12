@@ -1,5 +1,6 @@
 ﻿using System;
 using cfg;
+using Draconia.System;
 using UnityEngine;
 using Utility;
 
@@ -65,6 +66,7 @@ namespace Draconia.ViewController
 
         protected override void UseNormalAttack()
         {
+            //BattleSystem.Attack(_enemy, );
             base.UseNormalAttack();
             _enemy.Energy++;
             //Debug.Log("#DEBUG# USe Normal Attack");

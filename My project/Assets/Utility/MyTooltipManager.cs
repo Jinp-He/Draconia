@@ -148,12 +148,13 @@ namespace Utility
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (TooltipContainer.transform.position != TooltipPosition.transform.position)
-                TooltipContainer.transform.position = TooltipPosition.transform.position;
             if (!IsInit)
             {
                 return;
             }
+            if (TooltipContainer.transform.position != TooltipPosition.transform.position)
+                TooltipContainer.transform.position = TooltipPosition.transform.position;
+            
 
             if(!LagDisplay)
                 TooltipContainer.gameObject.SetActive(true);

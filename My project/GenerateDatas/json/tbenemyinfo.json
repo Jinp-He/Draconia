@@ -1,7 +1,7 @@
 [
   {
     "id": 20001,
-    "Name": "猎狗",
+    "Name": "dog01",
     "AttackPower": 3,
     "AttackPreCD": 12,
     "AttackPostCD": 55,
@@ -50,7 +50,7 @@
   },
   {
     "id": 20002,
-    "Name": "铁骑士",
+    "Name": "fatknight",
     "AttackPower": 3,
     "AttackPreCD": 12,
     "AttackPostCD": 55,

@@ -10,7 +10,7 @@ namespace Draconia.ViewController
 		public static int Length = 500;
 
 		public Pointer PointerPrefab;
-		public List<Character> PlayerList;
+		public List<Player> PlayerList;
 		public List<Enemy> EnemyList;
 		public List<Pointer> Pointers;
 		public bool IsInit, IsStart;
@@ -18,17 +18,17 @@ namespace Draconia.ViewController
 		public void Init()
 		{
 			IsInit = true;
-			PlayerList = new List<Character>();
+			PlayerList = new List<Player>();
 			EnemyList = new List<Enemy>();
 			Pointers = new List<Pointer>();
 		}
 
 
-		public Pointer AddCharacter(Character character)
+		public Pointer AddCharacter(Player player)
 		{
 			Pointer pointer = Instantiate(PointerPrefab,PlayerSlot.transform);
 			pointer.LocalPosition(0, 0, 0);
-			pointer.Init(character);
+			pointer.Init(player);
 			Pointers.Add(pointer);
 			
 			return pointer;
@@ -43,7 +43,7 @@ namespace Draconia.ViewController
 			return pointer;
 		}
         
-		public void RemoveCharacter(Character character)
+		public void RemoveCharacter(Player player)
 		{}
         
 		public void RemoveEnemy(Enemy enemy)

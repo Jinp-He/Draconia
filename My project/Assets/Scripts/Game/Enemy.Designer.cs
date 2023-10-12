@@ -1,6 +1,5 @@
-// Generate Id:7a5e12e4-2101-47b2-acb7-6ff52f3d43e8
+// Generate Id:e9b4c082-567f-4bcf-b355-63ada9b24881
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Draconia.ViewController
 {
@@ -11,15 +10,13 @@ namespace Draconia.ViewController
 
 		public UnityEngine.UI.Image EnemyImage;
 
-		public RectTransform EnemyBar;
+		public EnemyBar EnemyBar;
 
-		public ViewController.HPBar HPBar;
+		//public HPBar HPBar;
 
-		public RectTransform EnergyBar;
+		//public RectTransform EnergyBar;
 
 		public RectTransform ChooseBracelet;
-
-		public Image IntentionImage;
 
 	}
 }

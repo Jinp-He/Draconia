@@ -28,7 +28,8 @@ namespace Draconia.ViewController
         private CardState _cardState;
         private Hands _hands;
         public CardInfo _cardInfo;
-        private Character CardPlayer;
+        public CardDragger CardDragger;
+        private Player CardPlayer;
         private UIBattlePanel UIBattlePanel;
         private List<EnumCardProperty> _properties;
         
@@ -39,10 +40,11 @@ namespace Draconia.ViewController
             UIBattlePanel = UIKit.GetPanel<UIBattlePanel>();
         }
 
-        public void Init(CardInfo cardInfo, Character character)
+        public void Init(CardInfo cardInfo, Player player)
         {
             _cardInfo = cardInfo;
             _properties = cardInfo.Properties;
+            
             var desc = _cardInfo.Desc;
             MatchCollection m = Regex.Matches(desc, "\\{(.*?)\\}");
             List<string> commons = new List<string>();
@@ -55,8 +57,8 @@ namespace Draconia.ViewController
             CardName.text = _cardInfo.Name;
             CardDesc.text = desc;
             CardCost.text = _cardInfo.Cost.ToString();
-            CardType.text = _cardInfo.SkillTargetType.ToString();
-            CardPlayer = character;
+            //CardType.text = _cardInfo.SkillTargetType.ToString();
+            CardPlayer = player;
             
             GetComponent<MyTooltipManager>().InitWithCommons(commons);
         }
@@ -64,7 +66,7 @@ namespace Draconia.ViewController
         public void OnPointerEnter(PointerEventData eventData)
         {
             if (_cardState == CardState.Listen)
-                _hands.Choose(this);
+                Hover();
         }
 
         public void OnPointerExit(PointerEventData eventData)
@@ -75,7 +77,7 @@ namespace Draconia.ViewController
 
         private List<ICharacter> Target;
         private List<Enemy> _enemies;
-        private List<Character> _characters;
+        private List<Player> _characters;
 
         public void OnBeginDrag(PointerEventData eventData)
         {
@@ -89,7 +91,7 @@ namespace Draconia.ViewController
                 return;
             }
 
-            InitialPos = transform.GetComponent<RectTransform>().anchoredPosition;
+            InitialPos = transform.localPosition;
             _rotation = transform.rotation;
             transform.eulerAngles = new Vector3(0, 0, 0);
             UIKit.GetPanel<UIBattlePanel>().Bezier.Activate();
@@ -98,7 +100,7 @@ namespace Draconia.ViewController
 
             Target = new List<ICharacter>();
             _enemies = new List<Enemy>();
-            _characters = new List<Character>();
+            _characters = new List<Player>();
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -117,7 +119,7 @@ namespace Draconia.ViewController
             //Debug.LogFormat("{0},{1}",Input.mousePosition.x,Input.mousePosition.y);
 
             UnHover();
-
+            MoveToMiddle();
 
             List<RaycastResult> res = new List<RaycastResult>();
             UIRoot.Instance.Canvas.GetComponent<GraphicRaycaster>().Raycast(eventData, res);
@@ -137,15 +139,15 @@ namespace Draconia.ViewController
                 case SkillTarget.SingleAlly:
                     if (res[0].gameObject.CompareTag("PlayerRaycast"))
                     {
-                        Character character = res[0].gameObject.GetComponentInParent<Character>();
-                        if (_characters.Count > 0 && character != _characters[0])
+                        Player player = res[0].gameObject.GetComponentInParent<Player>();
+                        if (_characters.Count > 0 && player != _characters[0])
                         {
                             _characters[0].Unchosen();
                             _characters.Clear();
                         }
 
-                        character.Chosen();
-                        _characters.Add(character);
+                        player.Chosen();
+                        _characters.Add(player);
                     }
 
                     break;
@@ -183,11 +185,11 @@ namespace Draconia.ViewController
                 case SkillTarget.AroundSelf:
                     if (res[0].gameObject.CompareTag("PlayerRaycast"))
                     {
-                        Character character = res[0].gameObject.GetComponentInParent<Character>();
-                        if (character.Distance(CardPlayer) == 1)
+                        Player player = res[0].gameObject.GetComponentInParent<Player>();
+                        if (player.Distance(CardPlayer) == 1)
                         {
-                            character.Chosen();
-                            _characters.Add(character);
+                            player.Chosen();
+                            _characters.Add(player);
                         }
                         
                     }
@@ -203,6 +205,13 @@ namespace Draconia.ViewController
             // if(_cardState == CardState.Listen)
             // 	Play();
         }
+
+        private void MoveToMiddle()
+        {
+            transform.parent = _hands.DisplayArea;
+            transform.localPosition = Vector3.zero;
+        }
+
         public void OnEndDrag(PointerEventData eventData)
         {
             if (this.GetSystem<BattleSystem>().BattleState != BattleState.Player)
@@ -235,9 +244,11 @@ namespace Draconia.ViewController
             }
             else
             {
-                transform.GetComponent<RectTransform>().anchoredPosition = InitialPos;
+                transform.parent = _hands.transform;
+                transform.localPosition = InitialPos;
                 transform.SetSiblingIndex(index);
                 transform.rotation = _rotation;
+                _hands.RecView();
             }
 
             UIKit.GetPanel<UIBattlePanel>().UnchosenAll();
@@ -245,19 +256,36 @@ namespace Draconia.ViewController
 
         private int index;
 
+        private Vector3 _localScale, _localPos;
+        public bool IsChosen;
         public void Hover()
         {
-            transform.localScale = new Vector3(1.4f, 1.4f, 1.4f);
-            ChosenEffect.gameObject.SetActive(true);
+            var transform1 = transform;
+            _localScale = transform1.localScale;
+            _localPos = transform1.localPosition;
+            transform1.localScale = new Vector3(.8f, .8f, 1f);
+            
+            
+            //ChosenEffect.gameObject.SetActive(true);
             index = transform.GetSiblingIndex();
-            transform.SetAsLastSibling();
+            transform1.parent = _hands.DisplayArea;
+            transform1.localPosition = new Vector3(transform1.localPosition.x, 0, 0);
+            transform1.SetAsLastSibling();
+            IsChosen = true;
+            //_hands.RecView();
         }
 
         public void UnHover()
         {
-            transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-            ChosenEffect.gameObject.SetActive(false);
+            transform.parent = _hands.transform;
+            transform.localScale = _localScale;
+            transform.localPosition = _localPos;
             transform.SetSiblingIndex(index);
+            IsChosen = false;
+            _hands.RecView();
+            //ChosenEffect.gameObject.SetActive(false);
+            
+            
         }
 
         //TODO For Example Use only
@@ -266,7 +294,7 @@ namespace Draconia.ViewController
             switch (_cardInfo.Id)
             {
                 case 100:
-                    BattleSystem.Attack(CardPlayer, _enemies[0],1);
+                    BattleSystem.Attack(CardPlayer, _enemies[0],1f, AttackType.Physical);
                     break;
                 case 101:
                     CardPlayer.Move(_characters[0]);
@@ -275,7 +303,7 @@ namespace Draconia.ViewController
                     CardPlayer.Defense();
                     break;
                 case 103:
-                    BattleSystem.Attack(CardPlayer, _enemies[0],.9f);
+                    BattleSystem.Attack(CardPlayer, _enemies[0],.9f, AttackType.Physical);
                     _enemies[0].Move(1);
                     _enemies[0].AddBuff("重心不稳",1);
                     break;
@@ -283,7 +311,7 @@ namespace Draconia.ViewController
                     CardPlayer.AddBuff("必定闪避", 1);
                     break;
                 case 105:
-                    BattleSystem.Attack(CardPlayer, _enemies[0],1.3f);
+                    BattleSystem.Attack(CardPlayer, _enemies[0],1.3f, AttackType.Physical);
                     CardPlayer.AddBuff("清风", 1);
                     break;
                 case 106:
@@ -291,7 +319,7 @@ namespace Draconia.ViewController
                     CardPlayer.AddBuff("加速", 1);
                     break;
                 case 107:
-                    BattleSystem.Attack(CardPlayer, _enemies[0],1.8f);
+                    BattleSystem.Attack(CardPlayer, _enemies[0],1.8f, AttackType.Physical);
                     Card card = BattleSystem.DrawRandom(CardPlayer, 1)[0];
                     //card._properties.Add(EnumCardProperty.Virtual);
                     break;
@@ -334,5 +362,10 @@ namespace Draconia.ViewController
         {
             Destroy(gameObject);
         }
+    }
+
+    public class CardDragger : MyViewController
+    {
+        
     }
 }

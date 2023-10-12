@@ -11,16 +11,16 @@ namespace Draconia.Controller
     public class Pointer : MyViewController
     {
         public Image PointerImage;
-        private Character _mCharacter;
+        private Player _mPlayer;
         private Enemy _mEnemy;
         private int _speed;
         private bool _isPlayer;
         public bool IsStop = false;
-        public void Init(Character character)
+        public void Init(Player player)
         {
-            _mCharacter = character;
-            _speed = _mCharacter.PlayerInfo.Speed;
-            PointerImage.sprite = character.CharacterAtlas.GetSprite("Pointer");
+            _mPlayer = player;
+            _speed = _mPlayer.PlayerInfo.Speed;
+            PointerImage.sprite = player.CharacterAtlas.GetSprite("Pointer");
             _isPlayer = true;
         }
         
@@ -28,7 +28,7 @@ namespace Draconia.Controller
         {
             _mEnemy = enemy;
             _speed = _mEnemy.EnemyInfo.Speed;
-            PointerImage.sprite = _mEnemy.EnemyAtlas.GetSprite("dog01_Pointer");
+            PointerImage.sprite = _mEnemy.GetComponent<EnemyAnimator>().PointerSprite;
         }
 
 
@@ -69,7 +69,7 @@ namespace Draconia.Controller
                 if (_isPlayer)
                 {
                     BattleSystem.Stop();
-                    BattleSystem.PlayerTurnStart(_mCharacter);
+                    BattleSystem.PlayerTurnStart(_mPlayer);
                     //_mCharacter.
                 }
                 else

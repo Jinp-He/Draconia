@@ -1032,6 +1032,7 @@ m_ResolvedPackages:
     - 1.8.2
     - 1.8.3
     - 1.8.4
+    - 1.8.5
     compatible:
     - 1.6.4
     - 1.6.5
@@ -1048,6 +1049,7 @@ m_ResolvedPackages:
     - 1.8.2
     - 1.8.3
     - 1.8.4
+    - 1.8.5
     verified: 1.6.5
   dependencies:
   - name: com.unity.modules.director
@@ -3816,6 +3818,7 @@ m_ResolvedPackages:
     - 10.0.0
     - 10.0.1
     - 10.0.2
+    - 10.0.3
     compatible:
     - 7.0.9
     - 7.0.10
@@ -4045,6 +4048,7 @@ m_ResolvedPackages:
     - 9.0.0-pre.1
     - 9.0.0-pre.2
     - 9.0.0
+    - 9.0.1
     compatible:
     - 6.0.7
     verified: 6.0.7
@@ -4258,6 +4262,7 @@ m_ResolvedPackages:
     - 10.0.0-pre.2
     - 10.0.0
     - 10.0.1
+    - 10.0.2
     compatible:
     - 7.0.6
     - 7.0.7
@@ -4440,6 +4445,7 @@ m_ResolvedPackages:
     - 4.0.0-pre.3
     - 4.0.0
     - 4.0.1
+    - 4.0.2
     compatible:
     - 2.2.4
     - 2.2.5
@@ -4629,6 +4635,7 @@ m_ResolvedPackages:
     - 9.0.0-pre.2
     - 9.0.0
     - 9.0.1
+    - 9.0.2
     compatible:
     - 6.0.6
     verified: 6.0.6

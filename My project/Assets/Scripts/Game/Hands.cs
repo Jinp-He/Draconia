@@ -32,6 +32,15 @@ namespace Draconia.ViewController
             Refresh();
             return card;
         }
+        
+        public Card AddCard(Card card, Player player)
+        {
+            Cards.Add(card);
+            card.transform.parent = transform;
+            card.transform.localPosition = Vector3.zero;
+            Refresh();
+            return card;
+        }
 
         public void RemoveCard(Card card)
         {
@@ -63,21 +72,14 @@ namespace Draconia.ViewController
         /// </summary>
         public void Refresh()
         {
-            ReorderCard();
-            RecView();
-
+            Cards = new List<Card>();
             foreach (var card in transform.GetComponentsInChildren<Card>())
             {
-                if (card._cardInfo.Cost <= this.GetSystem<BattleSystem>().Energy &&
-                    this.GetSystem<BattleSystem>().BattleState == BattleState.Player)
-                {
-                    //card.UseEffect.gameObject.SetActive(true);
-                }
-                else
-                {
-                    //card.UseEffect.gameObject.SetActive(false);
-                }
+                Cards.Add(card);
             }
+            ReorderCard();
+            RecView();
+            
         }
 
         private void ArcView()
@@ -118,6 +120,7 @@ namespace Draconia.ViewController
         private const float IdealDist = 0f;
         public void RecView()
         {
+            
             float p0 = transform.position.x;
             float dist = IdealDist + CardPrefab.GetComponent<RectTransform>().rect.width * CardPrefab.GetComponent<RectTransform>().Scale().y;
             int count = Cards.Count;
@@ -138,7 +141,7 @@ namespace Draconia.ViewController
             foreach (var card in Cards)
             {
                 Transform tf = card.transform;
-                tf.localPosition = new Vector3(pos, tf.localPosition.y, 0);
+                tf.localPosition = new Vector3(pos, -50, 0);
                 pos += dist;
                 if (card.IsChosen)
                 {
@@ -152,8 +155,10 @@ namespace Draconia.ViewController
         {
             for (int i = 0; i < Cards.Count(); i++)
             {
-                Cards[i].OnEndTurn();
+                Cards[i].Discard();
             }
+
+            Cards = new List<Card>();
         }
 
         /// <summary>

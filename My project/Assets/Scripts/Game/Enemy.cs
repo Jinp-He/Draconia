@@ -26,6 +26,10 @@ namespace Draconia.ViewController
 			set
 			{
 				_energy = value;
+				if (_energy > EnemyBar._energyBulbs.Count)
+				{
+					_energy = EnemyBar._energyBulbs.Count;
+				}
 				foreach (var bulb in EnemyBar._energyBulbs)
 				{
 					bulb.color = Color.white;
@@ -67,6 +71,7 @@ namespace Draconia.ViewController
 		{
 			EnemyInfo = enemyInfo;
 			_enemyStrategy = EnemyStrategy.GetEnemyStrategy(this);
+			EnemyBar.Init(enemyInfo);
 			EnemyAnimation = GetComponent<EnemyAnimation>();
 			EnemyAnimation.Init(this);
 			//EnemyImage.sprite = EnemyAtlas.GetSprite("dog01_Idle");
@@ -76,6 +81,11 @@ namespace Draconia.ViewController
 			MyPointer = UIKit.GetPanel<UIBattlePanel>().TimeBar.AddEnemy(this);
 
 			_enemyAnimator.Init(this);
+		}
+
+		public void EnemyTurnEnd()
+		{
+			MyPointer.Refresh();
 		}
 
 		public void OnPointerEnter(PointerEventData eventData)

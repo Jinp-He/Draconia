@@ -73,8 +73,8 @@ MonoBehaviour:
   ScriptsFolder: Assets/Scripts/Game
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
-  EnergyBulbPrefab1: {fileID: 0}
-  EnergyBulbPrefab2: {fileID: 0}
+  EnergyBulbPrefab1: {fileID: 789939177497475327, guid: 9b092627a9af03845b7c8b8f198a46ff, type: 3}
+  EnergyBulbPrefab2: {fileID: 789939177497475327, guid: 41fa0338a91e683498a2bb952f81450d, type: 3}
   HPBar: {fileID: 4114536903312070070}
   EnergyBar: {fileID: 2269916249811251653}
 --- !u!1 &1893759669667501116

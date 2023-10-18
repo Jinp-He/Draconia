@@ -16,5 +16,9 @@ namespace Draconia.ViewController
 
 		public RectTransform ChooseBracelet;
 
+		public RectTransform CardDeck;
+		
+		public RectTransform CardBin;
+
 	}
 }

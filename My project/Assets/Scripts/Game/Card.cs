@@ -1,18 +1,15 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using cfg;
-using DG.Tweening;
 using Draconia.Controller;
 using Draconia.MyComponent;
 using Draconia.System;
 using Draconia.UI;
-using UnityEngine;
 using QFramework;
-using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Utility;
-using NotImplementedException = System.NotImplementedException;
 
 namespace Draconia.ViewController
 {
@@ -32,6 +29,9 @@ namespace Draconia.ViewController
         private Player CardPlayer;
         private UIBattlePanel UIBattlePanel;
         private List<EnumCardProperty> _properties;
+        private int index;
+        private Vector3 _localScale, _localPos; 
+        public bool IsChosen;
         
         void Start()
         {
@@ -63,7 +63,12 @@ namespace Draconia.ViewController
             GetComponent<MyTooltipManager>().InitWithCommons(commons);
         }
 
-        public void OnPointerEnter(PointerEventData eventData)
+  
+
+        private List<ICharacter> Target;
+        private List<Enemy> _enemies;
+        private List<Player> _characters;
+      public void OnPointerEnter(PointerEventData eventData)
         {
             if (_cardState == CardState.Listen)
                 Hover();
@@ -74,11 +79,6 @@ namespace Draconia.ViewController
             if (_cardState == CardState.Listen)
                 UnHover();
         }
-
-        private List<ICharacter> Target;
-        private List<Enemy> _enemies;
-        private List<Player> _characters;
-
         public void OnBeginDrag(PointerEventData eventData)
         {
             if (this.GetSystem<BattleSystem>().BattleState != BattleState.Player)
@@ -218,29 +218,11 @@ namespace Draconia.ViewController
             {
                 return;
             }
-
-            if (_cardInfo.Cost > BattleSystem.Energy)
-            {
-                return;
-            }
-
+            
             UIKit.GetPanel<UIBattlePanel>().Bezier.Deactivate();
             if (InThePlayerArea() && IsRightTarget())
             {
                 Play();
-                if (_properties.Contains(EnumCardProperty.Flash))
-                {
-                    _hands.RemoveCard(this);
-                }
-               
-                BattleSystem.Energy.Value -= _cardInfo.Cost;
-                BattleSystem.BattleState = BattleState.Enemy;
-                BattleSystem.Continue();
-                
-                _hands.RemoveCard(this);
-                CardPlayer.OnEndTurn();
-                Destroy(gameObject);
-                _hands.Refresh();
             }
             else
             {
@@ -254,10 +236,23 @@ namespace Draconia.ViewController
             UIKit.GetPanel<UIBattlePanel>().UnchosenAll();
         }
 
-        private int index;
 
-        private Vector3 _localScale, _localPos;
-        public bool IsChosen;
+
+        /// <summary>
+        /// 丢弃到角色的弃牌堆
+        /// </summary>
+        public void Discard()
+        {
+            // if (_cardInfo.Properties.Contains(EnumCardProperty.Virtual))
+            // {
+            //     Destroy(this.gameObject,0.1f);
+            //     return;
+            // }
+            transform.parent = CardPlayer.CardBin;
+            _hands.Refresh();
+        }
+
+       
         public void Hover()
         {
             var transform1 = transform;
@@ -324,15 +319,11 @@ namespace Draconia.ViewController
                     //card._properties.Add(EnumCardProperty.Virtual);
                     break;
             }
+            Discard();
+            //CardPlayer.PlayerTurnEnd();
         }
 
-        public void OnEndTurn()
-        {
-            if (_properties.Contains(EnumCardProperty.Virtual))
-            {
-                _hands.RemoveCard(this);
-            }
-        }
+
         
         private Vector2 InitialPos;
         private Quaternion _rotation;

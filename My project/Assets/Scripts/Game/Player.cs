@@ -11,6 +11,7 @@ using UnityEngine.U2D;
 using cfg;
 using Draconia.Game.Buff;
 using Draconia.MyComponent;
+using Draconia.System;
 using Draconia.ViewController.Event;
 using NotImplementedException = System.NotImplementedException;
 
@@ -34,6 +35,10 @@ namespace Draconia.ViewController
 		public PlayerInfo PlayerInfo;
 		public List<CardInfo> Cards;
 
+
+		public List<Card> Deck;
+		public List<Card> Bin;
+
 		
 
 		private float _armorModifier;
@@ -55,6 +60,8 @@ namespace Draconia.ViewController
 		{
 			
 			PlayerInfo = playerInfo;
+			Debug.Log(playerInfo.Name);
+			CharacterAtlas = ResLoadSystem.LoadSync<SpriteAtlas>(playerInfo.Alias);
 			CharacterImage.sprite = CharacterAtlas.GetSprite("Idle");
 			CharacterImage.SetNativeSize();
 			PlayerName = playerInfo.Name;
@@ -62,6 +69,7 @@ namespace Draconia.ViewController
 			HPBar.GetComponent<HPBar>().Init(playerInfo.InitialHP,playerInfo.InitialHP);
 			MyPointer = UIKit.GetPanel<UIBattlePanel>().TimeBar.AddCharacter(this);
 			Cards = new List<CardInfo>();
+			//初始牌库
 			Cards.AddRange(PlayerInfo.InitialCards_Ref);
 			PlayerAnimator.Init(this);
 			this.RegisterEvent<PlayerTurnStartEvent>((e) =>
@@ -69,6 +77,18 @@ namespace Draconia.ViewController
 				NextTurn?.Invoke();
 				NextTurn = new Action(() => { });
 			});
+			BattleStart();
+		}
+
+		public void BattleStart()
+		{
+			foreach (var cardInfo in PlayerInfo.InitialCards_Ref)
+			{
+				var cardPrefab = ResLoadSystem.LoadSync<GameObject>("CardPrefab").GetComponent<Card>();
+				Card card = Instantiate(cardPrefab, CardDeck);
+				card.Init(cardInfo, this);
+				Deck.Add(card);
+			}
 		}
 		
 		private void Update()               
@@ -113,7 +133,7 @@ namespace Draconia.ViewController
 		public void Chosen()
 		{
 			ChooseBracelet.gameObject.SetActive(true);
-		}
+		} 
 
 		public void Unchosen()
 		{
@@ -186,14 +206,24 @@ namespace Draconia.ViewController
 			};
 		}
 
+		public void PlayerTurnEnd()
+		{
+			Refresh();
+		}
+
 		public void Refresh()
 		{
 			MyPointer.Refresh();
 		}
 
-		public void OnEndTurn()
+
+		public void OnTurnStart()
 		{
-			Debug.Log("#DEBUG# Endturn");
+			PlayerAnimator.IsChosen();
+		}
+		public void OnTurnEnd()
+		{
+			PlayerAnimator.EndChosen();
 			BattleSystem.Hands.OnEndTurn(this);
 		}
 

@@ -5,6 +5,9 @@ using QFramework;
 
 namespace Draconia.ViewController
 {
+	/// <summary>
+	/// 时间轴，控制角色的行动顺序
+	/// </summary>
 	public partial class TimeBar : QFramework.ViewController
 	{
 		public static int Length = 500;
@@ -28,7 +31,7 @@ namespace Draconia.ViewController
 		{
 			Pointer pointer = Instantiate(PointerPrefab,PlayerSlot.transform);
 			pointer.LocalPosition(0, 0, 0);
-			pointer.Init(player);
+			pointer.Init(player,this);
 			Pointers.Add(pointer);
 			
 			return pointer;
@@ -38,7 +41,7 @@ namespace Draconia.ViewController
 		{
 			Pointer pointer = Instantiate(PointerPrefab,EnemySlot.transform);
 			pointer.LocalPosition(0, 0, 0);
-			pointer.Init(enemy);
+			pointer.Init(enemy,this);
 			Pointers.Add(pointer);
 			return pointer;
 		}
@@ -67,6 +70,7 @@ namespace Draconia.ViewController
 
 		public void Stop()
 		{
+			//Debug.LogError("Stop");
 			foreach (var pointer in Pointers)
 			{
 				pointer.IsStop = true;

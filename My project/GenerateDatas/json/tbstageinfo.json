@@ -2,7 +2,8 @@
   {
     "ID": 0,
     "CharacterList": [
-      10001
+      10001,
+      10002
     ],
     "EnemyList": [
       20001,

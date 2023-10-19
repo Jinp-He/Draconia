@@ -28,6 +28,8 @@ namespace Draconia.System
         public BindableProperty<int> Energy;
         public int InitEnergy = 0;
         public int MaxEnergy = 10;
+
+        public Player OngoingPlayer;
         protected override void OnInit()
         {
             
@@ -68,16 +70,21 @@ namespace Draconia.System
             UIKit.OpenPanel<UIBattlePanel>().EnergyCounter.Continue();
         }
 
+        /// <summary>
+        /// 从玩家抽牌堆抽卡
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="num"></param>
+        /// <returns></returns>
         public List<Card> DrawCard(Player player, int num)
         {
-            List<CardInfo> cards = player.Cards.PickRandom(num).ToList();
-            List<Card> res = new List<Card>();
+            List<Card> cards = player.Deck.PickRandom(num).ToList();
             foreach (var cardInfo in cards)
             {
-                res.Add(Hands.AddCard(cardInfo,player));
+                Hands.AddCard(cardInfo,player);
             }
 
-            return res;
+            return cards;
         }
         
         
@@ -94,7 +101,12 @@ namespace Draconia.System
         }
         
 
-        public List<Card> DrawAttackCard(Player player)
+        /// <summary>
+        /// 玩家手上默认的卡牌，调整位置，攻击等
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
+        public List<Card> DrawNormalCard(Player player)
         {
             List<Card> res = new List<Card>();
             foreach (var cardInfo in player.PlayerInfo.NormalAttackCard_Ref)
@@ -107,10 +119,25 @@ namespace Draconia.System
         
         public void PlayerTurnStart(Player player)
         {
-            Energy.Value += 2;
+            //Energy.Value += 2;
             BattleState = BattleState.Player;
-            DrawCard(player, 1);
-            DrawAttackCard(player);
+            player.OnTurnStart();
+            OngoingPlayer = player;
+            DrawCard(player, player.PlayerInfo.DrawCardNum);
+            DrawNormalCard(player);
+        }
+
+        public void PlayerTurnEnd()
+        {
+            if (BattleState != BattleState.Player)
+            {
+                return;
+            }
+            BattleState = BattleState.Enemy;
+            Continue();
+            Hands.OnEndTurn(OngoingPlayer);
+            OngoingPlayer.OnTurnEnd();
+            OngoingPlayer = null;
         }
 
         public void EnemyTurnStart(Enemy enemy)
@@ -119,7 +146,7 @@ namespace Draconia.System
         }
 
         /// <summary>
-        /// Move ICharacter to a comparative position
+        /// Move ICharacter to a comparative position 
         /// </summary>
         /// <param name="enemy"></param>
         /// <param name="position"></param>

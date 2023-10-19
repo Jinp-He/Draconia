@@ -101,6 +101,11 @@ namespace Draconia.ViewController
             }
         }
 
+        public void EndAction()
+        {
+            _enemy.EnemyTurnEnd();
+        }
+
         protected virtual void ChooseTarget()
         {
             

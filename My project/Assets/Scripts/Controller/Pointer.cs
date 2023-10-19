@@ -14,21 +14,32 @@ namespace Draconia.Controller
         private Player _mPlayer;
         private Enemy _mEnemy;
         private int _speed;
-        private bool _isPlayer;
+        private int _originalPos;
+        public bool _isPlayer;
+        private TimeBar _timeBar;
+        public bool _isInit;
         public bool IsStop = false;
-        public void Init(Player player)
+        
+        public void Init(Player player, TimeBar timeBar)
         {
+            Debug.Log("Init!");
+            _timeBar = timeBar;
             _mPlayer = player;
             _speed = _mPlayer.PlayerInfo.Speed;
             PointerImage.sprite = player.CharacterAtlas.GetSprite("Pointer");
             _isPlayer = true;
+            _isInit = true;
         }
         
-        public void Init(Enemy enemy)
+        public void Init(Enemy enemy, TimeBar timeBar)
         {
+            Debug.Log("Init!");
+            _timeBar = timeBar;
             _mEnemy = enemy;
             _speed = _mEnemy.EnemyInfo.Speed;
             PointerImage.sprite = _mEnemy.GetComponent<EnemyAnimator>().PointerSprite;
+            _isPlayer = false;
+            _isInit = true;
         }
 
 
@@ -42,7 +53,16 @@ namespace Draconia.Controller
         /// </summary>
         public void Refresh()
         {
-            transform.localPosition = new Vector3(500, transform.localPosition.y, transform.localPosition.z);
+            if (_isPlayer)
+            {
+                Vector3 pos = transform.position;
+                transform.localPosition = new Vector3(_timeBar.PlayerStartPoint.position.x, pos.y, pos.z);
+            }
+            else
+            {
+                Vector3 pos = transform.position;
+                transform.localPosition = new Vector3(_timeBar.EnemyStartPoint.position.x, pos.y, pos.z);
+            }
         }
 
         public void Move()
@@ -59,26 +79,44 @@ namespace Draconia.Controller
         {
             if (IsStop)
             {
+                //Debug.Log("Stop");
                 return;
-                
             }
-            transform.localPosition += Vector3.right * _speed / 10;
-            
-            if (transform.localPosition.x >= 500)
+
+            if (!_isInit)
             {
-                if (_isPlayer)
+                Debug.Log("NotInit");
+                return;
+            }
+            if(_isPlayer)
+                transform.localPosition += Vector3.right * _speed / 10;
+            else
+            {
+                transform.localPosition -= Vector3.right * _speed / 10;
+            }
+
+            if (_isPlayer)
+            {
+                if (IsTouch(transform.position.x,_timeBar.PlayerActionPoint.position.x))
                 {
+                    Debug.LogFormat("#DEBUG# {0} {1}",transform.position.x,_timeBar.PlayerActionPoint.position.x);
                     BattleSystem.Stop();
                     BattleSystem.PlayerTurnStart(_mPlayer);
-                    //_mCharacter.
                 }
-                else
+            }
+            else
+            {
+                if (IsTouch(transform.position.x,_timeBar.EnemyActionPoint.position.x))
                 {
+                    EnemyStrategy enemy = _mEnemy.EnemyStrategy;
                     _mEnemy.EnemyStrategy.Action();
                 }
-                var localPosition = transform.localPosition;
-                transform.localPosition = new Vector3(0, localPosition.y, localPosition.z);
             }
+        }
+
+        private bool IsTouch(float a, float b)
+        {
+            return Math.Abs(a - b) < .01f;
         }
     }
 }

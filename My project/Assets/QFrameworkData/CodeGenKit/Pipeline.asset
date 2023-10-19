@@ -19,18 +19,33 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos:
-    - TypeName: Draconia.ViewController.HPBar
-      PathToRoot: HPBar
-      MemberName: HPBar
     - TypeName: RectTransform
-      PathToRoot: EnemyEnergyArea/EnergyBar
+      PathToRoot: Deck
+      MemberName: Deck
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: CharacterImage
+      MemberName: CharacterImage
+    - TypeName: Draconia.ViewController.HPBar
+      PathToRoot: CharacterBar/HPBar (1)
+      MemberName: HPBar (1)
+    - TypeName: TMPro.TextMeshProUGUI
+      PathToRoot: CharacterBar/RestCard/RestCardNum
+      MemberName: RestCardNum
+    - TypeName: RectTransform
+      PathToRoot: CharacterBar/CharacterEnergyArea/EnergyBar
       MemberName: EnergyBar
+    - TypeName: RectTransform
+      PathToRoot: ChooseBracelet
+      MemberName: ChooseBracelet
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: EnemyBar
+    ClassName: Character
     Namespace: Draconia.ViewController
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace Draconia.ViewController\r\n{\r\n\tpublic
-      partial class EnemyBar : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class Character : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:cc00861b-395e-442f-8b9b-b3d2fe88d66e\r\nusing UnityEngine;\r\n\r\nnamespace
-      Draconia.ViewController\r\n{\r\n\tpublic partial class EnemyBar\r\n\t{\r\n\r\n\t\tpublic
-      Draconia.ViewController.HPBar HPBar;\r\n\r\n\t\tpublic RectTransform EnergyBar;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:30b2bb86-449f-4d08-be01-5d9013deb8f6\r\nusing UnityEngine;\r\n\r\nnamespace
+      Draconia.ViewController\r\n{\r\n\tpublic partial class Character\r\n\t{\r\n\r\n\t\tpublic
+      RectTransform Deck;\r\n\r\n\t\tpublic UnityEngine.UI.Image CharacterImage;\r\n\r\n\t\tpublic
+      Draconia.ViewController.HPBar HPBar (1);\r\n\r\n\t\tpublic TMPro.TextMeshProUGUI
+      RestCardNum;\r\n\r\n\t\tpublic RectTransform EnergyBar;\r\n\r\n\t\tpublic RectTransform
+      ChooseBracelet;\r\n\r\n\t}\r\n}\r\n"

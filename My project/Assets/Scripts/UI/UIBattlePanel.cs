@@ -53,6 +53,10 @@ namespace Draconia.UI
 			{
 				UIKit.OpenPanel<UISettingPanel>();
 			});
+			EndTurnButton.onClick.AddListener(() =>
+			{
+				this.GetSystem<BattleSystem>().PlayerTurnEnd();
+			});
 			
 			
 

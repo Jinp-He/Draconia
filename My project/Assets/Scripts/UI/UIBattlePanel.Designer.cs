@@ -53,7 +53,8 @@ namespace Draconia.UI
 		public TMPro.TextMeshProUGUI Energy;
 		[SerializeField]
 		public Utility.BelzierArrows.BezierArrows Bezier;
-		
+		[SerializeField]
+		public Button EndTurnButton;
 		private UIBattlePanelData mPrivateData = null;
 		
 		protected override void ClearUIComponents()
@@ -79,6 +80,7 @@ namespace Draconia.UI
 			EnergyCounterImage = null;
 			Energy = null;
 			Bezier = null;
+			EndTurnButton = null;
 			
 			mData = null;
 		}

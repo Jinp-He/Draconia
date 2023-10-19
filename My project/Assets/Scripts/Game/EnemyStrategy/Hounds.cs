@@ -38,6 +38,7 @@ namespace Draconia.ViewController
         
         public override void Action()
         {
+            PreAction();
             switch (_currentAction.ActionType)
             {
                 case ActionType.Attack:
@@ -54,7 +55,8 @@ namespace Draconia.ViewController
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            PreAction();
+            
+            EndAction();
         }
 
         protected override void UseUlt()

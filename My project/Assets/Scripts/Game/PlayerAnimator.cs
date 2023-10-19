@@ -23,7 +23,7 @@ namespace Draconia.ViewController
             _player = player;
             _isHitSprite = _player.CharacterAtlas.GetSprite("OnHit");
             _idleSprite = _player.CharacterAtlas.GetSprite("Idle");
-            //_chosenSprite = _character.CharacterAtlas.GetSprite("Chosen");
+            _chosenSprite = _player.CharacterAtlas.GetSprite("Chosen");
         }
 
         public void IsHit()
@@ -56,14 +56,16 @@ namespace Draconia.ViewController
         
 
 
-        public void IsChose()
+        public void IsChosen()
         {
-            
+            _player.CharacterImage.sprite = _chosenSprite;
+            _player.CharacterImage.SetNativeSize();
         }
 
-        public void EndChose()
+        public void EndChosen()
         {
-            
+            _player.CharacterImage.sprite = _idleSprite;
+            _player.CharacterImage.SetNativeSize();
         }
         
         

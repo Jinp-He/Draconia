@@ -44,7 +44,13 @@ namespace Draconia.ViewController
 		private float _armorModifier;
 		private float _magicResistModifier;
 		private float _recoverModifier;
+		private int _backNumModifier;
+		public int BackNum => PlayerInfo.BackNum + _backNumModifier;
+		private int _drawCardModifier;
+		public int DrawCard => PlayerInfo.DrawCardNum + _drawCardModifier;
 		private Action NextTurn;
+		
+		
 		public int Position 
 		{
 			get
@@ -206,10 +212,22 @@ namespace Draconia.ViewController
 			};
 		}
 
-		public void PlayerTurnEnd()
+		//判断是否可以释放该卡
+		public bool ValidCard(Card card)
 		{
-			Refresh();
+			if(BattleSystem.TimeBar.IsValidMove(MyPointer, card._cardInfo.Cost))
+				return true;
+			return false;
 		}
+
+		/// <summary>
+		/// 时间轴上移动相应的数值
+		/// </summary>
+		public void PayCost(int cost)
+		{
+			MyPointer.Move(cost);
+		}
+		
 
 		public void Refresh()
 		{
@@ -219,6 +237,7 @@ namespace Draconia.ViewController
 
 		public void OnTurnStart()
 		{
+			UIKit.GetPanel<UIBattlePanel>().TimeBar.MoveAbsoluteTimePosition(MyPointer, BackNum);
 			PlayerAnimator.IsChosen();
 		}
 		public void OnTurnEnd()

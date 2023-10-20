@@ -11,9 +11,11 @@ namespace Draconia.ViewController
 {
     public class Hands : QFramework.ViewController, ICanGetSystem
     {
-        public Card CardPrefab;
+        public Card CardPrefab, BasicCardPrefab;
+        
+        
         public List<Card> Cards;
-        public RectTransform DisplayArea;
+        public RectTransform DisplayArea,BasicCardArea;
 
         private List<Card> tempRemovedCard;
 
@@ -22,6 +24,7 @@ namespace Draconia.ViewController
             tempRemovedCard = new List<Card>();
             Refresh();
             Cards = new List<Card>();
+            Width = GetComponent<RectTransform>().rect.width;
         }
 
         public Card AddCard(CardInfo cardInfo, Player player)
@@ -31,6 +34,17 @@ namespace Draconia.ViewController
             Cards.Add(card);
             Refresh();
             return card;
+        }
+
+        public void AddBasicCard(Player player)
+        {
+            foreach (var cardInfo in player.PlayerInfo.NormalAttackCard_Ref)
+            {
+                Card card = Instantiate(BasicCardPrefab, BasicCardArea);
+                card.Init(cardInfo, player, true);
+                Cards.Add(card);
+                Refresh();
+            }
         }
         
         public Card AddCard(Card card, Player player)
@@ -116,7 +130,7 @@ namespace Draconia.ViewController
             }
         }
 
-        private const float Width = 1200f;
+        private float Width;
         private const float IdealDist = 0f;
         public void RecView()
         {
@@ -153,7 +167,7 @@ namespace Draconia.ViewController
 
         public void OnEndTurn(Player player)
         {
-            for (int i = 0; i < Cards.Count(); i++)
+            for (int i = 0; i < Cards.Count();)
             {
                 Cards[i].Discard();
             }

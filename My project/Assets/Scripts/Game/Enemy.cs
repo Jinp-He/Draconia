@@ -83,6 +83,12 @@ namespace Draconia.ViewController
 			_enemyAnimator.Init(this);
 		}
 
+		public void EnemyTurnStart()  
+		{
+			//调整位置
+			BattleSystem.TimeBar.MoveAbsoluteTimePosition(MyPointer, 4);
+			EnemyStrategy.Action();
+		}
 		public void EnemyTurnEnd()
 		{
 			MyPointer.Refresh();

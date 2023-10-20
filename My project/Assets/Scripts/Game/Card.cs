@@ -32,7 +32,7 @@ namespace Draconia.ViewController
         private int index;
         private Vector3 _localScale, _localPos; 
         public bool IsChosen;
-        
+        public bool IsBasicCard;
         void Start()
         {
             _cardState = CardState.Listen;
@@ -40,10 +40,11 @@ namespace Draconia.ViewController
             UIBattlePanel = UIKit.GetPanel<UIBattlePanel>();
         }
 
-        public void Init(CardInfo cardInfo, Player player)
+        public void Init(CardInfo cardInfo, Player player, bool isBasic = false)
         {
             _cardInfo = cardInfo;
             _properties = cardInfo.Properties;
+            IsBasicCard = isBasic;
             
             var desc = _cardInfo.Desc;
             MatchCollection m = Regex.Matches(desc, "\\{(.*?)\\}");
@@ -55,6 +56,8 @@ namespace Draconia.ViewController
             desc = desc.Replace("{", "<color=yellow>").Replace("}", "</color>");
 
             CardName.text = _cardInfo.Name;
+            if (IsBasicCard)
+                CardName.text = "<rotate90>" + _cardInfo.Name;
             CardDesc.text = desc;
             CardCost.text = _cardInfo.Cost.ToString();
             //CardType.text = _cardInfo.SkillTargetType.ToString();
@@ -86,10 +89,6 @@ namespace Draconia.ViewController
                 return;
             }
 
-            if (_cardInfo.Cost > BattleSystem.Energy)
-            {
-                return;
-            }
 
             InitialPos = transform.localPosition;
             _rotation = transform.rotation;
@@ -109,12 +108,6 @@ namespace Draconia.ViewController
             {
                 return;
             }
-
-            if (_cardInfo.Cost > BattleSystem.Energy)
-            {
-                return;
-            }
-
 
             //Debug.LogFormat("{0},{1}",Input.mousePosition.x,Input.mousePosition.y);
 
@@ -220,17 +213,27 @@ namespace Draconia.ViewController
             }
             
             UIKit.GetPanel<UIBattlePanel>().Bezier.Deactivate();
-            if (InThePlayerArea() && IsRightTarget())
+            if (InThePlayerArea() && IsRightTarget() && CardPlayer.ValidCard(this))
             {
+                CardPlayer.PayCost(_cardInfo.Cost);
                 Play();
             }
             else
             {
-                transform.parent = _hands.transform;
-                transform.localPosition = InitialPos;
-                transform.SetSiblingIndex(index);
-                transform.rotation = _rotation;
-                _hands.RecView();
+                if (IsBasicCard)
+                {
+                    transform.parent = _hands.BasicCardArea.transform;
+                    transform.localPosition = InitialPos;
+                }
+                else
+                {
+                    transform.parent = _hands.transform;
+                    transform.localPosition = InitialPos;
+                    transform.SetSiblingIndex(index);
+                    transform.rotation = _rotation;
+                    _hands.RecView();
+                }
+                
             }
 
             UIKit.GetPanel<UIBattlePanel>().UnchosenAll();
@@ -267,17 +270,29 @@ namespace Draconia.ViewController
             transform1.localPosition = new Vector3(transform1.localPosition.x, 0, 0);
             transform1.SetAsLastSibling();
             IsChosen = true;
-            //_hands.RecView();
+            _hands.RecView();
         }
 
         public void UnHover()
         {
-            transform.parent = _hands.transform;
-            transform.localScale = _localScale;
-            transform.localPosition = _localPos;
-            transform.SetSiblingIndex(index);
-            IsChosen = false;
-            _hands.RecView();
+            if (IsBasicCard)
+            {
+                transform.parent = _hands.BasicCardArea.transform;
+                IsChosen = false;
+                transform.localScale = _localScale;
+                transform.localPosition = _localPos;
+            }
+            else
+            {
+                transform.parent = _hands.transform;
+                transform.localScale = _localScale;
+                transform.localPosition = _localPos;
+                transform.SetSiblingIndex(index);
+                IsChosen = false;
+                _hands.RecView();
+            }
+
+            
             //ChosenEffect.gameObject.SetActive(false);
             
             

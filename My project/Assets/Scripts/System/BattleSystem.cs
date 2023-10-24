@@ -30,6 +30,7 @@ namespace Draconia.System
         public int MaxEnergy = 10;
 
         public Player OngoingPlayer;
+        public TimeBar TimeBar;
         protected override void OnInit()
         {
             
@@ -51,6 +52,7 @@ namespace Draconia.System
             });
             Energy.Value = InitEnergy;
             BattleState = BattleState.Enemy;
+            TimeBar = UIKit.GetPanel<UIBattlePanel>().TimeBar;
             this.SendEvent<BattleStartEvent>();
         }
 
@@ -106,15 +108,9 @@ namespace Draconia.System
         /// </summary>
         /// <param name="player"></param>
         /// <returns></returns>
-        public List<Card> DrawNormalCard(Player player)
+        public void DrawNormalCard(Player player)
         {
-            List<Card> res = new List<Card>();
-            foreach (var cardInfo in player.PlayerInfo.NormalAttackCard_Ref)
-            {
-                res.Add(Hands.AddCard(cardInfo,player));
-            }
-
-            return res;
+            Hands.AddBasicCard(player);
         }
         
         public void PlayerTurnStart(Player player)
@@ -123,7 +119,7 @@ namespace Draconia.System
             BattleState = BattleState.Player;
             player.OnTurnStart();
             OngoingPlayer = player;
-            DrawCard(player, player.PlayerInfo.DrawCardNum);
+            DrawCard(player, player.DrawCard);
             DrawNormalCard(player);
         }
 

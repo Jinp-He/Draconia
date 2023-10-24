@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using Draconia.MyComponent;
 using Draconia.System;
 using Draconia.ViewController;
 using QFramework;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Draconia.Controller
@@ -19,16 +21,25 @@ namespace Draconia.Controller
         private TimeBar _timeBar;
         public bool _isInit;
         public bool IsStop = false;
+
+        public float PositionX
+        {
+            set => transform.localPosition = new Vector3(value,transform.position.y,transform.position.z);
+            get => transform.localPosition.x;
+        }
         
         public void Init(Player player, TimeBar timeBar)
         {
             Debug.Log("Init!");
+            name = "Pointer_" + player.PlayerInfo.Name;
             _timeBar = timeBar;
             _mPlayer = player;
             _speed = _mPlayer.PlayerInfo.Speed;
             PointerImage.sprite = player.CharacterAtlas.GetSprite("Pointer");
             _isPlayer = true;
             _isInit = true;
+            
+            _timeBar.MoveAbsoluteTimePosition(this, _mPlayer.BackNum);
         }
         
         public void Init(Enemy enemy, TimeBar timeBar)
@@ -40,13 +51,12 @@ namespace Draconia.Controller
             PointerImage.sprite = _mEnemy.GetComponent<EnemyAnimator>().PointerSprite;
             _isPlayer = false;
             _isInit = true;
-        }
-
-
-        public void Move(int count)
-        {
             
+            //TODO: 更改初始位置
+            _timeBar.MoveAbsoluteTimePosition(this, 4);
         }
+
+
 
         /// <summary>
         /// 立即开始回合
@@ -65,9 +75,9 @@ namespace Draconia.Controller
             }
         }
 
-        public void Move()
+        public void Move(int i)
         {
-            
+            _timeBar.MoveRelativeTimePosition(this, i);
         }
         
         public void Execute()
@@ -88,6 +98,24 @@ namespace Draconia.Controller
                 Debug.Log("NotInit");
                 return;
             }
+
+            if (transform.localPosition.y != 0)
+            {
+                
+            }
+
+            // PointerEventData eventData = new PointerEventData(EventSystem.current);
+            // eventData.position = transform.position;
+            // if (_isPlayer)
+            // {
+            //     _timeBar.Players
+            // }
+            
+            
+            
+            
+            
+            
             if(_isPlayer)
                 transform.localPosition += Vector3.right * _speed / 10;
             else
@@ -97,6 +125,8 @@ namespace Draconia.Controller
 
             if (_isPlayer)
             {
+                //Debug.LogFormat("#DEBUG# Position {0} {1}",transform.position.x,_timeBar.PlayerActionPoint.position.x);
+
                 if (IsTouch(transform.position.x,_timeBar.PlayerActionPoint.position.x))
                 {
                     Debug.LogFormat("#DEBUG# {0} {1}",transform.position.x,_timeBar.PlayerActionPoint.position.x);
@@ -108,15 +138,29 @@ namespace Draconia.Controller
             {
                 if (IsTouch(transform.position.x,_timeBar.EnemyActionPoint.position.x))
                 {
-                    EnemyStrategy enemy = _mEnemy.EnemyStrategy;
-                    _mEnemy.EnemyStrategy.Action();
+                    _mEnemy.EnemyTurnStart();
                 }
             }
+        }
+        
+        void OnTriggerEnter2D(Collider2D other) 
+        {
+            //如果两个指针距离过近，则将其中一个往上提
+            if (Math.Abs(other.transform.localPosition.y - transform.localPosition.y) < .1f &&
+                Math.Abs(other.transform.localPosition.x - transform.localPosition.x) < .1f)
+            {
+                Vector3 pos = transform.localPosition;
+                pos.x -= 10f;
+                transform.localPosition = pos;
+            }
+                
+            //Debug.Log ("Triggered");
+           
         }
 
         private bool IsTouch(float a, float b)
         {
-            return Math.Abs(a - b) < .01f;
+            return Math.Abs(a - b) < .1f;
         }
     }
 }

@@ -9,10 +9,12 @@ using QFramework;
 using UnityEngine.EventSystems;
 using UnityEngine.U2D;
 using cfg;
+using DG.Tweening;
 using Draconia.Game.Buff;
 using Draconia.MyComponent;
 using Draconia.System;
 using Draconia.ViewController.Event;
+using UnityEngine.Rendering;
 using NotImplementedException = System.NotImplementedException;
 
 namespace Draconia.Controller
@@ -23,6 +25,12 @@ namespace Draconia.Controller
 		{
             
 		}
+
+		public abstract bool IsOnDangerArea();
+
+
+		public abstract void MoveInTime(int i);
+
 	}
 }
 
@@ -49,16 +57,16 @@ namespace Draconia.ViewController
 		private int _drawCardModifier;
 		public int DrawCard => PlayerInfo.DrawCardNum + _drawCardModifier;
 		private Action NextTurn;
-		
-		
-		public int Position 
-		{
-			get
-			{
-				return BattleSystem.Characters.FindIndex(a => a = this);
 
-			}
+		private int _armor;
+		public int Armor
+		{
+			get => _armor;
+			set => _armor = value;
 		}
+		
+		
+		public int Position => transform.GetSiblingIndex();
 		private string PlayerName;
 		public PlayerAnimator PlayerAnimator;
 		private int CurrHP;
@@ -146,47 +154,19 @@ namespace Draconia.ViewController
 			ChooseBracelet.gameObject.SetActive(false);
 		}
 		
-		public void Move(int position)
-		{
-			List<Player> characters = BattleSystem.Characters;
-			int pos = characters.FindIndex(a => a = this);
-			int finalPos = pos + position;
-            
-			//TODO best practice of this
-			if (finalPos < 0)
-			{
-				finalPos = 0;
-			}
-
-			if (finalPos >= characters.Count)
-			{
-				finalPos = characters.Count;
-			}
-
-			GetComponent<PlayerAnimator>().Move(characters[finalPos]);
-			(characters[pos], characters[finalPos]) = (characters[finalPos], characters[pos]);
-
-		}
+		
+		
 		public void Move(Player player)
 		{
-			List<Player> characters = BattleSystem.Characters;
-			int pos = characters.FindIndex(a => a = this);
-			int finalPos = characters.FindIndex(a => a = player);
-            
-			//TODO best practice of this
-			if (finalPos < 0)
-			{
-				finalPos = 0;
-			}
-
-			if (finalPos >= characters.Count)
-			{
-				finalPos = characters.Count;
-			}
-
-			GetComponent<PlayerAnimator>().Move(characters[finalPos]);
-			(characters[pos], characters[finalPos]) = (characters[finalPos], characters[pos]);
-
+			Sequence seq = DOTween.Sequence();
+			seq.Append(player.transform.DOLocalMoveX(transform.localPosition.x, 1f))
+				.Join(transform.DOLocalMoveX(player.transform.localPosition.x, 1f))
+				.OnComplete(() =>
+				{
+					int tempPos = player.transform.GetSiblingIndex();
+					player.transform.SetSiblingIndex(Position);
+					transform.SetSiblingIndex(tempPos);
+				});
 		}
 		
 		public void Miss()
@@ -197,19 +177,12 @@ namespace Draconia.ViewController
 		public int Distance(Player player)
 		{
 			List<Player> characters = BattleSystem.Characters;
-			return Math.Abs(characters.FindIndex(a => a = this)
-			- characters.FindIndex(a => a = player));
+			return Math.Abs(player.Position - Position);
 		}
 
-		public void Defense()
+		public void Defense(int value)
 		{
-			_magicResistModifier += 0.2f;
-			_armorModifier += 0.2f;
-			NextTurn += () =>
-			{
-				_magicResistModifier -= 0.2f;
-				_armorModifier -= 0.2f;
-			};
+			Armor += value;
 		}
 
 		//判断是否可以释放该卡
@@ -249,6 +222,16 @@ namespace Draconia.ViewController
 		public void AddBuff(string buffName, int stack)
 		{
 			GetComponent<BuffManager>().AddBuff(buffName, stack);
+		}
+
+		public bool IsOnDangerArea()
+		{
+			return true;
+		}
+
+		public void MoveInTime(int i)
+		{
+			MyPointer.Move(i);
 		}
 	}
 }

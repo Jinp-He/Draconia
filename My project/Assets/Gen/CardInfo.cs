@@ -28,12 +28,12 @@ public sealed partial class CardInfo :  Bright.Config.BeanBase
         { if(!_json["AttackRecover"].IsNumber) { throw new SerializationException(); }  AttackRecover = _json["AttackRecover"]; }
         { var __json0 = _json["Effect"]; if(!__json0.IsArray) { throw new SerializationException(); } Effect = new System.Collections.Generic.List<BaseEffect>(__json0.Count); foreach(JSONNode __e0 in __json0.Children) { BaseEffect __v0;  { if(!__e0.IsObject) { throw new SerializationException(); }  __v0 = BaseEffect.DeserializeBaseEffect(__e0);  }  Effect.Add(__v0); }   }
         { if(!_json["SkillTargetType"].IsNumber) { throw new SerializationException(); }  SkillTargetType = (SkillTarget)_json["SkillTargetType"].AsInt; }
-        { if(!_json["BelongedCharacter"].IsNumber) { throw new SerializationException(); }  BelongedCharacter = _json["BelongedCharacter"]; }
+        { if(!_json["BelongedCharacter"].IsString) { throw new SerializationException(); }  BelongedCharacter = _json["BelongedCharacter"]; }
         { var __json0 = _json["Properties"]; if(!__json0.IsArray) { throw new SerializationException(); } Properties = new System.Collections.Generic.List<EnumCardProperty>(__json0.Count); foreach(JSONNode __e0 in __json0.Children) { EnumCardProperty __v0;  { if(!__e0.IsNumber) { throw new SerializationException(); }  __v0 = (EnumCardProperty)__e0.AsInt; }  Properties.Add(__v0); }   }
         PostInit();
     }
 
-    public CardInfo(int id, string Name, string Desc, int Cost, int AttackPreCD, int AttackPostCD, int AttackRange, int AttackRecover, System.Collections.Generic.List<BaseEffect> Effect, SkillTarget SkillTargetType, int BelongedCharacter, System.Collections.Generic.List<EnumCardProperty> Properties ) 
+    public CardInfo(int id, string Name, string Desc, int Cost, int AttackPreCD, int AttackPostCD, int AttackRange, int AttackRecover, System.Collections.Generic.List<BaseEffect> Effect, SkillTarget SkillTargetType, string BelongedCharacter, System.Collections.Generic.List<EnumCardProperty> Properties ) 
     {
         this.Id = id;
         this.Name = Name;
@@ -98,7 +98,7 @@ public sealed partial class CardInfo :  Bright.Config.BeanBase
     /// <summary>
     /// 从属英雄
     /// </summary>
-    public int BelongedCharacter { get; private set; }
+    public string BelongedCharacter { get; private set; }
     public PlayerInfo BelongedCharacter_Ref { get; private set; }
     /// <summary>
     /// 特性

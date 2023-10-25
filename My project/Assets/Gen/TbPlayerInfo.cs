@@ -16,29 +16,29 @@ namespace cfg
 
 public sealed partial class TbPlayerInfo
 {
-    private readonly Dictionary<int, PlayerInfo> _dataMap;
+    private readonly Dictionary<string, PlayerInfo> _dataMap;
     private readonly List<PlayerInfo> _dataList;
     
     public TbPlayerInfo(JSONNode _json)
     {
-        _dataMap = new Dictionary<int, PlayerInfo>();
+        _dataMap = new Dictionary<string, PlayerInfo>();
         _dataList = new List<PlayerInfo>();
         
         foreach(JSONNode _row in _json.Children)
         {
             var _v = PlayerInfo.DeserializePlayerInfo(_row);
             _dataList.Add(_v);
-            _dataMap.Add(_v.Id, _v);
+            _dataMap.Add(_v.Alias, _v);
         }
         PostInit();
     }
 
-    public Dictionary<int, PlayerInfo> DataMap => _dataMap;
+    public Dictionary<string, PlayerInfo> DataMap => _dataMap;
     public List<PlayerInfo> DataList => _dataList;
 
-    public PlayerInfo GetOrDefault(int key) => _dataMap.TryGetValue(key, out var v) ? v : null;
-    public PlayerInfo Get(int key) => _dataMap[key];
-    public PlayerInfo this[int key] => _dataMap[key];
+    public PlayerInfo GetOrDefault(string key) => _dataMap.TryGetValue(key, out var v) ? v : null;
+    public PlayerInfo Get(string key) => _dataMap[key];
+    public PlayerInfo this[string key] => _dataMap[key];
 
     public void Resolve(Dictionary<string, object> _tables)
     {

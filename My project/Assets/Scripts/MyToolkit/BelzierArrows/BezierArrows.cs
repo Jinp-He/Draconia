@@ -91,5 +91,15 @@ namespace Utility.BelzierArrows
 
             arrowNodes[0].transform.rotation = arrowNodes[1].transform.rotation;
         }
+
+        public void OnTriggerEnter2D(Collider2D col)
+        {
+            Debug.LogFormat("Trigger Collider {0}",col.tag);
+        }
+
+        public void OnCollisionEnter2D(Collision2D col)
+        {
+            Debug.LogFormat("Trigger Collider {0}",col.collider.tag);
+        }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using cfg;
+using DG.Tweening;
 using Draconia.Controller;
 using Draconia.MyComponent;
 using Draconia.System;
@@ -10,6 +11,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Utility;
+using NotImplementedException = System.NotImplementedException;
 
 namespace Draconia.ViewController
 {
@@ -46,31 +48,42 @@ namespace Draconia.ViewController
             _properties = cardInfo.Properties;
             IsBasicCard = isBasic;
             
-            var desc = _cardInfo.Desc;
-            MatchCollection m = Regex.Matches(desc, "\\{(.*?)\\}");
-            List<string> commons = new List<string>();
-            foreach (Match match in m)
-            {
-                commons.Add(match.ToString().Trim('{').Trim('}'));
-            }
-            desc = desc.Replace("{", "<color=yellow>").Replace("}", "</color>");
-
+            var commons = ChangeDesc();
             CardName.text = _cardInfo.Name;
+            //CardImage.sprite = ResLoadSystem.LoadSprite();
+            //基础卡的标题是竖着
             if (IsBasicCard)
-                CardName.text = "<rotate90>" + _cardInfo.Name;
-            CardDesc.text = desc;
+                CardName.text = "<rotate=90>" + _cardInfo.Name;
+            
             CardCost.text = _cardInfo.Cost.ToString();
             //CardType.text = _cardInfo.SkillTargetType.ToString();
             CardPlayer = player;
             
             GetComponent<MyTooltipManager>().InitWithCommons(commons);
+
+            
+            //更改角色描述
+            List<string> ChangeDesc()
+            {
+                var desc = _cardInfo.Desc;
+                MatchCollection m = Regex.Matches(desc, "\\{(.*?)\\}");
+                List<string> commons = new List<string>();
+                foreach (Match match in m)
+                {
+                    commons.Add(match.ToString().Trim('{').Trim('}'));
+                }
+
+                desc = desc.Replace("{", "<color=yellow>").Replace("}", "</color>");
+                CardDesc.text = desc;
+                return commons;
+            }
         }
 
   
 
         private List<ICharacter> Target;
         private List<Enemy> _enemies;
-        private List<Player> _characters;
+        private List<Player> _allies;
       public void OnPointerEnter(PointerEventData eventData)
         {
             if (_cardState == CardState.Listen)
@@ -89,7 +102,7 @@ namespace Draconia.ViewController
                 return;
             }
 
-
+            PlayTimeBarAnimation(_cardInfo.Cost, CardPlayer);
             InitialPos = transform.localPosition;
             _rotation = transform.rotation;
             transform.eulerAngles = new Vector3(0, 0, 0);
@@ -99,7 +112,7 @@ namespace Draconia.ViewController
 
             Target = new List<ICharacter>();
             _enemies = new List<Enemy>();
-            _characters = new List<Player>();
+            _allies = new List<Player>();
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -109,38 +122,56 @@ namespace Draconia.ViewController
                 return;
             }
 
+            
+            index = transform.GetSiblingIndex();
             //Debug.LogFormat("{0},{1}",Input.mousePosition.x,Input.mousePosition.y);
 
             UnHover();
+            
             MoveToMiddle();
 
             List<RaycastResult> res = new List<RaycastResult>();
-            UIRoot.Instance.Canvas.GetComponent<GraphicRaycaster>().Raycast(eventData, res);
+            //UIRoot.Instance.Canvas.GetComponent<GraphicRaycaster>().Raycast(eventData, res);
+            UIKit.GetPanel<UIBattlePanel>().transform.GetChild(0).GetComponent<GraphicRaycaster>().Raycast(eventData,res);
             if (res.Count == 0)
             {
+                //Debug.Log("Cannot find raycast trarget");
                 return;
             }
 
+            ChooseTarget(res);
+
+            if (!InThePlayerArea())
+            {
+                UIKit.GetPanel<UIBattlePanel>().UnchosenAll();
+            }
+
+            // if(_cardState == CardState.Listen)
+            // 	Play();
+        }
+
+        private void ChooseTarget(List<RaycastResult> res)
+        {
             switch (_cardInfo.SkillTargetType)
             {
                 case SkillTarget.Self:
                     CardPlayer.Chosen();
                     Target.Add(CardPlayer);
-                    _characters.Add(CardPlayer);
+                    _allies.Add(CardPlayer);
                     break;
 
                 case SkillTarget.SingleAlly:
                     if (res[0].gameObject.CompareTag("PlayerRaycast"))
                     {
                         Player player = res[0].gameObject.GetComponentInParent<Player>();
-                        if (_characters.Count > 0 && player != _characters[0])
+                        if (_allies.Count > 0 && player != _allies[0])
                         {
-                            _characters[0].Unchosen();
-                            _characters.Clear();
+                            _allies[0].Unchosen();
+                            _allies.Clear();
                         }
 
                         player.Chosen();
-                        _characters.Add(player);
+                        _allies.Add(player);
                     }
 
                     break;
@@ -150,7 +181,7 @@ namespace Draconia.ViewController
                         character.Chosen();
                     }
 
-                    _characters.AddRange(BattleSystem.Characters);
+                    _allies.AddRange(BattleSystem.Characters);
                     break;
                 case SkillTarget.SingleEnemy:
                     if (res[0].gameObject.CompareTag("EnemyRaycast"))
@@ -182,28 +213,15 @@ namespace Draconia.ViewController
                         if (player.Distance(CardPlayer) == 1)
                         {
                             player.Chosen();
-                            _characters.Add(player);
+                            _allies.Add(player);
                         }
-                        
                     }
+
                     break;
                 //TODO For other Condition;
             }
-
-            if (!InThePlayerArea())
-            {
-                UIKit.GetPanel<UIBattlePanel>().UnchosenAll();
-            }
-
-            // if(_cardState == CardState.Listen)
-            // 	Play();
         }
 
-        private void MoveToMiddle()
-        {
-            transform.parent = _hands.DisplayArea;
-            transform.localPosition = Vector3.zero;
-        }
 
         public void OnEndDrag(PointerEventData eventData)
         {
@@ -211,6 +229,8 @@ namespace Draconia.ViewController
             {
                 return;
             }
+
+            StopTimeBarAnimation();
             
             UIKit.GetPanel<UIBattlePanel>().Bezier.Deactivate();
             if (InThePlayerArea() && IsRightTarget() && CardPlayer.ValidCard(this))
@@ -220,25 +240,51 @@ namespace Draconia.ViewController
             }
             else
             {
-                if (IsBasicCard)
-                {
-                    transform.parent = _hands.BasicCardArea.transform;
-                    transform.localPosition = InitialPos;
-                }
-                else
-                {
-                    transform.parent = _hands.transform;
-                    transform.localPosition = InitialPos;
-                    transform.SetSiblingIndex(index);
-                    transform.rotation = _rotation;
-                    _hands.RecView();
-                }
-                
+                transform.parent = _hands.PlayerHands.transform;
+                transform.localPosition = InitialPos;
+                transform.SetSiblingIndex(index);
+                transform.rotation = _rotation;
+                _hands.Refresh();
             }
 
             UIKit.GetPanel<UIBattlePanel>().UnchosenAll();
         }
 
+
+        private Sequence _sequence;
+        private float _pointerPosition;
+        /// <summary>
+        /// 演示使用这张牌在时间轴上会发生什么效果
+        /// </summary>
+        /// <param name="cardInfoCost"></param>
+        /// <param name="cardPlayer"></param>
+        /// <exception cref="NotImplementedException"></exception>
+        private void PlayTimeBarAnimation(int cardInfoCost, Player cardPlayer)
+        {
+            _pointerPosition = cardPlayer.MyPointer.PositionX;
+            _sequence = DOTween.Sequence();
+            _sequence.Append(cardPlayer.MyPointer.transform.DOLocalMoveX(_pointerPosition-TimeBar.ToBarPosition(cardInfoCost),.9f))
+                .Join(cardPlayer.MyPointer.PointerImage.DOFade(0,.9f))
+                .OnComplete(()=>
+                {
+                    cardPlayer.MyPointer.PositionX = _pointerPosition;
+                    cardPlayer.MyPointer.PointerImage.ChangeAlpha(1);
+                })
+                .SetLoops(-1);
+        }
+        
+        private void StopTimeBarAnimation()
+        {
+            CardPlayer.MyPointer.PositionX = _pointerPosition;
+            CardPlayer.MyPointer.PointerImage.ChangeAlpha(1);
+            _sequence.Pause();
+        }
+
+        private void MoveToMiddle()
+        {
+            transform.parent = _hands.DisplayArea;
+            transform.localPosition = Vector3.zero;
+        }
 
 
         /// <summary>
@@ -251,7 +297,7 @@ namespace Draconia.ViewController
             //     Destroy(this.gameObject,0.1f);
             //     return;
             // }
-            transform.parent = CardPlayer.CardBin;
+            transform.SetParent(CardPlayer.CardBin);
             _hands.Refresh();
         }
 
@@ -275,63 +321,61 @@ namespace Draconia.ViewController
 
         public void UnHover()
         {
-            if (IsBasicCard)
-            {
-                transform.parent = _hands.BasicCardArea.transform;
-                IsChosen = false;
-                transform.localScale = _localScale;
-                transform.localPosition = _localPos;
-            }
-            else
-            {
-                transform.parent = _hands.transform;
+
+                transform.parent = _hands.PlayerHands.transform;
                 transform.localScale = _localScale;
                 transform.localPosition = _localPos;
                 transform.SetSiblingIndex(index);
                 IsChosen = false;
                 _hands.RecView();
-            }
-
-            
-            //ChosenEffect.gameObject.SetActive(false);
-            
-            
+                //ChosenEffect.gameObject.SetActive(false);
         }
 
         //TODO For Example Use only
         public void Play()
         {
-            switch (_cardInfo.Id)
+            int id = _cardInfo.Id;
+            if (id > 200)
+            {
+                id -= 100;
+            }
+            switch (id)
             {
                 case 100:
-                    BattleSystem.Attack(CardPlayer, _enemies[0],1f, AttackType.Physical);
+                    BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 2);
                     break;
                 case 101:
-                    CardPlayer.Move(_characters[0]);
+                    CardPlayer.Move(_allies[0]);
                     break;
                 case 102:
-                    CardPlayer.Defense();
+                    CardPlayer.Defense(2);
                     break;
                 case 103:
-                    BattleSystem.Attack(CardPlayer, _enemies[0],.9f, AttackType.Physical);
-                    _enemies[0].Move(1);
-                    _enemies[0].AddBuff("重心不稳",1);
+                    BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 3);
+                    if (_enemies[0].IsOnDangerArea())
+                    {
+                        BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 3);
+                    }
                     break;
                 case 104:
                     CardPlayer.AddBuff("必定闪避", 1);
                     break;
                 case 105:
-                    BattleSystem.Attack(CardPlayer, _enemies[0],1.3f, AttackType.Physical);
-                    CardPlayer.AddBuff("清风", 1);
                     break;
                 case 106:
-                    _characters[0].Refresh();
-                    CardPlayer.AddBuff("加速", 1);
                     break;
                 case 107:
-                    BattleSystem.Attack(CardPlayer, _enemies[0],1.8f, AttackType.Physical);
-                    Card card = BattleSystem.DrawRandom(CardPlayer, 1)[0];
-                    //card._properties.Add(EnumCardProperty.Virtual);
+                    _allies[0].MoveInTime(2);
+                    break;
+                case 108:
+                    BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 3);
+                    _enemies[0].MoveInTime(2);
+                    break;
+                case 109:
+                    BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 5);
+                    break;
+                case 110:
+                    CardPlayer.Defense(3);
                     break;
             }
             Discard();
@@ -355,7 +399,7 @@ namespace Draconia.ViewController
         /// <returns></returns>
         private bool IsRightTarget()
         {
-            if (_characters.Count == 0 && _enemies.Count == 0)
+            if (_allies.Count == 0 && _enemies.Count == 0)
             {
                 return false;
             }

@@ -49,6 +49,7 @@ namespace Draconia.UI
 				enemy.Init(enemyInfo);
 				Enemies.Add(enemy);
 			}
+
 			SettingBtn.onClick.AddListener(() =>
 			{
 				UIKit.OpenPanel<UISettingPanel>();
@@ -56,6 +57,20 @@ namespace Draconia.UI
 			EndTurnButton.onClick.AddListener(() =>
 			{
 				this.GetSystem<BattleSystem>().PlayerTurnEnd();
+			});
+			ItemToggle.onValueChanged.AddListener(e =>
+			{
+				if (e)
+				{
+					Hands.DisplayItem();
+				}
+			});
+			HandsToggle.onValueChanged.AddListener(e =>
+			{
+				if (e)
+				{
+					Hands.DisplayHands();
+				}
 			});
 			
 			

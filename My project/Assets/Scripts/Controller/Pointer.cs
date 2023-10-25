@@ -63,16 +63,7 @@ namespace Draconia.Controller
         /// </summary>
         public void Refresh()
         {
-            if (_isPlayer)
-            {
-                Vector3 pos = transform.position;
-                transform.localPosition = new Vector3(_timeBar.PlayerStartPoint.position.x, pos.y, pos.z);
-            }
-            else
-            {
-                Vector3 pos = transform.position;
-                transform.localPosition = new Vector3(_timeBar.EnemyStartPoint.position.x, pos.y, pos.z);
-            }
+
         }
 
         public void Move(int i)
@@ -83,6 +74,37 @@ namespace Draconia.Controller
         public void Execute()
         {
             
+        }
+        
+        /// <summary>
+        /// 移动到正确的位置 不会超出
+        /// </summary>
+        public void Regulate()
+        {
+            if (_isPlayer)
+            {
+                if (PositionX > 0)
+                {
+                    PositionX = 0;
+                }
+
+                if (PositionX < -TimeBar.TimeBarEdge)
+                {
+                    PositionX = -TimeBar.TimeBarEdge;
+                }
+            }
+            else
+            {
+                if (PositionX < 0)
+                {
+                    PositionX = 0;
+                }
+
+                if (PositionX > TimeBar.TimeBarEdge)
+                {
+                    PositionX = TimeBar.TimeBarEdge;
+                }
+            }
         }
 
         public void FixedUpdate()

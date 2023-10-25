@@ -1402,6 +1402,7 @@ GameObject:
   - component: {fileID: 3820759432760347027}
   - component: {fileID: 2146311912368821088}
   - component: {fileID: 6440552536590915926}
+  - component: {fileID: 4693330905015731199}
   m_Layer: 5
   m_Name: Enemy
   m_TagString: boot
@@ -1494,15 +1495,11 @@ MonoBehaviour:
   PrefabFolder: Assets/Art/Prefab
   MyPointer: {fileID: 0}
   _enemyAnimator: {fileID: 3820759432760347027}
-  EnergyBulbPrefab: {fileID: 5035428339445653707}
   EnemyAnimation: {fileID: 2146311912368821088}
   Intention: {fileID: 4234989759205369784}
   EnemyImage: {fileID: 6140284848426026121}
   EnemyBar: {fileID: 2094888950406806047}
-  HPBar: {fileID: 2331961816703176132}
-  EnergyBar: {fileID: 487888099294718391}
   ChooseBracelet: {fileID: 5572216220163847296}
-  IntentionImage: {fileID: 1364757385795752170}
 --- !u!114 &3820759432760347027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1546,6 +1543,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuffPrefab: {fileID: 4263197387314950052}
   BuffBar: {fileID: 3148813854513907057}
+--- !u!223 &4693330905015731199
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8908608596797766618}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1001 &3915435300893349258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1793,14 +1811,3 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 927616686962157384, guid: 9b092627a9af03845b7c8b8f198a46ff, type: 3}
   m_PrefabInstance: {fileID: 5699026166240860212}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5035428339445653707 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 789939177497475327, guid: 9b092627a9af03845b7c8b8f198a46ff, type: 3}
-  m_PrefabInstance: {fileID: 5699026166240860212}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

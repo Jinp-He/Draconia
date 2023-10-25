@@ -31,7 +31,7 @@ namespace Draconia.System
             return mResLoader.LoadSync<T>(objectName);
         }
 
-        public Sprite LoadSprite(string objectName)
+        public Sprite LoadSprite(string objectName, string defaultName = "")
         {
             if (_dictionaryPool.ContainsKey(objectName))
             {

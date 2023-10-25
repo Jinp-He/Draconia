@@ -47,7 +47,7 @@ namespace Draconia.ViewController
                 case ActionType.Defense:
                     break;
                 case ActionType.Move:
-                    _enemy.BattleSystem.Move(_enemy, -1);
+                    _enemy.Move( -1);
                     break;
                 case ActionType.Ult:
                     UseUlt();

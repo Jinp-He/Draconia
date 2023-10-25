@@ -597,7 +597,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72, y: -118}
+  m_AnchoredPosition: {x: -72, y: -20}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8831814468458634326
@@ -628,6 +628,7 @@ GameObject:
   - component: {fileID: 1604945116834503809}
   - component: {fileID: 95727704247056075}
   - component: {fileID: 1855125534385301792}
+  - component: {fileID: 1684501711463673336}
   m_Layer: 5
   m_Name: CharacterImage
   m_TagString: PlayerRaycast
@@ -709,6 +710,32 @@ MonoBehaviour:
   CustomComponentName: CharacterImage
   CustomComment: 
   mComponentName: UnityEngine.UI.Image
+--- !u!61 &1684501711463673336
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5567052163751846172}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &5683032663712405081
 GameObject:
   m_ObjectHideFlags: 0

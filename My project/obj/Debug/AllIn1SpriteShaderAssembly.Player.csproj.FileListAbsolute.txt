@@ -1,0 +1,4 @@
+C:\Users\lofnh\Documents\GitHub\Draconia\My project\obj\Debug\AllIn1SpriteShaderAssembly.Player.csproj.AssemblyReference.cache
+C:\Users\lofnh\Documents\GitHub\Draconia\My project\obj\Debug\AllIn1SpriteShaderAssembly.Player.csproj.CoreCompileInputs.cache
+C:\Users\lofnh\Documents\GitHub\Draconia\My project\obj\Debug\AllIn1SpriteShaderAssembly.dll
+C:\Users\lofnh\Documents\GitHub\Draconia\My project\obj\Debug\AllIn1SpriteShaderAssembly.pdb

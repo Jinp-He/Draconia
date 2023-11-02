@@ -18,6 +18,8 @@ namespace Draconia.ViewController
 			HPBarSlider.value = (float)_Hp / _maxHp;
 			HPText.text = _Hp + "/" + _maxHp;
 			HPText.gameObject.SetActive(true);
+			ArmorImage.gameObject.SetActive(false);
+			ArmorText.text = "0";
 		}
 
 		public void SetHp(int t)
@@ -25,6 +27,19 @@ namespace Draconia.ViewController
 			_Hp = t;
 			HPBarSlider.value = (float)_Hp / _maxHp;
 			HPText.text = _Hp + "/" + _maxHp;
+		}
+
+		public void SetArmor(int t)
+		{
+			if (t == 0)
+			{
+				ArmorImage.gameObject.SetActive(false);
+			}
+			else
+			{
+				ArmorImage.gameObject.SetActive(true);
+				ArmorText.text = t.ToString();
+			}
 		}
 
 		public void OnPointerEnter(PointerEventData eventData)

@@ -477,6 +477,7 @@
 "Assets/Scripts/Game/Buff/BuffManager.cs"
 "Assets/Scripts/Game/Card.cs"
 "Assets/Scripts/Game/Card.Designer.cs"
+"Assets/Scripts/Game/CharacterAnimator.cs"
 "Assets/Scripts/Game/Enemy.cs"
 "Assets/Scripts/Game/Enemy.Designer.cs"
 "Assets/Scripts/Game/EnemyAnimation.cs"

@@ -8,8 +8,6 @@ namespace Draconia.ViewController
 
 		public UnityEngine.UI.Image CharacterImage;
 
-		public UnityEngine.UI.Slider HPBar;
-
 		public RectTransform EnergyBar;
 
 		public TMPro.TextMeshProUGUI RestCardNum;

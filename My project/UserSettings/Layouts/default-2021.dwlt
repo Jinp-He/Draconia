@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 8096}
   vertical: 0
-  controlID: 113
+  controlID: 96
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -593,7 +593,7 @@ MonoBehaviour:
       layout: 4
     m_OverlaysVisible: 1
   m_WindowGUID: 3eb6ba1d4c38d1548bb9454814b5edfa
-  m_Gizmos: 1
+  m_Gizmos: 0
   m_OverrideSceneCullingMask: 0
   m_SceneIsLit: 0
   m_SceneLighting: 1
@@ -602,9 +602,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 341.1409, y: 121.05146, z: -4.6488166}
+    m_Target: {x: 431.0866, y: 283.4902, z: -0.74263614}
     speed: 2
-    m_Value: {x: -0.59966433, y: 1.4120119, z: -0.1206685}
+    m_Value: {x: 431.0866, y: 283.4902, z: -0.74263614}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -655,9 +655,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 535.59247
+    m_Target: 131.04602
     speed: 2
-    m_Value: 9.622406
+    m_Value: 131.04602
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -779,23 +779,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b8490100
-      m_LastClickedID: 84408
-      m_ExpandedIDs: bac2f9ff7ccbf9ff5a48010078480100de480100f8480100fc48010084490100f8490100
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 3c31fbff4c31fbff4846010052460100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Image
-        m_OriginalName: Image
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 60500
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 7}
       m_SearchString: 
@@ -835,7 +835,7 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_SearchFilter:
-    m_NameFilter: uiba
+    m_NameFilter: hpba
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -849,7 +849,7 @@ MonoBehaviour:
     m_Folders:
     - Assets/Resources/Art/UIElement
     m_Globs: []
-    m_OriginalText: uiba
+    m_OriginalText: hpba
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
@@ -860,9 +860,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 60}
-    m_SelectedIDs: b8710000
-    m_LastClickedID: 29112
-    m_ExpandedIDs: 000000007e71000080710000827100008471000086710000887100008a7100008c7100008e7100009071000092710000f071000000ca9a3bffffff7f
+    m_SelectedIDs: bc710000
+    m_LastClickedID: 29116
+    m_ExpandedIDs: 00000000827100008471000086710000887100008a7100008c7100008e7100009071000092710000947100009671000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -890,7 +890,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007e71000080710000827100008471000086710000887100008a7100008c7100008e7100009071000092710000
+    m_ExpandedIDs: 00000000827100008471000086710000887100008a7100008c7100008e71000090710000927100009471000096710000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

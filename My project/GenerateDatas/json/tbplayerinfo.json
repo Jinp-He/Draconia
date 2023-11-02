@@ -17,9 +17,9 @@
     "MagicResist": 0,
     "InitialCards": [
       103,
-      104,
-      105,
-      106,
+      108,
+      109,
+      110,
       107
     ],
     "NormalAttackCard": [
@@ -28,10 +28,10 @@
       102
     ],
     "Passives": 0,
-    "HitDecreaseRate": 0.9,
+    "HitDecreaseRate": 1,
     "Alias": "Zhouzhou",
     "DrawCardNum": 3,
-    "BackNum": 4
+    "BackNum": 3
   },
   {
     "id": 10002,

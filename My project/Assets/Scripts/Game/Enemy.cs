@@ -18,7 +18,7 @@ using Sequence = DG.Tweening.Sequence;
 
 namespace Draconia.ViewController
 {
-	public partial class Enemy : MyViewController, ICharacter,IPointerEnterHandler, IPointerExitHandler
+	public partial class Enemy : Character,IPointerEnterHandler, IPointerExitHandler
 	{
 		public EnemyInfo EnemyInfo;
 		private int _energy;
@@ -57,7 +57,6 @@ namespace Draconia.ViewController
 		//public SpriteAtlas EnemyAtlas;
 		public EnemyAnimator _enemyAnimator;
 		private EnemyStrategy _enemyStrategy;
-		private int CurrHP;
 		public EnemyAnimation EnemyAnimation;
 
 
@@ -65,6 +64,7 @@ namespace Draconia.ViewController
 		{
 			EnemyInfo = enemyInfo;
 			_enemyStrategy = EnemyStrategy.GetEnemyStrategy(this);
+			HpBar.Init(enemyInfo.InitialHP,enemyInfo.InitialHP);
 			EnemyBar.Init(enemyInfo);
 			EnemyAnimation = GetComponent<EnemyAnimation>();
 			EnemyAnimation.Init(this);
@@ -76,9 +76,9 @@ namespace Draconia.ViewController
 			_enemyAnimator.Init(this);
 		}
 
-		public void EnemyTurnStart()  
+		public override void OnTurnStart()  
 		{
-			
+			base.OnTurnStart();
 			//调整位置
 			BattleSystem.TimeBar.MoveAbsoluteTimePosition(MyPointer, 4);
 			Debug.Log(MyPointer.PositionX);
@@ -102,16 +102,11 @@ namespace Draconia.ViewController
 			EnemyAnimation.OnPointerExit(eventData);
 		}
 		
-		public void IsHit(int damage)
+		public override void IsHit(int damage)
 		{
 			//CharacterImage.sprite = CharacterAtlas.GetSprite("OnHit");
 			GetComponent<EnemyAnimator>().HitText(damage.ToString());
-			CurrHP -= damage;
-			if (CurrHP <= 0)
-			{
-				Die();
-			}
-			EnemyBar.HPBar.GetComponent<HPBar>().SetHp(CurrHP);
+			base.IsHit(damage);
 			_enemyAnimator.IsHitAnimation();
 
 		}
@@ -144,7 +139,7 @@ namespace Draconia.ViewController
 		}
 
 
-		public void Die()
+		public override void Die()
 		{
 			BattleSystem.Enemies.Remove(this);
 			Destroy(this);

@@ -5,9 +5,6 @@ namespace Draconia.ViewController
 {
 	public partial class EnemyBar
 	{
-
-		public HPBar HPBar;
-
 		public RectTransform EnergyBar;
 
 	}

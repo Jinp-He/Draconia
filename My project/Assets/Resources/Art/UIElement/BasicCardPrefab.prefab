@@ -946,6 +946,7 @@ MonoBehaviour:
   PrefabFolder: Assets/Art/Prefab
   CardDragger: {fileID: 0}
   IsChosen: 0
+  IsBasicCard: 0
   ChosenEffect: {fileID: 5714573926639879708}
   UseEffect: {fileID: 660141997404181129}
   CardName: {fileID: 4392160589594528052}

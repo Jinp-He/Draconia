@@ -81,7 +81,7 @@ namespace Draconia.ViewController
 
   
 
-        private List<ICharacter> Target;
+        private List<Character> Target;
         private List<Enemy> _enemies;
         private List<Player> _allies;
       public void OnPointerEnter(PointerEventData eventData)
@@ -110,7 +110,7 @@ namespace Draconia.ViewController
             UIKit.GetPanel<UIBattlePanel>().Bezier.GetComponent<RectTransform>().position =
                 transform.GetComponent<RectTransform>().position;
 
-            Target = new List<ICharacter>();
+            Target = new List<Character>();
             _enemies = new List<Enemy>();
             _allies = new List<Player>();
         }
@@ -307,13 +307,13 @@ namespace Draconia.ViewController
             var transform1 = transform;
             _localScale = transform1.localScale;
             _localPos = transform1.localPosition;
-            transform1.localScale = new Vector3(.8f, .8f, 1f);
+            transform1.localScale = new Vector3(.6f, .6f, 1f);
             
             
             //ChosenEffect.gameObject.SetActive(true);
             index = transform.GetSiblingIndex();
-            transform1.parent = _hands.DisplayArea;
-            transform1.localPosition = new Vector3(transform1.localPosition.x, 0, 0);
+            //transform1.parent = _hands.DisplayArea;
+            //transform1.localPosition = new Vector3(0, 50f, 0);
             transform1.SetAsLastSibling();
             IsChosen = true;
             _hands.RecView();

@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Draconia.ViewController
 {
-    public class PlayerAnimator : MonoBehaviour
+    public class PlayerAnimator : CharacterAnimator
     {
         public TextMeshProUGUI HitTextPrefab;
         

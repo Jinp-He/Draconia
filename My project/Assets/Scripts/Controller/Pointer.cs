@@ -160,7 +160,7 @@ namespace Draconia.Controller
             {
                 if (IsTouch(transform.position.x,_timeBar.EnemyActionPoint.position.x))
                 {
-                    _mEnemy.EnemyTurnStart();
+                    _mEnemy.OnTurnStart();
                 }
             }
         }

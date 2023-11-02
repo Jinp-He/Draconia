@@ -615,6 +615,8 @@ MonoBehaviour:
   ScriptsFolder: Assets/Scripts/Game
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
+  HpBar: {fileID: 254748906218457916}
+  CurrHP: 0
   MyPointer: {fileID: 0}
   _enemyAnimator: {fileID: 3820759432760347027}
   EnemyAnimation: {fileID: 2146311912368821088}
@@ -1032,6 +1034,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0003ff366185fbc48a0026f493e3c296, type: 3}
+--- !u!114 &254748906218457916 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4114536903312070070, guid: 0003ff366185fbc48a0026f493e3c296, type: 3}
+  m_PrefabInstance: {fileID: 4220094145935761034}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74400ddbaa0ce6244a441a7beed780de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4523668238821719271 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 312865002884932205, guid: 0003ff366185fbc48a0026f493e3c296, type: 3}

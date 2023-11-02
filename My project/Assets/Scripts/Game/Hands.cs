@@ -201,18 +201,39 @@ namespace Draconia.ViewController
             //     }
             //     i++;
             // }
+            bool nextChosen = false;
+            bool isPrevBasic = false;
+            //TODO: 更改卡牌显示逻辑，选中之后会更显眼。
             foreach (var card in Cards)
             {
                 if (card.IsBasicCard)
                     pos += basicDist;
                 else 
                     pos += dist;
-                if (card.IsChosen)
+                if (nextChosen)
                 {
-                    pos += 20f;
+                    //如果之前的手牌被选中了
+                    nextChosen = false;
+                    if (isPrevBasic)
+                    {
+                        pos += 10f;
+                    }
+                    else
+                    {
+                        pos += 95f;
+                    }
                 }
                 Transform tf = card.transform;
                 tf.localPosition = new Vector3(pos, -50, 0);
+                if (card.IsChosen)
+                {
+                    nextChosen = true;
+                    isPrevBasic = card.IsBasicCard;
+                    tf.localPosition = new Vector3(pos, 0, 0);
+                }
+
+                
+                
                 i++;
             }
         }

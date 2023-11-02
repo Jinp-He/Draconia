@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using cfg;
 using Draconia.Controller;
 using Draconia.UI;
@@ -13,30 +14,83 @@ using DG.Tweening;
 using Draconia.Game.Buff;
 using Draconia.MyComponent;
 using Draconia.System;
+using Draconia.ViewController;
 using Draconia.ViewController.Event;
 using UnityEngine.Rendering;
 using NotImplementedException = System.NotImplementedException;
 
 namespace Draconia.Controller
 {
-	public interface ICharacter
+	public class Character : MyViewController
 	{
+		public HPBar HpBar;
+		public int CurrHP;
+		private int _armor;
+		public int Armor
+		{
+			get => _armor;
+			set => _armor = value;
+		}
+
 		public virtual void Init()
 		{
             
 		}
 
-		public abstract bool IsOnDangerArea();
+		public virtual bool IsOnDangerArea()
+		{
+			return true;
+		}
 
 
-		public abstract void MoveInTime(int i);
+		public virtual void MoveInTime(int i)
+		{
+			
+		}
+
+		public virtual void IsHit(int damage)
+		{
+			if (Armor >= damage)
+			{
+				Armor -= damage;
+				HpBar.SetArmor(Armor);
+			}
+			else
+			{
+				damage -= Armor;
+				HpBar.SetArmor(Armor);
+				CurrHP -= damage;
+				HpBar.SetHp(CurrHP);
+			}
+			if (CurrHP <= 0)
+			{
+				Die();
+			}
+		}
+		
+		public void Defense(int value)
+		{
+			Armor += value;
+			HpBar.SetArmor(value);
+		}
+		
+		public virtual void OnTurnStart()
+		{
+			Armor = 0;
+			HpBar.SetArmor(Armor);
+		}
+
+		public virtual void Die()
+		{
+			
+		}
 
 	}
 }
 
 namespace Draconia.ViewController
 {
-	public partial class Player : MyViewController, ICanRegisterEvent, ICharacter, IPointerEnterHandler, IPointerExitHandler
+	public partial class Player : Character, ICanRegisterEvent,  IPointerEnterHandler, IPointerExitHandler
 	{
 		public SpriteAtlas CharacterAtlas;
 		public Pointer MyPointer;
@@ -58,18 +112,11 @@ namespace Draconia.ViewController
 		public int DrawCard => PlayerInfo.DrawCardNum + _drawCardModifier;
 		private Action NextTurn;
 
-		private int _armor;
-		public int Armor
-		{
-			get => _armor;
-			set => _armor = value;
-		}
 		
 		
 		public int Position => transform.GetSiblingIndex();
 		private string PlayerName;
 		public PlayerAnimator PlayerAnimator;
-		private int CurrHP;
 		public void Init(PlayerInfo playerInfo)
 		{
 			
@@ -80,7 +127,7 @@ namespace Draconia.ViewController
 			CharacterImage.SetNativeSize();
 			PlayerName = playerInfo.Name;
 			CurrHP = playerInfo.InitialHP;
-			HPBar.GetComponent<HPBar>().Init(playerInfo.InitialHP,playerInfo.InitialHP);
+			HpBar.Init(playerInfo.InitialHP,playerInfo.InitialHP);
 			MyPointer = UIKit.GetPanel<UIBattlePanel>().TimeBar.AddCharacter(this);
 			Cards = new List<CardInfo>();
 			//初始牌库
@@ -115,20 +162,15 @@ namespace Draconia.ViewController
 			Cards.AddRange(PlayerInfo.InitialCards_Ref);
 		}
 
-		public void IsHit(int damage)
+		public override void IsHit(int damage)
 		{
 			//CharacterImage.sprite = CharacterAtlas.GetSprite("OnHit");
-			CurrHP -= damage;
-			if (CurrHP <= 0)
-			{
-				Die();
-			}
-			HPBar.GetComponent<HPBar>().SetHp(CurrHP);
+			base.IsHit(damage);
 			PlayerAnimator.IsHit();
 
 		}
 
-		public void Die()
+		public override void Die()
 		{
 			BattleSystem.GameOver();
 		}
@@ -179,11 +221,7 @@ namespace Draconia.ViewController
 			List<Player> characters = BattleSystem.Characters;
 			return Math.Abs(player.Position - Position);
 		}
-
-		public void Defense(int value)
-		{
-			Armor += value;
-		}
+		
 
 		//判断是否可以释放该卡
 		public bool ValidCard(Card card)
@@ -208,8 +246,9 @@ namespace Draconia.ViewController
 		}
 
 
-		public void OnTurnStart()
+		public override void OnTurnStart()
 		{
+			base.OnTurnStart();
 			UIKit.GetPanel<UIBattlePanel>().TimeBar.MoveAbsoluteTimePosition(MyPointer, BackNum);
 			PlayerAnimator.IsChosen();
 		}

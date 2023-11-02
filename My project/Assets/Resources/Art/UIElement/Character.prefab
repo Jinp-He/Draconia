@@ -430,6 +430,7 @@ MonoBehaviour:
   ScriptsFolder: Assets/Scripts/Game
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
+  HpBar: {fileID: 3560528407222337041}
   CharacterAtlas: {fileID: 4343727234628468602, guid: f3a346eb568b54841bb6f6a300f0d048, type: 2}
   MyPointer: {fileID: 0}
   Deck: []
@@ -1732,6 +1733,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3560528407222337041 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2097332693072909483, guid: 1d2e1ef665d04e04aa3d635917c671e9, type: 3}
+  m_PrefabInstance: {fileID: 3202817174242601658}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74400ddbaa0ce6244a441a7beed780de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &7076671801468794505 stripped

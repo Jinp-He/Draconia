@@ -431,13 +431,14 @@ MonoBehaviour:
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
   HpBar: {fileID: 3560528407222337041}
+  CurrHP: 0
   CharacterAtlas: {fileID: 4343727234628468602, guid: f3a346eb568b54841bb6f6a300f0d048, type: 2}
+  CharacterImage: {fileID: 95727704247056075}
+  CharacterAnimator: {fileID: 3934012111695030347}
   MyPointer: {fileID: 0}
   Deck: []
   Bin: []
   PlayerAnimator: {fileID: 3934012111695030347}
-  CharacterImage: {fileID: 95727704247056075}
-  HPBar: {fileID: 2770501193780015874}
   EnergyBar: {fileID: 5955985199982484469}
   RestCardNum: {fileID: 2626879283856591081}
   ChooseBracelet: {fileID: 4643453363303231752}
@@ -455,7 +456,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ee23a99c104ed4a194912b3284c8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Namespace: Draconia.ViewController
+  ScriptName: Character
+  ScriptsFolder: Assets/Scripts/Game
+  GeneratePrefab: 0
+  PrefabFolder: Assets/Art/Prefab
   HitTextPrefab: {fileID: 5094355460707625817}
+  CharacterImage: {fileID: 0}
+  HitTextPrefab: {fileID: 5094355460707625817}
+  CharacterAtlas: {fileID: 0}
 --- !u!114 &6813661187802785325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1724,17 +1733,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d2e1ef665d04e04aa3d635917c671e9, type: 3}
---- !u!114 &2770501193780015874 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 720713826517752248, guid: 1d2e1ef665d04e04aa3d635917c671e9, type: 3}
-  m_PrefabInstance: {fileID: 3202817174242601658}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3560528407222337041 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2097332693072909483, guid: 1d2e1ef665d04e04aa3d635917c671e9, type: 3}

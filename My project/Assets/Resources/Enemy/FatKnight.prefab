@@ -617,6 +617,9 @@ MonoBehaviour:
   PrefabFolder: Assets/Art/Prefab
   HpBar: {fileID: 254748906218457916}
   CurrHP: 0
+  CharacterAtlas: {fileID: 0}
+  CharacterImage: {fileID: 0}
+  CharacterAnimator: {fileID: 3820759432760347027}
   MyPointer: {fileID: 0}
   _enemyAnimator: {fileID: 3820759432760347027}
   EnemyAnimation: {fileID: 2146311912368821088}
@@ -636,11 +639,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c737cf33ce9b4394abbc63fe1366c6da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Namespace: Draconia.ViewController
+  ScriptName: FatKnight
+  ScriptsFolder: Assets/Scripts/Game
+  GeneratePrefab: 0
+  PrefabFolder: Assets/Art/Prefab
   HitTextPrefab: {fileID: 6757110241999187396}
-  IsHitSprite: {fileID: 6213653491814447561, guid: ef4e601a6ce2a344ba13d9733481e047, type: 3}
-  IdleSprite: {fileID: 668113233927112930, guid: ef4e601a6ce2a344ba13d9733481e047, type: 3}
-  ChosenSprite: {fileID: -6298515830966106145, guid: ef4e601a6ce2a344ba13d9733481e047, type: 3}
-  PointerSprite: {fileID: -1132529145639360275, guid: ef4e601a6ce2a344ba13d9733481e047, type: 3}
+  CharacterImage: {fileID: 0}
+  HitTextPrefab: {fileID: 6757110241999187396}
+  IsHitSprite: {fileID: 4746496336179205166, guid: e84c474fc68e8814497d4f37c8909847, type: 3}
+  IdleSprite: {fileID: -3544379724933196057, guid: e84c474fc68e8814497d4f37c8909847, type: 3}
+  ChosenSprite: {fileID: 4746496336179205166, guid: e84c474fc68e8814497d4f37c8909847, type: 3}
+  PointerSprite: {fileID: 4746496336179205166, guid: e84c474fc68e8814497d4f37c8909847, type: 3}
 --- !u!114 &2146311912368821088
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2620,7 +2620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerPrefab: {fileID: 4822245438395855891, guid: e3a9723dbb3d3f1458288207e54a62cb, type: 3}
-  EnemyPrefab: {fileID: 6778931705989726991, guid: 02adf43283d5e5c448dafa1c9423fa11, type: 3}
+  EnemyPrefab: {fileID: 6778931705989726991, guid: caa396c57e514ea499917020bff8478f, type: 3}
   Characters: []
   Enemies: []
   ChosenEnemy: {fileID: 0}

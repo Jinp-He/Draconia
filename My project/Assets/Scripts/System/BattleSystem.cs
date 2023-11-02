@@ -167,7 +167,7 @@ namespace Draconia.System
             {
                 dmg = (int)(dmg * enemy.EnemyInfo.CriticalDamage);
             }
-            player.IsHit(dmg);
+            player.IsHit(dmg,attackType);
         }
 
         public void Attack(Player player, Enemy enemy, AttackType attackType, int attackPower)
@@ -194,7 +194,7 @@ namespace Draconia.System
             {
                 dmg = (int)(dmg * player.PlayerInfo.CriticalDamage);
             }
-            enemy.IsHit(dmg);
+            enemy.IsHit(dmg, attackType);
         }
         
         public void Restart()

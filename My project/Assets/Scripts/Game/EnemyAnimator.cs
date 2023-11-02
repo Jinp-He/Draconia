@@ -8,10 +8,9 @@ using UnityEngine;
 
 namespace Draconia.ViewController
 {
-    public class EnemyAnimator : MonoBehaviour
+    public class EnemyAnimator : CharacterAnimator
     {
-        public TextMeshProUGUI HitTextPrefab;
-        
+
         private string _enemyName;
         private Enemy _enemy;
         public Sprite IsHitSprite;
@@ -21,8 +20,9 @@ namespace Draconia.ViewController
         public void Init(Enemy enemy)
         {
             _enemy = enemy;
-            _enemy.EnemyImage.sprite = IdleSprite;
-            _enemy.EnemyImage.SetNativeSize();
+            _isHitSprite = _enemy.CharacterAtlas.GetSprite("OnHit");
+            _idleSprite = _enemy.CharacterAtlas.GetSprite("Idle");
+            CharacterImage = _enemy.CharacterImage;
         }
 
         public void IsHitAnimation()
@@ -53,15 +53,7 @@ namespace Draconia.ViewController
                 .Play();
         }
 
-        public void IsChose()
-        {
-            
-        }
 
-        public void EndChose()
-        {
-            
-        }
         
         
     }

@@ -62,15 +62,18 @@ namespace Draconia.ViewController
 
 		public void Init(EnemyInfo enemyInfo)
 		{
+			//base.Init();
 			EnemyInfo = enemyInfo;
 			_enemyStrategy = EnemyStrategy.GetEnemyStrategy(this);
+
+			CharacterAtlas = ResLoadSystem.LoadSync<SpriteAtlas>(enemyInfo.Alias);
+			CharacterImage.sprite = CharacterAtlas.GetSprite("Idle");
+			CharacterImage.SetNativeSize();
+			
 			HpBar.Init(enemyInfo.InitialHP,enemyInfo.InitialHP);
 			EnemyBar.Init(enemyInfo);
 			EnemyAnimation = GetComponent<EnemyAnimation>();
 			EnemyAnimation.Init(this);
-			//EnemyImage.sprite = EnemyAtlas.GetSprite("dog01_Idle");
-			EnemyImage.SetNativeSize();
-			//HPBar.Init(EnemyInfo.InitialHP,EnemyInfo.InitialHP);
 			CurrHP = EnemyInfo.InitialHP;
 			MyPointer = UIKit.GetPanel<UIBattlePanel>().TimeBar.AddEnemy(this);
 			_enemyAnimator.Init(this);
@@ -102,12 +105,12 @@ namespace Draconia.ViewController
 			EnemyAnimation.OnPointerExit(eventData);
 		}
 		
-		public override void IsHit(int damage)
+		public override void IsHit(int damage, AttackType attackType)
 		{
 			//CharacterImage.sprite = CharacterAtlas.GetSprite("OnHit");
 			GetComponent<EnemyAnimator>().HitText(damage.ToString());
-			base.IsHit(damage);
-			_enemyAnimator.IsHitAnimation();
+			base.IsHit(damage, attackType);
+			//_enemyAnimator.IsHit();
 
 		}
 

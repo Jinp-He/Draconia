@@ -17,6 +17,7 @@ using Draconia.System;
 using Draconia.ViewController;
 using Draconia.ViewController.Event;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 using NotImplementedException = System.NotImplementedException;
 
 namespace Draconia.Controller
@@ -26,6 +27,9 @@ namespace Draconia.Controller
 		public HPBar HpBar;
 		public int CurrHP;
 		private int _armor;
+		public SpriteAtlas CharacterAtlas;
+		public Image CharacterImage;
+		public CharacterAnimator CharacterAnimator;
 		public int Armor
 		{
 			get => _armor;
@@ -48,24 +52,29 @@ namespace Draconia.Controller
 			
 		}
 
-		public virtual void IsHit(int damage)
+		public virtual void IsHit(int damage,AttackType attackType)
 		{
 			if (Armor >= damage)
 			{
 				Armor -= damage;
 				HpBar.SetArmor(Armor);
+				CharacterAnimator.IsHit(0, attackType, damage);
 			}
 			else
 			{
+				int tempArmor = Armor;
 				damage -= Armor;
 				HpBar.SetArmor(Armor);
 				CurrHP -= damage;
 				HpBar.SetHp(CurrHP);
+				CharacterAnimator.IsHit(damage, attackType, tempArmor);
 			}
+			
 			if (CurrHP <= 0)
 			{
 				Die();
 			}
+			
 		}
 		
 		public void Defense(int value)
@@ -92,7 +101,7 @@ namespace Draconia.ViewController
 {
 	public partial class Player : Character, ICanRegisterEvent,  IPointerEnterHandler, IPointerExitHandler
 	{
-		public SpriteAtlas CharacterAtlas;
+		//public SpriteAtlas CharacterAtlas;
 		public Pointer MyPointer;
 		public PlayerInfo PlayerInfo;
 		public List<CardInfo> Cards;
@@ -121,7 +130,7 @@ namespace Draconia.ViewController
 		{
 			
 			PlayerInfo = playerInfo;
-			Debug.Log(playerInfo.Name);
+			//Debug.Log(playerInfo.Name);
 			CharacterAtlas = ResLoadSystem.LoadSync<SpriteAtlas>(playerInfo.Alias);
 			CharacterImage.sprite = CharacterAtlas.GetSprite("Idle");
 			CharacterImage.SetNativeSize();
@@ -162,13 +171,7 @@ namespace Draconia.ViewController
 			Cards.AddRange(PlayerInfo.InitialCards_Ref);
 		}
 
-		public override void IsHit(int damage)
-		{
-			//CharacterImage.sprite = CharacterAtlas.GetSprite("OnHit");
-			base.IsHit(damage);
-			PlayerAnimator.IsHit();
 
-		}
 
 		public override void Die()
 		{

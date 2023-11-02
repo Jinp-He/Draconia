@@ -46,7 +46,8 @@
         "Defense": 0,
         "Magic": 0
       }
-    ]
+    ],
+    "Alias": "dog01"
   },
   {
     "id": 20002,
@@ -95,6 +96,7 @@
         "Defense": 0,
         "Magic": 0
       }
-    ]
+    ],
+    "Alias": "fatknight"
   }
 ]

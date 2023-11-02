@@ -42,8 +42,7 @@ namespace Draconia.UI
 			{
 				Debug.Log(enemyInfo.Name);
 				ResKit.Init();
-				Enemy enemyPrefab = this.GetSystem<ResLoadSystem>().LoadSync<GameObject>(enemyInfo.Name).GetComponent<Enemy>();
-				Enemy enemy = Instantiate(enemyPrefab, EnemyArea.transform, true);
+				Enemy enemy = Instantiate(EnemyPrefab, EnemyArea.transform, true);
 				enemy.LocalScale(1);
 				enemy.LocalPosition(0, 0, 0);
 				enemy.Init(enemyInfo);

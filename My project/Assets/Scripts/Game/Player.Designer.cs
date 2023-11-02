@@ -6,7 +6,7 @@ namespace Draconia.ViewController
 	public partial class Player
 	{
 
-		public UnityEngine.UI.Image CharacterImage;
+		//public UnityEngine.UI.Image CharacterImage;
 
 		public RectTransform EnergyBar;
 

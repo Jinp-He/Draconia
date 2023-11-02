@@ -634,6 +634,9 @@ MonoBehaviour:
   PrefabFolder: Assets/Art/Prefab
   HpBar: {fileID: 2331961816703176132}
   CurrHP: 0
+  CharacterAtlas: {fileID: 0}
+  CharacterImage: {fileID: 0}
+  CharacterAnimator: {fileID: 3820759432760347027}
   MyPointer: {fileID: 0}
   _enemyAnimator: {fileID: 3820759432760347027}
   EnemyAnimation: {fileID: 2146311912368821088}
@@ -653,6 +656,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c737cf33ce9b4394abbc63fe1366c6da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Namespace: Draconia.ViewController
+  ScriptName: Dog01
+  ScriptsFolder: Assets/Scripts/Game
+  GeneratePrefab: 0
+  PrefabFolder: Assets/Art/Prefab
+  HitTextPrefab: {fileID: 6757110241999187396}
+  CharacterImage: {fileID: 0}
   HitTextPrefab: {fileID: 6757110241999187396}
   IsHitSprite: {fileID: -6310813461936705396, guid: ae51e498dde4f65418fdcffb3d38e9c6, type: 3}
   IdleSprite: {fileID: -246257844704515392, guid: ae51e498dde4f65418fdcffb3d38e9c6, type: 3}

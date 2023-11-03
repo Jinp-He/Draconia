@@ -18,7 +18,6 @@ namespace Draconia.ViewController
 
 		public void Init(EnemyInfo enemyInfo)
 		{
-			HPBar.Init(enemyInfo.InitialHP,enemyInfo.InitialHP);
 			// EnergyCount = new BindableProperty<int>
 			// {
 			// 	Value = 0

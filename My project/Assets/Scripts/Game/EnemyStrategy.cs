@@ -15,14 +15,14 @@ namespace Draconia.ViewController
         protected EnemyAction _currentAction;
         protected BattleSystem BattleSystem => this.GetSystem<BattleSystem>();
 
-        protected Sprite Attack, Defense, Ult, Move;
+        protected Sprite Attack, Move, Other, Skill;
         
         protected EnemyStrategy(Enemy enemy)
         {
             _enemy = enemy;
             Attack = this.GetSystem<ResLoadSystem>().LoadSprite("Intention_Attack");
-            Defense = this.GetSystem<ResLoadSystem>().LoadSprite("Intention_Defense");
-            Ult = this.GetSystem<ResLoadSystem>().LoadSprite("Intention_Ult");
+            Skill = this.GetSystem<ResLoadSystem>().LoadSprite("Intention_Skill");
+            Other = this.GetSystem<ResLoadSystem>().LoadSprite("Intention_Other");
             Move = this.GetSystem<ResLoadSystem>().LoadSprite("Intention_Move");
 
             this.RegisterEvent<BattleStartEvent>(e => { PreAction(); });
@@ -88,13 +88,13 @@ namespace Draconia.ViewController
                     _enemy.Intention.GetComponent<Intention>().IntentionImage.sprite = Attack;
                     break;
                 case ActionType.Defense:
-                    _enemy.Intention.GetComponent<Intention>().IntentionImage.sprite = Defense;
+                    _enemy.Intention.GetComponent<Intention>().IntentionImage.sprite = Skill;
                     break;
                 case ActionType.Move:
                     _enemy.Intention.GetComponent<Intention>().IntentionImage.sprite = Move;
                     break;
                 case ActionType.Ult:
-                    _enemy.Intention.GetComponent<Intention>().IntentionImage.sprite = Ult;
+                    _enemy.Intention.GetComponent<Intention>().IntentionImage.sprite = Other;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

@@ -92,7 +92,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData:
-  - name: dog01_Idle
+  - name: Idle
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -114,7 +114,7 @@ ScriptedImporter:
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 202}
     spritePosition: {x: 34, y: 14}
-  - name: dog01_Pointer
+  - name: Pointer
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -136,7 +136,7 @@ ScriptedImporter:
     parentGroupIndex: -1
     uvTransform: {x: 293, y: 4}
     spritePosition: {x: 244, y: 156}
-  - name: dog01_Melee
+  - name: Melee
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -158,7 +158,7 @@ ScriptedImporter:
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 4}
     spritePosition: {x: 556, y: 8}
-  - name: dog01_OnHit
+  - name: OnHit
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -342,8 +342,8 @@ ScriptedImporter:
   spritePackingTag: 
   resliceFromLayer: 0
   mosaicPSDLayers:
-  - name: dog01_Idle
-    spriteName: dog01_Idle
+  - name: Idle
+    spriteName: Idle
     isGroup: 0
     parentIndex: -1
     spriteID: b2028c640a4ebbd4586c0795e0e7aed5
@@ -352,8 +352,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: dog01_Pointer
-    spriteName: dog01_Pointer
+  - name: Pointer
+    spriteName: Pointer
     isGroup: 0
     parentIndex: -1
     spriteID: e83c27d01c2978c49a9bcb9bec464b4f
@@ -362,8 +362,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: dog01_Melee
-    spriteName: dog01_Melee
+  - name: Melee
+    spriteName: Melee
     isGroup: 0
     parentIndex: -1
     spriteID: 3c5104dc4214bf24eb758c0e6d5dfe4e
@@ -372,8 +372,8 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: dog01_OnHit
-    spriteName: dog01_OnHit
+  - name: OnHit
+    spriteName: OnHit
     isGroup: 0
     parentIndex: -1
     spriteID: bc297a504aa1ecc42a9eb978104301b3

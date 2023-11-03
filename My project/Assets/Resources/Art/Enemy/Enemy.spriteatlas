@@ -39,15 +39,15 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: -3757629437768917528, guid: ae51e498dde4f65418fdcffb3d38e9c6, type: 3}
-  - {fileID: -246257844704515392, guid: ae51e498dde4f65418fdcffb3d38e9c6, type: 3}
-  - {fileID: -6310813461936705396, guid: ae51e498dde4f65418fdcffb3d38e9c6, type: 3}
   - {fileID: 5934609774093363417, guid: ae51e498dde4f65418fdcffb3d38e9c6, type: 3}
+  - {fileID: -6310813461936705396, guid: ae51e498dde4f65418fdcffb3d38e9c6, type: 3}
+  - {fileID: -246257844704515392, guid: ae51e498dde4f65418fdcffb3d38e9c6, type: 3}
+  - {fileID: -3757629437768917528, guid: ae51e498dde4f65418fdcffb3d38e9c6, type: 3}
   m_PackedSpriteNamesToIndex:
-  - dog01_Melee
-  - dog01_Idle
-  - dog01_OnHit
-  - dog01_Pointer
+  - Pointer
+  - OnHit
+  - Idle
+  - Melee
   m_RenderDataMap: {}
   m_Tag: Enemy
   m_IsVariant: 0

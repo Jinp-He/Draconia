@@ -44,3 +44,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1864687375
+    locked: 0
+  - name: Image
+    uniqueID: 2871013757
+    locked: 0
+  - name: Intention
+    uniqueID: 1431308961
+    locked: 0

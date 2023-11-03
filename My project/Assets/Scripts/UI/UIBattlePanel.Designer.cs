@@ -21,20 +21,8 @@ namespace Draconia.UI
 		public RectTransform EnemySlot;
 		[SerializeField]
 		public UnityEngine.UI.Image PlayerArea;
-		[SerializeField]
-		public UnityEngine.UI.Image CharacterImage;
-		[SerializeField]
-		public UnityEngine.UI.Slider HPBar;
-		[SerializeField]
-		public UnityEngine.UI.Slider HPBarSlider;
-		[SerializeField]
-		public TMPro.TextMeshProUGUI HPText;
-		[SerializeField]
-		public RectTransform EnergyBar;
-		[SerializeField]
-		public TMPro.TextMeshProUGUI RestCardNum;
-		[SerializeField]
-		public RectTransform ChooseBracelet;
+
+
 		[SerializeField]
 		public UnityEngine.UI.Image EnemyArea;
 		[SerializeField]
@@ -48,13 +36,15 @@ namespace Draconia.UI
 		[SerializeField]
 		public EnergyCounter EnergyCounter;
 		[SerializeField]
-		public UnityEngine.UI.Image EnergyCounterImage;
-		[SerializeField]
-		public TMPro.TextMeshProUGUI Energy;
+		public RectTransform EnemyIntentionArea;
 		[SerializeField]
 		public Utility.BelzierArrows.BezierArrows Bezier;
 		[SerializeField]
 		public Button EndTurnButton;
+		[SerializeField]
+		public Toggle ItemToggle;
+		[SerializeField]
+		public Toggle HandsToggle;
 		private UIBattlePanelData mPrivateData = null;
 		
 		protected override void ClearUIComponents()
@@ -64,23 +54,17 @@ namespace Draconia.UI
 			PlayerSlot = null;
 			EnemySlot = null;
 			PlayerArea = null;
-			CharacterImage = null;
-			HPBar = null;
-			HPBarSlider = null;
-			HPText = null;
-			EnergyBar = null;
-			RestCardNum = null;
-			ChooseBracelet = null;
 			EnemyArea = null;
 			EnemyImage = null;
 			EnemyBar = null;
 			CardArea = null;
 			Hands = null;
 			EnergyCounter = null;
-			EnergyCounterImage = null;
-			Energy = null;
+
 			Bezier = null;
 			EndTurnButton = null;
+			ItemToggle = null;
+			HandsToggle = null;
 			
 			mData = null;
 		}

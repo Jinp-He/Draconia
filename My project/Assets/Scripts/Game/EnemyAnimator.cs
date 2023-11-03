@@ -8,29 +8,26 @@ using UnityEngine;
 
 namespace Draconia.ViewController
 {
-    public class EnemyAnimator : MonoBehaviour
+    public class EnemyAnimator : CharacterAnimator
     {
-        public TextMeshProUGUI HitTextPrefab;
-        
+
         private string _enemyName;
         private Enemy _enemy;
-        public Sprite IsHitSprite;
-        public Sprite IdleSprite;
-        public Sprite ChosenSprite;
-        public Sprite PointerSprite;
+        
         public void Init(Enemy enemy)
         {
+            base.Init(enemy);
             _enemy = enemy;
-            _enemy.EnemyImage.sprite = IdleSprite;
-            _enemy.EnemyImage.SetNativeSize();
+            _isHitSprite = _enemy.CharacterAtlas.GetSprite("OnHit");
+            _idleSprite = _enemy.CharacterAtlas.GetSprite("Idle");
         }
 
         public void IsHitAnimation()
         {
             ActionKit.Sequence()
-                .Callback(() => { _enemy.EnemyImage.sprite = IsHitSprite; })
+                .Callback(() => { _enemy.EnemyImage.sprite = _isHitSprite; })
                 .Delay(0.3f)
-                .Callback(() => { _enemy.EnemyImage.sprite = IdleSprite; })
+                .Callback(() => { _enemy.EnemyImage.sprite = _idleSprite; })
                 .Start(this);
         }
 
@@ -53,15 +50,7 @@ namespace Draconia.ViewController
                 .Play();
         }
 
-        public void IsChose()
-        {
-            
-        }
 
-        public void EndChose()
-        {
-            
-        }
         
         
     }

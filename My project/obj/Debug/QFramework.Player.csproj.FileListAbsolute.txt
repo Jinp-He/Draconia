@@ -1,0 +1,4 @@
+C:\Users\lofnh\Documents\GitHub\Draconia\My project\obj\Debug\QFramework.Player.csproj.AssemblyReference.cache
+C:\Users\lofnh\Documents\GitHub\Draconia\My project\obj\Debug\QFramework.Player.csproj.CoreCompileInputs.cache
+C:\Users\lofnh\Documents\GitHub\Draconia\My project\obj\Debug\QFramework.dll
+C:\Users\lofnh\Documents\GitHub\Draconia\My project\obj\Debug\QFramework.pdb

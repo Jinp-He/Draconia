@@ -4,7 +4,9 @@ using System.Linq;
 using cfg;
 using Draconia.System;
 using QFramework;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using static UnityEngine.Screen;
 
 namespace Draconia.ViewController
@@ -12,10 +14,11 @@ namespace Draconia.ViewController
     public class Hands : QFramework.ViewController, ICanGetSystem
     {
         public Card CardPrefab, BasicCardPrefab;
-        
-        
+        public Image FrontImage;
+
+        public Player OnGoingPlayer;
         public List<Card> Cards;
-        public RectTransform DisplayArea,BasicCardArea;
+        public RectTransform DisplayArea,BasicCardArea,ItemHands,PlayerHands;
 
         private List<Card> tempRemovedCard;
 
@@ -29,7 +32,7 @@ namespace Draconia.ViewController
 
         public Card AddCard(CardInfo cardInfo, Player player)
         {
-            Card card = Instantiate(CardPrefab, transform);
+            Card card = Instantiate(CardPrefab, PlayerHands.transform);
             card.Init(cardInfo, player);
             Cards.Add(card);
             Refresh();
@@ -40,8 +43,8 @@ namespace Draconia.ViewController
         {
             foreach (var cardInfo in player.PlayerInfo.NormalAttackCard_Ref)
             {
-                Card card = Instantiate(BasicCardPrefab, BasicCardArea);
-                card.Init(cardInfo, player, true);
+                Card card = Instantiate(BasicCardPrefab, PlayerHands.transform);
+                card.Init(cardInfo, player,true);
                 Cards.Add(card);
                 Refresh();
             }
@@ -50,7 +53,7 @@ namespace Draconia.ViewController
         public Card AddCard(Card card, Player player)
         {
             Cards.Add(card);
-            card.transform.parent = transform;
+            card.transform.parent = PlayerHands.transform;
             card.transform.localPosition = Vector3.zero;
             Refresh();
             return card;
@@ -62,6 +65,37 @@ namespace Draconia.ViewController
             tempRemovedCard.Add(card);
             card.gameObject.SetActive(false);
             Refresh();
+        }
+
+        public void AddItemCard()
+        {
+            
+        }
+
+        public void OnPlayerTurnStart(Player player)
+        {
+            OnGoingPlayer = player;
+            DisplayHands();
+        }
+
+        public void DisplayItem()
+        {
+            PlayerHands.gameObject.SetActive(false);
+            ItemHands.gameObject.SetActive(true);
+            FrontImage.sprite = this.GetSystem<ResLoadSystem>()
+                .LoadSprite("FrontGround_Item");
+        }
+
+        public void DisplayHands()
+        {
+            PlayerHands.gameObject.SetActive(true);
+            ItemHands.gameObject.SetActive(false);
+            if (OnGoingPlayer == null)
+            {
+                return;
+            }
+            FrontImage.sprite = this.GetSystem<ResLoadSystem>()
+                .LoadSprite("FrontGround_" + OnGoingPlayer.PlayerInfo.Alias);
         }
 
         private void CleanRemovedCard()
@@ -91,7 +125,7 @@ namespace Draconia.ViewController
             {
                 Cards.Add(card);
             }
-            ReorderCard();
+            ReorderCard(Cards);
             RecView();
             
         }
@@ -135,8 +169,10 @@ namespace Draconia.ViewController
         public void RecView()
         {
             
-            float p0 = transform.position.x;
+            float p0 = PlayerHands.transform.position.x;
             float dist = IdealDist + CardPrefab.GetComponent<RectTransform>().rect.width * CardPrefab.GetComponent<RectTransform>().Scale().y;
+            float basicDist = IdealDist + BasicCardPrefab.GetComponent<RectTransform>().rect.width * BasicCardPrefab.GetComponent<RectTransform>().Scale().y;
+
             int count = Cards.Count;
             float halfCount = (count - 1) / 2f;
             int i = 0;
@@ -151,16 +187,53 @@ namespace Draconia.ViewController
                 dist = Width / 2 / halfCount;
             }
             //Debug.LogFormat("Dist: {0}, pos : {1}, p0 : {2}",dist,pos,p0);
-            
+            // for (int k = 0; k < Cards.Count; k++)
+            // {
+            //     Transform tf = Cards[k].transform;
+            //     tf.localPosition = new Vector3(pos, -50, 0);
+            //     if (k != Cards.Count-1 && Cards[k+1].IsBasicCard)
+            //         pos += basicDist;
+            //     else 
+            //         pos += dist;
+            //     if (Cards[k].IsChosen)
+            //     {
+            //         pos += 20f;
+            //     }
+            //     i++;
+            // }
+            bool nextChosen = false;
+            bool isPrevBasic = false;
+            //TODO: 更改卡牌显示逻辑，选中之后会更显眼。
             foreach (var card in Cards)
             {
+                if (card.IsBasicCard)
+                    pos += basicDist;
+                else 
+                    pos += dist;
+                if (nextChosen)
+                {
+                    //如果之前的手牌被选中了
+                    nextChosen = false;
+                    if (isPrevBasic)
+                    {
+                        pos += 10f;
+                    }
+                    else
+                    {
+                        pos += 95f;
+                    }
+                }
                 Transform tf = card.transform;
                 tf.localPosition = new Vector3(pos, -50, 0);
-                pos += dist;
                 if (card.IsChosen)
                 {
-                    pos += 20f;
+                    nextChosen = true;
+                    isPrevBasic = card.IsBasicCard;
+                    tf.localPosition = new Vector3(pos, 0, 0);
                 }
+
+                
+                
                 i++;
             }
         }
@@ -179,10 +252,13 @@ namespace Draconia.ViewController
         /// Reorder the card order to certain type
         /// By User and then Cost?
         /// </summary>
-        private void ReorderCard()
+        private void ReorderCard(List<Card> card)
         {
-            List<Card> list = transform.GetComponentsInChildren<Card>().ToList();
-            list.Sort((x, y) => x._cardInfo.Id - y._cardInfo.Id);
+            card.Sort((x, y) => - x._cardInfo.Id + y._cardInfo.Id);
+            for (int i = 0; i < card.Count; i++)
+            {
+                card[i].transform.SetSiblingIndex(i);
+            }
         }
 
 

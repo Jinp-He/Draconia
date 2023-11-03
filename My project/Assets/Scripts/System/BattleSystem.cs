@@ -119,6 +119,7 @@ namespace Draconia.System
             BattleState = BattleState.Player;
             player.OnTurnStart();
             OngoingPlayer = player;
+            Hands.OnPlayerTurnStart(OngoingPlayer);
             DrawCard(player, player.DrawCard);
             DrawNormalCard(player);
         }
@@ -141,51 +142,8 @@ namespace Draconia.System
             //Attack(enemy, Characters[0], 1f, );
         }
 
-        /// <summary>
-        /// Move ICharacter to a comparative position 
-        /// </summary>
-        /// <param name="enemy"></param>
-        /// <param name="position"></param>
-        public void Move(Enemy enemy, int position)
-        {
-            int pos = enemy.Position;
-            int finalPos = pos + position;
-            
-            //TODO best practice of this
-            if (finalPos < 0)
-            {
-                finalPos = 0;
-            }
 
-            if (finalPos >= Enemies.Count)
-            {
-                finalPos = Enemies.Count;
-            }
-
-            (Enemies[pos], Enemies[finalPos]) = (Enemies[finalPos], Enemies[pos]);
-        }
-
-        public void Move(Player player, int position)
-        {
-            int pos = Characters.FindIndex(a => a = player);
-            int finalPos = pos + position;
-            
-            //TODO best practice of this
-            if (finalPos < 0)
-            {
-                finalPos = 0;
-            }
-
-            if (finalPos >= Characters.Count)
-            {
-                finalPos = Characters.Count;
-            }
-
-            (Characters[pos], Characters[finalPos]) = (Characters[finalPos], Characters[pos]);
-
-        }
-
-        public void Attack(Enemy enemy, Player player, float attackModifier, AttackType attackType)
+        public void Attack(Enemy enemy, Player player,  AttackType attackType ,int attackPower)
         {
             int dmg;
             //是否闪避
@@ -198,10 +156,10 @@ namespace Draconia.System
 
             //计算伤害
             if(attackType == AttackType.Magic)
-                dmg = (int)(enemy.EnemyInfo.AttackPower * attackModifier - player.PlayerInfo.MagicResist);
+                dmg = (int)(attackPower - player.PlayerInfo.MagicResist);
             else
             {
-                dmg = (int)(enemy.EnemyInfo.AttackPower * attackModifier - player.PlayerInfo.Armor);
+                dmg = (int)(attackPower - player.PlayerInfo.Armor);
 
             }
             //是否暴击
@@ -209,10 +167,10 @@ namespace Draconia.System
             {
                 dmg = (int)(dmg * enemy.EnemyInfo.CriticalDamage);
             }
-            player.IsHit(dmg);
+            player.IsHit(dmg,attackType);
         }
 
-        public void Attack(Player player, Enemy enemy, float attackModifier, AttackType attackType)
+        public void Attack(Player player, Enemy enemy, AttackType attackType, int attackPower)
         {
             int dmg;
             //是否闪避
@@ -224,10 +182,10 @@ namespace Draconia.System
             }
 
             if(attackType == AttackType.Magic)
-                dmg = (int)(player.PlayerInfo.AttackPower * attackModifier - enemy.EnemyInfo.MagicResist);
+                dmg = (int)(attackPower  - enemy.EnemyInfo.MagicResist);
             else
             {
-                dmg = (int)(player.PlayerInfo.AttackPower * attackModifier - enemy.EnemyInfo.Armor);
+                dmg = (int)(attackPower - enemy.EnemyInfo.Armor);
             }
             //计算伤害
             
@@ -236,7 +194,7 @@ namespace Draconia.System
             {
                 dmg = (int)(dmg * player.PlayerInfo.CriticalDamage);
             }
-            enemy.IsHit(dmg);
+            enemy.IsHit(dmg, attackType);
         }
         
         public void Restart()

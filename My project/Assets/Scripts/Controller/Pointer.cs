@@ -48,7 +48,7 @@ namespace Draconia.Controller
             _timeBar = timeBar;
             _mEnemy = enemy;
             _speed = _mEnemy.EnemyInfo.Speed;
-            PointerImage.sprite = _mEnemy.GetComponent<EnemyAnimator>().PointerSprite;
+            PointerImage.sprite = _mEnemy.CharacterAtlas.GetSprite("Pointer");
             _isPlayer = false;
             _isInit = true;
             
@@ -63,16 +63,7 @@ namespace Draconia.Controller
         /// </summary>
         public void Refresh()
         {
-            if (_isPlayer)
-            {
-                Vector3 pos = transform.position;
-                transform.localPosition = new Vector3(_timeBar.PlayerStartPoint.position.x, pos.y, pos.z);
-            }
-            else
-            {
-                Vector3 pos = transform.position;
-                transform.localPosition = new Vector3(_timeBar.EnemyStartPoint.position.x, pos.y, pos.z);
-            }
+
         }
 
         public void Move(int i)
@@ -83,6 +74,37 @@ namespace Draconia.Controller
         public void Execute()
         {
             
+        }
+        
+        /// <summary>
+        /// 移动到正确的位置 不会超出
+        /// </summary>
+        public void Regulate()
+        {
+            if (_isPlayer)
+            {
+                if (PositionX > 0)
+                {
+                    PositionX = 0;
+                }
+
+                if (PositionX < -TimeBar.TimeBarEdge)
+                {
+                    PositionX = -TimeBar.TimeBarEdge;
+                }
+            }
+            else
+            {
+                if (PositionX < 0)
+                {
+                    PositionX = 0;
+                }
+
+                if (PositionX > TimeBar.TimeBarEdge)
+                {
+                    PositionX = TimeBar.TimeBarEdge;
+                }
+            }
         }
 
         public void FixedUpdate()
@@ -138,7 +160,7 @@ namespace Draconia.Controller
             {
                 if (IsTouch(transform.position.x,_timeBar.EnemyActionPoint.position.x))
                 {
-                    _mEnemy.EnemyTurnStart();
+                    _mEnemy.OnTurnStart();
                 }
             }
         }

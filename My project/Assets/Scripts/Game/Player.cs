@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using cfg;
 using Draconia.Controller;
 using Draconia.UI;
@@ -9,28 +10,104 @@ using QFramework;
 using UnityEngine.EventSystems;
 using UnityEngine.U2D;
 using cfg;
+using DG.Tweening;
 using Draconia.Game.Buff;
 using Draconia.MyComponent;
 using Draconia.System;
+using Draconia.ViewController;
 using Draconia.ViewController.Event;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 using NotImplementedException = System.NotImplementedException;
 
 namespace Draconia.Controller
 {
-	public interface ICharacter
+	public class Character : MyViewController
 	{
+		public HPBar HpBar;
+		public int CurrHP;
+		private int _armor;
+		public SpriteAtlas CharacterAtlas;
+		public Image CharacterImage;
+		public CharacterAnimator CharacterAnimator;
+		public RectTransform DamageTextField;
+		public int Armor
+		{
+			get => _armor;
+			set => _armor = value;
+		}
+
 		public virtual void Init()
 		{
             
 		}
+
+		public virtual bool IsOnDangerArea()
+		{
+			return true;
+		}
+
+
+		public virtual void MoveInTime(int i)
+		{
+			
+		}
+
+		public virtual void IsHit(int damage,AttackType attackType)
+		{
+			if (Armor >= damage)
+			{
+				Armor -= damage;
+				HpBar.SetArmor(Armor);
+				CharacterAnimator.IsHit(0, attackType, damage);
+			}
+			else
+			{
+				int tempArmor = Armor;
+				damage -= Armor;
+				HpBar.SetArmor(Armor);
+				CurrHP -= damage;
+				HpBar.SetHp(CurrHP);
+				CharacterAnimator.IsHit(damage, attackType, tempArmor);
+			}
+			
+			if (CurrHP <= 0)
+			{
+				Die();
+			}
+			
+		}
+		
+		public void Defense(int value)
+		{
+			Armor += value;
+			HpBar.SetArmor(value);
+		}
+		
+		public virtual void OnTurnStart()
+		{
+			Armor = 0;
+			HpBar.SetArmor(Armor);
+		}
+
+		public virtual void Die()
+		{
+			
+		}
+		
+		public void Miss()
+		{
+			StartCoroutine(GetComponent<CharacterAnimator>().Miss());
+		}
+
 	}
 }
 
 namespace Draconia.ViewController
 {
-	public partial class Player : MyViewController, ICanRegisterEvent, ICharacter, IPointerEnterHandler, IPointerExitHandler
+	public partial class Player : Character, ICanRegisterEvent,  IPointerEnterHandler, IPointerExitHandler
 	{
-		public SpriteAtlas CharacterAtlas;
+		//public SpriteAtlas CharacterAtlas;
 		public Pointer MyPointer;
 		public PlayerInfo PlayerInfo;
 		public List<CardInfo> Cards;
@@ -49,30 +126,23 @@ namespace Draconia.ViewController
 		private int _drawCardModifier;
 		public int DrawCard => PlayerInfo.DrawCardNum + _drawCardModifier;
 		private Action NextTurn;
-		
-		
-		public int Position 
-		{
-			get
-			{
-				return BattleSystem.Characters.FindIndex(a => a = this);
 
-			}
-		}
+		
+		
+		public int Position => transform.GetSiblingIndex();
 		private string PlayerName;
 		public PlayerAnimator PlayerAnimator;
-		private int CurrHP;
 		public void Init(PlayerInfo playerInfo)
 		{
 			
 			PlayerInfo = playerInfo;
-			Debug.Log(playerInfo.Name);
+			//Debug.Log(playerInfo.Name);
 			CharacterAtlas = ResLoadSystem.LoadSync<SpriteAtlas>(playerInfo.Alias);
 			CharacterImage.sprite = CharacterAtlas.GetSprite("Idle");
 			CharacterImage.SetNativeSize();
 			PlayerName = playerInfo.Name;
 			CurrHP = playerInfo.InitialHP;
-			HPBar.GetComponent<HPBar>().Init(playerInfo.InitialHP,playerInfo.InitialHP);
+			HpBar.Init(playerInfo.InitialHP,playerInfo.InitialHP);
 			MyPointer = UIKit.GetPanel<UIBattlePanel>().TimeBar.AddCharacter(this);
 			Cards = new List<CardInfo>();
 			//初始牌库
@@ -107,20 +177,9 @@ namespace Draconia.ViewController
 			Cards.AddRange(PlayerInfo.InitialCards_Ref);
 		}
 
-		public void IsHit(int damage)
-		{
-			//CharacterImage.sprite = CharacterAtlas.GetSprite("OnHit");
-			CurrHP -= damage;
-			if (CurrHP <= 0)
-			{
-				Die();
-			}
-			HPBar.GetComponent<HPBar>().SetHp(CurrHP);
-			PlayerAnimator.IsHit();
 
-		}
 
-		public void Die()
+		public override void Die()
 		{
 			BattleSystem.GameOver();
 		}
@@ -146,71 +205,29 @@ namespace Draconia.ViewController
 			ChooseBracelet.gameObject.SetActive(false);
 		}
 		
-		public void Move(int position)
-		{
-			List<Player> characters = BattleSystem.Characters;
-			int pos = characters.FindIndex(a => a = this);
-			int finalPos = pos + position;
-            
-			//TODO best practice of this
-			if (finalPos < 0)
-			{
-				finalPos = 0;
-			}
-
-			if (finalPos >= characters.Count)
-			{
-				finalPos = characters.Count;
-			}
-
-			GetComponent<PlayerAnimator>().Move(characters[finalPos]);
-			(characters[pos], characters[finalPos]) = (characters[finalPos], characters[pos]);
-
-		}
+		
+		
 		public void Move(Player player)
 		{
-			List<Player> characters = BattleSystem.Characters;
-			int pos = characters.FindIndex(a => a = this);
-			int finalPos = characters.FindIndex(a => a = player);
-            
-			//TODO best practice of this
-			if (finalPos < 0)
-			{
-				finalPos = 0;
-			}
-
-			if (finalPos >= characters.Count)
-			{
-				finalPos = characters.Count;
-			}
-
-			GetComponent<PlayerAnimator>().Move(characters[finalPos]);
-			(characters[pos], characters[finalPos]) = (characters[finalPos], characters[pos]);
-
+			Sequence seq = DOTween.Sequence();
+			seq.Append(player.transform.DOLocalMoveX(transform.localPosition.x, 1f))
+				.Join(transform.DOLocalMoveX(player.transform.localPosition.x, 1f))
+				.OnComplete(() =>
+				{
+					int tempPos = player.transform.GetSiblingIndex();
+					player.transform.SetSiblingIndex(Position);
+					transform.SetSiblingIndex(tempPos);
+				});
 		}
 		
-		public void Miss()
-		{
-			GetComponent<EnemyAnimator>().HitText("Miss");
-		}
+		
 
 		public int Distance(Player player)
 		{
 			List<Player> characters = BattleSystem.Characters;
-			return Math.Abs(characters.FindIndex(a => a = this)
-			- characters.FindIndex(a => a = player));
+			return Math.Abs(player.Position - Position);
 		}
-
-		public void Defense()
-		{
-			_magicResistModifier += 0.2f;
-			_armorModifier += 0.2f;
-			NextTurn += () =>
-			{
-				_magicResistModifier -= 0.2f;
-				_armorModifier -= 0.2f;
-			};
-		}
+		
 
 		//判断是否可以释放该卡
 		public bool ValidCard(Card card)
@@ -235,8 +252,9 @@ namespace Draconia.ViewController
 		}
 
 
-		public void OnTurnStart()
+		public override void OnTurnStart()
 		{
+			base.OnTurnStart();
 			UIKit.GetPanel<UIBattlePanel>().TimeBar.MoveAbsoluteTimePosition(MyPointer, BackNum);
 			PlayerAnimator.IsChosen();
 		}
@@ -249,6 +267,16 @@ namespace Draconia.ViewController
 		public void AddBuff(string buffName, int stack)
 		{
 			GetComponent<BuffManager>().AddBuff(buffName, stack);
+		}
+
+		public bool IsOnDangerArea()
+		{
+			return true;
+		}
+
+		public void MoveInTime(int i)
+		{
+			MyPointer.Move(i);
 		}
 	}
 }

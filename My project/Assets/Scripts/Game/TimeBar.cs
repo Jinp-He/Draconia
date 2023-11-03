@@ -20,6 +20,11 @@ namespace Draconia.ViewController
 		public List<Pointer> Enemies;
 		public bool IsInit, IsStart;
 
+
+		public static float ToBarPosition(int k)
+		{
+			return k * TimeBarScale;
+		}
 		public void Init()
 		{
 			IsInit = true;
@@ -88,6 +93,8 @@ namespace Draconia.ViewController
 		/// </summary>
 		public const float TimeBarScale = 74f;
 
+		public const float TimeBarEdge = 7 * TimeBarScale;
+
 		/// <summary>
 		/// 将时间轴刻度转译成游戏的X位置
 		/// </summary>
@@ -104,7 +111,7 @@ namespace Draconia.ViewController
 			else
 			{
 				return (timePosition) * TimeBarScale;
-			}
+			}  
 		}
 
 		public QFramework.Tuple<int, int> TransferLocalPosition(Pointer pointer)
@@ -131,7 +138,9 @@ namespace Draconia.ViewController
 			{
 				pointer.PositionX += cost * TimeBarScale;
 			}
+			pointer.Regulate();
 		}
+		
 		
 		public void MoveAbsoluteTimePosition(Pointer pointer,float pos)
 		{
@@ -151,6 +160,8 @@ namespace Draconia.ViewController
 			}
 			return true;
 		}
+
+	
 		
 		
 		

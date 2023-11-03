@@ -353,7 +353,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1446428229570825543}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -528,42 +528,6 @@ MonoBehaviour:
   CustomComponentName: ChooseBracelet
   CustomComment: 
   mComponentName: RectTransform
---- !u!1 &8552024094016141208
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6198159628556417870}
-  m_Layer: 5
-  m_Name: DamageTextField
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &6198159628556417870
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8552024094016141208}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1446428229570825543}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8908608596797766618
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,7 +568,6 @@ RectTransform:
   - {fileID: 2094888950406806047}
   - {fileID: 5572216220163847296}
   - {fileID: 3148813854513907057}
-  - {fileID: 6198159628556417870}
   - {fileID: 6292150110449186581}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -674,7 +637,6 @@ MonoBehaviour:
   CharacterAtlas: {fileID: 0}
   CharacterImage: {fileID: 6140284848426026121}
   CharacterAnimator: {fileID: 3820759432760347027}
-  DamageTextField: {fileID: 6198159628556417870}
   MyPointer: {fileID: 0}
   _enemyAnimator: {fileID: 3820759432760347027}
   EnemyAnimation: {fileID: 2146311912368821088}
@@ -699,9 +661,13 @@ MonoBehaviour:
   ScriptsFolder: Assets/Scripts/Game
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
-  HitTextPrefab: {fileID: 874472295046470626, guid: d3ab2f314b0f4e948aedb9fe91eb9e4c, type: 3}
-  CriticalHitTextPrefab: {fileID: 874472295046470626, guid: 6fc68aca3fd613d40b56165e8e23f107, type: 3}
+  HitTextPrefab: {fileID: 6757110241999187396}
   CharacterImage: {fileID: 0}
+  HitTextPrefab: {fileID: 6757110241999187396}
+  IsHitSprite: {fileID: -6310813461936705396, guid: ae51e498dde4f65418fdcffb3d38e9c6, type: 3}
+  IdleSprite: {fileID: -246257844704515392, guid: ae51e498dde4f65418fdcffb3d38e9c6, type: 3}
+  ChosenSprite: {fileID: -3757629437768917528, guid: ae51e498dde4f65418fdcffb3d38e9c6, type: 3}
+  PointerSprite: {fileID: 5934609774093363417, guid: ae51e498dde4f65418fdcffb3d38e9c6, type: 3}
 --- !u!114 &2146311912368821088
 MonoBehaviour:
   m_ObjectHideFlags: 0

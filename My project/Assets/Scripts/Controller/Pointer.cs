@@ -48,7 +48,7 @@ namespace Draconia.Controller
             _timeBar = timeBar;
             _mEnemy = enemy;
             _speed = _mEnemy.EnemyInfo.Speed;
-            PointerImage.sprite = _mEnemy.GetComponent<EnemyAnimator>().PointerSprite;
+            PointerImage.sprite = _mEnemy.CharacterAtlas.GetSprite("Pointer");
             _isPlayer = false;
             _isInit = true;
             

@@ -30,6 +30,7 @@ namespace Draconia.Controller
 		public SpriteAtlas CharacterAtlas;
 		public Image CharacterImage;
 		public CharacterAnimator CharacterAnimator;
+		public RectTransform DamageTextField;
 		public int Armor
 		{
 			get => _armor;
@@ -92,6 +93,11 @@ namespace Draconia.Controller
 		public virtual void Die()
 		{
 			
+		}
+		
+		public void Miss()
+		{
+			StartCoroutine(GetComponent<CharacterAnimator>().Miss());
 		}
 
 	}
@@ -214,10 +220,7 @@ namespace Draconia.ViewController
 				});
 		}
 		
-		public void Miss()
-		{
-			GetComponent<EnemyAnimator>().HitText("Miss");
-		}
+		
 
 		public int Distance(Player player)
 		{

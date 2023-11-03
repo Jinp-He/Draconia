@@ -108,16 +108,12 @@ namespace Draconia.ViewController
 		public override void IsHit(int damage, AttackType attackType)
 		{
 			//CharacterImage.sprite = CharacterAtlas.GetSprite("OnHit");
-			GetComponent<EnemyAnimator>().HitText(damage.ToString());
+			//GetComponent<EnemyAnimator>().HitText(damage.ToString());
 			base.IsHit(damage, attackType);
 			//_enemyAnimator.IsHit();
 
 		}
-
-		public void Miss()
-		{
-			GetComponent<EnemyAnimator>().HitText("Miss");
-		}
+		
 		public void Move(int position)
 		{
 			int pos = transform.GetSiblingIndex() + position;

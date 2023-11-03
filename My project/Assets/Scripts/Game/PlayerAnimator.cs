@@ -1,5 +1,6 @@
 ﻿using System;
 using DG.Tweening;
+using Draconia.Controller;
 using Draconia.MyComponent;
 using QFramework;
 using TMPro;
@@ -16,7 +17,14 @@ namespace Draconia.ViewController
         public SpriteAtlas CharacterAtlas;
         
         
+        public override void Init(Character character)
+        {
+            base.Init(character);
+            _isHitSprite = character.CharacterAtlas.GetSprite("OnHit");
+            _idleSprite = character.CharacterAtlas.GetSprite("Idle");
+            _chosenSprite = character.CharacterAtlas.GetSprite("Chosen");
 
+        }
         
     }
 }

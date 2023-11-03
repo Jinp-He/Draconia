@@ -143,7 +143,7 @@ namespace Draconia.System
         }
 
 
-        public void Attack(Enemy enemy, Player player, float attackModifier, AttackType attackType)
+        public void Attack(Enemy enemy, Player player,  AttackType attackType ,int attackPower)
         {
             int dmg;
             //是否闪避
@@ -156,10 +156,10 @@ namespace Draconia.System
 
             //计算伤害
             if(attackType == AttackType.Magic)
-                dmg = (int)(enemy.EnemyInfo.AttackPower * attackModifier - player.PlayerInfo.MagicResist);
+                dmg = (int)(attackPower - player.PlayerInfo.MagicResist);
             else
             {
-                dmg = (int)(enemy.EnemyInfo.AttackPower * attackModifier - player.PlayerInfo.Armor);
+                dmg = (int)(attackPower - player.PlayerInfo.Armor);
 
             }
             //是否暴击

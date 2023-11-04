@@ -58,8 +58,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: impact Material
-  m_Shader: {fileID: 4800000, guid: 3b7a05503b2092b498363037d050e29d, type: 3}
-  m_ValidKeywords: []
+  m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
+  m_ValidKeywords:
+  - OUTLINE_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -117,11 +118,11 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0.515
+    - _OutlineWidth: 0.782
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.8
-    - _ScaleRatioB: 0.508
+    - _ScaleRatioB: 0.684
     - _ScaleRatioC: 0.342
     - _ScaleX: 1
     - _ScaleY: 1

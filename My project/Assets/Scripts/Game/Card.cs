@@ -28,25 +28,40 @@ namespace Draconia.ViewController
         private Hands _hands;
         public CardInfo _cardInfo;
         public CardDragger CardDragger;
-        private Player CardPlayer;
+        public Player CardPlayer;
         private UIBattlePanel UIBattlePanel;
         private List<EnumCardProperty> _properties;
         private int index;
         private Vector3 _localScale, _localPos; 
         public bool IsChosen;
         public bool IsBasicCard;
+        public bool IsViewMode = true;
         void Start()
         {
             _cardState = CardState.Listen;
-            _hands = UIKit.GetPanel<UIBattlePanel>().Hands;
+           
             UIBattlePanel = UIKit.GetPanel<UIBattlePanel>();
+            if(UIBattlePanel != null) _hands = UIKit.GetPanel<UIBattlePanel>().Hands;
+
+        }
+
+        public void ShowMode(bool isUsed = false)
+        {
+            IsViewMode = true;
+            if (isUsed)
+            {
+                GetComponent<CanvasGroup>().alpha = 0.5f;
+            }
         }
 
         public void Init(CardInfo cardInfo, Player player, bool isBasic = false)
         {
+            IsViewMode = false;
+            
             _cardInfo = cardInfo;
             _properties = cardInfo.Properties;
             IsBasicCard = isBasic;
+            _cardState = CardState.Listen;
             
             var commons = ChangeDesc();
             CardName.text = _cardInfo.Name;
@@ -86,18 +101,18 @@ namespace Draconia.ViewController
         private List<Player> _allies;
       public void OnPointerEnter(PointerEventData eventData)
         {
-            if (_cardState == CardState.Listen)
+            if (_cardState == CardState.Listen && !IsViewMode)
                 Hover();
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            if (_cardState == CardState.Listen)
+            if (_cardState == CardState.Listen&& !IsViewMode)
                 UnHover();
         }
         public void OnBeginDrag(PointerEventData eventData)
         {
-            if (this.GetSystem<BattleSystem>().BattleState != BattleState.Player)
+            if (this.GetSystem<BattleSystem>().BattleState != BattleState.Player || IsViewMode)
             {
                 return;
             }
@@ -117,7 +132,7 @@ namespace Draconia.ViewController
 
         public void OnDrag(PointerEventData eventData)
         {
-            if (this.GetSystem<BattleSystem>().BattleState != BattleState.Player)
+            if (this.GetSystem<BattleSystem>().BattleState != BattleState.Player || IsViewMode)
             {
                 return;
             }
@@ -225,7 +240,7 @@ namespace Draconia.ViewController
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            if (this.GetSystem<BattleSystem>().BattleState != BattleState.Player)
+            if (this.GetSystem<BattleSystem>().BattleState != BattleState.Player || IsViewMode)
             {
                 return;
             }
@@ -297,6 +312,12 @@ namespace Draconia.ViewController
             //     Destroy(this.gameObject,0.1f);
             //     return;
             // }
+            if (!IsBasicCard)
+            {
+                CardPlayer.Hands.Remove(this);
+                CardPlayer.Bin.Add(this);
+            }
+            //TODO 正确的移除basiccard
             transform.SetParent(CardPlayer.CardBin);
             _hands.Refresh();
         }
@@ -304,6 +325,7 @@ namespace Draconia.ViewController
        
         public void Hover()
         {
+            if (IsViewMode) return;
             var transform1 = transform;
             _localScale = transform1.localScale;
             _localPos = transform1.localPosition;
@@ -321,7 +343,7 @@ namespace Draconia.ViewController
 
         public void UnHover()
         {
-
+            if (IsViewMode) return;
                 transform.parent = _hands.PlayerHands.transform;
                 transform.localScale = _localScale;
                 transform.localPosition = _localPos;

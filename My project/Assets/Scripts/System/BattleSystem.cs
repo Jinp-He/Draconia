@@ -53,6 +53,8 @@ namespace Draconia.System
             Energy.Value = InitEnergy;
             BattleState = BattleState.Enemy;
             TimeBar = UIKit.GetPanel<UIBattlePanel>().TimeBar;
+            //默认使用角色成为第一个
+            OngoingPlayer = Characters[0];
             this.SendEvent<BattleStartEvent>();
         }
 
@@ -80,27 +82,29 @@ namespace Draconia.System
         /// <returns></returns>
         public List<Card> DrawCard(Player player, int num)
         {
-            List<Card> cards = player.Deck.PickRandom(num).ToList();
-            foreach (var cardInfo in cards)
+            //如果没有卡牌了
+            if (num > player.Deck.Count)
             {
-                Hands.AddCard(cardInfo,player);
+                foreach (var card in player.Bin)
+                {
+                    player.Deck.Add(card);
+                    player.Deck.Shuffle();
+                }
+                player.Bin.Clear();
             }
-
+            
+            List<Card> cards = player.Deck.PickRandom(num).ToList();
+            player.Hands.AddRange(cards);
+            foreach (var card in cards)
+            {
+                Hands.AddCard(card,player);
+                player.Deck.Remove(card);
+            }
             return cards;
         }
         
         
-        public List<Card> DrawRandom(Player player, int num)
-        {
-            List<CardInfo> cards = player.Cards.PickRandom(num).ToList();
-            List<Card> res = new List<Card>();
-            foreach (var cardInfo in cards)
-            {
-                res.Add(Hands.AddCard(cardInfo,player));
-            }
 
-            return res;
-        }
         
 
         /// <summary>
@@ -134,7 +138,7 @@ namespace Draconia.System
             Continue();
             Hands.OnEndTurn(OngoingPlayer);
             OngoingPlayer.OnTurnEnd();
-            OngoingPlayer = null;
+            //OngoingPlayer = null;
         }
 
         public void EnemyTurnStart(Enemy enemy)

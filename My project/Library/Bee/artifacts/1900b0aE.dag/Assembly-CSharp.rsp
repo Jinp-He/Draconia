@@ -481,6 +481,7 @@
 "Assets/Scripts/Game/EnemyBar.cs"
 "Assets/Scripts/Game/EnemyBar.Designer.cs"
 "Assets/Scripts/Game/EnemyStrategy.cs"
+"Assets/Scripts/Game/EnemyStrategy/FatKnight.cs"
 "Assets/Scripts/Game/EnemyStrategy/Hounds.cs"
 "Assets/Scripts/Game/EnergyCounter.cs"
 "Assets/Scripts/Game/EnergyCounter.Designer.cs"

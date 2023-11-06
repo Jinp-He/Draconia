@@ -62,17 +62,19 @@ namespace Draconia.ViewController
             _properties = cardInfo.Properties;
             IsBasicCard = isBasic;
             _cardState = CardState.Listen;
+            CardPlayer = player;
             
             var commons = ChangeDesc();
             CardName.text = _cardInfo.Name;
-            //CardImage.sprite = ResLoadSystem.LoadSprite();
+            if (!IsBasicCard)
+                CardImage.sprite = CardPlayer.CardImageSprite;
             //基础卡的标题是竖着
             if (IsBasicCard)
                 CardName.text = "<rotate=90>" + _cardInfo.Name;
-            
+            CardImage.SetNativeSize();
             CardCost.text = _cardInfo.Cost.ToString();
             //CardType.text = _cardInfo.SkillTargetType.ToString();
-            CardPlayer = player;
+            
             
             GetComponent<MyTooltipManager>().InitWithCommons(commons);
 

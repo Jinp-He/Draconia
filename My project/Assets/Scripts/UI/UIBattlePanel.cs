@@ -80,6 +80,7 @@ namespace Draconia.UI
 				});
 			});
 			
+			//this.SendEvent<BattleStartEvent>();
 			
 
 			

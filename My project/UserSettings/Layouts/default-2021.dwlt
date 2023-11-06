@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 8096}
   vertical: 0
-  controlID: 97738
+  controlID: 117
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -602,9 +602,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -77.51094, y: -21.480564, z: -3.3852553}
+    m_Target: {x: 334.94583, y: 371.58868, z: -0.4080403}
     speed: 2
-    m_Value: {x: -77.51094, y: -21.480564, z: -3.3852553}
+    m_Value: {x: 0.5749681, y: -0.45381266, z: -0.020311505}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -655,9 +655,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 251.62935
+    m_Target: 937.3586
     speed: 2
-    m_Value: 251.62935
+    m_Value: 5.9775777
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -779,23 +779,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6e370600
-      m_LastClickedID: 407406
-      m_ExpandedIDs: 8a3accff9c3accff6e37060086370600a8370600b4370600
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: dc0fcbfff40fcbff26e5000042e5000078e50000a2e50000b8e50000bee50000c2e50000d6e5000046e6000058e600005ee60000a2e60000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: CardPrefab
-        m_OriginalName: CardPrefab
+        m_Name: EnemyPrefab(Clone)
+        m_OriginalName: EnemyPrefab(Clone)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -3151014
+        m_UserData: -109788
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 4
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 7}
       m_SearchString: 
@@ -835,7 +835,7 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_SearchFilter:
-    m_NameFilter: card
+    m_NameFilter: uiba
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -847,36 +847,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/UI
+    - Assets/Scripts/Game
     m_Globs: []
-    m_OriginalText: card
+    m_OriginalText: uiba
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites/UI
+  - Assets/Scripts/Game
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\lofnh\Documents\GitHub\Draconia\My project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7a720300
-    m_LastClickedID: 225914
-    m_ExpandedIDs: 00000000767c00002081000024810000288100002c8100006681000000ca9a3bffffff7f
+    m_SelectedIDs: 92770000
+    m_LastClickedID: 30610
+    m_ExpandedIDs: 000000008c7100008e7100009071000092710000947100009e77000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: "\u524D\u666F\u5E95\u7EB9"
+      m_OriginalName: "\u524D\u666F\u5E95\u7EB9"
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 30598
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -890,7 +890,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000767c000020810000248100002c8100006681000000ca9a3bffffff7f
+    m_ExpandedIDs: 000000008c7100008e710000907100009271000094710000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -918,7 +918,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 2a82000070730000fa6f0000b27300008a350000c86c00002e720000327200004c7200005a720000c2710000ee7100000a8100007a9500008695000052810000e8a30000fea30000f2a3000008a400003a820000b8ac00002aad0000e07c0000387a00008ad80000cad80000c0250100c273000048740000ac7c000028aa000006730000648f0100888f01005a8f0100302f0200de7600006c750000d2ae0000beae0000b6ae0000a07500009e740000d2730000b2740000867600002a7600008c81000018910000427f000028b503003a910000e2a70000
+    m_ExpandedInstanceIDs: 2a82000070730000fa6f0000b27300008a350000c86c00002e720000327200004c7200005a720000c2710000ee7100000a8100007a9500008695000052810000e8a30000fea30000f2a3000008a400003a820000b8ac00002aad0000e07c0000387a00008ad80000cad80000c0250100c273000048740000ac7c000028aa000006730000648f0100888f01005a8f0100302f0200de7600006c750000d2ae0000beae0000b6ae0000a07500009e740000d2730000b2740000867600002a7600008c81000018910000427f000028b503003a910000e2a700003caa000040aa0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

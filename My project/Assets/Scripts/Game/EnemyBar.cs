@@ -18,15 +18,15 @@ namespace Draconia.ViewController
 
 		public void Init(EnemyInfo enemyInfo)
 		{
-			// EnergyCount = new BindableProperty<int>
-			// {
-			// 	Value = 0
-			// };
 			for (int i = 0; i < enemyInfo.MaxEnergy; i++)
 			{
-				Image energyBulb = Instantiate(EnergyBulbPrefab1, EnergyBar.transform);
+				Image energyBulb;
 				if (i % 2 == 0)
 					energyBulb = Instantiate(EnergyBulbPrefab2, EnergyBar.transform);
+				else
+				{
+					energyBulb = Instantiate(EnergyBulbPrefab1, EnergyBar.transform);
+				}
 				_energyBulbs.Add(energyBulb);
 				energyBulb.gameObject.SetActive(true);
 

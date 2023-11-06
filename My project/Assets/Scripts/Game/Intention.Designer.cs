@@ -7,6 +7,6 @@ namespace Draconia.ViewController
 	{
 
 		public UnityEngine.UI.Image IntentionImage;
-
+		public RectTransform PositionMarker;
 	}
 }

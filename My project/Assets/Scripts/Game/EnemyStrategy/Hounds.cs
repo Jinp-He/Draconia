@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using cfg;
 using Draconia.System;
 using UnityEngine;
@@ -14,65 +15,57 @@ namespace Draconia.ViewController
         }
 
 
-        protected override void PreAction()
+        public override void ChooseNextTurnAction()
         {
-            
-            if (_enemy.EnemyInfo.AttackRange < _enemy.Position)
-            {
-                _currentAction = _enemy.EnemyInfo.EnemyActions[1];
-            }
-            else if (_enemy.Energy < 2)
+
+            if (_enemy.Energy < 2)
             {
                 _currentAction = _enemy.EnemyInfo.EnemyActions[1];
             }
             else
             {
-                _currentAction = _enemy.EnemyInfo.EnemyActions[1];
+                _currentAction = _enemy.EnemyInfo.EnemyActions[2];
             }
-            //Debug.LogFormat("#dEBUG# Change to {0} {1}",_currentAction.Name, _currentAction.ActionType);
-            //TODO Add More Eco way to do this
+            TryGetTarget(_currentAction);
             _enemy.Intention.InitTooltip(new Tooltip(){Name = _currentAction.Name, Desc = _currentAction.Desc});
-            ChooseIntention();
-            //base.Action();
+            UpdateIntention();
         }
         
         public override void Action()
         {
-            PreAction();
-            switch (_currentAction.ActionType)
+       
+            switch (_currentAction.Id)
             {
-                case ActionType.Attack:
+                case 0:
+                    _enemy.Move( _currentAction.AttackRange);
+                    break; 
+                case 1:
                     UseNormalAttack();
                     break;
-                case ActionType.Defense:
-                    break;
-                case ActionType.Move:
-                    _enemy.Move( 1);
-                    break;
-                case ActionType.Ult:
+                case 2:
                     UseUlt();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            
+            ChooseNextTurnAction();
             EndAction();
         }
+        protected override void UseNormalAttack()
+        {
+            BattleSystem.Attack(_enemy, Range, AttackType.Physical, 3);
+            _enemy.Energy+=1;
 
+            //Debug.Log("#DEBUG# USe Normal Attack");
+        }
         protected override void UseUlt()
         {
             base.UseUlt();
-            BattleSystem.Attack(_enemy, BattleSystem.Characters[0],AttackType.Physical, 5 );
+            BattleSystem.Attack(_enemy, Range, AttackType.Physical, 5);
             _enemy.Energy = 0;
             //Debug.Log("#DEBUG# USe Ult");
         }
 
-        protected override void UseNormalAttack()
-        {
-            BattleSystem.Attack(_enemy, BattleSystem.Characters[0],AttackType.Physical, 3 );
-            base.UseNormalAttack();
-            _enemy.Energy++;
-            //Debug.Log("#DEBUG# USe Normal Attack");
-        }
+       
     }
 }

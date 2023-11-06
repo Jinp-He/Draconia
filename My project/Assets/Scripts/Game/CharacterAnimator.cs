@@ -62,7 +62,7 @@ namespace Draconia.ViewController
             hitText.color = Color.gray;
             Sequence seq = DOTween.Sequence();
             seq.Append(hitText.transform.DOLocalMoveY(100, .3f))
-                .Join(hitText.DOFade(0f, 1f))
+                .Join(hitText.GetComponent<CanvasGroup>().DOFade(0f, 1f))
                 .OnComplete(() => { hitText.DestroySelf(); })
                 .Play();
             yield return new WaitForSeconds(1f);

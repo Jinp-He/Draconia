@@ -8,7 +8,7 @@
     "AttackRange": 2,
     "AttackRecover": 2,
     "Speed": 33,
-    "InitialHP": 25,
+    "InitialHP": 13,
     "CriticalHitRate": 0,
     "CriticalDamage": 2,
     "HitRate": 1,
@@ -24,30 +24,34 @@
         "Name": "移动",
         "Desc": "移动一格",
         "ActionType": 2,
-        "Attack": 0,
-        "Defense": 0,
-        "Magic": 0
+        "AttackRange": 0,
+        "AttackTarget": 0,
+        "Magic": 0,
+        "Target": 2
       },
       {
         "Id": 1,
         "Name": "咬",
-        "Desc": "造成100%物理伤害。回复一点cost",
+        "Desc": "造成2点物理伤害",
         "ActionType": 0,
-        "Attack": 0,
-        "Defense": 0,
-        "Magic": 0
+        "AttackRange": 3,
+        "AttackTarget": 0,
+        "Magic": 0,
+        "Target": 1
       },
       {
         "Id": 2,
         "Name": "扑咬",
-        "Desc": "造成130%物理伤害，击退单位一格。",
-        "ActionType": 3,
-        "Attack": 0,
-        "Defense": 0,
-        "Magic": 0
+        "Desc": "造成3点物理伤害，击退单位一格。",
+        "ActionType": 0,
+        "AttackRange": 2,
+        "AttackTarget": 0,
+        "Magic": 0,
+        "Target": 1
       }
     ],
-    "Alias": "dog01"
+    "Alias": "dog01",
+    "BackPos": 4
   },
   {
     "id": 20002,
@@ -57,8 +61,8 @@
     "AttackPostCD": 55,
     "AttackRange": 2,
     "AttackRecover": 2,
-    "Speed": 10,
-    "InitialHP": 50,
+    "Speed": 33,
+    "InitialHP": 30,
     "CriticalHitRate": 0,
     "CriticalDamage": 2,
     "HitRate": 1,
@@ -74,29 +78,33 @@
         "Name": "移动",
         "Desc": "移动一格",
         "ActionType": 2,
-        "Attack": 0,
-        "Defense": 0,
-        "Magic": 0
+        "AttackRange": 0,
+        "AttackTarget": 0,
+        "Magic": 0,
+        "Target": 2
       },
       {
         "Id": 1,
-        "Name": "咬",
-        "Desc": "造成100%物理伤害。回复一点cost",
+        "Name": "挥砍",
+        "Desc": "造成3物理伤害",
         "ActionType": 0,
-        "Attack": 0,
-        "Defense": 0,
-        "Magic": 0
+        "AttackRange": 4,
+        "AttackTarget": 0,
+        "Magic": 0,
+        "Target": 1
       },
       {
         "Id": 2,
-        "Name": "扑咬",
-        "Desc": "造成130%物理伤害，击退单位一格。",
-        "ActionType": 3,
-        "Attack": 0,
-        "Defense": 0,
-        "Magic": 0
+        "Name": "胡乱连砍",
+        "Desc": "打击两个单位各4点伤害。",
+        "ActionType": 0,
+        "AttackRange": 3,
+        "AttackTarget": 2,
+        "Magic": 0,
+        "Target": 6
       }
     ],
-    "Alias": "fatknight"
+    "Alias": "fatknight",
+    "BackPos": 5
   }
 ]

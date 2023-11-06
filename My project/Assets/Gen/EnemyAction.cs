@@ -22,21 +22,23 @@ public sealed partial class EnemyAction :  Bright.Config.BeanBase
         { if(!_json["Name"].IsString) { throw new SerializationException(); }  Name = _json["Name"]; }
         { if(!_json["Desc"].IsString) { throw new SerializationException(); }  Desc = _json["Desc"]; }
         { if(!_json["ActionType"].IsNumber) { throw new SerializationException(); }  ActionType = (ActionType)_json["ActionType"].AsInt; }
-        { if(!_json["Attack"].IsNumber) { throw new SerializationException(); }  Attack = _json["Attack"]; }
-        { if(!_json["Defense"].IsNumber) { throw new SerializationException(); }  Defense = _json["Defense"]; }
+        { if(!_json["AttackRange"].IsNumber) { throw new SerializationException(); }  AttackRange = _json["AttackRange"]; }
+        { if(!_json["AttackTarget"].IsNumber) { throw new SerializationException(); }  AttackTarget = _json["AttackTarget"]; }
         { if(!_json["Magic"].IsNumber) { throw new SerializationException(); }  Magic = _json["Magic"]; }
+        { if(!_json["Target"].IsNumber) { throw new SerializationException(); }  Target = (SkillTarget)_json["Target"].AsInt; }
         PostInit();
     }
 
-    public EnemyAction(int Id, string Name, string Desc, ActionType ActionType, int Attack, int Defense, int Magic ) 
+    public EnemyAction(int Id, string Name, string Desc, ActionType ActionType, int AttackRange, int AttackTarget, int Magic, SkillTarget Target ) 
     {
         this.Id = Id;
         this.Name = Name;
         this.Desc = Desc;
         this.ActionType = ActionType;
-        this.Attack = Attack;
-        this.Defense = Defense;
+        this.AttackRange = AttackRange;
+        this.AttackTarget = AttackTarget;
         this.Magic = Magic;
+        this.Target = Target;
         PostInit();
     }
 
@@ -49,9 +51,10 @@ public sealed partial class EnemyAction :  Bright.Config.BeanBase
     public string Name { get; private set; }
     public string Desc { get; private set; }
     public ActionType ActionType { get; private set; }
-    public int Attack { get; private set; }
-    public int Defense { get; private set; }
+    public int AttackRange { get; private set; }
+    public int AttackTarget { get; private set; }
     public int Magic { get; private set; }
+    public SkillTarget Target { get; private set; }
 
     public const int __ID__ = 1215896510;
     public override int GetTypeId() => __ID__;
@@ -72,9 +75,10 @@ public sealed partial class EnemyAction :  Bright.Config.BeanBase
         + "Name:" + Name + ","
         + "Desc:" + Desc + ","
         + "ActionType:" + ActionType + ","
-        + "Attack:" + Attack + ","
-        + "Defense:" + Defense + ","
+        + "AttackRange:" + AttackRange + ","
+        + "AttackTarget:" + AttackTarget + ","
         + "Magic:" + Magic + ","
+        + "Target:" + Target + ","
         + "}";
     }
     

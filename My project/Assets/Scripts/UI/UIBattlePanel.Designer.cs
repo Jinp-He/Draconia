@@ -45,6 +45,8 @@ namespace Draconia.UI
 		public Toggle ItemToggle;
 		[SerializeField]
 		public Toggle HandsToggle;
+		[SerializeField]
+		public Button CardBinButton;
 		private UIBattlePanelData mPrivateData = null;
 		
 		protected override void ClearUIComponents()
@@ -65,6 +67,7 @@ namespace Draconia.UI
 			EndTurnButton = null;
 			ItemToggle = null;
 			HandsToggle = null;
+			CardBinButton = null;
 			
 			mData = null;
 		}

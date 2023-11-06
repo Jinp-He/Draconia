@@ -72,6 +72,14 @@ namespace Draconia.UI
 				}
 			});
 			
+			CardBinButton.onClick.AddListener(() =>
+			{
+				UIKit.OpenPanel<CardDisplayPanel>(new CardDisplayPanelData()
+				{
+					OnGoingPlayer = this.GetSystem<BattleSystem>().OngoingPlayer,
+				});
+			});
+			
 			
 
 			

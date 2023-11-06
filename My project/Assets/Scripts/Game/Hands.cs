@@ -6,6 +6,7 @@ using Draconia.System;
 using QFramework;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 using static UnityEngine.Screen;
 
@@ -30,15 +31,7 @@ namespace Draconia.ViewController
             Width = GetComponent<RectTransform>().rect.width;
         }
 
-        public Card AddCard(CardInfo cardInfo, Player player)
-        {
-            Card card = Instantiate(CardPrefab, PlayerHands.transform);
-            card.Init(cardInfo, player);
-            Cards.Add(card);
-            Refresh();
-            return card;
-        }
-
+        
         public void AddBasicCard(Player player)
         {
             foreach (var cardInfo in player.PlayerInfo.NormalAttackCard_Ref)

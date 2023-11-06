@@ -16,9 +16,11 @@ using Draconia.MyComponent;
 using Draconia.System;
 using Draconia.ViewController;
 using Draconia.ViewController.Event;
+using Unity.VisualScripting;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using NotImplementedException = System.NotImplementedException;
+using Sequence = DG.Tweening.Sequence;
 
 namespace Draconia.Controller
 {
@@ -37,7 +39,7 @@ namespace Draconia.Controller
 			set => _armor = value;
 		}
 
-		public virtual void Init()
+		public virtual void Init() 
 		{
             
 		}
@@ -114,6 +116,7 @@ namespace Draconia.ViewController
 
 
 		public List<Card> Deck;
+		public List<Card> Hands;
 		public List<Card> Bin;
 
 		
@@ -155,6 +158,8 @@ namespace Draconia.ViewController
 			});
 			BattleStart();
 		}
+
+
 
 		public void BattleStart()
 		{

@@ -82,7 +82,7 @@ namespace Draconia.Controller
 		
 		public void Defense(int value)
 		{
-			Armor += value;
+			Armor += value; 
 			HpBar.SetArmor(value);
 		}
 		
@@ -130,6 +130,8 @@ namespace Draconia.ViewController
 		public int DrawCard => PlayerInfo.DrawCardNum + _drawCardModifier;
 		private Action NextTurn;
 
+		public Sprite CardImageSprite;
+
 		
 		
 		public int Position => transform.GetSiblingIndex();
@@ -143,6 +145,7 @@ namespace Draconia.ViewController
 			CharacterAtlas = ResLoadSystem.LoadSync<SpriteAtlas>(playerInfo.Alias);
 			CharacterImage.sprite = CharacterAtlas.GetSprite("Idle");
 			CharacterImage.SetNativeSize();
+			CardImageSprite = ResLoadSystem.LoadSync<Sprite>("CardImage_" + playerInfo.Alias);
 			PlayerName = playerInfo.Name;
 			CurrHP = playerInfo.InitialHP;
 			HpBar.Init(playerInfo.InitialHP,playerInfo.InitialHP);
@@ -186,7 +189,9 @@ namespace Draconia.ViewController
 
 		public override void Die()
 		{
-			BattleSystem.GameOver();
+			HpBar.SetHp(0);
+			BattleSystem.PlayerDie(this);
+			
 		}
 		public void OnPointerEnter(PointerEventData eventData)
 		{

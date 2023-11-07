@@ -35,6 +35,14 @@ namespace cfg
         /// 自己周围
         /// </summary>
         AroundSelf = 5,
+        /// <summary>
+        /// 一些敌人（敌人限定）
+        /// </summary>
+        MultipleEnemy = 6,
+        /// <summary>
+        /// 一些友方（敌人限定）
+        /// </summary>
+        MultipleAlly = 7,
     }
 
 } 

@@ -54,12 +54,20 @@ namespace Draconia.ViewController
 			Enemies.Add(pointer);
 			return pointer;
 		}
-        
+
 		public void RemoveCharacter(Player player)
-		{}
-        
+		{
+			Players.Remove(player.MyPointer);
+			Pointers.Remove(player.MyPointer);
+			player.MyPointer.gameObject.DestroySelf();
+		}
+
 		public void RemoveEnemy(Enemy enemy)
-		{}
+		{
+			Players.Remove(enemy.MyPointer);
+			Pointers.Remove(enemy.MyPointer);
+			enemy.MyPointer.gameObject.DestroySelf();
+		}
 
 		public int GetPosition(Pointer pointer)
 		{

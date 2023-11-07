@@ -13,6 +13,7 @@ using UnityEngine.UI;
 using Utility;
 using DOTween = DG.Tweening.DOTween;
 using DG.Tweening;
+using Draconia.ViewController.Event;
 using NotImplementedException = System.NotImplementedException;
 using Sequence = DG.Tweening.Sequence;
 
@@ -21,27 +22,27 @@ namespace Draconia.ViewController
 	public partial class Enemy : Character,IPointerEnterHandler, IPointerExitHandler
 	{
 		public EnemyInfo EnemyInfo;
-		private int _energy;
-
+		public int _energy;
+		public int MaxEnergy;
 		public int Energy
 		{
 			get => _energy;
 			set
 			{
 				_energy = value;
-				if (_energy > EnemyBar._energyBulbs.Count)
+				if (_energy > MaxEnergy)
 				{
-					_energy = EnemyBar._energyBulbs.Count;
-				}
-				foreach (var bulb in EnemyBar._energyBulbs)
-				{
-					bulb.color = Color.white;
-
+					_energy = MaxEnergy;
 				}
 
-				foreach (var bulb in EnemyBar._energyBulbs.GetRange(0, value))
+				for (int i = 0; i < MaxEnergy; i++)
 				{
-					bulb.color = Color.blue;
+					if(i < _energy)
+						EnemyBar._energyBulbs[i].color = Color.blue;
+					else
+					{
+						EnemyBar._energyBulbs[i].color = Color.white;
+					}
 				}
 
 			}
@@ -66,6 +67,8 @@ namespace Draconia.ViewController
 			EnemyInfo = enemyInfo;
 			_enemyStrategy = EnemyStrategy.GetEnemyStrategy(this);
 
+			MaxEnergy = enemyInfo.MaxEnergy;
+
 			CharacterAtlas = ResLoadSystem.LoadSync<SpriteAtlas>(enemyInfo.Alias);
 			CharacterImage.sprite = CharacterAtlas.GetSprite("Idle");
 			CharacterImage.SetNativeSize();
@@ -77,14 +80,15 @@ namespace Draconia.ViewController
 			CurrHP = EnemyInfo.InitialHP;
 			MyPointer = UIKit.GetPanel<UIBattlePanel>().TimeBar.AddEnemy(this);
 			_enemyAnimator.Init(this);
+
+			this.RegisterEvent<BattleStartEvent>(e => _enemyStrategy.ChooseNextTurnAction());
 		}
 
 		public override void OnTurnStart()  
 		{
 			base.OnTurnStart();
 			//调整位置
-			BattleSystem.TimeBar.MoveAbsoluteTimePosition(MyPointer, 4);
-			Debug.Log(MyPointer.PositionX);
+			BattleSystem.TimeBar.MoveAbsoluteTimePosition(MyPointer, EnemyInfo.BackPos);
 			EnemyStrategy.Action();
 		}
 
@@ -140,7 +144,7 @@ namespace Draconia.ViewController
 
 		public override void Die()
 		{
-			BattleSystem.Enemies.Remove(this);
+			BattleSystem.EnemyDie(this);
 			Destroy(this);
 		}
 

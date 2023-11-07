@@ -20,6 +20,7 @@ namespace Draconia.ViewController
         
         public TextMeshProUGUI HitTextPrefab;
         public TextMeshProUGUI CriticalHitTextPrefab;
+        public CanvasGroup NotificationTextPrefab;
 
         public Image CharacterImage;
         public virtual void Init(Character character)
@@ -47,8 +48,8 @@ namespace Draconia.ViewController
         public void IsHit(int damage,  AttackType attackType, int armorDamage = 0, bool isCritical = false)
         {
             ActionKit.Sequence()
-                .Callback(() => {StartCoroutine(HitText(damage, attackType, isCritical)); })
-                .Callback(() => {if(armorDamage != 0) StartCoroutine(HitText(armorDamage, attackType, isCritical, true)); })
+                .Callback(() => {StartCoroutine(SendHitText(damage, attackType, isCritical)); })
+                .Callback(() => {if(armorDamage != 0) StartCoroutine(SendHitText(armorDamage, attackType, isCritical, true)); })
                 .Callback(() => { CharacterImage.sprite = _isHitSprite; })
                 .Delay(0.5f)
                 .Callback(() => { CharacterImage.sprite = _idleSprite; })
@@ -68,9 +69,17 @@ namespace Draconia.ViewController
             yield return new WaitForSeconds(1f);
         }
         
-        public IEnumerator HitText(int damage, AttackType hitType, bool isCritical, bool isArmor = false)
+        /// <summary>
+        /// 伤害数字跳出
+        /// </summary>
+        /// <param name="damage"></param>
+        /// <param name="hitType"></param>
+        /// <param name="isCritical"></param>
+        /// <param name="isArmor"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        public IEnumerator SendHitText(int damage, AttackType hitType, bool isCritical, bool isArmor = false)
         {
-            Debug.Log("HitText 触发");
             TextMeshProUGUI hitText;
             if (isCritical)
                 hitText = Instantiate(CriticalHitTextPrefab, Character.DamageTextField);
@@ -109,8 +118,28 @@ namespace Draconia.ViewController
                 .Play();
             yield return new WaitForSeconds(1f);
         }
-        
 
+        /// <summary>
+        /// 信息跳出（Buff或者是姿态的提示信息）
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public IEnumerator SendNotificationText(string text)
+        {
+            CanvasGroup s = Instantiate(NotificationTextPrefab, Character.NotificationTextField);
+            s.gameObject.SetActive(true);
+            s.GetComponentInChildren<TextMeshProUGUI>().text = text;
+            s.alpha = 0;
+            Sequence seq = DOTween.Sequence();
+            seq.Append(s.transform.DOLocalMoveY(-50, .3f))
+                .Join(s.DOFade(1f, .3f))
+                .AppendInterval(.5f)
+                .Append(s.transform.DOLocalMoveY(-80, .1f))
+                .Join(s.DOFade(0f, .3f))
+                .OnComplete(()=> s.gameObject.DestroySelf())
+                .Play();
+            yield return new WaitForSeconds(2f);
+        }
 
     }
 }

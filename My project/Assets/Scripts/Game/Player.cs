@@ -33,6 +33,7 @@ namespace Draconia.Controller
 		public Image CharacterImage;
 		public CharacterAnimator CharacterAnimator;
 		public RectTransform DamageTextField;
+		public RectTransform NotificationTextField;
 		public int Armor
 		{
 			get => _armor;
@@ -107,7 +108,7 @@ namespace Draconia.Controller
 
 namespace Draconia.ViewController
 {
-	public partial class Player : Character, ICanRegisterEvent,  IPointerEnterHandler, IPointerExitHandler
+	public partial class Player : Character, ICanRegisterEvent
 	{
 		//public SpriteAtlas CharacterAtlas;
 		public Pointer MyPointer;
@@ -175,34 +176,12 @@ namespace Draconia.ViewController
 			}
 		}
 		
-		private void Update()               
-		{
-			
-		}
-
-		private void RefreshCard()
-		{
-			Cards.AddRange(PlayerInfo.InitialCards_Ref);
-		}
-
-
 
 		public override void Die()
 		{
 			HpBar.SetHp(0);
 			BattleSystem.PlayerDie(this);
 			
-		}
-		public void OnPointerEnter(PointerEventData eventData)
-		{
-			// Chosen();
-			// UIKit.GetPanel<UIBattlePanel>().ChosenCharacter = this;
-		}
-
-		public void OnPointerExit(PointerEventData eventData)
-		{
-			// Unchosen();
-			// UIKit.GetPanel<UIBattlePanel>().ChosenCharacter = null;
 		}
 
 		public void Chosen()
@@ -214,8 +193,14 @@ namespace Draconia.ViewController
 		{
 			ChooseBracelet.gameObject.SetActive(false);
 		}
-		
-		
+
+		/// <summary>
+		/// 进入姿态
+		/// </summary>
+		public void EnterPose()
+		{
+			
+		}
 		
 		public void Move(Player player)
 		{
@@ -256,15 +241,10 @@ namespace Draconia.ViewController
 		}
 		
 
-		public void Refresh()
-		{
-			MyPointer.Refresh();
-		}
-
-
 		public override void OnTurnStart()
 		{
 			base.OnTurnStart();
+			StartCoroutine(PlayerAnimator.SendNotificationText("回合开始了"));
 			UIKit.GetPanel<UIBattlePanel>().TimeBar.MoveAbsoluteTimePosition(MyPointer, BackNum);
 			PlayerAnimator.IsChosen();
 		}

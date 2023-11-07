@@ -382,7 +382,7 @@ namespace Draconia.ViewController
                     }
                     break;
                 case 104:
-                    CardPlayer.AddBuff("必定闪避", 1);
+                    BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 2);
                     break;
                 case 105:
                     break;

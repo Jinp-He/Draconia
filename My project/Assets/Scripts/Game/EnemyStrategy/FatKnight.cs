@@ -62,13 +62,13 @@ namespace Draconia.ViewController
         {
             
             _enemy.Energy+=1;
-            BattleSystem.Attack(_enemy, Range, AttackType.Physical, 3 );
+            BattleSystem.RangeAttack(_enemy, Range, AttackType.Physical, 3 );
             //Debug.Log("#DEBUG# USe Normal Attack");
         }
         protected override void UseUlt()
         {
             base.UseUlt();
-            BattleSystem.Attack(_enemy, Range,AttackType.Physical, 4 );
+            BattleSystem.RangeAttack(_enemy, Range,AttackType.Physical, 4 );
             //BattleSystem.Attack(_enemy, BattleSystem.Characters[1],AttackType.Physical, 4 );
             
             _enemy.Energy = 0;

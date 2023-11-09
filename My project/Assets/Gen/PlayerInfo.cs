@@ -35,15 +35,17 @@ public sealed partial class PlayerInfo :  Bright.Config.BeanBase
         { if(!_json["MagicResist"].IsNumber) { throw new SerializationException(); }  MagicResist = _json["MagicResist"]; }
         { var __json0 = _json["InitialCards"]; if(!__json0.IsArray) { throw new SerializationException(); } InitialCards = new System.Collections.Generic.List<int>(__json0.Count); foreach(JSONNode __e0 in __json0.Children) { int __v0;  { if(!__e0.IsNumber) { throw new SerializationException(); }  __v0 = __e0; }  InitialCards.Add(__v0); }   }
         { var __json0 = _json["NormalAttackCard"]; if(!__json0.IsArray) { throw new SerializationException(); } NormalAttackCard = new System.Collections.Generic.List<int>(__json0.Count); foreach(JSONNode __e0 in __json0.Children) { int __v0;  { if(!__e0.IsNumber) { throw new SerializationException(); }  __v0 = __e0; }  NormalAttackCard.Add(__v0); }   }
-        { if(!_json["Passives"].IsNumber) { throw new SerializationException(); }  Passives = _json["Passives"]; }
+        { if(!_json["PassiveModifier"].IsNumber) { throw new SerializationException(); }  PassiveModifier = _json["PassiveModifier"]; }
         { if(!_json["HitDecreaseRate"].IsNumber) { throw new SerializationException(); }  HitDecreaseRate = _json["HitDecreaseRate"]; }
         { if(!_json["Alias"].IsString) { throw new SerializationException(); }  Alias = _json["Alias"]; }
         { if(!_json["DrawCardNum"].IsNumber) { throw new SerializationException(); }  DrawCardNum = _json["DrawCardNum"]; }
         { if(!_json["BackNum"].IsNumber) { throw new SerializationException(); }  BackNum = _json["BackNum"]; }
+        { if(!_json["Passive"].IsString) { throw new SerializationException(); }  Passive = _json["Passive"]; }
+        { if(!_json["PassiveDesc"].IsString) { throw new SerializationException(); }  PassiveDesc = _json["PassiveDesc"]; }
         PostInit();
     }
 
-    public PlayerInfo(int id, string Name, int AttackPower, int AttackPreCD, int AttackPostCD, int AttackRange, int AttackRecover, int Speed, int InitialHP, float CriticalHitRate, float CriticalDamage, float HitRate, float DodgeRate, int Armor, int MagicResist, System.Collections.Generic.List<int> InitialCards, System.Collections.Generic.List<int> NormalAttackCard, int Passives, float HitDecreaseRate, string Alias, int DrawCardNum, int BackNum ) 
+    public PlayerInfo(int id, string Name, int AttackPower, int AttackPreCD, int AttackPostCD, int AttackRange, int AttackRecover, int Speed, int InitialHP, float CriticalHitRate, float CriticalDamage, float HitRate, float DodgeRate, int Armor, int MagicResist, System.Collections.Generic.List<int> InitialCards, System.Collections.Generic.List<int> NormalAttackCard, int PassiveModifier, float HitDecreaseRate, string Alias, int DrawCardNum, int BackNum, string Passive, string PassiveDesc ) 
     {
         this.Id = id;
         this.Name = Name;
@@ -62,11 +64,13 @@ public sealed partial class PlayerInfo :  Bright.Config.BeanBase
         this.MagicResist = MagicResist;
         this.InitialCards = InitialCards;
         this.NormalAttackCard = NormalAttackCard;
-        this.Passives = Passives;
+        this.PassiveModifier = PassiveModifier;
         this.HitDecreaseRate = HitDecreaseRate;
         this.Alias = Alias;
         this.DrawCardNum = DrawCardNum;
         this.BackNum = BackNum;
+        this.Passive = Passive;
+        this.PassiveDesc = PassiveDesc;
         PostInit();
     }
 
@@ -146,9 +150,9 @@ public sealed partial class PlayerInfo :  Bright.Config.BeanBase
     public System.Collections.Generic.List<int> NormalAttackCard { get; private set; }
     public System.Collections.Generic.List<CardInfo> NormalAttackCard_Ref { get; private set; }
     /// <summary>
-    /// 被动（暂时未添加）
+    /// 被动数值
     /// </summary>
-    public int Passives { get; private set; }
+    public int PassiveModifier { get; private set; }
     /// <summary>
     /// 硬直系数
     /// </summary>
@@ -165,6 +169,14 @@ public sealed partial class PlayerInfo :  Bright.Config.BeanBase
     /// 每回合退回数
     /// </summary>
     public int BackNum { get; private set; }
+    /// <summary>
+    /// 被动
+    /// </summary>
+    public string Passive { get; private set; }
+    /// <summary>
+    /// 被动描述
+    /// </summary>
+    public string PassiveDesc { get; private set; }
 
     public const int __ID__ = -205981873;
     public override int GetTypeId() => __ID__;
@@ -200,11 +212,13 @@ public sealed partial class PlayerInfo :  Bright.Config.BeanBase
         + "MagicResist:" + MagicResist + ","
         + "InitialCards:" + Bright.Common.StringUtil.CollectionToString(InitialCards) + ","
         + "NormalAttackCard:" + Bright.Common.StringUtil.CollectionToString(NormalAttackCard) + ","
-        + "Passives:" + Passives + ","
+        + "PassiveModifier:" + PassiveModifier + ","
         + "HitDecreaseRate:" + HitDecreaseRate + ","
         + "Alias:" + Alias + ","
         + "DrawCardNum:" + DrawCardNum + ","
         + "BackNum:" + BackNum + ","
+        + "Passive:" + Passive + ","
+        + "PassiveDesc:" + PassiveDesc + ","
         + "}";
     }
     

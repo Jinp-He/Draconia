@@ -58,6 +58,7 @@ namespace Draconia.System
             Energy.Value = InitEnergy;
             BattleState = BattleState.Enemy;
             TimeBar = UIBattlePanel.TimeBar;
+            TimeBar.Init();
             //默认使用角色成为第一个
             OngoingPlayer = Characters[0];
             this.SendEvent<BattleStartEvent>();
@@ -132,7 +133,7 @@ namespace Draconia.System
             player.OnTurnStart();
             OngoingPlayer = player;
             Hands.OnPlayerTurnStart(OngoingPlayer);
-            DrawCard(player, player.DrawCard);
+            DrawCard(player, player.CardDrawNum);
             DrawNormalCard(player);
         }
 
@@ -175,6 +176,9 @@ namespace Draconia.System
                 dmg = (int)(attackPower - player.PlayerInfo.Armor);
 
             }
+            
+            //是否在危险区，如果在危险区加伤
+            dmg += player.IsOnDangerArea() ? player.DamageDangerModifier : 0;
 
             //是否暴击
             if (Random.Range(0, 1f) <= enemy.EnemyInfo.CriticalHitRate)
@@ -185,20 +189,6 @@ namespace Draconia.System
             player.IsHit(dmg, attackType);
         }
         
-        public void Attack(Enemy enemy, List<int> range, AttackType attackType, int attackPower)
-        {
-            foreach (var i in range)
-            {
-                Debug.Log(i + " ");
-            }
-            List<Player> list = UIBattlePanel.PlayerArea.GetComponentsInChildren<Player>().ToList();
-            for (int i = 0; i < range.Count; i++)
-            {
-                Debug.Log(range.ToString());
-                if(range[i] == 1)
-                    Attack(enemy, list[i], attackType, attackPower);
-            }
-        }
 
         public void Attack(Player player, Enemy enemy, AttackType attackType, int attackPower)
         {
@@ -218,6 +208,9 @@ namespace Draconia.System
                 dmg = (int)(attackPower - enemy.EnemyInfo.Armor);
             }
             //计算伤害
+            
+            //是否在危险区，如果在危险区加伤
+            dmg += enemy.IsOnDangerArea() ? enemy.DamageDangerModifier : 0;
 
             //是否暴击
             if (Random.Range(0, 1f) <= player.PlayerInfo.CriticalHitRate)
@@ -226,6 +219,20 @@ namespace Draconia.System
             }
 
             enemy.IsHit(dmg, attackType);
+        }
+        public void RangeAttack(Enemy enemy, List<int> range, AttackType attackType, int attackPower)
+        {
+            foreach (var i in range)
+            {
+                Debug.Log(i + " ");
+            }
+            List<Player> list = UIBattlePanel.PlayerArea.GetComponentsInChildren<Player>().ToList();
+            for (int i = 0; i < range.Count; i++)
+            {
+                Debug.Log(range.ToString());
+                if(range[i] == 1)
+                    Attack(enemy, list[i], attackType, attackPower);
+            }
         }
 
         public void Restart()

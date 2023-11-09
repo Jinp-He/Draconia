@@ -385,8 +385,10 @@ namespace Draconia.ViewController
                     BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 2);
                     break;
                 case 105:
+                    CardPlayer.EnterPose("飞鸟式");
                     break;
                 case 106:
+                    CardPlayer.EnterPose("拿云式");
                     break;
                 case 107:
                     _allies[0].MoveInTime(2);

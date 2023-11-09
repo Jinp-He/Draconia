@@ -20,6 +20,8 @@ namespace Draconia.ViewController
 		public List<Pointer> Enemies;
 		public bool IsInit, IsStart;
 
+		public int DangerAreaPlayer, DangerAreaEnemy;
+
 
 		public static float ToBarPosition(int k)
 		{
@@ -27,10 +29,12 @@ namespace Draconia.ViewController
 		}
 		public void Init()
 		{
-			IsInit = true;
-			Pointers = new List<Pointer>();
-			Players = new List<Pointer>();
-			Enemies = new List<Pointer>();
+			// Pointers = new List<Pointer>();
+			// Players = new List<Pointer>();
+			// Enemies = new List<Pointer>();
+
+			DangerAreaPlayer = 6;
+			DangerAreaEnemy = 6;
 		}
 
 
@@ -109,9 +113,8 @@ namespace Draconia.ViewController
 		/// <param name="timePosition"></param>
 		/// <param name="isEnemy"></param>
 		/// <returns></returns>
-		public float TransferPosition(float timePosition, bool isPlayer)
+		private float TransferPosition(float timePosition, bool isPlayer)
 		{
-			//Debug.LogFormat("#DEBUG#{0}, {1}",timePosition,EnemyActionPoint.position.x - timePosition * TimeBarScale);
 			if (isPlayer)
 			{
 				return -(timePosition) * TimeBarScale;
@@ -127,6 +130,7 @@ namespace Draconia.ViewController
 			//获得绝对位置
 			float h = Math.Abs(pointer.PositionX);
 			int min = (int)h / (int)TimeBarScale;
+			//Debug.LogFormat("获取的位置为 {0} {1}",min,min+1);
 			if ((int)h % (int)TimeBarScale == 0)
 			{
 				return new QFramework.Tuple<int, int>(min, min);
@@ -147,12 +151,18 @@ namespace Draconia.ViewController
 				pointer.PositionX += cost * TimeBarScale;
 			}
 			pointer.Regulate();
+			if(IsInDangerArea(pointer))
+				pointer.Character.TriggerDanger.Invoke();
 		}
-		
-		
-		public void MoveAbsoluteTimePosition(Pointer pointer,float pos)
+
+
+		public void MoveAbsoluteTimePosition(Pointer pointer, float pos, bool isInit = false)
 		{
 			pointer.PositionX = TransferPosition(pos, pointer._isPlayer);
+			if (isInit) return;
+			pointer.Regulate();
+			if(IsInDangerArea(pointer))
+				pointer.Character.TriggerDanger.Invoke();
 		}
 
 		public void Move()
@@ -168,6 +178,35 @@ namespace Draconia.ViewController
 			}
 			return true;
 		}
+
+
+		public bool IsInDangerArea(Pointer pointer)
+		{
+			QFramework.Tuple<int, int> range = TransferLocalPosition(pointer);
+			Debug.LogFormat("位置为{0} {1}", range.Item1, range.Item2);
+			Debug.LogFormat("Dangerarea {0}", DangerAreaPlayer);
+			if (pointer._isPlayer)
+			{
+				if (range.Item1 > DangerAreaPlayer)
+				{
+					return true;
+				}
+				else if(range.Item1 == DangerAreaPlayer && range.Item1 != range.Item2)
+					return true;
+			}
+			else
+			{
+				if (range.Item1 > DangerAreaEnemy)
+				{
+					return true;
+				}
+				else if(range.Item1 == DangerAreaEnemy && range.Item1 != range.Item2)
+					return true;
+			}
+
+			return false;
+		}
+		
 
 	
 		

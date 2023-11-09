@@ -119,6 +119,8 @@ namespace Draconia.ViewController
             yield return new WaitForSeconds(1f);
         }
 
+
+        private bool _isSendingNotification;
         /// <summary>
         /// 信息跳出（Buff或者是姿态的提示信息）
         /// </summary>
@@ -126,6 +128,11 @@ namespace Draconia.ViewController
         /// <returns></returns>
         public IEnumerator SendNotificationText(string text)
         {
+            if (_isSendingNotification)
+            {
+                yield return 0.1f;
+            }
+            _isSendingNotification = true;
             CanvasGroup s = Instantiate(NotificationTextPrefab, Character.NotificationTextField);
             s.gameObject.SetActive(true);
             s.GetComponentInChildren<TextMeshProUGUI>().text = text;
@@ -139,6 +146,7 @@ namespace Draconia.ViewController
                 .OnComplete(()=> s.gameObject.DestroySelf())
                 .Play();
             yield return new WaitForSeconds(2f);
+            _isSendingNotification = false;
         }
 
     }

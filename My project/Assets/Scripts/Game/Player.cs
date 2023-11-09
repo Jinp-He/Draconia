@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using cfg;
@@ -29,11 +30,21 @@ namespace Draconia.Controller
 		public HPBar HpBar;
 		public int CurrHP;
 		private int _armor;
+		public Action TriggerDanger;
+		public Pointer MyPointer;
+
+		public int DamageDangerModifier = 1;
+
+
 		public SpriteAtlas CharacterAtlas;
 		public Image CharacterImage;
 		public CharacterAnimator CharacterAnimator;
 		public RectTransform DamageTextField;
 		public RectTransform NotificationTextField;
+
+		protected static readonly int DangerAreaDamageNum = 2;
+		
+		
 		public int Armor
 		{
 			get => _armor;
@@ -42,12 +53,12 @@ namespace Draconia.Controller
 
 		public virtual void Init() 
 		{
-            
+          
 		}
 
 		public virtual bool IsOnDangerArea()
 		{
-			return true;
+			return BattleSystem.TimeBar.IsInDangerArea(MyPointer);
 		}
 
 
@@ -102,6 +113,8 @@ namespace Draconia.Controller
 		{
 			StartCoroutine(GetComponent<CharacterAnimator>().Miss());
 		}
+		
+		
 
 	}
 }
@@ -111,7 +124,7 @@ namespace Draconia.ViewController
 	public partial class Player : Character, ICanRegisterEvent
 	{
 		//public SpriteAtlas CharacterAtlas;
-		public Pointer MyPointer;
+		
 		public PlayerInfo PlayerInfo;
 		public List<CardInfo> Cards;
 
@@ -128,7 +141,7 @@ namespace Draconia.ViewController
 		private int _backNumModifier;
 		public int BackNum => PlayerInfo.BackNum + _backNumModifier;
 		private int _drawCardModifier;
-		public int DrawCard => PlayerInfo.DrawCardNum + _drawCardModifier;
+		public int CardDrawNum => PlayerInfo.DrawCardNum + _drawCardModifier;
 		private Action NextTurn;
 
 		public Sprite CardImageSprite;
@@ -158,8 +171,12 @@ namespace Draconia.ViewController
 			this.RegisterEvent<PlayerTurnStartEvent>((e) =>
 			{
 				NextTurn?.Invoke();
-				NextTurn = new Action(() => { });
+				NextTurn = () => { };
 			});
+
+			TriggerDanger = () => { };
+			TriggerDanger += EnterDangerArea;
+			
 			BattleStart();
 		}
 
@@ -194,12 +211,65 @@ namespace Draconia.ViewController
 			ChooseBracelet.gameObject.SetActive(false);
 		}
 
+
+		private bool _isFirstTimeDangerArea;
+		/// <summary>
+		/// 进入危险区域自动触发
+		/// </summary>
+		public void EnterDangerArea()
+		{
+
+			if (_isFirstTimeDangerArea)
+			{
+				BattleSystem.DrawCard(this, 1);
+			}
+			IsHit(DangerAreaDamageNum, AttackType.Physical);
+			_isFirstTimeDangerArea = false;
+		}
+
+
+		private bool _isInPose;
+		private string _prevPoseId;
 		/// <summary>
 		/// 进入姿态
 		/// </summary>
-		public void EnterPose()
+		public void EnterPose(string poseId)
 		{
-			
+			if (_isInPose)
+			{
+				LeavePose();
+			}
+			StartCoroutine(PlayerAnimator.SendNotificationText("进入姿态"));
+			switch (poseId)
+			{
+				case "飞鸟式":
+					BattleSystem.TimeBar.DangerAreaEnemy += 1;
+					break;
+				case "拿云式":
+					
+					break;
+
+			}
+			StartCoroutine(PlayerAnimator.SendNotificationText(poseId));
+			_isInPose = true;
+			_prevPoseId = poseId;
+		}
+
+		public void LeavePose()
+		{
+			StartCoroutine(PlayerAnimator.SendNotificationText("退出姿态"));
+			switch (_prevPoseId)
+			{
+				case "飞鸟式":
+					BattleSystem.TimeBar.DangerAreaEnemy -= 1;
+					break;
+				case "拿云式":
+					
+					break;
+
+			}
+
+			_isInPose = false;
 		}
 		
 		public void Move(Player player)
@@ -246,6 +316,7 @@ namespace Draconia.ViewController
 			base.OnTurnStart();
 			StartCoroutine(PlayerAnimator.SendNotificationText("回合开始了"));
 			UIKit.GetPanel<UIBattlePanel>().TimeBar.MoveAbsoluteTimePosition(MyPointer, BackNum);
+			_isFirstTimeDangerArea = true;
 			PlayerAnimator.IsChosen();
 		}
 		public void OnTurnEnd()
@@ -259,10 +330,6 @@ namespace Draconia.ViewController
 			GetComponent<BuffManager>().AddBuff(buffName, stack);
 		}
 
-		public bool IsOnDangerArea()
-		{
-			return true;
-		}
 
 		public void MoveInTime(int i)
 		{

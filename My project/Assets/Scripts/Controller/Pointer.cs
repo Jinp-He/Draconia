@@ -13,6 +13,7 @@ namespace Draconia.Controller
     public class Pointer : MyViewController
     {
         public Image PointerImage;
+        public Character Character;
         private Player _mPlayer;
         private Enemy _mEnemy;
         private int _speed;
@@ -28,9 +29,11 @@ namespace Draconia.Controller
             get => transform.localPosition.x;
         }
         
+        
         public void Init(Player player, TimeBar timeBar)
         {
             Debug.Log("Init!");
+            Character = player;
             name = "Pointer_" + player.PlayerInfo.Name;
             _timeBar = timeBar;
             _mPlayer = player;
@@ -39,12 +42,13 @@ namespace Draconia.Controller
             _isPlayer = true;
             _isInit = true;
             
-            _timeBar.MoveAbsoluteTimePosition(this, _mPlayer.BackNum);
+            _timeBar.MoveAbsoluteTimePosition(this, _mPlayer.BackNum, true);
         }
         
         public void Init(Enemy enemy, TimeBar timeBar)
         {
             Debug.Log("Init!");
+            Character = enemy;
             _timeBar = timeBar;
             _mEnemy = enemy;
             _speed = _mEnemy.EnemyInfo.Speed;
@@ -53,7 +57,7 @@ namespace Draconia.Controller
             _isInit = true;
             
             //TODO: 更改初始位置
-            _timeBar.MoveAbsoluteTimePosition(this, 4);
+            _timeBar.MoveAbsoluteTimePosition(this, 4, true);
         }
 
 
@@ -77,7 +81,7 @@ namespace Draconia.Controller
         }
         
         /// <summary>
-        /// 移动到正确的位置 不会超出
+        /// 移动到正确的位置 不会超出,同时判断是否进入危险区？
         /// </summary>
         public void Regulate()
         {

@@ -52,9 +52,7 @@ namespace Draconia.ViewController
 		public int Position => transform.GetSiblingIndex();
 
 		public EnemyStrategy EnemyStrategy => _enemyStrategy;
-
-
-		public Pointer MyPointer;
+		
 		//public SpriteAtlas EnemyAtlas;
 		public EnemyAnimator _enemyAnimator;
 		private EnemyStrategy _enemyStrategy;
@@ -80,6 +78,9 @@ namespace Draconia.ViewController
 			CurrHP = EnemyInfo.InitialHP;
 			MyPointer = UIKit.GetPanel<UIBattlePanel>().TimeBar.AddEnemy(this);
 			_enemyAnimator.Init(this);
+			
+			TriggerDanger = () => { };
+			TriggerDanger += EnterDangerArea;
 
 			this.RegisterEvent<BattleStartEvent>(e => _enemyStrategy.ChooseNextTurnAction());
 		}
@@ -153,14 +154,15 @@ namespace Draconia.ViewController
 			GetComponent<BuffManager>().AddBuff(buffName, stack);
 		}
 
-		public bool IsOnDangerArea()
-		{
-			return true;
-		}
-		
+
 		public void MoveInTime(int i)
 		{
 			MyPointer.Move(i);
+		}
+
+		private void EnterDangerArea()
+		{
+			IsHit(DangerAreaDamageNum, AttackType.Physical);
 		}
 	}
 }

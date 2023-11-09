@@ -53,7 +53,7 @@ namespace Draconia.ViewController
         }
         protected override void UseNormalAttack()
         {
-            BattleSystem.Attack(_enemy, Range, AttackType.Physical, 3);
+            BattleSystem.RangeAttack(_enemy, Range, AttackType.Physical, 3);
             _enemy.Energy+=1;
 
             //Debug.Log("#DEBUG# USe Normal Attack");
@@ -61,7 +61,7 @@ namespace Draconia.ViewController
         protected override void UseUlt()
         {
             base.UseUlt();
-            BattleSystem.Attack(_enemy, Range, AttackType.Physical, 5);
+            BattleSystem.RangeAttack(_enemy, Range, AttackType.Physical, 5);
             _enemy.Energy = 0;
             //Debug.Log("#DEBUG# USe Ult");
         }

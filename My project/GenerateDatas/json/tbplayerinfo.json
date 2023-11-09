@@ -17,8 +17,8 @@
     "MagicResist": 0,
     "InitialCards": [
       103,
-      108,
-      109,
+      105,
+      106,
       110,
       107
     ],
@@ -27,11 +27,13 @@
       101,
       102
     ],
-    "Passives": 0,
+    "PassiveModifier": 1,
     "HitDecreaseRate": 1,
     "Alias": "Zhouzhou",
     "DrawCardNum": 3,
-    "BackNum": 3
+    "BackNum": 3,
+    "Passive": "避柳",
+    "PassiveDesc": "场上有单位进入危险区时减少自身*PassiveModifier*费用。一次行动只能触发一次。（直到下个回合无法触发）"
   },
   {
     "id": 10002,
@@ -61,10 +63,12 @@
       201,
       202
     ],
-    "Passives": 0,
+    "PassiveModifier": 0,
     "HitDecreaseRate": 1,
     "Alias": "Timbuktu",
     "DrawCardNum": 3,
-    "BackNum": 4
+    "BackNum": 4,
+    "Passive": "",
+    "PassiveDesc": ""
   }
 ]

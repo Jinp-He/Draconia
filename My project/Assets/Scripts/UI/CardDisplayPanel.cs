@@ -32,19 +32,19 @@ namespace Draconia.UI
 
 		private void InitCards()
 		{
-			foreach (var card in mData.OnGoingPlayer.Deck)
+			foreach (var card in mData.OnGoingPlayer.PlayerStrategy.Deck)
 			{
 				Card tempCard = Instantiate(card, CardArea);
 				tempCard.Init(card._cardInfo, card.CardPlayer);
 				tempCard.ShowMode(); 
 			}
-			foreach (var card in mData.OnGoingPlayer.Hands)
+			foreach (var card in mData.OnGoingPlayer.PlayerStrategy.Hands)
 			{
 				Card tempCard = Instantiate(card, CardArea);
 				tempCard.Init(card._cardInfo, card.CardPlayer);
 				tempCard.ShowMode();
 			}
-			foreach (var card in mData.OnGoingPlayer.Bin)
+			foreach (var card in mData.OnGoingPlayer.PlayerStrategy.Bin)
 			{
 				Card tempCard = Instantiate(card, CardArea);
 				tempCard.Init(card._cardInfo, card.CardPlayer);

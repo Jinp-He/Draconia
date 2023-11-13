@@ -22,7 +22,7 @@ namespace Draconia.System
     public class BattleSystem : AbstractSystem, ICanSendEvent
     {
         public Hands Hands;
-        public List<Player> Characters;
+        public List<Player> Players;
         public List<Enemy> Enemies;
         public BattleState BattleState;
         private UIBattlePanel UIBattlePanel;
@@ -47,7 +47,7 @@ namespace Draconia.System
             UIKit.OpenPanel<UIBattlePanel>(new UIBattlePanelData() { StageInfo = stageInfo });
             UIBattlePanel = UIKit.GetPanel<UIBattlePanel>();
             Hands = UIBattlePanel.Hands;
-            Characters = UIBattlePanel.Characters;
+            Players = UIBattlePanel.Characters;
             Enemies = UIBattlePanel.Enemies;
             Energy = new BindableProperty<int>(InitEnergy);
             Energy.Register(e =>
@@ -60,7 +60,7 @@ namespace Draconia.System
             TimeBar = UIBattlePanel.TimeBar;
             TimeBar.Init();
             //默认使用角色成为第一个
-            OngoingPlayer = Characters[0];
+            OngoingPlayer = Players[0];
             this.SendEvent<BattleStartEvent>();
         }
 
@@ -90,23 +90,23 @@ namespace Draconia.System
         public List<Card> DrawCard(Player player, int num)
         {
             //如果没有卡牌了
-            if (num > player.Deck.Count)
+            if (num > player.PlayerStrategy.Deck.Count)
             {
-                foreach (var card in player.Bin)
+                foreach (var card in player.PlayerStrategy.Bin)
                 {
-                    player.Deck.Add(card);
-                    player.Deck.Shuffle();
+                    player.PlayerStrategy.Deck.Add(card);
+                    player.PlayerStrategy.Deck.Shuffle();
                 }
 
-                player.Bin.Clear();
+                player.PlayerStrategy.Bin.Clear();
             }
 
-            List<Card> cards = player.Deck.PickRandom(num).ToList();
-            player.Hands.AddRange(cards);
+            List<Card> cards = player.PlayerStrategy.Deck.PickRandom(num).ToList();
+            player.PlayerStrategy.Hands.AddRange(cards);
             foreach (var card in cards)
             {
                 Hands.AddCard(card, player);
-                player.Deck.Remove(card);
+                player.PlayerStrategy.Deck.Remove(card);
             }
 
             return cards;
@@ -125,6 +125,8 @@ namespace Draconia.System
         {
             Hands.AddBasicCard(player);
         }
+        
+        
 
         public void PlayerTurnStart(Player player)
         {
@@ -133,7 +135,7 @@ namespace Draconia.System
             player.OnTurnStart();
             OngoingPlayer = player;
             Hands.OnPlayerTurnStart(OngoingPlayer);
-            DrawCard(player, player.CardDrawNum);
+            DrawCard(player, player.PlayerStrategy.CardDrawNum);
             DrawNormalCard(player);
         }
 
@@ -147,7 +149,7 @@ namespace Draconia.System
             BattleState = BattleState.Enemy;
             Continue();
             Hands.OnEndTurn(OngoingPlayer);
-            OngoingPlayer.OnTurnEnd();
+            OngoingPlayer.PlayerStrategy.OnTurnEnd();
             //OngoingPlayer = null;
         }
 
@@ -162,7 +164,7 @@ namespace Draconia.System
             int dmg;
             //是否闪避
             if (Random.Range(0, 1f) > enemy.EnemyInfo.HitRate
-                || Random.Range(0, 1f) <= player.PlayerInfo.DodgeRate)
+                || Random.Range(0, 1f) <= player.PlayerStrategy.PlayerInfo.DodgeRate)
             {
                 player.Miss();
                 return;
@@ -170,10 +172,10 @@ namespace Draconia.System
 
             //计算伤害
             if (attackType == AttackType.Magic)
-                dmg = (int)(attackPower - player.PlayerInfo.MagicResist);
+                dmg = (int)(attackPower - player.PlayerStrategy.PlayerInfo.MagicResist);
             else
             {
-                dmg = (int)(attackPower - player.PlayerInfo.Armor);
+                dmg = (int)(attackPower - player.PlayerStrategy.PlayerInfo.Armor);
 
             }
             
@@ -194,7 +196,7 @@ namespace Draconia.System
         {
             int dmg;
             //是否闪避
-            if (Random.Range(0, 1f) > player.PlayerInfo.HitRate
+            if (Random.Range(0, 1f) > player.PlayerStrategy.PlayerInfo.HitRate
                 || Random.Range(0, 1f) <= enemy.EnemyInfo.DodgeRate)
             {
                 enemy.Miss();
@@ -213,9 +215,9 @@ namespace Draconia.System
             dmg += enemy.IsOnDangerArea() ? enemy.DamageDangerModifier : 0;
 
             //是否暴击
-            if (Random.Range(0, 1f) <= player.PlayerInfo.CriticalHitRate)
+            if (Random.Range(0, 1f) <= player.PlayerStrategy.PlayerInfo.CriticalHitRate)
             {
-                dmg = (int)(dmg * player.PlayerInfo.CriticalDamage);
+                dmg = (int)(dmg * player.PlayerStrategy.PlayerInfo.CriticalDamage);
             }
 
             enemy.IsHit(dmg, attackType);
@@ -243,9 +245,9 @@ namespace Draconia.System
 
         public void PlayerDie(Player player)
         {
-            Characters.Remove(player);
+            Players.Remove(player);
             TimeBar.RemoveCharacter(player);
-            if (Characters.Count == 0)
+            if (Players.Count == 0)
             {
                 GameOver();
             }

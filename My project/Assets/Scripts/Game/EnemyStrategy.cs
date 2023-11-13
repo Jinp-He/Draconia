@@ -70,7 +70,7 @@ namespace Draconia.ViewController
             //计算攻击的角色位置
             var listNum = new List<int>();
             Debug.Log(_enemy.EnemyInfo.Name);
-            len = Math.Min(len, BattleSystem.Characters.Count);
+            len = Math.Min(len, BattleSystem.Players.Count);
             for (int i = 0; i < len; i++)
             {
                 listNum.Add(i);
@@ -190,8 +190,8 @@ namespace Draconia.ViewController
         protected List<Player> PossibleTarget(int minRange, int maxRange)
         { 
             List<Player> res = new List<Player>();
-            int min = Math.Clamp(minRange - _enemy.Position, 0, BattleSystem.Characters.Count);
-            int max = Math.Clamp(maxRange - _enemy.Position, 0, BattleSystem.Characters.Count);
+            int min = Math.Clamp(minRange - _enemy.Position, 0, BattleSystem.Players.Count);
+            int max = Math.Clamp(maxRange - _enemy.Position, 0, BattleSystem.Players.Count);
             BattleSystem.GetPlayersAtRange(min, max);
             
             return res;

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Draconia.Controller;
+using Draconia.ViewController.Event;
 using UnityEngine;
 using QFramework;
 
@@ -10,7 +11,7 @@ namespace Draconia.ViewController
 	/// <summary>
 	/// 时间轴，控制角色的行动顺序
 	/// </summary>
-	public partial class TimeBar : QFramework.ViewController
+	public partial class TimeBar : QFramework.ViewController, ICanRegisterEvent, ICanSendEvent
 	{
 		public static int Length = 500;
 
@@ -33,8 +34,8 @@ namespace Draconia.ViewController
 			// Players = new List<Pointer>();
 			// Enemies = new List<Pointer>();
 
-			DangerAreaPlayer = 6;
-			DangerAreaEnemy = 6;
+			DangerAreaPlayer = 5;
+			DangerAreaEnemy = 5;
 		}
 
 
@@ -129,6 +130,7 @@ namespace Draconia.ViewController
 		{
 			//获得绝对位置
 			float h = Math.Abs(pointer.PositionX);
+			//Debug.LogFormat("h is {0} TimeBarS擦了 is {1}",h,TimeBarScale);
 			int min = (int)h / (int)TimeBarScale;
 			//Debug.LogFormat("获取的位置为 {0} {1}",min,min+1);
 			if ((int)h % (int)TimeBarScale == 0)
@@ -183,27 +185,37 @@ namespace Draconia.ViewController
 		public bool IsInDangerArea(Pointer pointer)
 		{
 			QFramework.Tuple<int, int> range = TransferLocalPosition(pointer);
-			Debug.LogFormat("位置为{0} {1}", range.Item1, range.Item2);
-			Debug.LogFormat("Dangerarea {0}", DangerAreaPlayer);
+			//Debug.LogFormat("位置为{0} {1}", range.Item1, range.Item2);
+			//Debug.LogFormat("Dangerarea {0}", DangerAreaPlayer);
 			if (pointer._isPlayer)
 			{
 				if (range.Item1 > DangerAreaPlayer)
 				{
+					this.SendEvent(new EnterDangerAreaEvent() { Character = pointer.Character });
 					return true;
 				}
-				else if(range.Item1 == DangerAreaPlayer && range.Item1 != range.Item2)
+				else if (range.Item1 == DangerAreaPlayer && range.Item1 != range.Item2)
+				{
+					this.SendEvent(new EnterDangerAreaEvent() { Character = pointer.Character });
 					return true;
+				}
+					
 			}
 			else
 			{
 				if (range.Item1 > DangerAreaEnemy)
 				{
+					this.SendEvent(new EnterDangerAreaEvent() { Character = pointer.Character });
 					return true;
 				}
-				else if(range.Item1 == DangerAreaEnemy && range.Item1 != range.Item2)
+				else if (range.Item1 == DangerAreaEnemy && range.Item1 != range.Item2)
+				{
+					this.SendEvent(new EnterDangerAreaEvent() { Character = pointer.Character });
 					return true;
+				}
 			}
 
+			
 			return false;
 		}
 		
@@ -233,6 +245,11 @@ namespace Draconia.ViewController
 			{
 				pointer.IsStop = false;
 			}
+		}
+
+		public IArchitecture GetArchitecture()
+		{
+			return Draconia.Interface;
 		}
 	}
 }

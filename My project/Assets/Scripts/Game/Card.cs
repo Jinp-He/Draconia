@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using cfg;
 using DG.Tweening;
@@ -36,6 +37,30 @@ namespace Draconia.ViewController
         public bool IsChosen;
         public bool IsBasicCard;
         public bool IsViewMode = true;
+
+        private int tempCostModifier;
+        public int TempCostModifier {
+            get => tempCostModifier;
+            set
+            {
+                tempCostModifier = value;
+                SetCost();
+            }
+        }
+        
+        private int battleCostModifier;
+        public int BattleCostModifier {
+            get => battleCostModifier;
+            set
+            {
+                battleCostModifier = value;
+                SetCost();
+                
+            }
+        }
+
+        public int Cost { set; get; }
+
         void Start()
         {
             _cardState = CardState.Listen;
@@ -72,7 +97,7 @@ namespace Draconia.ViewController
             if (IsBasicCard)
                 CardName.text = "<rotate=90>" + _cardInfo.Name;
             CardImage.SetNativeSize();
-            CardCost.text = _cardInfo.Cost.ToString();
+            CardCost.text = Cost.ToString();
             //CardType.text = _cardInfo.SkillTargetType.ToString();
             
             
@@ -96,12 +121,18 @@ namespace Draconia.ViewController
             }
         }
 
+        public void SetCost()
+        {
+            Cost = _cardInfo.Cost + TempCostModifier + BattleCostModifier;
+            CardCost.text = Cost.ToString();
+        }
+
   
 
         private List<Character> Target;
         private List<Enemy> _enemies;
         private List<Player> _allies;
-      public void OnPointerEnter(PointerEventData eventData)
+        public void OnPointerEnter(PointerEventData eventData)
         {
             if (_cardState == CardState.Listen && !IsViewMode)
                 Hover();
@@ -193,12 +224,12 @@ namespace Draconia.ViewController
 
                     break;
                 case SkillTarget.AllAlly:
-                    foreach (var character in BattleSystem.Characters)
+                    foreach (var character in BattleSystem.Players)
                     {
                         character.Chosen();
                     }
 
-                    _allies.AddRange(BattleSystem.Characters);
+                    _allies.AddRange(BattleSystem.Players);
                     break;
                 case SkillTarget.SingleEnemy:
                     if (res[0].gameObject.CompareTag("EnemyRaycast"))
@@ -227,7 +258,7 @@ namespace Draconia.ViewController
                     if (res[0].gameObject.CompareTag("PlayerRaycast"))
                     {
                         Player player = res[0].gameObject.GetComponentInParent<Player>();
-                        if (player.Distance(CardPlayer) == 1)
+                        if (player.PlayerStrategy.Distance(CardPlayer) == 1)
                         {
                             player.Chosen();
                             _allies.Add(player);
@@ -250,14 +281,14 @@ namespace Draconia.ViewController
             StopTimeBarAnimation();
             
             UIKit.GetPanel<UIBattlePanel>().Bezier.Deactivate();
-            if (InThePlayerArea() && IsRightTarget() && CardPlayer.ValidCard(this))
+            if (InThePlayerArea() && IsRightTarget() && CardPlayer.PlayerStrategy.ValidCard(this))
             {
-                CardPlayer.PayCost(_cardInfo.Cost);
+                CardPlayer.PlayerStrategy.PayCost(Cost);
                 Play();
             }
             else
             {
-                transform.parent = _hands.PlayerHands.transform;
+                transform.parent = _hands.OngoingPlayerHands.transform;
                 transform.localPosition = InitialPos;
                 transform.SetSiblingIndex(index);
                 transform.rotation = _rotation;
@@ -316,8 +347,12 @@ namespace Draconia.ViewController
             // }
             if (!IsBasicCard)
             {
-                CardPlayer.Hands.Remove(this);
-                CardPlayer.Bin.Add(this);
+                CardPlayer.PlayerStrategy.Hands.Remove(this);
+                CardPlayer.PlayerStrategy.Bin.Add(this);
+            }
+            else
+            {
+                CardPlayer.PlayerStrategy.Hands.Remove(this);
             }
             //TODO 正确的移除basiccard
             transform.SetParent(CardPlayer.CardBin);
@@ -346,7 +381,7 @@ namespace Draconia.ViewController
         public void UnHover()
         {
             if (IsViewMode) return;
-                transform.parent = _hands.PlayerHands.transform;
+                transform.SetParent(_hands.OngoingPlayerHands.transform);
                 transform.localScale = _localScale;
                 transform.localPosition = _localPos;
                 transform.SetSiblingIndex(index);
@@ -369,29 +404,28 @@ namespace Draconia.ViewController
                     BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 2);
                     break;
                 case 101:
-                    CardPlayer.Move(_allies[0]);
+                    CardPlayer.PlayerStrategy.Move(_allies[0]);
                     break;
                 case 102:
                     CardPlayer.Defense(2);
                     break;
                 case 103:
                     BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 3);
-                    if (_enemies[0].IsOnDangerArea())
-                    {
-                        BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 3);
-                    }
+                    //TODO cost modifieir 
+                    CardPlayer.PlayerStrategy.Hands.Where(card => card.IsBasicCard).ToList()
+                        .ForEach(card => card.tempCostModifier -= 1);
                     break;
                 case 104:
                     BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 2);
                     break;
                 case 105:
-                    CardPlayer.EnterPose("飞鸟式");
+                    CardPlayer.PlayerStrategy.EnterPose("飞鸟式");
                     break;
                 case 106:
-                    CardPlayer.EnterPose("拿云式");
+                    CardPlayer.PlayerStrategy.EnterPose("拿云式");
                     break;
                 case 107:
-                    _allies[0].MoveInTime(2);
+                    _allies[0].PlayerStrategy.MoveInTime(2);
                     break;
                 case 108:
                     BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 3);

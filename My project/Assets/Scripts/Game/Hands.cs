@@ -8,6 +8,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
+using Utility;
 using static UnityEngine.Screen;
 
 namespace Draconia.ViewController
@@ -19,46 +20,62 @@ namespace Draconia.ViewController
 
         public Player OnGoingPlayer;
         public List<Card> Cards;
-        public RectTransform DisplayArea,BasicCardArea,ItemHands,PlayerHands;
+        public RectTransform DisplayArea,ItemHands,PlayerHands;
+
+        private Dictionary<string, RectTransform> _playerHandsList;
+        public RectTransform OngoingPlayerHands;
 
         private List<Card> tempRemovedCard;
 
         public void Start()
         {
             tempRemovedCard = new List<Card>();
-            Refresh();
+            //Refresh();
             Cards = new List<Card>();
             Width = GetComponent<RectTransform>().rect.width;
+
+            _playerHandsList = new Dictionary<string, RectTransform>();
+            foreach (var player in this.GetSystem<BattleSystem>().Players)
+            {
+                var playerHands = Instantiate(PlayerHands, transform);
+                _playerHandsList.Add(player.PlayerInfo.Alias, playerHands);
+            }
         }
 
         
         public void AddBasicCard(Player player)
         {
-            foreach (var cardInfo in player.PlayerInfo.NormalAttackCard_Ref)
+            foreach (var cardInfo in player.PlayerStrategy.PlayerInfo.NormalAttackCard_Ref)
             {
-                Card card = Instantiate(BasicCardPrefab, PlayerHands.transform);
+                Card card = Instantiate(BasicCardPrefab, _playerHandsList[player.Alias]);
                 card.Init(cardInfo, player,true);
-                Cards.Add(card);
+                player.PlayerStrategy.Hands.Add(card);
                 Refresh();
             }
+        }
+
+        public void AddRandomBasicCard(Player player, int num)
+        {
+            for (int i = 0; i < num; i++)
+            {
+                CardInfo cardInfo = player.PlayerStrategy.PlayerInfo.NormalAttackCard_Ref.PickRandom(1).ToList()[0];
+                Card card = Instantiate(BasicCardPrefab, _playerHandsList[player.Alias]);
+                card.Init(cardInfo, player,true);
+                player.PlayerStrategy.Hands.Add(card);
+                Refresh();
+            }
+            
         }
         
         public Card AddCard(Card card, Player player)
         {
-            Cards.Add(card);
-            card.transform.parent = PlayerHands.transform;
+            //player.PlayerStrategy.Hands.Add(card);
+            card.transform.parent = _playerHandsList[player.Alias];
             card.transform.localPosition = Vector3.zero;
             Refresh();
             return card;
         }
-
-        public void RemoveCard(Card card)
-        {
-            Cards.Remove(card);
-            tempRemovedCard.Add(card);
-            card.gameObject.SetActive(false);
-            Refresh();
-        }
+        
 
         public void AddItemCard()
         {
@@ -68,12 +85,13 @@ namespace Draconia.ViewController
         public void OnPlayerTurnStart(Player player)
         {
             OnGoingPlayer = player;
+            OngoingPlayerHands = _playerHandsList[player.Alias];
             DisplayHands();
         }
 
         public void DisplayItem()
         {
-            PlayerHands.gameObject.SetActive(false);
+            OngoingPlayerHands.gameObject.SetActive(false);
             ItemHands.gameObject.SetActive(true);
             FrontImage.sprite = this.GetSystem<ResLoadSystem>()
                 .LoadSprite("FrontGround_Item");
@@ -81,14 +99,24 @@ namespace Draconia.ViewController
 
         public void DisplayHands()
         {
-            PlayerHands.gameObject.SetActive(true);
+            if (OnGoingPlayer == null)
+            {
+                return;
+                
+            }
+            foreach (var rect in _playerHandsList.Values)
+            {
+                rect.gameObject.SetActive(false);
+            }
+            OngoingPlayerHands = _playerHandsList[OnGoingPlayer.Alias];
+            OngoingPlayerHands.gameObject.SetActive(true);
             ItemHands.gameObject.SetActive(false);
             if (OnGoingPlayer == null)
             {
                 return;
             }
             FrontImage.sprite = this.GetSystem<ResLoadSystem>()
-                .LoadSprite("FrontGround_" + OnGoingPlayer.PlayerInfo.Alias);
+                .LoadSprite("FrontGround_" + OnGoingPlayer.PlayerStrategy.PlayerInfo.Alias);
         }
 
         private void CleanRemovedCard()
@@ -98,11 +126,7 @@ namespace Draconia.ViewController
                 tempRemovedCard[i].Destroy();
             }
         }
-
-        public bool HasCard(CardInfo cardInfo)
-        {
-            return Cards.Any(card => card._cardInfo == cardInfo);
-        }
+        
 
         private const float R = 2100.0f; //半径
         private const float Y = 2000.0f; //圆心Y值
@@ -113,11 +137,7 @@ namespace Draconia.ViewController
         /// </summary>
         public void Refresh()
         {
-            Cards = new List<Card>();
-            foreach (var card in transform.GetComponentsInChildren<Card>())
-            {
-                Cards.Add(card);
-            }
+            Cards = OnGoingPlayer.PlayerStrategy.Hands;
             ReorderCard(Cards);
             RecView();
             
@@ -162,7 +182,7 @@ namespace Draconia.ViewController
         public void RecView()
         {
             
-            float p0 = PlayerHands.transform.position.x;
+            float p0 = OngoingPlayerHands.transform.position.x;
             float dist = IdealDist + CardPrefab.GetComponent<RectTransform>().rect.width * CardPrefab.GetComponent<RectTransform>().Scale().y;
             float basicDist = IdealDist + BasicCardPrefab.GetComponent<RectTransform>().rect.width * BasicCardPrefab.GetComponent<RectTransform>().Scale().y;
 
@@ -179,21 +199,7 @@ namespace Draconia.ViewController
                 pos = p0 - Width / 2;
                 dist = Width / 2 / halfCount;
             }
-            //Debug.LogFormat("Dist: {0}, pos : {1}, p0 : {2}",dist,pos,p0);
-            // for (int k = 0; k < Cards.Count; k++)
-            // {
-            //     Transform tf = Cards[k].transform;
-            //     tf.localPosition = new Vector3(pos, -50, 0);
-            //     if (k != Cards.Count-1 && Cards[k+1].IsBasicCard)
-            //         pos += basicDist;
-            //     else 
-            //         pos += dist;
-            //     if (Cards[k].IsChosen)
-            //     {
-            //         pos += 20f;
-            //     }
-            //     i++;
-            // }
+
             bool nextChosen = false;
             bool isPrevBasic = false;
             //TODO: 更改卡牌显示逻辑，选中之后会更显眼。
@@ -267,6 +273,8 @@ namespace Draconia.ViewController
                 card.Hover();
             }
         }
+
+
 
         public IArchitecture GetArchitecture()
         {

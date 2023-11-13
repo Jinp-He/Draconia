@@ -42,7 +42,7 @@ namespace Draconia.Controller
             _isPlayer = true;
             _isInit = true;
             
-            _timeBar.MoveAbsoluteTimePosition(this, _mPlayer.BackNum, true);
+            _timeBar.MoveAbsoluteTimePosition(this, _mPlayer.PlayerStrategy.BackNum, true);
         }
         
         public void Init(Enemy enemy, TimeBar timeBar)

@@ -107,7 +107,7 @@ namespace Draconia.ViewController
 		/// <summary>
 		/// 进入姿态
 		/// </summary>
-		public void EnterPose(string poseId)
+		public virtual void EnterPose(string poseId)
 		{
 			if (_isInPose)
 			{
@@ -115,17 +115,7 @@ namespace Draconia.ViewController
 			}
 
 			_player.StartCoroutine(_player.PlayerAnimator.SendNotificationText("进入姿态"));
-			switch (poseId)
-			{
-				case "飞鸟式":
-					_player.BattleSystem.TimeBar.DangerAreaEnemy += 1;
-					break;
-				case "拿云式":
-
-					break;
-
-			}
-
+			
 			_player.StartCoroutine(_player.PlayerAnimator.SendNotificationText(poseId));
 			_isInPose = true;
 			_prevPoseId = poseId;

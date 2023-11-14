@@ -47,6 +47,9 @@ public sealed partial class BuffInfo :  Bright.Config.BeanBase
     /// Buff名
     /// </summary>
     public string BuffName { get; private set; }
+    /// <summary>
+    /// 每回合会不会自动减少层数
+    /// </summary>
     public bool IsConsis { get; private set; }
     /// <summary>
     /// 描述

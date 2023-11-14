@@ -19,6 +19,10 @@ namespace cfg
         /// 闪回
         /// </summary>
         Flash = 1,
+        /// <summary>
+        /// 双重
+        /// </summary>
+        Double = 2,
     }
 
 } 

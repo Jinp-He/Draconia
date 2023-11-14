@@ -16,4 +16,11 @@ namespace Draconia.ViewController.Event
     {
         public Character Character;
     }
+
+
+    public struct UseCardEvent
+    {
+        public Character Character;
+        public Card UsedCard;
+    }
 }

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "BuffName": "虚幻",
+    "Description": "回合结束消失",
+    "Properties": 0
+  },
+  {
+    "id": 2,
+    "BuffName": "双重",
+    "Description": "生效两次，移动不适用",
+    "Properties": 2
+  },
+  {
+    "id": 3,
+    "BuffName": "闪回",
+    "Description": "释放后获得一张同类型的卡，该卡不具有闪回",
+    "Properties": 1
+  }
+]

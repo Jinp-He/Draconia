@@ -117,7 +117,7 @@ namespace QFramework
             if (GetComponent<Animator>()) return "Animator";
             if (GetComponent<Canvas>()) return "Canvas";
             if (GetComponent<Camera>()) return "Camera";
-            if (GetComponent("Empty4Raycast")) return "QFramework.Empty4Raycast";
+            if (GetComponent("QFramework.Empty4Raycast")) return "QFramework.Empty4Raycast";
             if (GetComponent<RectTransform>()) return "RectTransform";
             if (GetComponent<MeshRenderer>()) return "MeshRenderer";
 

@@ -9,6 +9,7 @@
 
 namespace cfg
 { 
+    [System.Flags]
     public enum SkillTarget
     {
         /// <summary>
@@ -43,6 +44,10 @@ namespace cfg
         /// 一些友方（敌人限定）
         /// </summary>
         MultipleAlly = 7,
+        /// <summary>
+        /// 在危险区
+        /// </summary>
+        Endanger = 8,
     }
 
 } 

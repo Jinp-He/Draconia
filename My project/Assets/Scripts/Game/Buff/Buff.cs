@@ -23,6 +23,7 @@ namespace Draconia.Game.Buff
             {
                 
                 _stack = value;
+                if (_stack < 0) _stack = 0;
                 switch (_stack)
                 {
                     case 0:
@@ -44,13 +45,13 @@ namespace Draconia.Game.Buff
         private BuffInfo _buffInfo;
         private List<IUnRegister> _unRegister;
         private BuffManager _buffManager;
+        private BuffEffect _buffEffect;
         
-        
-        public void Init(BuffInfo buffInfo, int stack, BuffManager buffManager)
+        public virtual void Init(BuffInfo buffInfo, int stack, BuffManager buffManager)
         {
-            _unRegister = new List<IUnRegister>();
+            _buffEffect = BuffEffect.GetEffect(buffInfo);
+            _buffEffect.Init(this,buffInfo,stack,buffManager);
             _buffManager = buffManager;
-            Stack = stack;
             _buffInfo = buffInfo;
             GetComponent<MyTooltipManager>().InitTooltip(
                 new Tooltip(){Name = buffInfo.BuffName, Desc = buffInfo.Description});
@@ -72,28 +73,32 @@ namespace Draconia.Game.Buff
                     }
                 }));
             }
+            OnAddBuff();
+        }
+
+        //添加buff时候施加的效果
+        public virtual void OnAddBuff()
+        {
+            _buffEffect.OnAddBuff();
+        }
+
+        //Buff消失时候世家的效果
+        public virtual void OnRemoveBuff()
+        {
+            _buffEffect.OnRemoveBuff();
         }
 
         public virtual void PlayerTurnStart()
         {
-            
+            _buffEffect.PlayerTurnStart();
         }
 
         public void End()
         {
-            OnEnd();
-            _buffManager.Buffs.Remove(_buffInfo.BuffName);
+            _buffEffect.End();
             Destroy(gameObject);
         }
 
-        public virtual void OnEnd()
-        {
-            foreach (var iunRegister in _unRegister)
-            {
-                iunRegister?.UnRegister();
-            }
-            _unRegister = new List<IUnRegister>();
-        }
         
         
         

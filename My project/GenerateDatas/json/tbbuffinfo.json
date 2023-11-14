@@ -1,15 +1,15 @@
 [
   {
     "id": 1,
-    "BuffName": "必定闪避",
-    "IsConsis": false,
-    "Description": "下次伤害必定闪避，获得一张周周技能卡"
+    "BuffName": "轻盈",
+    "IsConsis": true,
+    "Description": "所有基础卡费用-1"
   },
   {
     "id": 2,
-    "BuffName": "清风",
+    "BuffName": "溃敌",
     "IsConsis": true,
-    "Description": "增加攻击力20%，最高可叠加3层。且3层后获得所有伤害百分之50真实伤害buff"
+    "Description": "基础卡可以生效两次"
   },
   {
     "id": 3,

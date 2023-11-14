@@ -432,22 +432,21 @@ MonoBehaviour:
   PrefabFolder: Assets/Art/Prefab
   HpBar: {fileID: 3560528407222337041}
   CurrHP: 0
+  MyPointer: {fileID: 0}
+  DamageDangerModifier: 1
   CharacterAtlas: {fileID: 4343727234628468602, guid: f3a346eb568b54841bb6f6a300f0d048, type: 2}
   CharacterImage: {fileID: 95727704247056075}
   CharacterAnimator: {fileID: 3934012111695030347}
   DamageTextField: {fileID: 8478509514297992399}
   NotificationTextField: {fileID: 148496692707872775}
-  MyPointer: {fileID: 0}
-  Deck: []
-  Hands: []
-  Bin: []
-  CardImageSprite: {fileID: 0}
   PlayerAnimator: {fileID: 3934012111695030347}
+  Alias: 
   EnergyBar: {fileID: 5955985199982484469}
   RestCardNum: {fileID: 2626879283856591081}
   ChooseBracelet: {fileID: 4643453363303231752}
   CardDeck: {fileID: 2414754611546928933}
   CardBin: {fileID: 8607606154066844485}
+  CardImageSprite: {fileID: 0}
 --- !u!114 &3934012111695030347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1720,7 +1719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3545030567107106766, guid: 048b4e23c8b731b42ad13acd0207d5c9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3654164349638606219, guid: 048b4e23c8b731b42ad13acd0207d5c9, type: 3}
       propertyPath: m_Enabled
@@ -1752,7 +1751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8838018992534159198, guid: 048b4e23c8b731b42ad13acd0207d5c9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 048b4e23c8b731b42ad13acd0207d5c9, type: 3}

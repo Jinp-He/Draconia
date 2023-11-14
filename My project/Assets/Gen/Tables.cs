@@ -20,6 +20,7 @@ public sealed partial class Tables
     public TbEnemyInfo TbEnemyInfo {get; }
     public TbCommon TbCommon {get; }
     public TbBuffInfo TbBuffInfo {get; }
+    public TbCardBuffInfo TbCardBuffInfo {get; }
 
     public Tables(System.Func<string, JSONNode> loader)
     {
@@ -36,6 +37,8 @@ public sealed partial class Tables
         tables.Add("TbCommon", TbCommon);
         TbBuffInfo = new TbBuffInfo(loader("tbbuffinfo")); 
         tables.Add("TbBuffInfo", TbBuffInfo);
+        TbCardBuffInfo = new TbCardBuffInfo(loader("tbcardbuffinfo")); 
+        tables.Add("TbCardBuffInfo", TbCardBuffInfo);
         PostInit();
 
         TbPlayerInfo.Resolve(tables); 
@@ -44,6 +47,7 @@ public sealed partial class Tables
         TbEnemyInfo.Resolve(tables); 
         TbCommon.Resolve(tables); 
         TbBuffInfo.Resolve(tables); 
+        TbCardBuffInfo.Resolve(tables); 
         PostResolve();
     }
 
@@ -55,6 +59,7 @@ public sealed partial class Tables
         TbEnemyInfo.TranslateText(translator); 
         TbCommon.TranslateText(translator); 
         TbBuffInfo.TranslateText(translator); 
+        TbCardBuffInfo.TranslateText(translator); 
     }
     
     partial void PostInit();

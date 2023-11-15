@@ -37,16 +37,10 @@ namespace Draconia.ViewController
             _isFirstTimeEnter = true;
         }
 
+        private int Counter = 3;
+
         public override void EnterPose(string poseId)
         {
-            base.EnterPose(poseId);
-            switch (poseId)
-            {
-                case "飞鸟式":
-                    break;
-                case "扶摇式":
-                    break;
-            }
         }
     }
 }

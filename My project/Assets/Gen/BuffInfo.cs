@@ -22,15 +22,17 @@ public sealed partial class BuffInfo :  Bright.Config.BeanBase
         { if(!_json["BuffName"].IsString) { throw new SerializationException(); }  BuffName = _json["BuffName"]; }
         { if(!_json["IsConsis"].IsBoolean) { throw new SerializationException(); }  IsConsis = _json["IsConsis"]; }
         { if(!_json["Description"].IsString) { throw new SerializationException(); }  Description = _json["Description"]; }
+        { if(!_json["IsPose"].IsBoolean) { throw new SerializationException(); }  IsPose = _json["IsPose"]; }
         PostInit();
     }
 
-    public BuffInfo(int id, string BuffName, bool IsConsis, string Description ) 
+    public BuffInfo(int id, string BuffName, bool IsConsis, string Description, bool IsPose ) 
     {
         this.Id = id;
         this.BuffName = BuffName;
         this.IsConsis = IsConsis;
         this.Description = Description;
+        this.IsPose = IsPose;
         PostInit();
     }
 
@@ -55,6 +57,10 @@ public sealed partial class BuffInfo :  Bright.Config.BeanBase
     /// 描述
     /// </summary>
     public string Description { get; private set; }
+    /// <summary>
+    /// 是否是姿态卡
+    /// </summary>
+    public bool IsPose { get; private set; }
 
     public const int __ID__ = -1458230335;
     public override int GetTypeId() => __ID__;
@@ -75,6 +81,7 @@ public sealed partial class BuffInfo :  Bright.Config.BeanBase
         + "BuffName:" + BuffName + ","
         + "IsConsis:" + IsConsis + ","
         + "Description:" + Description + ","
+        + "IsPose:" + IsPose + ","
         + "}";
     }
     

@@ -7,27 +7,32 @@ namespace Draconia.Game.Buff
 {
     public class DoubleBasicCard : BuffEffect
     {
-        private IUnRegister _unRegister;
+
         public override void OnAddBuff()
         {
             base.OnAddBuff();
             BattleSystem.OngoingPlayer.PlayerStrategy.Hands.Where(e => e.IsBasicCard)
                 .ForEach(e => e.Properties.Add(EnumCardProperty.Double));
 
-            _unRegister = this.RegisterEvent<UseCardEvent>(e =>
+            UnRegisters.Add(this.RegisterEvent<UseCardEvent>(e =>
             {
-                if (e.UsedCard.IsBasicCard)
+                if (e.UsedCard.IsBasicCard && e.Character == Player)
                 {
                     BattleSystem.OngoingPlayer.PlayerStrategy.Hands.Where(e => e.IsBasicCard)
                         .ForEach(e => e.Properties.Remove(EnumCardProperty.Double));
                 }
-            });
+            }));
+            
+            UnRegisters.Add(this.RegisterEvent<DrawCardEvent>(e =>
+            {
+                e.Cards.Where(e => e.IsBasicCard && e.CardPlayer == Player).ForEach(e => e.TempCostModifier -= 1);
+            }));
         }
 
         public override void OnRemoveBuff()
         {
             base.OnRemoveBuff();
-            _unRegister.UnRegister();
+            UnRegisters.ForEach(e => e.UnRegister());
         }
     }
 }

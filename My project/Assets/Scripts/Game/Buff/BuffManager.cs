@@ -5,18 +5,24 @@ using UnityEngine;
 using cfg;
 using Draconia.MyComponent;
 using Draconia.System;
+using Draconia.ViewController;
+using Draconia.ViewController.Event;
 using QFramework;
+
 
 namespace Draconia.Game.Buff
 {
-    public class BuffManager : MonoBehaviour, ICanGetSystem
+    public class BuffManager : MonoBehaviour, ICanGetSystem,ICanSendEvent
     {
         public Dictionary<string, Buff> Buffs;
         public Buff BuffPrefab;
         public RectTransform BuffBar;
+        public Player Player;
+        private Buff Pose;
         public void Start()
         {
             Buffs = new Dictionary<string, Buff>();
+            Player = GetComponent<Player>();
         }
 
         public void AddBuff(string buffName, int stack)
@@ -28,9 +34,21 @@ namespace Draconia.Game.Buff
             else
             {
                 Buff buff = Instantiate(BuffPrefab, BuffBar);
-                buff.Init(this.GetSystem<ResLoadSystem>().Table.TbBuffInfo[buffName], stack, this);
+                BuffInfo info = this.GetSystem<ResLoadSystem>().Table.TbBuffInfo[buffName];
+                buff.Init(info, stack, this);
                 Buffs.Add(buffName, buff);
+                if (info.IsPose)
+                {
+                    if (Pose != null)
+                    {
+                        Pose.End();
+                    }
+                    Pose = buff;
+                }
+                this.SendEvent(new AddBuffEvent(){Character = Player, Buff = buff});
             }
+           
+            
         }
 
         public void RemoveBuff(string buffName)

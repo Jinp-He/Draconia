@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using cfg;
 using Draconia.System;
+using Draconia.ViewController.Event;
 using QFramework;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,7 +14,7 @@ using static UnityEngine.Screen;
 
 namespace Draconia.ViewController
 {
-    public class Hands : QFramework.ViewController, ICanGetSystem
+    public class Hands : QFramework.ViewController, ICanGetSystem, ICanSendEvent
     {
         public Card CardPrefab, BasicCardPrefab;
         public Image FrontImage;
@@ -45,25 +46,31 @@ namespace Draconia.ViewController
         
         public void AddBasicCard(Player player)
         {
+            List<Card> res = new List<Card>();
             foreach (var cardInfo in player.PlayerStrategy.PlayerInfo.NormalAttackCard_Ref)
             {
                 Card card = Instantiate(BasicCardPrefab, _playerHandsList[player.Alias]);
                 card.Init(cardInfo, player,true);
+                res.Add(card);
                 player.PlayerStrategy.Hands.Add(card);
                 Refresh();
             }
+            this.SendEvent(new DrawCardEvent(){Cards = res});
         }
 
         public void AddRandomBasicCard(Player player, int num)
         {
+            List<Card> res = new List<Card>();
             for (int i = 0; i < num; i++)
             {
                 CardInfo cardInfo = player.PlayerStrategy.PlayerInfo.NormalAttackCard_Ref.PickRandom(1).ToList()[0];
                 Card card = Instantiate(BasicCardPrefab, _playerHandsList[player.Alias]);
                 card.Init(cardInfo, player,true);
+                res.Add(card);
                 player.PlayerStrategy.Hands.Add(card);
                 Refresh();
             }
+            this.SendEvent(new DrawCardEvent(){Cards = res});
             
         }
         
@@ -73,6 +80,7 @@ namespace Draconia.ViewController
             card.transform.parent = _playerHandsList[player.Alias];
             card.transform.localPosition = Vector3.zero;
             Refresh();
+            this.SendEvent(new DrawCardEvent(){Cards = new List<Card>(){card}});
             return card;
         }
         

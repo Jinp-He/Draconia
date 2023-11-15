@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using cfg;
+using Draconia.Game.Buff.Pose;
 using Draconia.System;
+using Draconia.ViewController;
 using Draconia.ViewController.Event;
 using QFramework;
 using Unity.VisualScripting;
@@ -15,9 +17,10 @@ namespace Draconia.Game.Buff
 
         protected BattleSystem BattleSystem => this.GetSystem<BattleSystem>();
         protected Buff Buff;
-        private BuffInfo _buffInfo;
-        private List<IUnRegister> _unRegister;
-        private BuffManager _buffManager;
+        protected Player Player;
+        protected BuffInfo _buffInfo;
+        protected List<IUnRegister> UnRegisters;
+        protected BuffManager _buffManager;
 
 
         public static BuffEffect GetEffect(BuffInfo buffId)
@@ -28,6 +31,10 @@ namespace Draconia.Game.Buff
                     return new BasicCardBuff();
                 case "溃敌":
                     return new DoubleBasicCard();
+                case "飞鸟式":
+                    return new Feiniao();
+                case "扶摇式":
+                    return new Fuyao();
                 default:
                     return new BasicCardBuff();
             }
@@ -36,13 +43,14 @@ namespace Draconia.Game.Buff
         public virtual void Init(Buff buff, BuffInfo buffInfo, int stack, BuffManager buffManager)
         {
             Buff = buff;
-            _unRegister = new List<IUnRegister>();
+            UnRegisters = new List<IUnRegister>();
             _buffManager = buffManager;
             _buffInfo = buffInfo;
+            Player = buffManager.Player;
 
             if (!_buffInfo.IsConsis)
             {
-                _unRegister.Add(this.RegisterEvent<PlayerTurnStartEvent>(e =>
+                UnRegisters.Add(this.RegisterEvent<PlayerTurnStartEvent>(e =>
                 {
                     PlayerTurnStart();
                     Buff.Stack--;

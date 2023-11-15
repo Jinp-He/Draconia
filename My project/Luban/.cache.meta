@@ -2,7 +2,7 @@
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/Assets/Gen/AttackType.cs,12DB4AD01141AF1521097D96896944C,597,1693455526802
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/Assets/Gen/BaseEffect.cs,F0F216C5F0B15A3F819992533C3D12B,2435,1687335203054
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/Assets/Gen/BaseEffectType.cs,8D9673F73B6B3E6EE5EE545EF9B27,461,1687335203052
-C:/Users/lofnh/Documents/GitHub/Draconia/My project/Assets/Gen/BuffInfo.cs,6DE9B06DE1FA984A85935752BF288E1,2409,1699953613403
+C:/Users/lofnh/Documents/GitHub/Draconia/My project/Assets/Gen/BuffInfo.cs,FD79C0576E6330E5456643EE52CE78,2706,1700042998159
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/Assets/Gen/CardBuffInfo.cs,F44BDF52E77AEADB6AA825ECF9F9A138,2474,1699967385180
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/Assets/Gen/CardInfo.cs,B190B868754A69236E578D1F1FFC070,6104,1698221092804
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/Assets/Gen/Common.cs,4D33BB9014CB8E30131234BC16B365,2062,1693369771630
@@ -20,7 +20,7 @@ C:/Users/lofnh/Documents/GitHub/Draconia/My project/Assets/Gen/TbCommon.cs,2C77C
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/Assets/Gen/TbEnemyInfo.cs,5A2D4455E98934FE4CDB4661384A8E,1738,1687434539024
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/Assets/Gen/TbPlayerInfo.cs,1DA877E09E4F87625D77388A2ADDFE,1772,1698221092799
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/Assets/Gen/TbStageInfo.cs,649D69765D2EC3808F1BF1B32333E095,1738,1687434539024
-C:/Users/lofnh/Documents/GitHub/Draconia/My project/GenerateDatas/json/tbbuffinfo.json,301ADCFC972F87AF8215D46B788AFDD5,491,1699953613403
+C:/Users/lofnh/Documents/GitHub/Draconia/My project/GenerateDatas/json/tbbuffinfo.json,EF6C183CD0CF93C1809C82F950575E,639,1700042998160
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/GenerateDatas/json/tbcardbuffinfo.json,7CED5AD2B9337107B51FB883F18E92,402,1699967385180
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/GenerateDatas/json/tbcardinfo.json,E3F270391F2D89EFDB4F7B3D6CF19212,6091,1699946044794
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/GenerateDatas/json/tbcommon.json,3AAC4F5F0794D72F868F1E6A8707B66,1081,1699967385180
@@ -31,7 +31,7 @@ C:/Users/lofnh/Documents/GitHub/Draconia/My project/Luban/Config/Datas/__beans__
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/Luban/Config/Datas/__enums__.xlsx,4C68DC5620EE333D2A69D31D9CAA9,10943,1699966777443
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/Luban/Config/Datas/__tables__.xlsx,3F1437EF5BB83DA790735D5EBAE7E5E,10331,1699967194361
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/Luban/Config/Datas/名词解释表.xlsx,61C08EDE1857D69E437C9B32FA91A1,12446,1699966764943
-C:/Users/lofnh/Documents/GitHub/Draconia/My project/Luban/Config/Datas/BuffInfo.xlsx,538BB2FD2EEFB996B11CAFAF24C779,10389,1699966909430
+C:/Users/lofnh/Documents/GitHub/Draconia/My project/Luban/Config/Datas/BuffInfo.xlsx,9F39E2D7EA7539CC2A28588AA38A9F9,10481,1700042849846
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/Luban/Config/Datas/CardBuffInfo.xlsx,D7B168D11E5B60C7C7DAC3360C16C2E,10395,1699967238343
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/Luban/Config/Datas/CardInfo.xlsx,2AAB1CFB6225452A5B579FF7B32131,13139,1699967239530
 C:/Users/lofnh/Documents/GitHub/Draconia/My project/Luban/Config/Datas/EnemyInfo.xlsx,8A12ECAD2A859E81A46BAD53BF26B1E,10825,1699277502954

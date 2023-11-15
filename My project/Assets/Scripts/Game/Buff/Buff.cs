@@ -16,6 +16,8 @@ namespace Draconia.Game.Buff
         public Image BuffImage;
         public TextMeshProUGUI BuffIndicator;
 
+        public bool IsShowStack;
+        
         private int _stack;
         public int Stack
         {
@@ -23,7 +25,13 @@ namespace Draconia.Game.Buff
             {
                 
                 _stack = value;
+                BuffIndicator.text = _stack.ToString();
                 if (_stack < 0) _stack = 0;
+                //姿态的指示器没有通过的功效
+                if (_buffInfo.IsPose)
+                {
+                    return;
+                }
                 switch (_stack)
                 {
                     case 0:
@@ -33,10 +41,12 @@ namespace Draconia.Game.Buff
                         BuffIndicator.gameObject.SetActive(false);
                         break;
                     default:
-                        BuffIndicator.gameObject.SetActive(true);
+                        BuffIndicator.gameObject.SetActive(false);
+                        if(IsShowStack)
+                            BuffIndicator.gameObject.SetActive(true);
                         break;
                 }
-                BuffIndicator.text = _stack.ToString();
+                
                 
             }
             get => _stack;
@@ -46,6 +56,8 @@ namespace Draconia.Game.Buff
         private List<IUnRegister> _unRegister;
         private BuffManager _buffManager;
         private BuffEffect _buffEffect;
+
+        public string BuffName => _buffInfo.BuffName;
         
         public virtual void Init(BuffInfo buffInfo, int stack, BuffManager buffManager)
         {

@@ -62,6 +62,11 @@ namespace Draconia.Controller
         public virtual void MoveInTime(int i)
         {
         }
+        
+        public void SendNotification(string text)
+        {
+            StartCoroutine(CharacterAnimator.SendNotificationText(text));
+        }
 
         public virtual void IsHit(int damage, AttackType attackType)
         {
@@ -174,6 +179,8 @@ namespace Draconia.ViewController
         {
             _playerStrategy.Die();
         }
+
+       
 
 
         //判断是否可以释放该卡

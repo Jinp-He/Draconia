@@ -3,24 +3,28 @@
     "id": 1,
     "BuffName": "轻盈",
     "IsConsis": true,
-    "Description": "所有基础卡费用-1"
+    "Description": "所有基础卡费用-1",
+    "IsPose": false
   },
   {
     "id": 2,
     "BuffName": "溃敌",
     "IsConsis": true,
-    "Description": "基础卡可以生效两次"
+    "Description": "基础卡可以生效两次",
+    "IsPose": false
   },
   {
     "id": 3,
-    "BuffName": "加速",
-    "IsConsis": false,
-    "Description": "提升自身速度20%"
+    "BuffName": "飞鸟式",
+    "IsConsis": true,
+    "Description": "周周的基础牌强化不会消耗。强化不可叠加。",
+    "IsPose": true
   },
   {
     "id": 4,
-    "BuffName": "重心不稳",
+    "BuffName": "扶摇式",
     "IsConsis": true,
-    "Description": "受到硬直增加"
+    "Description": "每使用3张基础牌，全队-1费用。",
+    "IsPose": true
   }
 ]

@@ -5,6 +5,7 @@ using cfg;
 using DG.Tweening;
 using Draconia.Controller;
 using Draconia.Game.Buff;
+using Draconia.System;
 using Draconia.UI;
 using Draconia.ViewController.Event;
 using QFramework;
@@ -33,6 +34,8 @@ namespace Draconia.ViewController
 		protected bool _isFirstTimeDangerArea;
 		protected bool _isInPose;
 		protected string _prevPoseId;
+
+		protected BattleSystem BattleSystem => this.GetSystem<BattleSystem>();
 		
 
 		public int BackNum => PlayerInfo.BackNum + _backNumModifier;

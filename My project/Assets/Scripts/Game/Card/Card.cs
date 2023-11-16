@@ -440,32 +440,28 @@ namespace Draconia.ViewController
                     CardPlayer.Defense(2);
                     break;
                 case 103:
-                    BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 3);
+                    BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 2);
                     //TODO cost modifieir 
                     CardPlayer.PlayerStrategy.AddBuff("轻盈",1);
                     break;
                 case 104:
-                    BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 2);
+                    BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 1);
                     CardPlayer.PlayerStrategy.AddBuff("溃敌",1);
                     break;
                 case 105:
-                    CardPlayer.PlayerStrategy.EnterPose("飞鸟式");
+                    BattleSystem.Hands.AddRandomBasicCard(CardPlayer,2);
                     break;
                 case 106:
-                    CardPlayer.PlayerStrategy.EnterPose("拿云式");
-                    break;
-                case 107:
                     _allies[0].PlayerStrategy.MoveInTime(2);
                     break;
+                case 107:
+                    CardPlayer.PlayerStrategy.AddBuff("飞鸟式",1);
+                    break;
                 case 108:
-                    BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 3);
-                    _enemies[0].MoveInTime(2);
+                    CardPlayer.PlayerStrategy.AddBuff("扶摇式",1);
                     break;
                 case 109:
                     BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 5);
-                    break;
-                case 110:
-                    CardPlayer.Defense(3);
                     break;
             }
 

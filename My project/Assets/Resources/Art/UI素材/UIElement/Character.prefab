@@ -285,7 +285,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -53, y: 11.2}
-  m_SizeDelta: {x: 30, y: 30}
+  m_SizeDelta: {x: 31, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9215562464735741493
 CanvasRenderer:
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3106240786334341787, guid: 960dde23e1ba7224ebfcaae4f7b82f9b, type: 3}
+  m_Sprite: {fileID: 2497220331127296044, guid: d095cc80479b9db4b803349050746549, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -483,6 +483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuffPrefab: {fileID: 391644123343171298, guid: 52377ac1acb61b8438da3693aa1268dd, type: 3}
   BuffBar: {fileID: 1339126427538607561}
+  Character: {fileID: 0}
 --- !u!1 &3505223255037614074
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,8 +900,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1865,7 +1866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8317509050590803144, guid: 1d2e1ef665d04e04aa3d635917c671e9, type: 3}
       propertyPath: m_fontSize
-      value: 20.7
+      value: 24.55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d2e1ef665d04e04aa3d635917c671e9, type: 3}

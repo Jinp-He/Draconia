@@ -75,7 +75,6 @@ MonoBehaviour:
   PrefabFolder: Assets/Art/Prefab
   EnergyBulbPrefab1: {fileID: 789939177497475327, guid: 9b092627a9af03845b7c8b8f198a46ff, type: 3}
   EnergyBulbPrefab2: {fileID: 789939177497475327, guid: 41fa0338a91e683498a2bb952f81450d, type: 3}
-  HPBar: {fileID: 4114536903312070070}
   EnergyBar: {fileID: 2269916249811251653}
 --- !u!1 &1893759669667501116
 GameObject:
@@ -301,17 +300,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d2e1ef665d04e04aa3d635917c671e9, type: 3}
---- !u!114 &4114536903312070070 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2097332693072909483, guid: 1d2e1ef665d04e04aa3d635917c671e9, type: 3}
-  m_PrefabInstance: {fileID: 2594915041841660189}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74400ddbaa0ce6244a441a7beed780de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &7657579213877697838 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5640708790477265971, guid: 1d2e1ef665d04e04aa3d635917c671e9, type: 3}
@@ -324,6 +312,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2269916249811251653}
     m_Modifications:
+    - target: {fileID: 789939177497475327, guid: 9b092627a9af03845b7c8b8f198a46ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7177287494502735673, guid: d095cc80479b9db4b803349050746549, type: 3}
     - target: {fileID: 927616686962157384, guid: 9b092627a9af03845b7c8b8f198a46ff, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -433,7 +425,7 @@ PrefabInstance:
     - target: {fileID: 789939177497475327, guid: 9b092627a9af03845b7c8b8f198a46ff, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 3254245790538764310, guid: 960dde23e1ba7224ebfcaae4f7b82f9b, type: 3}
+      objectReference: {fileID: -7895459541375077157, guid: d095cc80479b9db4b803349050746549, type: 3}
     - target: {fileID: 789939177497475327, guid: 9b092627a9af03845b7c8b8f198a46ff, type: 3}
       propertyPath: m_Color.a
       value: 1

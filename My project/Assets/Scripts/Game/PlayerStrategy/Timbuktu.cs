@@ -18,6 +18,16 @@ namespace Draconia.ViewController
         public override void Init(Player player)
         {
             base.Init(player);
+            this.RegisterEvent<AttackEvent>(e =>
+            {
+                if (e.Attacker == player)
+                {
+                    if (e.AttackReceiver is Enemy)
+                    {
+                        e.AttackReceiver.As<Enemy>().RefreshBuff("苦难残留", 2);
+                    }
+                }
+            });
             Mastery = 1;
 
         }

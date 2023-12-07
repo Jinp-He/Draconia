@@ -98,6 +98,9 @@ namespace Draconia.ViewController
                 case AttackType.Magic:
                     hitText.color = Color.blue;
                     break;
+                case AttackType.TrueDamage:
+                    hitText.color = Color.white;
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(hitType), hitType, null);
             }

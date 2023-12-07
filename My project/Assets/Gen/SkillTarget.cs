@@ -48,6 +48,10 @@ namespace cfg
         /// 在危险区
         /// </summary>
         Endanger = 8,
+        /// <summary>
+        /// 两个敌人
+        /// </summary>
+        DoubleEnemy = 9,
     }
 
 } 

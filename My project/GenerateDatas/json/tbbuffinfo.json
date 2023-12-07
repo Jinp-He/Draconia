@@ -26,5 +26,12 @@
     "IsConsis": true,
     "Description": "每使用3张基础牌，全队-1费用。",
     "IsPose": true
+  },
+  {
+    "id": 5,
+    "BuffName": "苦难残留",
+    "IsConsis": true,
+    "Description": "受到真实伤害",
+    "IsPose": false
   }
 ]

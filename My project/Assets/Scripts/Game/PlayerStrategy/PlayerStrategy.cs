@@ -30,6 +30,8 @@ namespace Draconia.ViewController
 		public Action NextTurn;
 		public string PlayerName;
 
+		public int Mastery;
+
 
 		protected bool _isFirstTimeDangerArea;
 		protected bool _isInPose;
@@ -107,39 +109,6 @@ namespace Draconia.ViewController
 			_isFirstTimeDangerArea = false;
 		}
 
-		/// <summary>
-		/// 进入姿态
-		/// </summary>
-		public virtual void EnterPose(string poseId)
-		{
-			if (_isInPose)
-			{
-				LeavePose();
-			}
-
-			_player.StartCoroutine(_player.PlayerAnimator.SendNotificationText("进入姿态"));
-			
-			_player.StartCoroutine(_player.PlayerAnimator.SendNotificationText(poseId));
-			_isInPose = true;
-			_prevPoseId = poseId;
-		}
-
-		public void LeavePose()
-		{
-			_player.StartCoroutine(_player.PlayerAnimator.SendNotificationText("退出姿态"));
-			switch (_prevPoseId)
-			{
-				case "飞鸟式":
-					_player.BattleSystem.TimeBar.DangerAreaEnemy -= 1;
-					break;
-				case "拿云式":
-
-					break;
-
-			}
-
-			_isInPose = false;
-		}
 
 		public void Move(Player player)
 		{

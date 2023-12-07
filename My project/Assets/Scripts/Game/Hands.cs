@@ -209,7 +209,6 @@ namespace Draconia.ViewController
             }
 
             bool nextChosen = false;
-            bool isPrevBasic = false;
             //TODO: 更改卡牌显示逻辑，选中之后会更显眼。
             foreach (var card in Cards)
             {
@@ -221,21 +220,13 @@ namespace Draconia.ViewController
                 {
                     //如果之前的手牌被选中了
                     nextChosen = false;
-                    if (isPrevBasic)
-                    {
-                        pos += 10f;
-                    }
-                    else
-                    {
-                        pos += 95f;
-                    }
+                    pos += 95f;
                 }
                 Transform tf = card.transform;
                 tf.localPosition = new Vector3(pos, -50, 0);
                 if (card.IsChosen)
                 {
                     nextChosen = true;
-                    isPrevBasic = card.IsBasicCard;
                     tf.localPosition = new Vector3(pos, 0, 0);
                 }
 
@@ -261,7 +252,7 @@ namespace Draconia.ViewController
         /// </summary>
         private void ReorderCard(List<Card> card)
         {
-            card.Sort((x, y) => - x._cardInfo.Id + y._cardInfo.Id);
+            card.Sort((x, y) =>  x._cardInfo.Id - y._cardInfo.Id);
             for (int i = 0; i < card.Count; i++)
             {
                 card[i].transform.SetSiblingIndex(i);

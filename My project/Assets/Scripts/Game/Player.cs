@@ -29,7 +29,9 @@ namespace Draconia.Controller
         public int CurrHP;
         private int _armor;
         public Action TriggerDanger;
+        public Action OnTurnStart;
         public Pointer MyPointer;
+        
 
         public int DamageDangerModifier = 1;
 
@@ -39,6 +41,8 @@ namespace Draconia.Controller
         public CharacterAnimator CharacterAnimator;
         public RectTransform DamageTextField;
         public RectTransform NotificationTextField;
+        public int Position => transform.GetSiblingIndex();
+
 
         public readonly int DangerAreaDamageNum = 2;
 
@@ -51,6 +55,8 @@ namespace Draconia.Controller
 
         public virtual void Init()
         {
+            OnTurnStart = new Action(() => { });
+            OnTurnStart += TurnStart;
         }
 
         public virtual bool IsOnDangerArea()
@@ -68,23 +74,35 @@ namespace Draconia.Controller
             StartCoroutine(CharacterAnimator.SendNotificationText(text));
         }
 
-        public virtual void IsHit(int damage, AttackType attackType)
+        public virtual void IsHit(int damage, AttackType attackType, Character Attacker = null)
         {
-            if (Armor >= damage)
+            if (attackType != AttackType.TrueDamage)
             {
-                Armor -= damage;
-                HpBar.SetArmor(Armor);
-                CharacterAnimator.IsHit(0, attackType, damage);
+                if (Armor >= damage)
+                {
+                    Armor -= damage;
+                    HpBar.SetArmor(Armor);
+                    damage = 0;
+                    CharacterAnimator.IsHit(0, attackType, damage);
+                }
+                else
+                {
+                    int tempArmor = Armor;
+                    damage -= Armor;
+                    HpBar.SetArmor(Armor);
+                    CurrHP -= damage;
+                    HpBar.SetHp(CurrHP);
+                    CharacterAnimator.IsHit(damage, attackType, tempArmor);
+                }
             }
             else
             {
-                int tempArmor = Armor;
-                damage -= Armor;
-                HpBar.SetArmor(Armor);
                 CurrHP -= damage;
                 HpBar.SetHp(CurrHP);
-                CharacterAnimator.IsHit(damage, attackType, tempArmor);
+                CharacterAnimator.IsHit(damage, attackType);
             }
+
+            this.SendEvent(new IsHitEvent() {AttackReceiver = this, RealDamage = damage, AttackType = attackType, Attacker = Attacker});
 
             if (CurrHP <= 0)
             {
@@ -98,7 +116,7 @@ namespace Draconia.Controller
             HpBar.SetArmor(value);
         }
 
-        public virtual void OnTurnStart()
+        public virtual void TurnStart()
         {
             Armor = 0;
             HpBar.SetArmor(Armor);
@@ -111,6 +129,26 @@ namespace Draconia.Controller
         public void Miss()
         {
             StartCoroutine(GetComponent<CharacterAnimator>().Miss());
+        }
+
+        public Character NextCharacter()
+        {
+            if (transform.parent.childCount > Position + 1)
+            {
+                return transform.parent.GetComponentsInChildren<Character>()[Position + 1];
+            }
+
+            return null;
+        }
+
+        public Character PrevCharacter()
+        {
+            if (Position > 0)
+            {
+                return transform.parent.GetComponentsInChildren<Character>()[Position - 1];
+            }
+
+            return null;
         }
     }
 }
@@ -127,6 +165,7 @@ namespace Draconia.ViewController
 
         public void Init(PlayerInfo playerInfo)
         {
+            base.Init();
             PlayerInfo = playerInfo;
             Alias = playerInfo.Alias;
             _playerStrategy = PlayerStrategy.GetStrategy(playerInfo.Alias, this);
@@ -186,7 +225,7 @@ namespace Draconia.ViewController
         //判断是否可以释放该卡
 
 
-        public override void OnTurnStart()
+        public override void TurnStart()
         {
             _playerStrategy.OnTurnStart();
             StartCoroutine(PlayerAnimator.SendNotificationText("回合开始了"));

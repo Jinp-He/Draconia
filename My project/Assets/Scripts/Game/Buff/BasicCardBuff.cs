@@ -19,7 +19,7 @@ namespace Draconia.Game.Buff
 
             UnRegisters.Add(this.RegisterEvent<UseCardEvent>(e =>
             {
-                if (e.UsedCard.IsBasicCard && e.Character == Player)
+                if (e.UsedCard.IsBasicCard && e.Character == Character)
                 {
                     BattleSystem.OngoingPlayer.PlayerStrategy.Hands.Where(e => e.IsBasicCard)
                         .ForEach(e => e.TempCostModifier += 1);
@@ -30,7 +30,7 @@ namespace Draconia.Game.Buff
             
             UnRegisters.Add(this.RegisterEvent<DrawCardEvent>(e =>
             {
-                e.Cards.Where(e => e.IsBasicCard && e.CardPlayer == Player).ForEach(e => e.TempCostModifier -= 1);
+                e.Cards.Where(e => e.IsBasicCard && e.CardPlayer == Character).ForEach(e => e.TempCostModifier -= 1);
             }));
         }
 

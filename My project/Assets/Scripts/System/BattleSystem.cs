@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using cfg;
+using Draconia.Controller;
 using Draconia.UI;
 using Draconia.ViewController;
 using Draconia.ViewController.Event;
@@ -23,7 +24,9 @@ namespace Draconia.System
     {
         public Hands Hands;
         public List<Player> Players;
+
         public List<Enemy> Enemies;
+
         public BattleState BattleState;
         private UIBattlePanel UIBattlePanel;
 
@@ -132,7 +135,7 @@ namespace Draconia.System
         {
             //Energy.Value += 2;
             BattleState = BattleState.Player;
-            player.OnTurnStart();
+            player.OnTurnStart.Invoke();
             OngoingPlayer = player;
             Hands.OnPlayerTurnStart(OngoingPlayer);
             DrawCard(player, player.PlayerStrategy.CardDrawNum);
@@ -189,8 +192,10 @@ namespace Draconia.System
             }
 
             player.IsHit(dmg, attackType);
+            this.SendEvent(new AttackEvent(){Attacker = enemy, AttackReceiver = player, AttackType = attackType});
         }
         
+
 
         public void Attack(Player player, Enemy enemy, AttackType attackType, int attackPower)
         {
@@ -221,6 +226,7 @@ namespace Draconia.System
             }
 
             enemy.IsHit(dmg, attackType);
+            this.SendEvent(new AttackEvent(){Attacker = player, AttackReceiver = enemy, AttackType = attackType});
         }
         public void RangeAttack(Enemy enemy, List<int> range, AttackType attackType, int attackPower)
         {
@@ -236,6 +242,7 @@ namespace Draconia.System
                     Attack(enemy, list[i], attackType, attackPower);
             }
         }
+
 
         public void Restart()
         {

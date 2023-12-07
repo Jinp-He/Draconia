@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b9737f76f8ac69649b2f560ff942a33a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - FZQuSongS-R-GB
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3efe3f3a70daa3a418817fdbceedb758, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

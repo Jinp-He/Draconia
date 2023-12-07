@@ -19,6 +19,10 @@ namespace cfg
         /// 魔法伤害
         /// </summary>
         Magic = 1,
+        /// <summary>
+        /// 真实伤害
+        /// </summary>
+        TrueDamage = 2,
     }
 
 } 

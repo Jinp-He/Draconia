@@ -39,8 +39,6 @@ namespace Draconia.ViewController
 
         private int Counter = 3;
 
-        public override void EnterPose(string poseId)
-        {
-        }
+
     }
 }

@@ -14,7 +14,7 @@ namespace Draconia.Game.Buff.Pose
 
             UnRegisters.Add(this.RegisterEvent<UseCardEvent>(e =>
             {
-                if (e.UsedCard.IsBasicCard && e.Character == Player)
+                if (e.UsedCard.IsBasicCard && e.Character == Character)
                 {
                     Buff.Stack++;
                     if (Buff.Stack >= 3)

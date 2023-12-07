@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using cfg;
+using Draconia.Controller;
 using Draconia.MyComponent;
 using Draconia.System;
 using Draconia.ViewController;
@@ -17,12 +18,12 @@ namespace Draconia.Game.Buff
         public Dictionary<string, Buff> Buffs;
         public Buff BuffPrefab;
         public RectTransform BuffBar;
-        public Player Player;
+        public Character Character;
         private Buff Pose;
         public void Start()
         {
             Buffs = new Dictionary<string, Buff>();
-            Player = GetComponent<Player>();
+            Character = GetComponent<Character>();
         }
 
         public void AddBuff(string buffName, int stack)
@@ -45,10 +46,34 @@ namespace Draconia.Game.Buff
                     }
                     Pose = buff;
                 }
-                this.SendEvent(new AddBuffEvent(){Character = Player, Buff = buff});
+                this.SendEvent(new AddBuffEvent(){Character = Character, Buff = buff});
             }
-           
-            
+        }
+
+        public void RefreshBuff(string buffName, int stack)
+        {
+            if(Buffs.TryGetValue(buffName, out Buff value))
+            {
+                value.Stack = stack;
+            }
+            else
+            {
+                Buff buff = Instantiate(BuffPrefab, BuffBar);
+                BuffInfo info = this.GetSystem<ResLoadSystem>().Table.TbBuffInfo[buffName];
+                buff.Init(info, stack, this);
+                Buffs.Add(buffName, buff);
+                this.SendEvent(new AddBuffEvent(){Character = Character, Buff = buff});
+            }
+        }
+
+        public bool HasBuff(string buffName)
+        {
+            return Buffs.ContainsKey(buffName);
+        }
+
+        public Buff GetBuff(string buffName)
+        {
+            return Buffs[buffName];
         }
 
         public void RemoveBuff(string buffName)

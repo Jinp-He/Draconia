@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.UI;
 using cfg;
 using Draconia.MyComponent;
+using Draconia.System;
 using Draconia.ViewController.Event;
 using QFramework;
 using Utility;
@@ -65,6 +66,7 @@ namespace Draconia.Game.Buff
             _buffEffect.Init(this,buffInfo,stack,buffManager);
             _buffManager = buffManager;
             _buffInfo = buffInfo;
+            BuffImage.sprite = this.GetSystem<ResLoadSystem>().LoadSprite("buff_" + buffInfo.BuffName);
             GetComponent<MyTooltipManager>().InitTooltip(
                 new Tooltip(){Name = buffInfo.BuffName, Desc = buffInfo.Description});
             if (!_buffInfo.IsConsis)

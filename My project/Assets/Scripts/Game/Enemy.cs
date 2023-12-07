@@ -24,6 +24,7 @@ namespace Draconia.ViewController
 		public EnemyInfo EnemyInfo;
 		public int _energy;
 		public int MaxEnergy;
+		public BuffManager BuffManager;
 		public int Energy
 		{
 			get => _energy;
@@ -61,7 +62,8 @@ namespace Draconia.ViewController
 
 		public void Init(EnemyInfo enemyInfo)
 		{
-			//base.Init();
+			base.Init();
+			BuffManager = GetComponent<BuffManager>();
 			EnemyInfo = enemyInfo;
 			_enemyStrategy = EnemyStrategy.GetEnemyStrategy(this);
 
@@ -85,9 +87,9 @@ namespace Draconia.ViewController
 			this.RegisterEvent<BattleStartEvent>(e => _enemyStrategy.ChooseNextTurnAction());
 		}
 
-		public override void OnTurnStart()  
+		public override void TurnStart()  
 		{
-			base.OnTurnStart();
+			//OnTurnStart.Invoke();
 			//调整位置
 			BattleSystem.TimeBar.MoveAbsoluteTimePosition(MyPointer, EnemyInfo.BackPos);
 			EnemyStrategy.Action();
@@ -110,14 +112,7 @@ namespace Draconia.ViewController
 			EnemyAnimation.OnPointerExit(eventData);
 		}
 		
-		public override void IsHit(int damage, AttackType attackType)
-		{
-			//CharacterImage.sprite = CharacterAtlas.GetSprite("OnHit");
-			//GetComponent<EnemyAnimator>().HitText(damage.ToString());
-			base.IsHit(damage, attackType);
-			//_enemyAnimator.IsHit();
 
-		}
 		
 		public void Move(int position)
 		{
@@ -152,6 +147,11 @@ namespace Draconia.ViewController
 		public void AddBuff(string buffName, int stack)
 		{
 			GetComponent<BuffManager>().AddBuff(buffName, stack);
+		}
+		
+		public void RefreshBuff(string buffName, int stack)
+		{
+			GetComponent<BuffManager>().RefreshBuff(buffName, stack);
 		}
 
 

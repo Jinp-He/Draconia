@@ -269,6 +269,26 @@ namespace Draconia.ViewController
                     }
 
                     break;
+                case SkillTarget.DoubleEnemy:
+                    if (res[0].gameObject.CompareTag("EnemyRaycast"))
+                    {
+                        Enemy enemy = res[0].gameObject.GetComponentInParent<Enemy>();
+                        if (_enemies.Count > 0 && enemy != _enemies[0])
+                        {
+                            _enemies[0].EnemyAnimation.Unchosen();
+                            _enemies.Clear();
+                        }
+
+                        enemy.EnemyAnimation.Chosen();
+                        _enemies.Add(enemy);
+                        if (BattleSystem.Enemies.Count > enemy.Position + 1)
+                        {
+                            BattleSystem.Enemies[enemy.Position+1].EnemyAnimation.Chosen();
+                            _enemies.Add(BattleSystem.Enemies[enemy.Position+1]);
+                        }
+                    }
+
+                    break;
                 case SkillTarget.AllEnemy:
                     foreach (var enemy in BattleSystem.Enemies)
                     {
@@ -424,10 +444,6 @@ namespace Draconia.ViewController
         {
             
             int id = _cardInfo.Id;
-            if (id > 200)
-            {
-                id -= 100;
-            }
             switch (id)
             {
                 case 100:
@@ -462,6 +478,57 @@ namespace Draconia.ViewController
                     break;
                 case 109:
                     BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 5);
+                    break;
+                
+                case 200:
+                    BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 2);
+                    break;
+                case 201:
+                    CardPlayer.PlayerStrategy.Move(_allies[0]);
+                    break;
+                case 202:
+                    CardPlayer.Defense(2);
+                    break;
+                case 203:
+                    BattleSystem.Attack(CardPlayer, _enemies[0], AttackType.Physical, 3);
+                    
+                    break;
+                case 204:
+                    if (_enemies[0].BuffManager.HasBuff("苦难残留"))
+                    {
+                        _enemies[0].IsHit(CardPlayer.PlayerStrategy.Mastery,AttackType.TrueDamage);
+                        _enemies[0].BuffManager.RefreshBuff("苦难残留",2);
+                    }
+                    break;
+                case 205:
+                    foreach (var enemy in _enemies)
+                    {
+                        BattleSystem.Attack(CardPlayer, enemy, AttackType.Physical, 1);
+                    }
+                    
+                    break;
+                case 206:
+                    int count = BattleSystem.Enemies.Where(e => e.BuffManager.HasBuff("苦难残留")).Count();
+                    foreach (var enemy in BattleSystem.Enemies.Where(e => e.BuffManager.HasBuff("苦难残留")))
+                    {
+                        int stack = enemy.BuffManager.GetBuff("苦难残留").Stack;
+                        enemy.BuffManager.RemoveBuff("苦难残留");
+                        enemy.IsHit(CardPlayer.PlayerStrategy.Mastery* stack, AttackType.TrueDamage);
+                    }
+                    CardPlayer.MoveInTime(-count);
+                    break;
+                case 207:
+                    CardPlayer.PlayerStrategy.AddBuff("祂",1);
+                    break;
+                case 208:
+                    CardPlayer.PlayerStrategy.AddBuff("厄运",1);
+                    break;
+                case 209:
+                    foreach (var enemy in BattleSystem.Enemies.Where(e => e.BuffManager.HasBuff("苦难残留")))
+                    {
+                        BattleSystem.Attack(CardPlayer, enemy, AttackType.Physical, 3);
+                        BattleSystem.Attack(CardPlayer, enemy, AttackType.Physical, 3);
+                    }
                     break;
             }
 

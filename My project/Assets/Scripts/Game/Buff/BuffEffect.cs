@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using cfg;
+using Draconia.Controller;
 using Draconia.Game.Buff.Pose;
 using Draconia.System;
 using Draconia.ViewController;
@@ -17,7 +18,7 @@ namespace Draconia.Game.Buff
 
         protected BattleSystem BattleSystem => this.GetSystem<BattleSystem>();
         protected Buff Buff;
-        protected Player Player;
+        protected Character Character;
         protected BuffInfo _buffInfo;
         protected List<IUnRegister> UnRegisters;
         protected BuffManager _buffManager;
@@ -35,6 +36,12 @@ namespace Draconia.Game.Buff
                     return new Feiniao();
                 case "扶摇式":
                     return new Fuyao();
+                case "苦难残留":
+                    return new KunanCanliu();
+                case "祂":
+                    return new Ta();
+                case "厄运":
+                    return new EYun();
                 default:
                     return new BasicCardBuff();
             }
@@ -46,7 +53,7 @@ namespace Draconia.Game.Buff
             UnRegisters = new List<IUnRegister>();
             _buffManager = buffManager;
             _buffInfo = buffInfo;
-            Player = buffManager.Player;
+            Character = buffManager.Character;
 
             if (!_buffInfo.IsConsis)
             {

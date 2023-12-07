@@ -22,28 +22,22 @@ public sealed partial class CardInfo :  Bright.Config.BeanBase
         { if(!_json["Name"].IsString) { throw new SerializationException(); }  Name = _json["Name"]; }
         { if(!_json["Desc"].IsString) { throw new SerializationException(); }  Desc = _json["Desc"]; }
         { if(!_json["Cost"].IsNumber) { throw new SerializationException(); }  Cost = _json["Cost"]; }
-        { if(!_json["AttackPreCD"].IsNumber) { throw new SerializationException(); }  AttackPreCD = _json["AttackPreCD"]; }
-        { if(!_json["AttackPostCD"].IsNumber) { throw new SerializationException(); }  AttackPostCD = _json["AttackPostCD"]; }
         { if(!_json["AttackRange"].IsNumber) { throw new SerializationException(); }  AttackRange = _json["AttackRange"]; }
         { if(!_json["AttackRecover"].IsNumber) { throw new SerializationException(); }  AttackRecover = _json["AttackRecover"]; }
-        { var __json0 = _json["Effect"]; if(!__json0.IsArray) { throw new SerializationException(); } Effect = new System.Collections.Generic.List<BaseEffect>(__json0.Count); foreach(JSONNode __e0 in __json0.Children) { BaseEffect __v0;  { if(!__e0.IsObject) { throw new SerializationException(); }  __v0 = BaseEffect.DeserializeBaseEffect(__e0);  }  Effect.Add(__v0); }   }
         { if(!_json["SkillTargetType"].IsNumber) { throw new SerializationException(); }  SkillTargetType = (SkillTarget)_json["SkillTargetType"].AsInt; }
         { if(!_json["BelongedCharacter"].IsString) { throw new SerializationException(); }  BelongedCharacter = _json["BelongedCharacter"]; }
         { var __json0 = _json["Properties"]; if(!__json0.IsArray) { throw new SerializationException(); } Properties = new System.Collections.Generic.List<EnumCardProperty>(__json0.Count); foreach(JSONNode __e0 in __json0.Children) { EnumCardProperty __v0;  { if(!__e0.IsNumber) { throw new SerializationException(); }  __v0 = (EnumCardProperty)__e0.AsInt; }  Properties.Add(__v0); }   }
         PostInit();
     }
 
-    public CardInfo(int id, string Name, string Desc, int Cost, int AttackPreCD, int AttackPostCD, int AttackRange, int AttackRecover, System.Collections.Generic.List<BaseEffect> Effect, SkillTarget SkillTargetType, string BelongedCharacter, System.Collections.Generic.List<EnumCardProperty> Properties ) 
+    public CardInfo(int id, string Name, string Desc, int Cost, int AttackRange, int AttackRecover, SkillTarget SkillTargetType, string BelongedCharacter, System.Collections.Generic.List<EnumCardProperty> Properties ) 
     {
         this.Id = id;
         this.Name = Name;
         this.Desc = Desc;
         this.Cost = Cost;
-        this.AttackPreCD = AttackPreCD;
-        this.AttackPostCD = AttackPostCD;
         this.AttackRange = AttackRange;
         this.AttackRecover = AttackRecover;
-        this.Effect = Effect;
         this.SkillTargetType = SkillTargetType;
         this.BelongedCharacter = BelongedCharacter;
         this.Properties = Properties;
@@ -72,14 +66,6 @@ public sealed partial class CardInfo :  Bright.Config.BeanBase
     /// </summary>
     public int Cost { get; private set; }
     /// <summary>
-    /// 攻击前摇
-    /// </summary>
-    public int AttackPreCD { get; private set; }
-    /// <summary>
-    /// 攻击后摇
-    /// </summary>
-    public int AttackPostCD { get; private set; }
-    /// <summary>
     /// 攻击范围
     /// </summary>
     public int AttackRange { get; private set; }
@@ -87,10 +73,6 @@ public sealed partial class CardInfo :  Bright.Config.BeanBase
     /// 攻击硬直
     /// </summary>
     public int AttackRecover { get; private set; }
-    /// <summary>
-    /// 技能效果
-    /// </summary>
-    public System.Collections.Generic.List<BaseEffect> Effect { get; private set; }
     /// <summary>
     /// 技能对象
     /// </summary>
@@ -110,14 +92,12 @@ public sealed partial class CardInfo :  Bright.Config.BeanBase
 
     public  void Resolve(Dictionary<string, object> _tables)
     {
-        foreach(var _e in Effect) { _e?.Resolve(_tables); }
         this.BelongedCharacter_Ref = (_tables["TbPlayerInfo"] as TbPlayerInfo).GetOrDefault(BelongedCharacter);
         PostResolve();
     }
 
     public  void TranslateText(System.Func<string, string, string> translator)
     {
-        foreach(var _e in Effect) { _e?.TranslateText(translator); }
     }
 
     public override string ToString()
@@ -127,11 +107,8 @@ public sealed partial class CardInfo :  Bright.Config.BeanBase
         + "Name:" + Name + ","
         + "Desc:" + Desc + ","
         + "Cost:" + Cost + ","
-        + "AttackPreCD:" + AttackPreCD + ","
-        + "AttackPostCD:" + AttackPostCD + ","
         + "AttackRange:" + AttackRange + ","
         + "AttackRecover:" + AttackRecover + ","
-        + "Effect:" + Bright.Common.StringUtil.CollectionToString(Effect) + ","
         + "SkillTargetType:" + SkillTargetType + ","
         + "BelongedCharacter:" + BelongedCharacter + ","
         + "Properties:" + Bright.Common.StringUtil.CollectionToString(Properties) + ","

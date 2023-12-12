@@ -156,7 +156,6 @@ namespace Draconia.Controller
                 if (IsTouch(transform.position.x,_timeBar.PlayerActionPoint.position.x))
                 {
                     Debug.LogFormat("#DEBUG# {0} {1}",transform.position.x,_timeBar.PlayerActionPoint.position.x);
-                    BattleSystem.Stop();
                     BattleSystem.PlayerTurnStart(_mPlayer);
                 }
             }

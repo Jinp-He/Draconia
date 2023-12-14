@@ -513,6 +513,7 @@
 "Assets/Scripts/Game/TimeBar.Designer.cs"
 "Assets/Scripts/MyComponent/MyViewController.cs"
 "Assets/Scripts/MyToolkit/BelzierArrows/BezierArrows.cs"
+"Assets/Scripts/MyToolkit/MyCanvasScaler.cs"
 "Assets/Scripts/MyToolkit/Toolkit.cs"
 "Assets/Scripts/Root.cs"
 "Assets/Scripts/System/BattleSystem.cs"

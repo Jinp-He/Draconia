@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
@@ -36,6 +37,62 @@ namespace Draconia.System
 
         public Player OngoingPlayer;
         public TimeBar TimeBar;
+        
+        //暂停状态
+        private bool _systemStopState;
+        public bool SystemStopState
+        {
+            get => _systemStopState;
+            set
+            {
+                _systemStopState = value;
+                if (_systemStopState)
+                {
+                    Stop();
+                }
+                else if (!StopState)
+                {
+                    Continue();
+                }
+                Debug.LogFormat("all state {0} {1} {2}",_systemStopState,_playerTurnStopState,_animationStopState);
+            }
+        }
+        private bool _playerTurnStopState;
+        public bool PlayerTurnStopState
+        {
+            get => _playerTurnStopState;
+            set
+            {
+                _playerTurnStopState = value;
+                if (_playerTurnStopState)
+                {
+                    Stop();
+                }
+                else if (!StopState)
+                {
+                    Continue();
+                }
+            }
+        }
+        private bool _animationStopState;
+        public bool AnimationStopState
+        {
+            get => _animationStopState;
+            set
+            {
+                _animationStopState = value;
+                if (_animationStopState)
+                {
+                    Stop();
+                }
+                else if (!StopState)
+                {
+                    Continue();
+                }
+            }
+        }
+
+        public bool StopState => SystemStopState || AnimationStopState || PlayerTurnStopState;
 
         protected override void OnInit()
         {
@@ -67,19 +124,23 @@ namespace Draconia.System
             this.SendEvent<BattleStartEvent>();
         }
 
-        private BattleState PrevBattleState;
+        private BattleState _prevBattleState;
+        
 
         public void Stop()
         {
-            PrevBattleState = BattleState;
-            BattleState = BattleState.Stop;
+            _prevBattleState = BattleState;
+            Debug.LogFormat("Battlestate save {0}", _prevBattleState);
+            //TODO 因为逻辑锁的问题 暂时取消了stop
+            //BattleState = BattleState.Stop;
             UIKit.OpenPanel<UIBattlePanel>().TimeBar.Stop();
             UIKit.OpenPanel<UIBattlePanel>().EnergyCounter.Stop();
         }
 
         public void Continue()
         {
-            BattleState = PrevBattleState;
+            BattleState = _prevBattleState;
+            Debug.LogFormat("Battlestate load {0}", _prevBattleState);
             UIKit.OpenPanel<UIBattlePanel>().TimeBar.Continue();
             UIKit.OpenPanel<UIBattlePanel>().EnergyCounter.Continue();
         }
@@ -134,6 +195,7 @@ namespace Draconia.System
         public void PlayerTurnStart(Player player)
         {
             //Energy.Value += 2;
+            PlayerTurnStopState = true;
             BattleState = BattleState.Player;
             player.OnTurnStart.Invoke();
             OngoingPlayer = player;
@@ -146,11 +208,13 @@ namespace Draconia.System
         {
             if (BattleState != BattleState.Player)
             {
+                Debug.Log("非法PlayerTurn");
+                Debug.Log(BattleState);
                 return;
             }
 
             BattleState = BattleState.Enemy;
-            Continue();
+            PlayerTurnStopState = false;
             Hands.OnEndTurn(OngoingPlayer);
             OngoingPlayer.PlayerStrategy.OnTurnEnd();
             //OngoingPlayer = null;

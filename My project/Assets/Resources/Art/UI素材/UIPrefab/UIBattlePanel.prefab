@@ -1020,9 +1020,9 @@ MonoBehaviour:
   OnGoingPlayer: {fileID: 0}
   Cards: []
   DisplayArea: {fileID: 1219158769948177303}
-  BasicCardArea: {fileID: 0}
   ItemHands: {fileID: 6887166526450483273}
   PlayerHands: {fileID: 3773066276045732639}
+  OngoingPlayerHands: {fileID: 0}
 --- !u!114 &766039214113640297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6137,6 +6137,8 @@ MonoBehaviour:
   Enemies: []
   IsInit: 0
   IsStart: 0
+  DangerAreaPlayer: 0
+  DangerAreaEnemy: 0
   PlayerSlot: {fileID: 970193311130339988}
   EnemySlot: {fileID: 839214182639073389}
   PlayerStartPoint: {fileID: 3051658440180799715}

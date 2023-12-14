@@ -58,7 +58,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 154
   orthographic: 1
   orthographic size: 5
   m_Depth: 99
@@ -162,9 +162,9 @@ GameObject:
   m_Component:
   - component: {fileID: 224089801841284202}
   - component: {fileID: 223938889282763000}
-  - component: {fileID: 114574186442532806}
   - component: {fileID: 114009023594300624}
   - component: {fileID: 114748361275145794}
+  - component: {fileID: 884017268938112015}
   m_Layer: 5
   m_Name: UIRoot
   m_TagString: Untagged
@@ -222,29 +222,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 100
   m_TargetDisplay: 0
---- !u!114 &114574186442532806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000012438581554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1600, y: 900}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
 --- !u!114 &114009023594300624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,13 +253,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UICamera: {fileID: 20000013668380898}
   Canvas: {fileID: 223938889282763000}
-  CanvasScaler: {fileID: 114574186442532806}
+  CanvasScaler: {fileID: 0}
   GraphicRaycaster: {fileID: 114009023594300624}
   Bg: {fileID: 224541553065129386}
   Common: {fileID: 224382408647199654}
   PopUI: {fileID: 224990554141452176}
   CanvasPanel: {fileID: 224720355990569190}
   TooltipContainer: {fileID: 3625271349243696517}
+--- !u!114 &884017268938112015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012438581554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7787ef77bbb4f679de8c62d51481c7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1600, y: 900}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!1 &1038258765803038
 GameObject:
   m_ObjectHideFlags: 0

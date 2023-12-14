@@ -92,6 +92,7 @@ namespace Draconia.ViewController
 			//OnTurnStart.Invoke();
 			//调整位置
 			BattleSystem.TimeBar.MoveAbsoluteTimePosition(MyPointer, EnemyInfo.BackPos);
+			_enemyAnimator.Attack();
 			EnemyStrategy.Action();
 		}
 

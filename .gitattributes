@@ -1,0 +1,2 @@
+fazfast.asset filter=lfs diff=lfs merge=lfs -text
+fzsOPt.asset filter=lfs diff=lfs merge=lfs -text

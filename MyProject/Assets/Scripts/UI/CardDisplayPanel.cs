@@ -10,8 +10,8 @@ namespace Draconia.UI
 	public class CardDisplayPanelData : UIPanelData
 	{
 		public PlayerViewController OnGoingPlayerViewController;
-		public List<Card> UsedCards;
-		public List<Card> UnUsedCards;
+		public List<CardVC> UsedCards;
+		public List<CardVC> UnUsedCards;
 
 	}
 	public partial class CardDisplayPanel : UIPanel
@@ -34,21 +34,21 @@ namespace Draconia.UI
 		{
 			foreach (var card in mData.OnGoingPlayerViewController.Player.Deck)
 			{
-				Card tempCard = Instantiate(card, CardArea);
-				tempCard.Init(card._cardInfo, card.CardPlayerViewController);
-				tempCard.ShowMode(); 
+				CardVC tempCardVc = Instantiate(card, CardArea);
+				tempCardVc.Init(card._cardInfo, card.CardUser);
+				tempCardVc.ShowMode(); 
 			}
 			foreach (var card in mData.OnGoingPlayerViewController.Player.Hands)
 			{
-				Card tempCard = Instantiate(card, CardArea);
-				tempCard.Init(card._cardInfo, card.CardPlayerViewController);
-				tempCard.ShowMode();
+				CardVC tempCardVc = Instantiate(card, CardArea);
+				tempCardVc.Init(card._cardInfo, card.CardUser);
+				tempCardVc.ShowMode();
 			}
 			foreach (var card in mData.OnGoingPlayerViewController.Player.Bin)
 			{
-				Card tempCard = Instantiate(card, CardArea);
-				tempCard.Init(card._cardInfo, card.CardPlayerViewController);
-				tempCard.ShowMode(true);
+				CardVC tempCardVc = Instantiate(card, CardArea);
+				tempCardVc.Init(card._cardInfo, card.CardUser);
+				tempCardVc.ShowMode(true);
 			}
 
 		}

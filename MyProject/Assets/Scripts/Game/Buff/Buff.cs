@@ -7,6 +7,7 @@ using Draconia.MyComponent;
 using Draconia.System;
 using Draconia.ViewController.Event;
 using QFramework;
+using UnityEngine.Events;
 using Utility;
 
 namespace Draconia.Game.Buff
@@ -37,7 +38,6 @@ namespace Draconia.Game.Buff
                 switch (_stack)
                 {
                     case 0:
-                        End();
                         break;
                     case 1:
                         BuffIndicator.gameObject.SetActive(false);
@@ -60,51 +60,35 @@ namespace Draconia.Game.Buff
         private BuffEffect _buffEffect;
 
         public string BuffName => _buffInfo.BuffName;
-        
-        
-        
-        
+        public UnityAction<int> OnEnd = (e) => { };
+
+
+
         public virtual void Init(BuffInfo buffInfo, int stack, BuffManager buffManager)
         {
             _buffManager = buffManager;
             _buffInfo = buffInfo;
             _stack = stack;
+            _buffEffect = BuffEffect.GetEffect(buffInfo);
+            _buffEffect.Init(this,buffInfo,buffManager);
             BuffImage.sprite = this.GetSystem<ResLoadSystem>().LoadSprite("buff_" + buffInfo.BuffName);
             GetComponent<MyTooltipManager>().InitTooltip(
                 new Tooltip(){Name = buffInfo.BuffName, Desc = buffInfo.Description});
             
             
-            if (!_buffInfo.IsConsis)
-            {
-                _unRegister.Add(this.RegisterEvent<PlayerTurnStartEvent>(e =>
-                {
-                    PlayerTurnStart();
-                    Stack--;
-                    if (Stack == 0)
-                    {
-                        foreach (var iunRegister in _unRegister)
-                        {
-                            iunRegister?.UnRegister();
-                        }
-
-                        _unRegister = new List<IUnRegister>();
-                        End();
-                    }
-                }));
-            }
             OnAddBuff();
         }
 
         //添加buff时候施加的效果
         public virtual void OnAddBuff()
         {
-            
+            _buffEffect.OnAddBuff();
         }
 
         //Buff消失时候世家的效果
         public virtual void OnRemoveBuff()
         {
-        
+            _buffEffect.OnRemoveBuff();
         }
 
         public virtual void PlayerTurnStart()
@@ -115,8 +99,11 @@ namespace Draconia.Game.Buff
         public void End()
         {
             _buffEffect.End();
+            OnEnd?.Invoke(Stack);
             Destroy(gameObject);
         }
+
+
 
         
         

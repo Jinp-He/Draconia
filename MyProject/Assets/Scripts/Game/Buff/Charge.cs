@@ -1,7 +1,9 @@
 ﻿using System.Linq;
 using cfg;
+using Draconia.Controller;
 using Draconia.ViewController.Event;
 using QFramework;
+using UnityEngine;
 
 namespace Draconia.Game.Buff
 {
@@ -12,21 +14,19 @@ namespace Draconia.Game.Buff
         public override void OnAddBuff()
         {
             base.OnAddBuff();
-            BattleSystem.OngoingPlayerViewController.Player.Hands.Where(e => e.IsBasicCard)
-                .ForEach(e => e.Properties.Add(EnumCardProperty.Double));
-
-            UnRegisters.Add(this.RegisterEvent<UseCardEvent>(e =>
+            UnRegisters.Add(_buffManager.CharacterViewController.MyPointer.PosDiff.Register(e =>
             {
-                if (e.UsedCard.IsBasicCard && e.CharacterViewController == CharacterViewController)
+                if (e > 0)
                 {
-                    BattleSystem.OngoingPlayerViewController.Player.Hands.Where(e => e.IsBasicCard)
-                        .ForEach(e => e.Properties.Remove(EnumCardProperty.Double));
+                    Buff.Stack += e;
                 }
             }));
-            
-            UnRegisters.Add(this.RegisterEvent<DrawCardEvent>(e =>
+            UnRegisters.Add(this.RegisterEvent<PlayerTurnStartEvent>(e =>
             {
-                e.Cards.Where(e => e.IsBasicCard && e.CardPlayerViewController == CharacterViewController).ForEach(e => e.TempCostModifier -= 1);
+                if (e.Player.Alias == _buffManager.CharacterViewController.Player.Alias)
+                {
+                    Buff.End();
+                }
             }));
         }
 

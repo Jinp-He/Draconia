@@ -27,13 +27,29 @@ namespace Draconia.Controller
     {
         public HPBar HpBar;
         public int CurrHP;
-        private int _armor;
+        protected int _armor;
         public Action TriggerDanger;
         public Action OnTurnStart;
         public Pointer MyPointer;
-        
+
+        public Player Player
+        {
+            get
+            {
+                if (IsPlayer)
+                {
+                    PlayerViewController pvc = (PlayerViewController)this;
+                    return pvc.Player;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
 
         public int DamageDangerModifier = 1;
+        public bool IsPlayer;
 
 
         public SpriteAtlas CharacterAtlas;
@@ -42,7 +58,7 @@ namespace Draconia.Controller
         public RectTransform DamageTextField;
         public RectTransform NotificationTextField;
         public int Position => transform.GetSiblingIndex();
-
+        public BuffManager BuffManager;
 
         public readonly int DangerAreaDamageNum = 2;
 
@@ -57,6 +73,7 @@ namespace Draconia.Controller
         {
             OnTurnStart = new Action(() => { });
             OnTurnStart += TurnStart;
+            BuffManager = GetComponent<BuffManager>();
         }
 
         public virtual bool IsOnDangerArea()
@@ -176,6 +193,7 @@ namespace Draconia.ViewController
         public void Init(Player player)
         {
             PlayerInfo playerInfo = player.PlayerInfo;
+            IsPlayer = true;
             base.Init();
             Player = player;
             Player.PlayerViewController = this;
@@ -205,10 +223,10 @@ namespace Draconia.ViewController
         {
             foreach (var cardInfo in Player.PlayerInfo.InitialCards_Ref)
             {
-                var cardPrefab = ResLoadSystem.LoadSync<GameObject>("CardPrefab").GetComponent<Card>();
-                Card card = Instantiate(cardPrefab, CardDeck);
-                card.Init(cardInfo, this);
-                Player.Deck.Add(card);
+                var cardPrefab = ResLoadSystem.LoadSync<GameObject>("CardPrefab").GetComponent<CardVC>();
+                CardVC cardVc = Instantiate(cardPrefab, CardDeck);
+                cardVc.Init(cardInfo, this);
+                Player.Deck.Add(cardVc);
             }
         }
 
@@ -237,6 +255,7 @@ namespace Draconia.ViewController
         public override void TurnStart()
         {
             _player.OnTurnStart();
+            this.SendEvent(new PlayerTurnStartEvent() { Player = this.Player });
             StartCoroutine(PlayerAnimator.SendNotificationText("回合开始了"));
             UIKit.GetPanel<UIBattlePanel>().TimeBar.MoveAbsoluteTimePosition(MyPointer, _player.BackNum);
             PlayerAnimator.IsChosen();

@@ -12,6 +12,7 @@ using Draconia.ViewController.Event;
 using QFramework;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 using Object = UnityEngine.Object;
 
 namespace Draconia.ViewController
@@ -21,9 +22,9 @@ namespace Draconia.ViewController
 		public PlayerViewController PlayerViewController;
 		public PlayerInfo PlayerInfo;
 		public List<CardInfo> Cards;
-		public List<Card> Deck;
-		public List<Card> Hands;
-		public List<Card> Bin;
+		public List<CardVC> Deck;
+		public List<CardVC> Hands;
+		public List<CardVC> Bin;
 		protected float _armorModifier;
 		protected float _magicResistModifier;
 		protected float _recoverModifier;
@@ -59,9 +60,9 @@ namespace Draconia.ViewController
 			Alias = playerInfo.Alias;
 			Cards = new List<CardInfo>();
 			
-			Deck = new List<Card>();
-			Hands = new List<Card>();
-			Bin = new List<Card>();
+			Deck = new List<CardVC>();
+			Hands = new List<CardVC>();
+			Bin = new List<CardVC>();
 
 			PlayerInfo = playerInfo;
 			
@@ -141,9 +142,9 @@ namespace Draconia.ViewController
 			return Math.Abs(playerViewController.Player.Position - Position);
 		}
 
-		public bool ValidCard(Card card)
+		public bool ValidCard(CardVC cardVc)
 		{
-			if (PlayerViewController.BattleSystem.TimeBar.IsValidMove(PlayerViewController.MyPointer, card.Cost))
+			if (PlayerViewController.BattleSystem.TimeBar.IsValidMove(PlayerViewController.MyPointer, cardVc.Cost))
 				return true;
 			return false;
 		}
@@ -170,6 +171,12 @@ namespace Draconia.ViewController
 		public void MoveInTime(int i)
 		{
 			PlayerViewController.MyPointer.Move(i);
+		}
+
+		public void Charge(UnityAction<int> chargeAction)
+		{
+			PlayerViewController.BuffManager.AddBuff("蓄力",0);
+			PlayerViewController.BuffManager.GetBuff("蓄力").OnEnd += chargeAction;
 		}
 
 		public virtual void InvokePassive()

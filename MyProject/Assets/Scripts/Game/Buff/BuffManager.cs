@@ -38,14 +38,6 @@ namespace Draconia.Game.Buff
                 BuffInfo info = this.GetSystem<ResLoadSystem>().Table.TbBuffInfo[buffName];
                 buff.Init(info, stack, this);
                 Buffs.Add(buffName, buff);
-                if (info.IsPose)
-                {
-                    if (Pose != null)
-                    {
-                        Pose.End();
-                    }
-                    Pose = buff;
-                }
                 this.SendEvent(new AddBuffEvent(){CharacterViewController = CharacterViewController, Buff = buff});
             }
         }

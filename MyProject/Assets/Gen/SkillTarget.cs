@@ -52,6 +52,10 @@ namespace cfg
         /// 两个敌人
         /// </summary>
         DoubleEnemy = 9,
+        /// <summary>
+        /// 单个目标
+        /// </summary>
+        Single = 10,
     }
 
 } 

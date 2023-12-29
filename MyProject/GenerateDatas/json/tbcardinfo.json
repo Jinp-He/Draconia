@@ -151,7 +151,7 @@
     "Desc": "使一名角色{后退}2，如果该名角色是友方角色，抽一张牌",
     "Cost": 0,
     "Rarity": 1,
-    "SkillTargetType": 0,
+    "SkillTargetType": 10,
     "BelongedCharacter": "Zhouzhou",
     "Properties": []
   },

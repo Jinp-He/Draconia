@@ -7,6 +7,7 @@ using QFramework;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Utility;
 
 namespace Draconia.Controller
 {
@@ -20,19 +21,19 @@ namespace Draconia.Controller
         private int _originalPos;
         public bool _isPlayer;
         private TimeBar _timeBar;
-        public bool _isInit;
+        public bool IsInit = false;
         public bool IsStop = false;
+        
+        
+        public BindableProperty<float> PosX;
+        public BindableProperty<int> Pos;
+        public BindableProperty<int> PosDiff;
 
-        public float PositionX
-        {
-            set => transform.localPosition = new Vector3(value,transform.position.y,transform.position.z);
-            get => transform.localPosition.x;
-        }
-        
-        
+
+
         public void Init(PlayerViewController playerViewController, TimeBar timeBar)
         {
-            Debug.Log("Init!");
+            IsInit = false;
             CharacterViewController = playerViewController;
             name = "Pointer_" + playerViewController.PlayerInfo.Name;
             _timeBar = timeBar;
@@ -40,24 +41,57 @@ namespace Draconia.Controller
             _speed = _mPlayerViewController.PlayerInfo.Speed;
             PointerImage.sprite = playerViewController.CharacterAtlas.GetSprite("Pointer");
             _isPlayer = true;
-            _isInit = true;
             
+            
+            PosX = new BindableProperty<float>(transform.localPosition.x);
+            Pos = new BindableProperty<int>(GetPos(PosX));
+            PosDiff = new BindableProperty<int>(0);
+            
+            
+            PosX.Register(e =>
+            {
+                transform.localPosition = new Vector3(e, transform.position.y, transform.position.z);
+                int diff = Pos.Value - GetPos(PosX);
+                Pos.Value = GetPos(PosX);
+                PosDiff.Value = diff;
+            });
+
             _timeBar.MoveAbsoluteTimePosition(this, _mPlayerViewController.Player.BackNum, true);
+
+            MyToolKit.StartTimer(.2f, () => { IsInit = true;});
         }
         
         public void Init(Enemy enemy, TimeBar timeBar)
         {
-            Debug.Log("Init!");
+            IsInit = false;
             CharacterViewController = enemy;
             _timeBar = timeBar;
             _mEnemy = enemy;
             _speed = _mEnemy.EnemyInfo.Speed;
             PointerImage.sprite = _mEnemy.CharacterAtlas.GetSprite("Pointer");
             _isPlayer = false;
-            _isInit = true;
+           
+            PosX = new BindableProperty<float>(transform.localPosition.x);
+            Pos = new BindableProperty<int>(GetPos(PosX));
+            PosDiff = new BindableProperty<int>(0);
             
             //TODO: 更改初始位置
+          
+
+            PosX.Register(e =>
+            {
+                transform.localPosition = new Vector3(e, transform.position.y, transform.position.z);
+                Pos.Value = GetPos(PosX);
+                
+            });
+            Pos.Register(e =>
+            {
+                if (_mPlayerViewController != null)
+                    Debug.LogFormat("DEBUG {0} : {1}", _mPlayerViewController.PlayerInfo.Alias, e);
+            });
             _timeBar.MoveAbsoluteTimePosition(this, 4, true);
+           
+            MyToolKit.StartTimer(.2f, () => { IsInit = true;});
         }
 
 
@@ -87,26 +121,26 @@ namespace Draconia.Controller
         {
             if (_isPlayer)
             {
-                if (PositionX > 0)
+                if (PosX > 0)
                 {
-                    PositionX = 0;
+                    PosX.Value = 0;
                 }
 
-                if (PositionX < -TimeBar.TimeBarEdge)
+                if (PosX.Value < -TimeBar.TimeBarEdge)
                 {
-                    PositionX = -TimeBar.TimeBarEdge;
+                    PosX.Value = -TimeBar.TimeBarEdge;
                 }
             }
             else
             {
-                if (PositionX < 0)
+                if (PosX < 0)
                 {
-                    PositionX = 0;
+                    PosX.Value = 0;
                 }
 
-                if (PositionX > TimeBar.TimeBarEdge)
+                if (PosX > TimeBar.TimeBarEdge)
                 {
-                    PositionX = TimeBar.TimeBarEdge;
+                    PosX.Value = TimeBar.TimeBarEdge;
                 }
             }
         }
@@ -119,7 +153,7 @@ namespace Draconia.Controller
                 return;
             }
 
-            if (!_isInit)
+            if (!IsInit)
             {
                 Debug.Log("NotInit");
                 return;
@@ -143,10 +177,10 @@ namespace Draconia.Controller
             
             
             if(_isPlayer)
-                transform.localPosition += Vector3.right * _speed / 10;
+                PosX.Value +=  _speed / 10;
             else
             {
-                transform.localPosition -= Vector3.right * _speed / 10;
+                PosX.Value -= _speed / 10;
             }
 
             if (_isPlayer)
@@ -186,6 +220,13 @@ namespace Draconia.Controller
         private bool IsTouch(float a, float b)
         {
             return Math.Abs(a - b) < .1f;
+        }
+
+        private int GetPos(float position)
+        {
+            float h = Math.Abs(position);
+            
+            return (int)h / (int)TimeBar.TimeBarScale;
         }
     }
 }

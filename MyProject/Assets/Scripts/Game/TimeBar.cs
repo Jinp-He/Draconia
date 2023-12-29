@@ -129,7 +129,7 @@ namespace Draconia.ViewController
 		public QFramework.Tuple<int, int> TransferLocalPosition(Pointer pointer)
 		{
 			//获得绝对位置
-			float h = Math.Abs(pointer.PositionX);
+			float h = Math.Abs(pointer.PosX.Value);
 			//Debug.LogFormat("h is {0} TimeBarS擦了 is {1}",h,TimeBarScale);
 			int min = (int)h / (int)TimeBarScale;
 			//Debug.LogFormat("获取的位置为 {0} {1}",min,min+1);
@@ -146,11 +146,11 @@ namespace Draconia.ViewController
 		{
 			if (pointer._isPlayer)
 			{
-				pointer.PositionX -= cost * TimeBarScale;
+				pointer.PosX.Value -= cost * TimeBarScale;
 			}
 			else
 			{
-				pointer.PositionX += cost * TimeBarScale;
+				pointer.PosX.Value += cost * TimeBarScale;
 			}
 			pointer.Regulate();
 			if(IsInDangerArea(pointer))
@@ -160,7 +160,9 @@ namespace Draconia.ViewController
 
 		public void MoveAbsoluteTimePosition(Pointer pointer, float pos, bool isInit = false)
 		{
-			pointer.PositionX = TransferPosition(pos, pointer._isPlayer);
+			
+			pointer.PosX.Value = TransferPosition(pos, pointer._isPlayer);
+//			Debug.Log("DEBUG PositionValue" +pointer.PosX.Value);
 			if (isInit) return;
 			pointer.Regulate();
 			if(IsInDangerArea(pointer))

@@ -33,5 +33,12 @@
     "IsConsis": true,
     "Description": "受到真实伤害",
     "IsPose": false
+  },
+  {
+    "id": 6,
+    "BuffName": "蓄力",
+    "IsConsis": false,
+    "Description": "回合开始时施放",
+    "IsPose": false
   }
 ]

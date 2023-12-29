@@ -16,23 +16,23 @@ namespace Draconia.ViewController
 {
     public class Hands : QFramework.ViewController, ICanGetSystem, ICanSendEvent
     {
-        public Card CardPrefab, BasicCardPrefab;
+        public CardVC CardVcPrefab, BasicCardVcPrefab;
         public Image FrontImage;
 
         public PlayerViewController OnGoingPlayerViewController;
-        public List<Card> Cards;
+        public List<CardVC> Cards;
         public RectTransform DisplayArea,ItemHands,PlayerHands;
 
         private Dictionary<string, RectTransform> _playerHandsList;
         public RectTransform OngoingPlayerHands;
 
-        private List<Card> tempRemovedCard;
+        private List<CardVC> tempRemovedCard;
 
         public void Start()
         {
-            tempRemovedCard = new List<Card>();
+            tempRemovedCard = new List<CardVC>();
             //Refresh();
-            Cards = new List<Card>();
+            Cards = new List<CardVC>();
             Width = GetComponent<RectTransform>().rect.width;
 
             _playerHandsList = new Dictionary<string, RectTransform>();
@@ -46,13 +46,13 @@ namespace Draconia.ViewController
         
         public void AddBasicCard(PlayerViewController playerViewController)
         {
-            List<Card> res = new List<Card>();
+            List<CardVC> res = new List<CardVC>();
             foreach (var cardInfo in playerViewController.Player.PlayerInfo.NormalAttackCard_Ref)
             {
-                Card card = Instantiate(BasicCardPrefab, _playerHandsList[playerViewController.Alias]);
-                card.Init(cardInfo, playerViewController,true);
-                res.Add(card);
-                playerViewController.Player.Hands.Add(card);
+                CardVC cardVc = Instantiate(BasicCardVcPrefab, _playerHandsList[playerViewController.Alias]);
+                cardVc.Init(cardInfo, playerViewController,true);
+                res.Add(cardVc);
+                playerViewController.Player.Hands.Add(cardVc);
                 Refresh();
             }
             this.SendEvent(new DrawCardEvent(){Cards = res});
@@ -60,28 +60,28 @@ namespace Draconia.ViewController
 
         public void AddRandomBasicCard(PlayerViewController playerViewController, int num)
         {
-            List<Card> res = new List<Card>();
+            List<CardVC> res = new List<CardVC>();
             for (int i = 0; i < num; i++)
             {
                 CardInfo cardInfo = playerViewController.Player.PlayerInfo.NormalAttackCard_Ref.PickRandom(1).ToList()[0];
-                Card card = Instantiate(BasicCardPrefab, _playerHandsList[playerViewController.Alias]);
-                card.Init(cardInfo, playerViewController,true);
-                res.Add(card);
-                playerViewController.Player.Hands.Add(card);
+                CardVC cardVc = Instantiate(BasicCardVcPrefab, _playerHandsList[playerViewController.Alias]);
+                cardVc.Init(cardInfo, playerViewController,true);
+                res.Add(cardVc);
+                playerViewController.Player.Hands.Add(cardVc);
                 Refresh();
             }
             this.SendEvent(new DrawCardEvent(){Cards = res});
             
         }
         
-        public Card AddCard(Card card, PlayerViewController playerViewController)
+        public CardVC AddCard(CardVC cardVc, PlayerViewController playerViewController)
         {
             //player.PlayerStrategy.Hands.Add(card);
-            card.transform.parent = _playerHandsList[playerViewController.Alias];
-            card.transform.localPosition = Vector3.zero;
+            cardVc.transform.parent = _playerHandsList[playerViewController.Alias];
+            cardVc.transform.localPosition = Vector3.zero;
             Refresh();
-            this.SendEvent(new DrawCardEvent(){Cards = new List<Card>(){card}});
-            return card;
+            this.SendEvent(new DrawCardEvent(){Cards = new List<CardVC>(){cardVc}});
+            return cardVc;
         }
         
 
@@ -93,6 +93,7 @@ namespace Draconia.ViewController
         public void OnPlayerTurnStart(PlayerViewController playerViewController)
         {
             OnGoingPlayerViewController = playerViewController;
+            Debug.LogFormat("DEBUG {0}", _playerHandsList.Count);
             OngoingPlayerHands = _playerHandsList[playerViewController.Alias];
             DisplayHands();
         }
@@ -169,7 +170,7 @@ namespace Draconia.ViewController
             }
 
             int i = 0;
-            foreach (var card in transform.GetComponentsInChildren<Card>())
+            foreach (var card in transform.GetComponentsInChildren<CardVC>())
             {
                 Transform tf = card.transform;
                 //计算角度
@@ -191,8 +192,8 @@ namespace Draconia.ViewController
         {
             
             float p0 = OngoingPlayerHands.transform.position.x;
-            float dist = IdealDist + CardPrefab.GetComponent<RectTransform>().rect.width * CardPrefab.GetComponent<RectTransform>().Scale().y;
-            float basicDist = IdealDist + BasicCardPrefab.GetComponent<RectTransform>().rect.width * BasicCardPrefab.GetComponent<RectTransform>().Scale().y;
+            float dist = IdealDist + CardVcPrefab.GetComponent<RectTransform>().rect.width * CardVcPrefab.GetComponent<RectTransform>().Scale().y;
+            float basicDist = IdealDist + BasicCardVcPrefab.GetComponent<RectTransform>().rect.width * BasicCardVcPrefab.GetComponent<RectTransform>().Scale().y;
 
             int count = Cards.Count;
             float halfCount = (count - 1) / 2f;
@@ -243,14 +244,14 @@ namespace Draconia.ViewController
                 Cards[i].Discard();
             }
 
-            Cards = new List<Card>();
+            Cards = new List<CardVC>();
         }
 
         /// <summary>
         /// Reorder the card order to certain type
         /// By User and then Cost?
         /// </summary>
-        private void ReorderCard(List<Card> card)
+        private void ReorderCard(List<CardVC> card)
         {
             card.Sort((x, y) =>  - x._cardInfo.Id + y._cardInfo.Id);
             for (int i = 0; i < card.Count; i++)
@@ -264,10 +265,10 @@ namespace Draconia.ViewController
         /// 
         /// </summary>
         /// 
-        public void Choose(Card currCard)
+        public void Choose(CardVC currCardVc)
         {
-            List<Card> cards = transform.GetComponentsInChildren<Card>().ToList();
-            foreach (var card in cards.Where(card => card == currCard))
+            List<CardVC> cards = transform.GetComponentsInChildren<CardVC>().ToList();
+            foreach (var card in cards.Where(card => card == currCardVc))
             {
                 card.Hover();
             }

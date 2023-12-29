@@ -153,7 +153,7 @@ namespace Draconia.System
         /// <param name="playerViewController"></param>
         /// <param name="num"></param>
         /// <returns></returns>
-        public List<Card> DrawCard(PlayerViewController playerViewController, int num)
+        public List<CardVC> DrawCard(PlayerViewController playerViewController, int num)
         {
             //如果没有卡牌了
             if (num > playerViewController.Player.Deck.Count)
@@ -167,7 +167,7 @@ namespace Draconia.System
                 playerViewController.Player.Bin.Clear();
             }
 
-            List<Card> cards = playerViewController.Player.Deck.PickRandom(num).ToList();
+            List<CardVC> cards = playerViewController.Player.Deck.PickRandom(num).ToList();
             playerViewController.Player.Hands.AddRange(cards);
             foreach (var card in cards)
             {

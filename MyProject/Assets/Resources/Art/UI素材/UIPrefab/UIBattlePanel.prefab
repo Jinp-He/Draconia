@@ -1014,8 +1014,8 @@ MonoBehaviour:
   ScriptsFolder: Assets/Scripts/Game
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
-  CardPrefab: {fileID: 7842945222931818247, guid: 8a5e06ae85e07d24dba36d7e50dd1954, type: 3}
-  BasicCardPrefab: {fileID: 7842945222931818247, guid: f6d73112dd61d4f4f909d5e72bd919bc, type: 3}
+  CardVcPrefab: {fileID: 7842945222931818247, guid: 8a5e06ae85e07d24dba36d7e50dd1954, type: 3}
+  BasicCardVcPrefab: {fileID: 7842945222931818247, guid: f6d73112dd61d4f4f909d5e72bd919bc, type: 3}
   FrontImage: {fileID: 946416581468177916}
   OnGoingPlayerViewController: {fileID: 0}
   Cards: []

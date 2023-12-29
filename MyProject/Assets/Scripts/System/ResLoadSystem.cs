@@ -40,6 +40,7 @@ namespace Draconia.System
             else
             {
                 Sprite s = mResLoader.LoadSync<Sprite>(objectName);
+                //mResLoader.
                 _dictionaryPool.Add(objectName,s);
                 return s;
             }

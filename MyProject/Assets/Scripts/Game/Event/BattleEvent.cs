@@ -12,7 +12,7 @@ namespace Draconia.ViewController.Event
     
     public struct PlayerTurnStartEvent
     {
-    
+        public Player Player;
     }
     
     public struct EnterDangerAreaEvent
@@ -24,12 +24,12 @@ namespace Draconia.ViewController.Event
     public struct UseCardEvent
     {
         public CharacterViewController CharacterViewController;
-        public Card UsedCard;
+        public CardVC UsedCardVc;
     }
 
     public struct DrawCardEvent
     {
-        public List<Card> Cards;
+        public List<CardVC> Cards;
     }
 
     public struct AddBuffEvent

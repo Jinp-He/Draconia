@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using QFramework;
 using UnityEngine;
 
@@ -17,6 +18,14 @@ namespace Utility
 	
          return relativePosition;
       }
+      
+      
+      public static async void StartTimer(float delay, Action action)
+      {
+         await Task.Delay((int)delay * 1000);
+         action?.Invoke();
+      }
+
    }
-    
-}
+   
+   }

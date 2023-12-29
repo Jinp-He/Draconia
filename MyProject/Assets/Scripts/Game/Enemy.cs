@@ -63,6 +63,7 @@ namespace Draconia.ViewController
 		public void Init(EnemyInfo enemyInfo)
 		{
 			base.Init();
+			IsPlayer = false;
 			BuffManager = GetComponent<BuffManager>();
 			EnemyInfo = enemyInfo;
 			_enemyStrategy = EnemyStrategy.GetEnemyStrategy(this);

@@ -24,9 +24,16 @@ namespace Draconia.Game.Buff
         protected BuffManager _buffManager;
 
 
-
+        public static BuffEffect GetEffect(BuffInfo buffInfo)
+        {
+            switch (buffInfo.BuffName)
+            {
+                default:
+                    return new Charge();
+            }
+        }
         
-        public virtual void Init(Buff buff, BuffInfo buffInfo, int stack, BuffManager buffManager)
+        public virtual void Init(Buff buff, BuffInfo buffInfo,  BuffManager buffManager)
         {
             Buff = buff;
             UnRegisters = new List<IUnRegister>();
@@ -34,14 +41,11 @@ namespace Draconia.Game.Buff
             _buffInfo = buffInfo;
             CharacterViewController = buffManager.CharacterViewController;
 
-            if (!_buffInfo.IsConsis)
-            {
                 UnRegisters.Add(this.RegisterEvent<PlayerTurnStartEvent>(e =>
                 {
                     PlayerTurnStart();
-                    Buff.Stack--;
                 }));
-            }
+
         }
 
         //添加buff时候施加的效果
@@ -65,6 +69,7 @@ namespace Draconia.Game.Buff
         {
             OnRemoveBuff();
             OnEnd();
+            
             _buffManager.Buffs.Remove(_buffInfo.BuffName);
         }
 

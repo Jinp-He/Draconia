@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638224151609035584
-    m_Hash: 2745513046
+      ticks: 638402941710423967
+    m_Hash: 1751355093
   m_LockFileStatus:
     m_FilePath: C:/Users/lofnh/Documents/GitHub/Draconia/MyProject/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638224151943313156
-    m_Hash: 3125261499
+      ticks: 638402941710436645
+    m_Hash: 4219078396
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:

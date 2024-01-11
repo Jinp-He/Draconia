@@ -1,22 +1,3 @@
-﻿using QFramework;
-using UnityEngine;
-using UnityEngine.EventSystems;
-using NotImplementedException = System.NotImplementedException;
-
-namespace Draconia.ViewController
-{
-    public class TileDropper : QFramework.ViewController, IDropHandler
-    {
-
-        public bool IsOccupied;
-        public void OnDrop(PointerEventData eventData)
-        {
-            if (eventData.pointerDrag != null && IsOccupied == false)
-            {
-                eventData.pointerDrag.transform.position =
-                    transform.position;
-                IsOccupied = true;
-            }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b83b76ccfd0b265e849cb92417079e1d8ef4040fe0685fa633792d0588255dcf
+size 1621

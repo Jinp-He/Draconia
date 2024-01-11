@@ -1,33 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Draconia.System;
-using Draconia.UI;
-using QFramework;
-using UnityEngine;
-using NotImplementedException = System.NotImplementedException;
-
-namespace Draconia
-{
-
-
-    public class Root : MonoBehaviour, ICanGetSystem
-    {
-        // Start is called before the first frame update
-        void Start()
-        {
-            ResKit.Init();
-            this.GetSystem<BattleSystem>().TestInit();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
-        public IArchitecture GetArchitecture()
-        {
-            return Draconia.Interface;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2146432fa1af654012b4631cb2179535c11866fb7554d6eef59ebf8d25769383
+size 698

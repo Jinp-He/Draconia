@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 2798876048
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9bca85410ebf5fa509f5ebef79b7242a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f267fd2d8bcb1179236b6179ac5313bc
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- "Assets/Resources/Art/\u6218\u6597\u754C\u9762\u7D20\u6750/\u524D\u666F\u5E95\u7EB9/FrontGround_Item.png"
+Dependencies: []

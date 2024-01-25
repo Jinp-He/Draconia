@@ -5,6 +5,7 @@ using cfg;
 using QFramework;
 using SimpleJSON;
 using UnityEngine;
+using UnityEngine.U2D;
 using NotImplementedException = System.NotImplementedException;
 using Object = UnityEngine.Object;
 
@@ -46,6 +47,10 @@ namespace Draconia.System
             }
         }
 
+        public SpriteAtlas LoadSpriteAtlas(string name)
+        {
+            return mResLoader.LoadSync<SpriteAtlas>(name);
+        }
          
 
         private JSONNode Loader(string fileName)

@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 3294595124
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: bf73bb3668ac990439329946678afed4
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 0d677c6dec2405a43fe6dd294cca7c3e
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- "Assets/Resources/Art/\u654C\u4EBA\u7D20\u6750/Dog01.spriteatlas"
+Dependencies: []

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 735979405
+CRC: 1681895099
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5e171177bedd8f79c2aab84b48734c2d
+    Hash: b670110f4ff2363744e2054fd2de5abf
   TypeTreeHash:
     serializedVersion: 2
     Hash: aa3d22db5abe392d4ea7f02d44a83865
@@ -87,5 +87,5 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
 Assets:
-- Assets/Resources/Art/UIPrefab/UISettingPanel.prefab
+- "Assets/Resources/Art/UI\u7D20\u6750/UIPrefab/UISettingPanel.prefab"
 Dependencies: []

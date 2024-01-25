@@ -10,9 +10,7 @@ namespace Draconia.UI
 	public class CardDisplayPanelData : UIPanelData
 	{
 		public PlayerViewController OnGoingPlayerViewController;
-		public List<CardVC> UsedCards;
-		public List<CardVC> UnUsedCards;
-
+		public bool IsBattleMode;
 	}
 	public partial class CardDisplayPanel : UIPanel
 	{
@@ -32,24 +30,32 @@ namespace Draconia.UI
 
 		private void InitCards()
 		{
-			foreach (var card in mData.OnGoingPlayerViewController.Player.Deck)
+			if (mData.IsBattleMode)
 			{
-				CardVC tempCardVc = Instantiate(card, CardArea);
-				tempCardVc.Init(card._cardInfo, card.CardUser);
-				tempCardVc.ShowMode(); 
+				foreach (var card in mData.OnGoingPlayerViewController.Player.Deck)
+				{
+					CardVC tempCardVc = Instantiate(card, CardArea);
+					tempCardVc.Init(card._cardInfo, card.CardUser);
+					tempCardVc.ShowMode(); 
+				}
+				foreach (var card in mData.OnGoingPlayerViewController.Player.Hands)
+				{
+					CardVC tempCardVc = Instantiate(card, CardArea);
+					tempCardVc.Init(card._cardInfo, card.CardUser);
+					tempCardVc.ShowMode();
+				}
+				foreach (var card in mData.OnGoingPlayerViewController.Player.Bin)
+				{
+					CardVC tempCardVc = Instantiate(card, CardArea);
+					tempCardVc.Init(card._cardInfo, card.CardUser);
+					tempCardVc.ShowMode(true);
+				}
 			}
-			foreach (var card in mData.OnGoingPlayerViewController.Player.Hands)
+			else
 			{
-				CardVC tempCardVc = Instantiate(card, CardArea);
-				tempCardVc.Init(card._cardInfo, card.CardUser);
-				tempCardVc.ShowMode();
+				
 			}
-			foreach (var card in mData.OnGoingPlayerViewController.Player.Bin)
-			{
-				CardVC tempCardVc = Instantiate(card, CardArea);
-				tempCardVc.Init(card._cardInfo, card.CardUser);
-				tempCardVc.ShowMode(true);
-			}
+			
 
 		}
 

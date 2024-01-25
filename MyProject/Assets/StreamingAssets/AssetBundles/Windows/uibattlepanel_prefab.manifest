@@ -1,23 +1,27 @@
 ManifestFileVersion: 0
-CRC: 284432474
+CRC: 2001750033
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e6f180928caacde2066e01689430b7a1
+    Hash: ba943fb61b9bf26997608e74a4b71c85
   TypeTreeHash:
     serializedVersion: 2
-    Hash: cc84d745014e9c5ee28d788714ce3d2c
+    Hash: 778671dfaef4e582e66a0d6eae0d394c
 HashAppended: 0
 ClassTypes:
 - Class: 1
-  Script: {instanceID: 0}
-- Class: 4
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
 - Class: 28
   Script: {instanceID: 0}
 - Class: 48
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 61
   Script: {instanceID: 0}
 - Class: 74
   Script: {instanceID: 0}
@@ -34,17 +38,21 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 9dddd46f1ba092b46bb63b6d5d906ce4, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 6f51e45d9f7841f482c00bce2fe06ae7, type: 3}
+  Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d85b887af7e6c3f45a2e2d2920d641bc, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 4d2edadb1c41b0140acdacca6d1fdbac, type: 3}
 - Class: 114
@@ -58,13 +66,17 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 63e42c418acddc046bd13ef307bf9212, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 8cb84b88ed2e4591be114dac250cdca1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6a132ebb16d23354b841b6618f4fa0e5, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: b7ee23a99c104ed4a194912b3284c8a7, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 7a7f31d3bde3120439600908681eab69, type: 3}
+  Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: bbd1f6b2d3cc46309af0249893970f9d, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 74400ddbaa0ce6244a441a7beed780de, type: 3}
 - Class: 114
@@ -82,26 +94,38 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: a0d5ba311377479088efe46034e8a17c, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: c737cf33ce9b4394abbc63fe1366c6da, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: b9b014a6d580460a9a55fa46ba4e3e71, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: cb4654ac43e3ec34a922e6e227fbfaba, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
-  Script: {instanceID: 0}
-- Class: 212
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
 - Class: 222
   Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
 - Class: 224
+  Script: {instanceID: 0}
+- Class: 225
   Script: {instanceID: 0}
 - Class: 687078895
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: TheraBytes.BetterUi.BetterImage/SpriteSettings
+- AssemblyName: Assembly-CSharp
+  ClassName: TheraBytes.BetterUi.BetterImage/SpriteSettingsConfigCollection
+- AssemblyName: Assembly-CSharp
+  ClassName: TheraBytes.BetterUi.SizeModifierCollection
+- AssemblyName: Assembly-CSharp
+  ClassName: TheraBytes.BetterUi.SizeModifierCollection/SizeModifier
+- AssemblyName: Assembly-CSharp
+  ClassName: TheraBytes.BetterUi.Vector2SizeConfigCollection
+- AssemblyName: Assembly-CSharp
+  ClassName: TheraBytes.BetterUi.Vector2SizeModifier
+- AssemblyName: Assembly-CSharp
+  ClassName: TheraBytes.BetterUi.VertexMaterialData
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.FaceInfo_Legacy
 - AssemblyName: Unity.TextMeshPro
@@ -148,11 +172,17 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.UI.Slider/SliderEvent
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Toggle/ToggleEvent
+- AssemblyName: spine-unity
+  ClassName: Spine.Unity.BlendModeMaterials
+- AssemblyName: spine-unity
+  ClassName: Spine.Unity.MeshGenerator
+- AssemblyName: spine-unity
+  ClassName: Spine.Unity.MeshGenerator/Settings
 Assets:
-- Assets/Resources/Art/UIPrefab/UIBattlePanel.prefab
+- "Assets/Resources/Art/UI\u7D20\u6750/UIPrefab/UIBattlePanel.prefab"
 Dependencies:
-- C:/Users/lofnh/Documents/GitHub/Draconia/My project/AssetBundles/Windows/dog01_prefab
-- C:/Users/lofnh/Documents/GitHub/Draconia/My project/AssetBundles/Windows/fatknight_prefab
-- C:/Users/lofnh/Documents/GitHub/Draconia/My project/AssetBundles/Windows/intention_ult_png
-- "C:/Users/lofnh/Documents/GitHub/Draconia/My project/AssetBundles/Windows/\u8840\u6761\u4FE1\u606F
-  1_psb"
+- C:/Users/lofnh/Documents/GitHub/Draconia/MyProject/AssetBundles/Windows/card_prefab
+- C:/Users/lofnh/Documents/GitHub/Draconia/MyProject/AssetBundles/Windows/enemyprefab_prefab
+- C:/Users/lofnh/Documents/GitHub/Draconia/MyProject/AssetBundles/Windows/frontground_item_png

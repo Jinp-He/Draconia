@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 2524287893
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9f1f4f741edd8fb9d73fc6f02e45f48e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f267fd2d8bcb1179236b6179ac5313bc
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- "Assets/Resources/Art/\u654C\u4EBA\u7D20\u6750/\u654C\u4EBA\u610F\u56FE/Intention_Other.png"
+Dependencies: []

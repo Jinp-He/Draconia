@@ -26,8 +26,8 @@ namespace Draconia.System
                 Players.Add(player);
                 
             }
-            Save();
-            Load();
+            //Save();
+            //Load();
         }
 
 

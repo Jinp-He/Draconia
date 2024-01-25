@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ed2db6cf222f58d48a28a281ce3a6aa8f7e5325afed034fa54a64b3db70fd706
-size 200
+fileFormatVersion: 2
+guid: 4191860886a025c4a8eded575d4fe8b8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4343727234628468602
+  userData: 
+  assetBundleName: iconatlas_spriteatlas
+  assetBundleVariant: 

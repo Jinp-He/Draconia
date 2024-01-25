@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 2201534386
+CRC: 1003550655
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -50,40 +50,114 @@ AssetBundleManifest:
     Info_14:
       Name: uibattlepanel_prefab
       Dependencies:
-        Dependency_0: intention_ult_png
-        Dependency_1: fatknight_prefab
-        Dependency_2: "\u8840\u6761\u4FE1\u606F 1_psb"
-        Dependency_3: dog01_prefab
+        Dependency_0: card_prefab
+        Dependency_1: frontground_item_png
+        Dependency_2: enemyprefab_prefab
     Info_15:
       Name: uisettingpanel_prefab
       Dependencies: {}
     Info_16:
-      Name: intention_attack_png
+      Name: enemybar_prefab
       Dependencies: {}
     Info_17:
-      Name: intention_defense_png
+      Name: zhouzhou_spriteatlas
       Dependencies: {}
     Info_18:
-      Name: intention_move_png
+      Name: timbuktu_spriteatlas
       Dependencies: {}
     Info_19:
-      Name: intention_ult_png
-      Dependencies: {}
-    Info_20:
-      Name: fatknight_prefab
+      Name: card_prefab
       Dependencies:
-        Dependency_0: intention_ult_png
-        Dependency_1: "\u8840\u6761\u4FE1\u606F 1_psb"
-        Dependency_2: enemybar_prefab
+        Dependency_0: cardimage_zhouzhou_png
+    Info_20:
+      Name: frontground_item_png
+      Dependencies: {}
     Info_21:
-      Name: "\u8840\u6761\u4FE1\u606F 1_psb"
+      Name: frontground_zhouzhou_png
       Dependencies: {}
     Info_22:
-      Name: dog01_prefab
-      Dependencies:
-        Dependency_0: intention_ult_png
-        Dependency_1: enemybar_prefab
+      Name: intention_attack_png
+      Dependencies: {}
     Info_23:
-      Name: enemybar_prefab
+      Name: intention_move_png
+      Dependencies: {}
+    Info_24:
+      Name: intention_other_png
+      Dependencies: {}
+    Info_25:
+      Name: intention_skill_png
+      Dependencies: {}
+    Info_26:
+      Name: frontground_timbuktu_png
+      Dependencies: {}
+    Info_27:
+      Name: fatknight_spriteatlas
+      Dependencies: {}
+    Info_28:
+      Name: dog01_spriteatlas
+      Dependencies: {}
+    Info_29:
+      Name: enemyprefab_prefab
       Dependencies:
-        Dependency_0: "\u8840\u6761\u4FE1\u606F 1_psb"
+        Dependency_0: enemybar_prefab
+        Dependency_1: intention_skill_png
+    Info_30:
+      Name: carddisplaypanel_prefab
+      Dependencies: {}
+    Info_31:
+      Name: cardimage_timbuktu_png
+      Dependencies: {}
+    Info_32:
+      Name: cardimage_zhouzhou_png
+      Dependencies: {}
+    Info_33:
+      Name: "buff_\u6276\u6447\u5F0F_png"
+      Dependencies: {}
+    Info_34:
+      Name: "buff_\u6E83\u654C_png"
+      Dependencies: {}
+    Info_35:
+      Name: "buff_\u82E6\u96BE\u6B8B\u7559_png"
+      Dependencies: {}
+    Info_36:
+      Name: "buff_\u8F7B\u76C8_png"
+      Dependencies: {}
+    Info_37:
+      Name: "buff_\u98DE\u9E1F\u5F0F_png"
+      Dependencies: {}
+    Info_38:
+      Name: buff__png
+      Dependencies: {}
+    Info_39:
+      Name: uimappanel_prefab
+      Dependencies:
+        Dependency_0: tile_prefab
+    Info_40:
+      Name: "\u64CD\u63A7\u5730\u5757\u90E8\u5206_psb"
+      Dependencies: {}
+    Info_41:
+      Name: uitestskeletonpanel_prefab
+      Dependencies: {}
+    Info_42:
+      Name: tile_prefab
+      Dependencies:
+        Dependency_0: "\u64CD\u63A7\u5730\u5757\u90E8\u5206_psb"
+        Dependency_1: iconatlas_spriteatlas
+        Dependency_2: maptile_spriteatlas
+        Dependency_3: storetile_spriteatlas
+    Info_43:
+      Name: "\u5730\u56FE\u5730\u5757\u6837\u5F0F_psb"
+      Dependencies: {}
+    Info_44:
+      Name: iconatlas_spriteatlas
+      Dependencies:
+        Dependency_0: "\u5730\u56FE\u5730\u5757\u6837\u5F0F_psb"
+    Info_45:
+      Name: maptile_spriteatlas
+      Dependencies:
+        Dependency_0: "\u64CD\u63A7\u5730\u5757\u90E8\u5206_psb"
+        Dependency_1: "\u5730\u56FE\u5730\u5757\u6837\u5F0F_psb"
+    Info_46:
+      Name: storetile_spriteatlas
+      Dependencies:
+        Dependency_0: "\u5730\u56FE\u5730\u5757\u6837\u5F0F_psb"

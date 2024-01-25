@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:25966c4315635a706a944c0940ac13c6f5040a19e1e6c882d0ecd5c81640a671
-size 188
+fazfast.asset filter=lfs diff=lfs merge=lfs -text
+fzsOPt.asset filter=lfs diff=lfs merge=lfs -text
+artifactDB filter=lfs diff=lfs merge=lfs -text
+MapPanelDescFont filter=lfs diff=lfs merge=lfs -text
+SDF.asset filter=lfs diff=lfs merge=lfs -text
+MapPanelDescFontSDF.asset filter=lfs diff=lfs merge=lfs -text
+MapPanelFontSDF.asset filter=lfs diff=lfs merge=lfs -text
+resources.assets.resS filter=lfs diff=lfs merge=lfs -text
+MyProject/Assets/Resources/Art/Font filter=lfs diff=lfs merge=lfs -text
+MyProject/Assets/Resources/Art/Font/* filter=lfs diff=lfs merge=lfs -text
+MyProject/Assets/Resources/Art/Font/** filter=lfs diff=lfs merge=lfs -text

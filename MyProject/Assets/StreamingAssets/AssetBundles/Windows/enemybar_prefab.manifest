@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 320089899
+CRC: 2632412852
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 8c0118dfbf61472c25ffeaf61a7acd3a
+    Hash: bd7cf680a830e991156482b5157cb812
   TypeTreeHash:
     serializedVersion: 2
-    Hash: c2f4d98ccd959d43296ee86cee640fbe
+    Hash: 97dd7fa3cf608bac8bdb0b1bd097ac3d
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -22,9 +22,9 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: cb4654ac43e3ec34a922e6e227fbfaba, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 0d51f3a7c41ab0346b49ae50d456bece, type: 3}
 - Class: 114
@@ -33,9 +33,9 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: cb4654ac43e3ec34a922e6e227fbfaba, type: 3}
 - Class: 115
+  Script: {instanceID: 0}
+- Class: 128
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
@@ -56,6 +56,12 @@ SerializeReferenceClassIdentifiers:
   ClassName: TMPro.TMP_FontFeatureTable
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.TMP_FontWeightPair
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphAdjustmentRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphPairAdjustmentRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphValueRecord
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.VertexGradient
 - AssemblyName: UnityEngine.CoreModule
@@ -83,7 +89,5 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
 Assets:
-- Assets/Resources/Art/Prefab/EnemyBar.prefab
-Dependencies:
-- "C:/Users/lofnh/Documents/GitHub/Draconia/My project/AssetBundles/Windows/\u8840\u6761\u4FE1\u606F
-  1_psb"
+- "Assets/Resources/Art/UI\u7D20\u6750/Prefab/EnemyBar.prefab"
+Dependencies: []

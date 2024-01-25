@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:11e4ea6091b7097a3161bf3442f9d15d15ae9a3134648d4ec65cda29117fd219
-size 96
+sceneSetups:
+- path: Assets/Scenes/FirstScene.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0

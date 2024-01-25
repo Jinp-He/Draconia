@@ -129,6 +129,7 @@ namespace Draconia.System
             ConnectedTiles[Tiles[0, 0]] = new HashSet<Tile>();
             
             AddNewTileOnStore();
+            //Debug.Log("DEBUG Add New Tile On Store");
             AddNewTileOnStore();
             AddNewTileOnStore();
 

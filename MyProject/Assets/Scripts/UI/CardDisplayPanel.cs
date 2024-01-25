@@ -25,6 +25,7 @@ namespace Draconia.UI
 			//PassiveName.text = mData.OnGoingPlayer.PlayerInfo.Alias;
 			ClostBtn.onClick.AddListener(CloseSelf);
 
+			
 			InitCards();
 		}
 
@@ -34,23 +35,29 @@ namespace Draconia.UI
 			{
 				foreach (var card in mData.OnGoingPlayerViewController.Player.Deck)
 				{
+					if (card.IsBasicCard)
+						return;
 					CardVC tempCardVc = Instantiate(card, CardArea);
 					tempCardVc.Init(card._cardInfo, card.CardUser);
 					tempCardVc.ShowMode(); 
 				}
 				foreach (var card in mData.OnGoingPlayerViewController.Player.Hands)
 				{
+					if (card.IsBasicCard)
+						return;
 					CardVC tempCardVc = Instantiate(card, CardArea);
 					tempCardVc.Init(card._cardInfo, card.CardUser);
 					tempCardVc.ShowMode();
 				}
 				foreach (var card in mData.OnGoingPlayerViewController.Player.Bin)
 				{
+					if (card.IsBasicCard)
+						return;
 					CardVC tempCardVc = Instantiate(card, CardArea);
 					tempCardVc.Init(card._cardInfo, card.CardUser);
 					tempCardVc.ShowMode(true);
 				}
-			}
+			} 
 			else
 			{
 				

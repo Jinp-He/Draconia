@@ -1,3 +1,65 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9d63c239a5f3046583c44e524dd621d2842b293b31554c7c64502a761ba54840
-size 1528
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621f3f918dd5423d93a746ad8fc9082d, type: 3}
+  m_Name: Pipeline
+  m_EditorClassIdentifier: 
+  CurrentTask:
+    ShowLog: 0
+    Status: 1
+    GameObject: {fileID: 0}
+    From: 0
+    NameToFullName: []
+    BindInfos:
+    - TypeName: RectTransform
+      PathToRoot: Card/CardDeck
+      MemberName: CardDeck
+    - TypeName: RectTransform
+      PathToRoot: Card/CardBin
+      MemberName: CardBin
+    - TypeName: Draconia.ViewController.HPBar
+      PathToRoot: CharacterBattleBar/HPBar (1)
+      MemberName: HPBar (1)
+    - TypeName: TMPro.TextMeshProUGUI
+      PathToRoot: CharacterBattleBar/RestCard/RestCardNum
+      MemberName: RestCardNum
+    - TypeName: RectTransform
+      PathToRoot: CharacterBattleBar/CharacterEnergyArea/EnergyBar
+      MemberName: EnergyBar
+    - TypeName: RectTransform
+      PathToRoot: CharacterBattleBar/ChooseBracelet
+      MemberName: ChooseBracelet
+    - TypeName: CharacterDisplayBar
+      PathToRoot: CharacterDisplayBar
+      MemberName: CharacterDisplayBar
+    - TypeName: TMPro.TextMeshProUGUI
+      PathToRoot: CharacterDisplayBar/Level
+      MemberName: Level
+    - TypeName: Draconia.ViewController.HPBar
+      PathToRoot: CharacterDisplayBar/HPBar (1)
+      MemberName: HPBar (1)
+    - TypeName: RectTransform
+      PathToRoot: CharacterDisplayBar/Experience
+      MemberName: Experience
+    ScriptsFolder: Assets/Scripts/Game
+    ClassName: Character
+    Namespace: Draconia.ViewController
+    MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace Draconia.ViewController\r\n{\r\n\tpublic
+      partial class Character : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:f1ee80b9-d103-457f-870a-1ee9289e1ea2\r\nusing UnityEngine;\r\n\r\nnamespace
+      Draconia.ViewController\r\n{\r\n\tpublic partial class Character\r\n\t{\r\n\r\n\t\tpublic
+      RectTransform CardDeck;\r\n\r\n\t\tpublic RectTransform CardBin;\r\n\r\n\t\tpublic
+      Draconia.ViewController.HPBar HPBar (1);\r\n\r\n\t\tpublic TMPro.TextMeshProUGUI
+      RestCardNum;\r\n\r\n\t\tpublic RectTransform EnergyBar;\r\n\r\n\t\tpublic RectTransform
+      ChooseBracelet;\r\n\r\n\t\tpublic CharacterDisplayBar CharacterDisplayBar;\r\n\r\n\t\tpublic
+      TMPro.TextMeshProUGUI Level;\r\n\r\n\t\tpublic Draconia.ViewController.HPBar
+      HPBar (1);\r\n\r\n\t\tpublic RectTransform Experience;\r\n\r\n\t}\r\n}\r\n"

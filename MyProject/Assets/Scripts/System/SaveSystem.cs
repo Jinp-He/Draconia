@@ -49,7 +49,13 @@ namespace Draconia.System
         }
         public void LoadByJson()
         {
+            string path = Application.dataPath + "/SaveFiles";
+            if(!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
             string datePath = Application.dataPath + "/SaveFiles" + "/PlayerData.bin";
+            
             if (File.Exists(datePath))  //判断这个路径里面是否为空
             {
                 byte[] bytes = File.ReadAllBytes(datePath);

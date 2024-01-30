@@ -21,6 +21,10 @@ namespace Draconia.ViewController
 	{
 		public PlayerViewController PlayerViewController;
 		public PlayerInfo PlayerInfo;
+
+		public int Hp;
+		public int MaxHp;
+		
 		public List<CardInfo> Cards;
 		public List<CardVC> Deck;
 		public List<CardVC> Hands;
@@ -35,6 +39,54 @@ namespace Draconia.ViewController
 		public string Alias;
 
 		public int Mastery;
+		public int TotalExp;
+		public int Level 
+		{
+			get
+			{
+				return TotalExp switch
+				{
+					< 1 => 0,
+					< 3 => 1,
+					< 6 => 2,
+					< 10 => 3,
+					< 15 => 4,
+					_ => 5
+				};
+			}
+		}
+
+		public int Exp
+		{
+			get
+			{
+				return TotalExp switch
+				{
+					< 1 => TotalExp,
+					< 3 => TotalExp-1,
+					< 6 => TotalExp-3,
+					< 10 => TotalExp-6,
+					< 15 => TotalExp-10,
+					_ => Math.Min(5,TotalExp-15)
+				};
+			}
+		}
+
+		public int RestExp
+		{
+			get
+			{
+				return Level switch
+				{
+					< 1 => 1 - Exp,
+					< 2 => 2 - Exp,
+					< 3 => 3 - Exp,
+					< 4 => 4 - Exp,
+					< 5 => 5 - Exp,
+					_ => 5 - Exp
+				};
+			}
+		}
 
 
 		protected bool _isFirstTimeDangerArea;
@@ -65,7 +117,10 @@ namespace Draconia.ViewController
 			Bin = new List<CardVC>();
 
 			PlayerInfo = playerInfo;
-			
+			Hp = PlayerInfo.InitialHP;
+			MaxHp = playerInfo.InitialHP;
+
+			TotalExp = 0;
 			Cards.AddRange(PlayerInfo.InitialCards_Ref);
 			PlayerName = PlayerInfo.Name;
 

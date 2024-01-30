@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "Name": "凯德冥邸",
+    "SpecialEvents": [
+      {
+        "StartingRow": 2,
+        "EndingRow": 2,
+        "StartingCol": 2,
+        "EndingCol": 2,
+        "EventType": 1,
+        "Name": "",
+        "CorrespondentId": 30001
+      }
+    ],
+    "Walls": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "RestNum": 3,
+    "StoreNum": 3,
+    "BossId": 30001
+  }
+]

@@ -24,10 +24,9 @@ namespace Draconia.System
                 Player player = Player.GetPlayer(playerInfo);
                 player.Init(playerInfo);
                 Players.Add(player);
-                
             }
-            Save();
-            Load();
+            //Save();
+            //Load();
         }
 
 

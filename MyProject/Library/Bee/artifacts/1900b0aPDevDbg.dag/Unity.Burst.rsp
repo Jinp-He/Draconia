@@ -109,9 +109,12 @@
 -define:ENABLE_TIMELINE
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
+-define:ODIN_INSPECTOR
+-define:ODIN_INSPECTOR_3
+-define:ODIN_INSPECTOR_3_1
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
--r:"C:/Users/lofnh/Documents/GitHub/Draconia/My project/Library/PackageCache/com.unity.burst@1.8.2/Unity.Burst.Unsafe.dll"
+-r:"C:/Users/lofnh/Documents/GitHub/Draconia/MyProject/Library/PackageCache/com.unity.burst@1.8.2/Unity.Burst.Unsafe.dll"
 -r:"D:/Program Files/2021.3.21f1c1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll"
 -r:"D:/Program Files/2021.3.21f1c1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.ComponentModel.Composition.dll"
 -r:"D:/Program Files/2021.3.21f1c1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Core.dll"

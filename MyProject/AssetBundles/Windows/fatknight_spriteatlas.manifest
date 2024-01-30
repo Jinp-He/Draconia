@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 2036057894
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1143f18cc57a87bb3f673e64b522a8b7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 0d677c6dec2405a43fe6dd294cca7c3e
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- "Assets/Resources/Art/\u654C\u4EBA\u7D20\u6750/FatKnight.spriteatlas"
+Dependencies: []

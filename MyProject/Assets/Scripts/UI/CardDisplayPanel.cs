@@ -10,9 +10,7 @@ namespace Draconia.UI
 	public class CardDisplayPanelData : UIPanelData
 	{
 		public PlayerViewController OnGoingPlayerViewController;
-		public List<CardVC> UsedCards;
-		public List<CardVC> UnUsedCards;
-
+		public bool IsBattleMode;
 	}
 	public partial class CardDisplayPanel : UIPanel
 	{
@@ -27,29 +25,44 @@ namespace Draconia.UI
 			//PassiveName.text = mData.OnGoingPlayer.PlayerInfo.Alias;
 			ClostBtn.onClick.AddListener(CloseSelf);
 
+			
 			InitCards();
 		}
 
 		private void InitCards()
 		{
-			foreach (var card in mData.OnGoingPlayerViewController.Player.Deck)
+			if (mData.IsBattleMode)
 			{
-				CardVC tempCardVc = Instantiate(card, CardArea);
-				tempCardVc.Init(card._cardInfo, card.CardUser);
-				tempCardVc.ShowMode(); 
-			}
-			foreach (var card in mData.OnGoingPlayerViewController.Player.Hands)
+				foreach (var card in mData.OnGoingPlayerViewController.Player.Deck)
+				{
+					if (card.IsBasicCard)
+						return;
+					CardVC tempCardVc = Instantiate(card, CardArea);
+					tempCardVc.Init(card._cardInfo, card.CardUser);
+					tempCardVc.ShowMode(); 
+				}
+				foreach (var card in mData.OnGoingPlayerViewController.Player.Hands)
+				{
+					if (card.IsBasicCard)
+						return;
+					CardVC tempCardVc = Instantiate(card, CardArea);
+					tempCardVc.Init(card._cardInfo, card.CardUser);
+					tempCardVc.ShowMode();
+				}
+				foreach (var card in mData.OnGoingPlayerViewController.Player.Bin)
+				{
+					if (card.IsBasicCard)
+						return;
+					CardVC tempCardVc = Instantiate(card, CardArea);
+					tempCardVc.Init(card._cardInfo, card.CardUser);
+					tempCardVc.ShowMode(true);
+				}
+			} 
+			else
 			{
-				CardVC tempCardVc = Instantiate(card, CardArea);
-				tempCardVc.Init(card._cardInfo, card.CardUser);
-				tempCardVc.ShowMode();
+				
 			}
-			foreach (var card in mData.OnGoingPlayerViewController.Player.Bin)
-			{
-				CardVC tempCardVc = Instantiate(card, CardArea);
-				tempCardVc.Init(card._cardInfo, card.CardUser);
-				tempCardVc.ShowMode(true);
-			}
+			
 
 		}
 

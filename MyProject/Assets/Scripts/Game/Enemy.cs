@@ -24,7 +24,7 @@ namespace Draconia.ViewController
 		public EnemyInfo EnemyInfo;
 		public int _energy;
 		public int MaxEnergy;
-		public BuffManager BuffManager;
+		//public BuffManager BuffManager;
 		public int Energy
 		{
 			get => _energy;

@@ -41,14 +41,66 @@ namespace QAssetBundle
         public const string BundleName = "b_png";
         public const string B = "b";
     }
+    public class Buff_png
+    {
+        public const string BundleName = "buff__png";
+        public const string BUFF_ = "buff_";
+    }
+    public class Buff_扶摇式_png
+    {
+        public const string BundleName = "buff_扶摇式_png";
+        public const string BUFF_扶摇式 = "buff_扶摇式";
+    }
+    public class Buff_溃敌_png
+    {
+        public const string BundleName = "buff_溃敌_png";
+        public const string BUFF_溃敌 = "buff_溃敌";
+        public const string BUFF_蓄力 = "buff_蓄力";
+    }
+    public class Buff_苦难残留_png
+    {
+        public const string BundleName = "buff_苦难残留_png";
+        public const string BUFF_苦难残留 = "buff_苦难残留";
+    }
+    public class Buff_轻盈_png
+    {
+        public const string BundleName = "buff_轻盈_png";
+        public const string BUFF_轻盈 = "buff_轻盈";
+    }
+    public class Buff_飞鸟式_png
+    {
+        public const string BundleName = "buff_飞鸟式_png";
+        public const string BUFF_飞鸟式 = "buff_飞鸟式";
+    }
     public class C_png
     {
         public const string BundleName = "c_png";
         public const string C = "c";
     }
-    public class Dog01_prefab
+    public class Card_prefab
     {
-        public const string BundleName = "dog01_prefab";
+        public const string BundleName = "card_prefab";
+        public const string CARDPREFAB = "CardPrefab";
+        public const string BASICCARDPREFAB = "BasicCardPrefab";
+    }
+    public class Carddisplaypanel_prefab
+    {
+        public const string BundleName = "carddisplaypanel_prefab";
+        public const string CARDDISPLAYPANEL = "CardDisplayPanel";
+    }
+    public class Cardimage_timbuktu_png
+    {
+        public const string BundleName = "cardimage_timbuktu_png";
+        public const string CARDIMAGE_TIMBUKTU = "CardImage_Timbuktu";
+    }
+    public class Cardimage_zhouzhou_png
+    {
+        public const string BundleName = "cardimage_zhouzhou_png";
+        public const string CARDIMAGE_ZHOUZHOU = "CardImage_Zhouzhou";
+    }
+    public class Dog01_spriteatlas
+    {
+        public const string BundleName = "dog01_spriteatlas";
         public const string DOG01 = "Dog01";
     }
     public class Enemybar_prefab
@@ -56,10 +108,35 @@ namespace QAssetBundle
         public const string BundleName = "enemybar_prefab";
         public const string ENEMYBAR = "EnemyBar";
     }
-    public class Fatknight_prefab
+    public class Enemyprefab_prefab
     {
-        public const string BundleName = "fatknight_prefab";
+        public const string BundleName = "enemyprefab_prefab";
+        public const string ENEMYPREFAB = "EnemyPrefab";
+    }
+    public class Fatknight_spriteatlas
+    {
+        public const string BundleName = "fatknight_spriteatlas";
         public const string FATKNIGHT = "FatKnight";
+    }
+    public class Frontground_item_png
+    {
+        public const string BundleName = "frontground_item_png";
+        public const string FRONTGROUND_ITEM = "FrontGround_Item";
+    }
+    public class Frontground_timbuktu_png
+    {
+        public const string BundleName = "frontground_timbuktu_png";
+        public const string FRONTGROUND_TIMBUKTU = "FrontGround_Timbuktu";
+    }
+    public class Frontground_zhouzhou_png
+    {
+        public const string BundleName = "frontground_zhouzhou_png";
+        public const string FRONTGROUND_ZHOUZHOU = "FrontGround_Zhouzhou";
+    }
+    public class Iconatlas_spriteatlas
+    {
+        public const string BundleName = "iconatlas_spriteatlas";
+        public const string ICONATLAS = "IconAtlas";
     }
     public class Imageprefaba_prefab
     {
@@ -81,20 +158,25 @@ namespace QAssetBundle
         public const string BundleName = "intention_attack_png";
         public const string INTENTION_ATTACK = "Intention_Attack";
     }
-    public class Intention_defense_png
-    {
-        public const string BundleName = "intention_defense_png";
-        public const string INTENTION_DEFENSE = "Intention_Defense";
-    }
     public class Intention_move_png
     {
         public const string BundleName = "intention_move_png";
         public const string INTENTION_MOVE = "Intention_Move";
     }
-    public class Intention_ult_png
+    public class Intention_other_png
     {
-        public const string BundleName = "intention_ult_png";
-        public const string INTENTION_ULT = "Intention_Ult";
+        public const string BundleName = "intention_other_png";
+        public const string INTENTION_OTHER = "Intention_Other";
+    }
+    public class Intention_skill_png
+    {
+        public const string BundleName = "intention_skill_png";
+        public const string INTENTION_SKILL = "Intention_Skill";
+    }
+    public class Maptile_spriteatlas
+    {
+        public const string BundleName = "maptile_spriteatlas";
+        public const string MAPTILE = "MapTile";
     }
     public class Sceneres_unity
     {
@@ -106,15 +188,35 @@ namespace QAssetBundle
         public const string BundleName = "spriteatlas_spriteatlas";
         public const string SPRITEATLAS = "spriteatlas";
     }
+    public class Storetile_spriteatlas
+    {
+        public const string BundleName = "storetile_spriteatlas";
+        public const string STORETILE = "StoreTile";
+    }
     public class Textureexample1_png
     {
         public const string BundleName = "textureexample1_png";
         public const string TEXTUREEXAMPLE1 = "TextureExample1";
     }
+    public class Tile_prefab
+    {
+        public const string BundleName = "tile_prefab";
+        public const string TILE = "Tile";
+    }
+    public class Timbuktu_spriteatlas
+    {
+        public const string BundleName = "timbuktu_spriteatlas";
+        public const string TIMBUKTU = "Timbuktu";
+    }
     public class Uibattlepanel_prefab
     {
         public const string BundleName = "uibattlepanel_prefab";
         public const string UIBATTLEPANEL = "UIBattlePanel";
+    }
+    public class Uimappanel_prefab
+    {
+        public const string BundleName = "uimappanel_prefab";
+        public const string UIMAPPANEL = "UIMapPanel";
     }
     public class Uipanelwithimageprefab_prefab
     {
@@ -126,9 +228,24 @@ namespace QAssetBundle
         public const string BundleName = "uisettingpanel_prefab";
         public const string UISETTINGPANEL = "UISettingPanel";
     }
-    public class 血条信息_1_psb
+    public class Uitestskeletonpanel_prefab
     {
-        public const string BundleName = "血条信息 1_psb";
-        public const string 血条信息_1 = "血条信息 1";
+        public const string BundleName = "uitestskeletonpanel_prefab";
+        public const string UITESTSKELETONPANEL = "UITestSkeletonPanel";
+    }
+    public class Zhouzhou_spriteatlas
+    {
+        public const string BundleName = "zhouzhou_spriteatlas";
+        public const string ZHOUZHOU = "Zhouzhou";
+    }
+    public class 地图地块样式_psb
+    {
+        public const string BundleName = "地图地块样式_psb";
+        public const string 地图地块样式 = "地图地块样式";
+    }
+    public class 操控地块部分_psb
+    {
+        public const string BundleName = "操控地块部分_psb";
+        public const string 操控地块部分 = "操控地块部分";
     }
 }

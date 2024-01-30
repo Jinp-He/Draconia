@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2562430824
+CRC: 4149887276
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e152c7ce416f3bb2a5153e1c4616aa5f
+    Hash: a29db40bbf376a8e36ae51b9b30b11f3
   TypeTreeHash:
     serializedVersion: 2
     Hash: f267fd2d8bcb1179236b6179ac5313bc
@@ -15,5 +15,5 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Resources/Art/EnemyIntention/Intention_Move.png
+- "Assets/Resources/Art/\u654C\u4EBA\u7D20\u6750/\u654C\u4EBA\u610F\u56FE/Intention_Move.png"
 Dependencies: []

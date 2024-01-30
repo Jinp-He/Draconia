@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 2935769653
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5b56c8893474bbedb7cd46b801ea7fbd
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 0d677c6dec2405a43fe6dd294cca7c3e
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- "Assets/Resources/Art/\u4EBA\u7269\u7D20\u6750/Timbuktu.spriteatlas"
+Dependencies: []

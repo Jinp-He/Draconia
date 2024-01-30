@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 811304873
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b5cad00c5914ebca6ae78b729b873d5b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 0d677c6dec2405a43fe6dd294cca7c3e
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/Art/MapPanel/StoreTile.spriteatlas
+Dependencies:
+- "C:/Users/lofnh/Documents/GitHub/Draconia/MyProject/AssetBundles/Windows/\u5730\u56FE\u5730\u5757\u6837\u5F0F_psb"

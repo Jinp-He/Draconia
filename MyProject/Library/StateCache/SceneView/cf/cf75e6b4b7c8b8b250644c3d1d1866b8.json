@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3eb995f7089492dd105e87490f1882e45fb77cbc665a9843a1bf2bcdad813c6e
-size 494
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":-3.0620763301849367,"y":-2.5699174404144289,"z":-0.12298844754695893},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":6.7475504875183109,"orthographic":true}

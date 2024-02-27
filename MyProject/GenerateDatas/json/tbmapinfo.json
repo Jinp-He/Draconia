@@ -9,7 +9,7 @@
         "StartingCol": 2,
         "EndingCol": 2,
         "EventType": 1,
-        "Name": "",
+        "Name": "城墙外延",
         "CorrespondentId": 30001
       }
     ],
@@ -29,6 +29,11 @@
     ],
     "RestNum": 3,
     "StoreNum": 3,
-    "BossId": 30001
+    "BossId": 30001,
+    "BossLocation": [
+      4,
+      12
+    ],
+    "BossLocationName": "正殿"
   }
 ]

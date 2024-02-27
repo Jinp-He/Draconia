@@ -92,7 +92,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData:
-  - name: Timbuktu
+  - name: Elin00
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -101,9 +101,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 42
-      height: 42
-    spriteID: d6d3dec9f6197c2479e30e070ed2046f
+      width: 44
+      height: 41
+    spriteID: 2b8d5d281d82d684c99cad5e99e55f7c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -113,29 +113,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 4, y: 4}
-  - name: Zhouzhou
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 54
-      width: 37
-      height: 40
-    spriteID: 9e0854cf1769d114690ce3227c11dca9
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 54}
-    spritePosition: {x: 7, y: 5}
+    spritePosition: {x: 3, y: 4}
   rigSpriteImportData:
   - name: Timbuktu
     originalName: 
@@ -262,8 +240,28 @@ ScriptedImporter:
     layerID: 3
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Elin00
+    spriteName: Elin00
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2b8d5d281d82d684c99cad5e99e55f7c
+    layerID: 26
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
     isImported: 1
     isVisible: 1
+  - name: Elin01
+    spriteName: 
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f92c0eaffb105e44384ed190a5a9e804
+    layerID: 27
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   - name: Zhouzhou
     spriteName: Zhouzhou
     isGroup: 0
@@ -272,8 +270,8 @@ ScriptedImporter:
     layerID: 2
     mosaicPosition: {x: 4, y: 54}
     flatten: 0
-    isImported: 1
-    isVisible: 1
+    isImported: 0
+    isVisible: 0
   rigPSDLayers:
   - name: Timbuktu
     spriteName: Timbuktu

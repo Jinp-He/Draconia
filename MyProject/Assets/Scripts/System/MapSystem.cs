@@ -194,6 +194,21 @@ namespace Draconia.System
                 ConnectedTiles.Add(Tiles[wallPos[0], wallPos[1]], new HashSet<Tile>());
             }
             
+            
+            //Add Boss Tile
+            int bossRow = mapInfo.BossLocation[0];
+            int bossCol = mapInfo.BossLocation[1];
+            Tiles[bossRow, mapInfo.BossLocation[1]] = _uiMapPanel.AddTile(5, bossRow, bossCol, MapEventEnum.BossConnect,mapInfo.BossLocationName);
+
+            for(int i = bossRow; i > bossRow - 2; i--)
+            {
+                for(int j = bossCol; j < bossCol + 2; j++)
+                {
+                    Tiles[i, j] = _uiMapPanel.AddTile(5, i, j, MapEventEnum.BossConnect,mapInfo.BossLocationName);
+                    ConnectedTiles.Add(Tiles[i, j], new HashSet<Tile>());
+                }
+            }
+            
             //Add Store and Rest Area
             List<TileDropper> selectedTiles = new List<TileDropper>();
             for(int i = 0; i < mapInfo.StoreNum; i++)
@@ -208,7 +223,9 @@ namespace Draconia.System
                 Tiles[t.row, t.col] = _uiMapPanel.AddTile(5, t.row, t.col, MapEventEnum.Rest);
                 ConnectedTiles.Add(Tiles[t.row, t.col], new HashSet<Tile>());
             }
-                
+            
+            
+
             TileDropper GetRandomTileDropper()
             {
                 selectedTiles.Clear();
@@ -304,7 +321,7 @@ namespace Draconia.System
         public void CheckMapEvent()
         {
             //Debug.Log("DEBUG Checked");
-            if (_playerExploredTiles.Any(tile => tile.MapEventIndex != MapEventEnum.None))
+            if (_playerExploredTiles.Any(tile => tile.MapEventIndex != MapEventEnum.None && tile.MapEventIndex != MapEventEnum.Explored))
             {
                 Tile t = _playerExploredTiles.Where(tile => tile.MapEventIndex != MapEventEnum.None).ToArray()[0];
                 Debug.Log("DEBUG Find Map Event Tile" + t.Row + " " + t.Col);
@@ -504,6 +521,10 @@ namespace Draconia.System
                     Debug.Log("Boss");
                     CheckMapEvent();
                     break;
+                case MapEventEnum.BossConnect:
+                    Debug.Log("Boss");
+                    CheckMapEvent();
+                    break;
                 case MapEventEnum.Elite:
                     Debug.Log("Elite");
                     break;
@@ -519,9 +540,9 @@ namespace Draconia.System
             }
             
             
-            if (tile.MapEventIndex != MapEventEnum.None)
+            if (tile.MapEventIndex != MapEventEnum.None && tile.MapEventIndex != MapEventEnum.Explored)
             {
-                tile.MapEventIndex = MapEventEnum.None;
+                tile.MapEventIndex = MapEventEnum.Explored;
                 //tile.DirectionImage.gameObject.SetActive(true);
                 tile.MapEventImage.sprite = tile.IconAtlas.GetSprite("Icon_Explored");
                 //tile.Map.sprite = tile.IconAtlas.GetSprite("Icon_Explored");

@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bd08cffc73216fd07a7d2aef12bfdd699a739b6969a29cded98a2ff5fec37cec
-size 456
+﻿using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace Draconia.ViewController
+{
+    public partial class Tile
+    {
+
+        public RectTransform RandomEvent;
+
+        public UnityEngine.UI.Image EventIcon;
+
+        public TMPro.TextMeshProUGUI EventTitle;
+
+        public Image TileImage;
+
+        public Image DirectionImage;
+
+        public Image MapEventImage;
+
+        public TextMeshProUGUI MapEventTitle;
+
+        public Image BossImage;
+
+        public TextMeshProUGUI BossTitle;
+    }
+}

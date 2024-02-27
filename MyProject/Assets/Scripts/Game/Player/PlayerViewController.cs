@@ -232,6 +232,10 @@ namespace Draconia.ViewController
                 
                 BattleStart();
             }
+            else
+            {
+                transform.localScale = new Vector3(.9f, .9f, 1);
+            }
 
             CharacterDisplayBar.Init(player);
 

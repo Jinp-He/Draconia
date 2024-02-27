@@ -25,7 +25,9 @@ namespace Draconia.ViewController
         Boss,
         Elite,
         Store,
-        Rest
+        Rest,
+        BossConnect,
+        Explored
 
     }
 
@@ -126,9 +128,11 @@ namespace Draconia.ViewController
                     RandomEvent.gameObject.SetActive(false);
                     break;
                 case TileEventEnum.NormalEnemy:
+                    EventIcon.sprite = IconAtlas.GetSprite("fatknight");
                     EventTitle.text = "普通敌人";
                     break;
                 case TileEventEnum.EliteEnemy:
+                    EventIcon.sprite = IconAtlas.GetSprite("dog01");
                     EventTitle.text = "精英敌人";
                     break;
                 case TileEventEnum.RandomEvent:
@@ -152,12 +156,16 @@ namespace Draconia.ViewController
                 switch (MapEventIndex)
                 {
                     case MapEventEnum.Boss:
-                        MapEventImage.sprite = IconAtlas.GetSprite("Icon_Store");
-                        MapEventTitle.text = "Boss";
+                        //MapEventImage.sprite = IconAtlas.GetSprite("Icon_Store");
+                        MapEventImage.gameObject.SetActive(false);
+                        BossImage.gameObject.SetActive(true);
+                        BossTitle.text = tileName;
+                        BossImage.sprite = IconAtlas.GetSprite("MasterChief");
+                        //MapEventTitle.text = "Boss";
                         break;
                     case MapEventEnum.Elite:
-                        MapEventImage.sprite = IconAtlas.GetSprite("Icon_Store");
-                        MapEventTitle.text = "精英";
+                        MapEventImage.sprite = IconAtlas.GetSprite("fatknight");
+                        MapEventTitle.text = tileName;
                         break;
                     case MapEventEnum.Store:
                         MapEventImage.sprite = IconAtlas.GetSprite("Icon_Store");
@@ -171,6 +179,9 @@ namespace Draconia.ViewController
                         MapEventImage.sprite = IconAtlas.GetSprite("Icon_Explored");
                         MapEventTitle.text = "起始处";
                         MapEventIndex = MapEventEnum.None;
+                        break;
+                    case MapEventEnum.BossConnect:
+                        MapEventImage.gameObject.SetActive(false);
                         break;
                     default:
                         throw new ArgumentOutOfRangeException(nameof(mapEvent), mapEvent, null);

@@ -60,9 +60,17 @@ namespace Draconia.UI
 		
 		public Tile AddTile(int tileType, int row, int col, MapEventEnum mapEvent = MapEventEnum.None, string tileName = "")
 		{
+		//Debug.Log(row + " " + col);
 			Tile t = Instantiate(TilePrefab, TileDroppers[row,col].transform);
+			
 			TileDroppers[row,col].DropTile(t);
-			t.Init(tileType, TileEventEnum.None,mapEvent);
+			if(tileName != "")
+				t.Init(tileType, TileEventEnum.None,mapEvent,tileName);
+			else
+			{
+				t.Init(tileType, TileEventEnum.None,mapEvent);
+			}
+			t.IsFixed = true;
 			t.DropTile();
 			return t;
 		}

@@ -25,10 +25,12 @@ public sealed partial class MapInfo :  Bright.Config.BeanBase
         { if(!_json["RestNum"].IsNumber) { throw new SerializationException(); }  RestNum = _json["RestNum"]; }
         { if(!_json["StoreNum"].IsNumber) { throw new SerializationException(); }  StoreNum = _json["StoreNum"]; }
         { if(!_json["BossId"].IsNumber) { throw new SerializationException(); }  BossId = _json["BossId"]; }
+        { var __json0 = _json["BossLocation"]; if(!__json0.IsArray) { throw new SerializationException(); } BossLocation = new System.Collections.Generic.List<int>(__json0.Count); foreach(JSONNode __e0 in __json0.Children) { int __v0;  { if(!__e0.IsNumber) { throw new SerializationException(); }  __v0 = __e0; }  BossLocation.Add(__v0); }   }
+        { if(!_json["BossLocationName"].IsString) { throw new SerializationException(); }  BossLocationName = _json["BossLocationName"]; }
         PostInit();
     }
 
-    public MapInfo(int id, string Name, System.Collections.Generic.List<MapEvent> SpecialEvents, System.Collections.Generic.List<System.Collections.Generic.List<int>> Walls, int RestNum, int StoreNum, int BossId ) 
+    public MapInfo(int id, string Name, System.Collections.Generic.List<MapEvent> SpecialEvents, System.Collections.Generic.List<System.Collections.Generic.List<int>> Walls, int RestNum, int StoreNum, int BossId, System.Collections.Generic.List<int> BossLocation, string BossLocationName ) 
     {
         this.Id = id;
         this.Name = Name;
@@ -37,6 +39,8 @@ public sealed partial class MapInfo :  Bright.Config.BeanBase
         this.RestNum = RestNum;
         this.StoreNum = StoreNum;
         this.BossId = BossId;
+        this.BossLocation = BossLocation;
+        this.BossLocationName = BossLocationName;
         PostInit();
     }
 
@@ -73,6 +77,14 @@ public sealed partial class MapInfo :  Bright.Config.BeanBase
     /// BossId
     /// </summary>
     public int BossId { get; private set; }
+    /// <summary>
+    /// Boss所在位置（的左上角）
+    /// </summary>
+    public System.Collections.Generic.List<int> BossLocation { get; private set; }
+    /// <summary>
+    /// Boss名字
+    /// </summary>
+    public string BossLocationName { get; private set; }
 
     public const int __ID__ = -1793914870;
     public override int GetTypeId() => __ID__;
@@ -98,6 +110,8 @@ public sealed partial class MapInfo :  Bright.Config.BeanBase
         + "RestNum:" + RestNum + ","
         + "StoreNum:" + StoreNum + ","
         + "BossId:" + BossId + ","
+        + "BossLocation:" + Bright.Common.StringUtil.CollectionToString(BossLocation) + ","
+        + "BossLocationName:" + BossLocationName + ","
         + "}";
     }
     

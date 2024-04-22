@@ -26,8 +26,6 @@ namespace Draconia.UI
 		public TMPro.TextMeshProUGUI RestTileTxt;
 		[SerializeField]
 		public UnityEngine.UI.Image TileStore;
-		[SerializeField]
-		public TMPro.TextMeshProUGUI MoneyTxt;
 		
 		private UIMapPanelData mPrivateData = null;
 		
@@ -41,7 +39,6 @@ namespace Draconia.UI
 			CharacterPointer = null;
 			RestTileTxt = null;
 			TileStore = null;
-			MoneyTxt = null;
 			
 			mData = null;
 		}

@@ -32,14 +32,14 @@ namespace Draconia.ViewController
         
         public void IsChosen()
         {
-            CharacterImage.sprite = _chosenSprite;
-            CharacterImage.SetNativeSize();
+            //CharacterImage.sprite = _chosenSprite;
+            //CharacterImage.SetNativeSize();
         }
         
         public void EndChosen()
         {
-            CharacterImage.sprite = _idleSprite;
-            CharacterImage.SetNativeSize();
+            //CharacterImage.sprite = _idleSprite;
+            //CharacterImage.SetNativeSize();
         }
         
         public void Move(PlayerViewController playerViewController)

@@ -75,6 +75,11 @@ namespace Draconia.UI
 			return t;
 		}
 
+		public void EnterBattleScene()
+		{
+			
+		}
+
 		public IArchitecture GetArchitecture()
 		{
 			return Draconia.Interface;

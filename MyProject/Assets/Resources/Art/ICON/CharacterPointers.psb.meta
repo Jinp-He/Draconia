@@ -92,7 +92,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData:
-  - name: Elin00
+  - name: rocket
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -102,8 +102,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 44
-      height: 41
-    spriteID: 2b8d5d281d82d684c99cad5e99e55f7c
+      height: 38
+    spriteID: c81449cf1029a2642914555b7520f7ac
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -242,6 +242,16 @@ ScriptedImporter:
     flatten: 0
     isImported: 0
     isVisible: 0
+  - name: rocket
+    spriteName: rocket
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c81449cf1029a2642914555b7520f7ac
+    layerID: 30
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Elin00
     spriteName: Elin00
     isGroup: 0
@@ -250,8 +260,8 @@ ScriptedImporter:
     layerID: 26
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
-    isImported: 1
-    isVisible: 1
+    isImported: 0
+    isVisible: 0
   - name: Elin01
     spriteName: 
     isGroup: 0

@@ -9,7 +9,8 @@
     "BelongedCharacter": "Zhouzhou",
     "Properties": [
       0
-    ]
+    ],
+    "Tags": []
   },
   {
     "id": 101,
@@ -21,7 +22,8 @@
     "BelongedCharacter": "Zhouzhou",
     "Properties": [
       0
-    ]
+    ],
+    "Tags": []
   },
   {
     "id": 102,
@@ -33,7 +35,8 @@
     "BelongedCharacter": "Zhouzhou",
     "Properties": [
       0
-    ]
+    ],
+    "Tags": []
   },
   {
     "id": 103,
@@ -43,7 +46,10 @@
     "Rarity": 0,
     "SkillTargetType": 1,
     "BelongedCharacter": "Zhouzhou",
-    "Properties": []
+    "Properties": [],
+    "Tags": [
+      "InStore"
+    ]
   },
   {
     "id": 104,
@@ -53,7 +59,10 @@
     "Rarity": 0,
     "SkillTargetType": 1,
     "BelongedCharacter": "Zhouzhou",
-    "Properties": []
+    "Properties": [],
+    "Tags": [
+      "InStore"
+    ]
   },
   {
     "id": 105,
@@ -63,7 +72,10 @@
     "Rarity": 0,
     "SkillTargetType": 2,
     "BelongedCharacter": "Zhouzhou",
-    "Properties": []
+    "Properties": [],
+    "Tags": [
+      "InStore"
+    ]
   },
   {
     "id": 106,
@@ -73,7 +85,10 @@
     "Rarity": 0,
     "SkillTargetType": 3,
     "BelongedCharacter": "Zhouzhou",
-    "Properties": []
+    "Properties": [],
+    "Tags": [
+      "InStore"
+    ]
   },
   {
     "id": 107,
@@ -83,7 +98,10 @@
     "Rarity": 0,
     "SkillTargetType": 2,
     "BelongedCharacter": "Zhouzhou",
-    "Properties": []
+    "Properties": [],
+    "Tags": [
+      "InStore"
+    ]
   },
   {
     "id": 108,
@@ -93,7 +111,10 @@
     "Rarity": 0,
     "SkillTargetType": 2,
     "BelongedCharacter": "Zhouzhou",
-    "Properties": []
+    "Properties": [],
+    "Tags": [
+      "InStore"
+    ]
   },
   {
     "id": 109,
@@ -103,7 +124,8 @@
     "Rarity": 1,
     "SkillTargetType": 2,
     "BelongedCharacter": "Zhouzhou",
-    "Properties": []
+    "Properties": [],
+    "Tags": []
   },
   {
     "id": 110,
@@ -113,7 +135,8 @@
     "Rarity": 1,
     "SkillTargetType": 2,
     "BelongedCharacter": "Zhouzhou",
-    "Properties": []
+    "Properties": [],
+    "Tags": []
   },
   {
     "id": 111,
@@ -123,7 +146,8 @@
     "Rarity": 1,
     "SkillTargetType": 2,
     "BelongedCharacter": "Zhouzhou",
-    "Properties": []
+    "Properties": [],
+    "Tags": []
   },
   {
     "id": 112,
@@ -133,7 +157,8 @@
     "Rarity": 1,
     "SkillTargetType": 2,
     "BelongedCharacter": "Zhouzhou",
-    "Properties": []
+    "Properties": [],
+    "Tags": []
   },
   {
     "id": 113,
@@ -143,7 +168,8 @@
     "Rarity": 1,
     "SkillTargetType": 1,
     "BelongedCharacter": "Zhouzhou",
-    "Properties": []
+    "Properties": [],
+    "Tags": []
   },
   {
     "id": 114,
@@ -153,7 +179,8 @@
     "Rarity": 1,
     "SkillTargetType": 10,
     "BelongedCharacter": "Zhouzhou",
-    "Properties": []
+    "Properties": [],
+    "Tags": []
   },
   {
     "id": 115,
@@ -163,7 +190,8 @@
     "Rarity": 2,
     "SkillTargetType": 2,
     "BelongedCharacter": "Zhouzhou",
-    "Properties": []
+    "Properties": [],
+    "Tags": []
   },
   {
     "id": 116,
@@ -173,7 +201,8 @@
     "Rarity": 2,
     "SkillTargetType": 1,
     "BelongedCharacter": "Zhouzhou",
-    "Properties": []
+    "Properties": [],
+    "Tags": []
   },
   {
     "id": 200,
@@ -185,7 +214,8 @@
     "BelongedCharacter": "Timbuktu",
     "Properties": [
       0
-    ]
+    ],
+    "Tags": []
   },
   {
     "id": 201,
@@ -197,7 +227,8 @@
     "BelongedCharacter": "Timbuktu",
     "Properties": [
       0
-    ]
+    ],
+    "Tags": []
   },
   {
     "id": 202,
@@ -209,7 +240,8 @@
     "BelongedCharacter": "Timbuktu",
     "Properties": [
       0
-    ]
+    ],
+    "Tags": []
   },
   {
     "id": 203,
@@ -219,7 +251,10 @@
     "Rarity": 0,
     "SkillTargetType": 1,
     "BelongedCharacter": "Timbuktu",
-    "Properties": []
+    "Properties": [],
+    "Tags": [
+      "InStore"
+    ]
   },
   {
     "id": 204,
@@ -229,7 +264,10 @@
     "Rarity": 0,
     "SkillTargetType": 1,
     "BelongedCharacter": "Timbuktu",
-    "Properties": []
+    "Properties": [],
+    "Tags": [
+      "InStore"
+    ]
   },
   {
     "id": 205,
@@ -239,7 +277,10 @@
     "Rarity": 0,
     "SkillTargetType": 9,
     "BelongedCharacter": "Timbuktu",
-    "Properties": []
+    "Properties": [],
+    "Tags": [
+      "InStore"
+    ]
   },
   {
     "id": 206,
@@ -249,7 +290,10 @@
     "Rarity": 0,
     "SkillTargetType": 0,
     "BelongedCharacter": "Timbuktu",
-    "Properties": []
+    "Properties": [],
+    "Tags": [
+      "InStore"
+    ]
   },
   {
     "id": 207,
@@ -259,7 +303,10 @@
     "Rarity": 0,
     "SkillTargetType": 2,
     "BelongedCharacter": "Timbuktu",
-    "Properties": []
+    "Properties": [],
+    "Tags": [
+      "InStore"
+    ]
   },
   {
     "id": 208,
@@ -269,7 +316,10 @@
     "Rarity": 0,
     "SkillTargetType": 2,
     "BelongedCharacter": "Timbuktu",
-    "Properties": []
+    "Properties": [],
+    "Tags": [
+      "InStore"
+    ]
   },
   {
     "id": 209,
@@ -279,6 +329,7 @@
     "Rarity": 1,
     "SkillTargetType": 0,
     "BelongedCharacter": "Timbuktu",
-    "Properties": []
+    "Properties": [],
+    "Tags": []
   }
 ]

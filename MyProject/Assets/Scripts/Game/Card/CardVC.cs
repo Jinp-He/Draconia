@@ -23,12 +23,20 @@ namespace Draconia.ViewController
         Listen
     }
 
+    public enum CardPosition
+    {
+        Battle,
+        View,
+        Store
+    }
+
     public partial class CardVC : MyViewController, IPointerEnterHandler, IPointerExitHandler, IDragHandler,
         ICanSendEvent,
         IBeginDragHandler, IEndDragHandler
     {
         protected CardState _cardState;
         protected Hands _hands;
+        public CardPosition CardPosition;
         public Card Card;
         public CardInfo _cardInfo;
         public PlayerViewController CardUser;
@@ -56,13 +64,14 @@ namespace Draconia.ViewController
             }
         }
 
-        public void Init(CardInfo cardInfo, PlayerViewController cardUser, bool isBasic = false)
-        {
-            
 
+
+        public void Init(CardInfo cardInfo, PlayerViewController cardUser = null, bool isBasic = false, CardPosition 
+        cardPosition = CardPosition.Battle)
+        {
             UIBattlePanel = UIKit.GetPanel<UIBattlePanel>();
             if (UIBattlePanel != null) _hands = UIKit.GetPanel<UIBattlePanel>().Hands;
-            IsViewMode = false;
+            CardPosition = cardPosition;
 
             _cardInfo = cardInfo;
             Properties = cardInfo.Properties;
@@ -72,7 +81,7 @@ namespace Draconia.ViewController
 
             ChangeDesc();
             CardName.text = _cardInfo.Name;
-            if (!IsBasicCard)
+            if (!IsBasicCard && cardUser!=null)
                 CardImage.sprite = CardUser.CardImageSprite;
             //基础卡的标题是竖着
             if (IsBasicCard)
@@ -137,14 +146,22 @@ namespace Draconia.ViewController
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (_cardState == CardState.Listen && !IsViewMode)
+            if (_cardState == CardState.Listen && CardPosition == CardPosition.Battle)
                 Hover();
+            if (IsViewMode)
+            {
+                CardBorder.gameObject.SetActive(true);
+            }
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            if (_cardState == CardState.Listen && !IsViewMode)
+            if (_cardState == CardState.Listen && CardPosition == CardPosition.Battle)
                 UnHover();
+            if (IsViewMode)
+            {
+                CardBorder.gameObject.SetActive(false);
+            }
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -393,7 +410,7 @@ namespace Draconia.ViewController
                 CardUser.Player.Hands.Remove(this);
             }
 
-            //TODO 正确的移除basiccard
+            //TODO 正确的移除basic card
             transform.SetParent(CardUser.CardBin);
             _hands.Refresh();
         }

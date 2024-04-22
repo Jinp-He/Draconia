@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 058d6e135f242f0469e260f3473555d1
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Douyin Sans
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 966d2fabf1d970a43a537b9d918e31cb, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

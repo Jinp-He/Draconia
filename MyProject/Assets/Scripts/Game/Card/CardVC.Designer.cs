@@ -20,5 +20,7 @@ namespace Draconia.ViewController
 
 		public TMPro.TextMeshProUGUI CardDesc;
 
+		public UnityEngine.UI.Image  CardBorder;
+
 	}
 }

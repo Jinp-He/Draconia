@@ -10,18 +10,73 @@ using NotImplementedException = System.NotImplementedException;
 
 namespace Draconia.System
 {
+    public enum GameLanguage
+    {
+        CHI,ENG
+    }
+    
+    public class GameSetting
+    {
+        public void Save()
+        {
+            
+        }
+        
+        //     确定提示
+        // 打开后不再额外提示确定页面
+        public bool BuyingPreference;
+        
+        //     屏幕震动       
+        // 角色受伤时的屏幕抖动
+        public bool IsHarmShake;
+        
+        // ///
+        // /// 窗口尺寸        1600x900
+        // 游戏窗口大小
+        public int Width;
+        public int Height;
+        
+        //
+        //     主音量
+        // 整体音量
+        public int MainVolume;
+        
+        //
+        //     环境音量
+        // 仅改变环境音量
+        public int EnvironmentVolume;
+        
+        //
+        //     音效音量
+        // 进改变音效音量
+        public int SoundVolume;
+        
+        //
+        //     语言    简体中文
+        //     游戏文字
+        public GameLanguage Language;
+        //
+        // /// 
+    }
+
     /// <summary>
     /// 管理游戏的进程，状态，保存和加载的系统
     /// </summary>
     public class GameSystem : AbstractSystem
     {
         public List<Player> Players;
+        public GameSetting GameSetting;
         
         //TODO Save it in the savable
         //public int Money;
         public BindableProperty<int> Money;
         protected override void OnInit()
         {
+            //Game Setting On GameTest
+            GameSetting = new GameSetting();
+            GameSetting.BuyingPreference = false;
+            
+            
             Money = new BindableProperty<int>();
             Players = new List<Player>();
             Money.Value = 500;
@@ -64,15 +119,17 @@ namespace Draconia.System
             return res;
         }
 
-        public void BuyCard(CardInfo cardInfo, int price)
+        public void BuyCard(CardVC cardVc, int price)
         {
             if (Money.Value >= price)
             {
                 Money.Value -= price;
+                cardVc.BeingBought();
                 Debug.Log("Buy Card!");
             }
             else
             {
+                cardVc.DOShakePosition();
                 Debug.Log("Not Enough Money!");
             }            
         }

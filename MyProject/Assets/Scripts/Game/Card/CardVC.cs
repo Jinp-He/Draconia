@@ -27,7 +27,8 @@ namespace Draconia.ViewController
     {
         Battle,
         View,
-        Store
+        Store,
+        Bought
     }
 
     public partial class CardVC : MyViewController, IPointerEnterHandler, IPointerExitHandler, IDragHandler,
@@ -62,6 +63,18 @@ namespace Draconia.ViewController
             {
                 GetComponent<CanvasGroup>().alpha = 0.5f;
             }
+        }
+
+        public void BeingBought()
+        {
+            CardPosition = CardPosition.Bought;
+            CardName.color = Color.gray;
+            CardBorder.gameObject.SetActive(false);
+        }
+
+        public void DOShakePosition()
+        {
+            ImageGroup.transform.DOShakePosition(0.5f, 20, 20, 90);
         }
 
 
@@ -148,7 +161,7 @@ namespace Draconia.ViewController
         {
             if (_cardState == CardState.Listen && CardPosition == CardPosition.Battle)
                 Hover();
-            if (IsViewMode)
+            if (IsViewMode && CardPosition != CardPosition.Bought)
             {
                 CardBorder.gameObject.SetActive(true);
             }
@@ -158,7 +171,7 @@ namespace Draconia.ViewController
         {
             if (_cardState == CardState.Listen && CardPosition == CardPosition.Battle)
                 UnHover();
-            if (IsViewMode)
+            if (IsViewMode && CardPosition != CardPosition.Bought)
             {
                 CardBorder.gameObject.SetActive(false);
             }

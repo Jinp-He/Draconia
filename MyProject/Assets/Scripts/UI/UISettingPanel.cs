@@ -33,7 +33,8 @@ namespace Draconia.UI
 		
 		protected override void OnOpen(IUIData uiData = null)
 		{
-			this.GetSystem<BattleSystem>().SystemStopState = true;
+			//TODO Find Somewhere else to open it
+			//this.GetSystem<BattleSystem>().SystemStopState = true;
 		}
 		
 		protected override void OnShow()
@@ -46,7 +47,8 @@ namespace Draconia.UI
 		
 		protected override void OnClose()
 		{
-			this.GetSystem<BattleSystem>().SystemStopState = false;
+			//TODO Find Somewhere else to open it
+			//this.GetSystem<BattleSystem>().SystemStopState = false;
 		}
 
 		public IArchitecture GetArchitecture()

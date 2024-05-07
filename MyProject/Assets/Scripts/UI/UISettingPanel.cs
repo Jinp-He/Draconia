@@ -11,6 +11,7 @@ namespace Draconia.UI
 	}
 	public partial class UISettingPanel : UIPanel, ICanGetSystem
 	{
+
 		protected override void OnInit(IUIData uiData = null)
 		{
 			mData = uiData as UISettingPanelData ?? new UISettingPanelData();

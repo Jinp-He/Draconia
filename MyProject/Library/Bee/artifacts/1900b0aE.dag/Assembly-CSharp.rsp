@@ -573,6 +573,7 @@
 "Assets/Scripts/UI/UIStorePanel.Designer.cs"
 "Assets/Scripts/UI/UITestSkeletonPanel.cs"
 "Assets/Scripts/UI/UITestSkeletonPanel.Designer.cs"
+"Assets/Scripts/UIToolkit/SliderText.cs"
 "Assets/TheraBytes/BetterUI/Runtime/Scripts/BetterUiElements/BetterButton.cs"
 "Assets/TheraBytes/BetterUI/Runtime/Scripts/BetterUiElements/BetterDropdown.cs"
 "Assets/TheraBytes/BetterUI/Runtime/Scripts/BetterUiElements/BetterImage.cs"

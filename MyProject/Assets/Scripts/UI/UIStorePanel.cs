@@ -27,7 +27,7 @@ namespace Draconia.UI
 				UIKit.OpenPanel<UISettingPanel>();
 			});
 
-			ConfirmBuyToggle.isOn = this.GetSystem<GameSystem>().GameSetting.BuyingPreference;
+			ConfirmBuyToggle.isOn = this.GetSystem<GameSystem>().GameSetting.ConfirmTips;
 			List<Tuple<CardInfo,int>> res = this.GetSystem<GameSystem>().GetStoreItem();
 			CancelButton.onClick.AddListener(() =>
 			{
@@ -35,7 +35,7 @@ namespace Draconia.UI
 			});
 			ConfirmBuyToggle.onValueChanged.AddListener((value) =>
 			{
-				this.GetSystem<GameSystem>().GameSetting.BuyingPreference = value;
+				this.GetSystem<GameSystem>().GameSetting.ConfirmTips = value;
 			});
 			GenerateCard(res);
 		}

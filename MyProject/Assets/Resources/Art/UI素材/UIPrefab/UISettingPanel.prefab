@@ -546,9 +546,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce744e9ac77e0e4e8e7c0dc1a056ad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CloseBtn: {fileID: 7917616162971134493}
+  FullscreenToggle: {fileID: 8758523186054233172}
+  Toggle: {fileID: 1417154651490284633}
+  ScreenSizeDropdown: {fileID: 5493081022179799752}
+  ConfirmTipsToggle: {fileID: 6682001674289333248}
+  MainVolumeSlider: {fileID: 8169917785180863352}
+  EnvVolumeSlider: {fileID: 162326035009516787}
+  VFX: {fileID: 32917451492353904}
+  LanguageDropdown: {fileID: 1734936362179105977}
   RestartBtn: {fileID: 6992392735404583267}
   ExitBtn: {fileID: 7931588840760484476}
-  CloseBtn: {fileID: 7917616162971134493}
 --- !u!95 &5983561288136365355
 Animator:
   serializedVersion: 5
@@ -1195,8 +1203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.7647059}
-  m_RaycastTarget: 1
+  m_Color: {r: 0, g: 0, b: 0, a: 0.9411765}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1894,7 +1902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2791860963338882770, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_Name
-      value: SettingOptions (5)
+      value: VFX
       objectReference: {fileID: 0}
     - target: {fileID: 5568288936235933944, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_fontColor.b
@@ -2038,6 +2046,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+--- !u!114 &32917451492353904 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 710596884464542288, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+  m_PrefabInstance: {fileID: 695944846621197600}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3393129061974199282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e8a039fbec44b3949ecaba226b88ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1187349180962775106 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1860604488385946978, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
@@ -2049,6 +2068,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3393129061974199282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2791860963338882770, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+  m_PrefabInstance: {fileID: 695944846621197600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1617015104746459665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3393129061974199282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d51f3a7c41ab0346b49ae50d456bece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarkType: 0
+  CustomComponentName: VFX
+  CustomComment: 
+  mComponentName: Draconia.UIToolkit.SettingOptions
 --- !u!114 &4967179497381717464 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5568288936235933944, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
@@ -2109,7 +2149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2791860963338882770, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_Name
-      value: SettingOptions (4)
+      value: EnvVolumeSlider
       objectReference: {fileID: 0}
     - target: {fileID: 5568288936235933944, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_fontColor.b
@@ -2253,6 +2293,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+--- !u!114 &162326035009516787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 710596884464542288, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+  m_PrefabInstance: {fileID: 836612568423863971}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3252320708227766385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e8a039fbec44b3949ecaba226b88ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1319008638713852865 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1860604488385946978, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
@@ -2264,6 +2315,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3252320708227766385 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2791860963338882770, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+  m_PrefabInstance: {fileID: 836612568423863971}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1047948062071055431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3252320708227766385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d51f3a7c41ab0346b49ae50d456bece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarkType: 0
+  CustomComponentName: EnvVolumeSlider
+  CustomComment: 
+  mComponentName: Draconia.UIToolkit.SettingOptions
 --- !u!114 &5105595419876701787 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5568288936235933944, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
@@ -2310,6 +2382,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -2517645730361313155, guid: 2a2f475576c7ea243b8a9c5d91daa921, type: 3}
+    - target: {fileID: 709750980140229273, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+    - target: {fileID: 709750980140229273, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4018336051990092739, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
     - target: {fileID: 1588915523655610730, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2324,7 +2404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2791860963338882770, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_Name
-      value: SettingOptions (6)
+      value: LanguageDropdown
       objectReference: {fileID: 0}
     - target: {fileID: 5568288936235933944, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_fontColor.b
@@ -2385,6 +2465,14 @@ PrefabInstance:
     - target: {fileID: 7743998912389168906, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_text
       value: "\u6E38\u620F\u6587\u5B57"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203581893968500302, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+    - target: {fileID: 8203581893968500302, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8227060579198363731, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_Pivot.x
@@ -2483,6 +2571,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1417154651490284633 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 172695694472430256, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+  m_PrefabInstance: {fileID: 1283305390625928937}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1734936362179105977 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 710596884464542288, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+  m_PrefabInstance: {fileID: 1283305390625928937}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3995143347332331579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e8a039fbec44b3949ecaba226b88ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3995143347332331579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2791860963338882770, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+  m_PrefabInstance: {fileID: 1283305390625928937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7148786253663674193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3995143347332331579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d51f3a7c41ab0346b49ae50d456bece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarkType: 0
+  CustomComponentName: LanguageDropdown
+  CustomComment: 
+  mComponentName: Draconia.UIToolkit.SettingOptions
 --- !u!1 &6045676845419395086 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4767544519583125223, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
@@ -2529,6 +2660,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -2517645730361313155, guid: 2a2f475576c7ea243b8a9c5d91daa921, type: 3}
+    - target: {fileID: 709750980140229273, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+    - target: {fileID: 709750980140229273, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4018336051990092739, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
     - target: {fileID: 1588915523655610730, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2543,7 +2682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2791860963338882770, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_Name
-      value: SettingOptions (1)
+      value: ScreenSizeDropdown
       objectReference: {fileID: 0}
     - target: {fileID: 5568288936235933944, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_fontColor.b
@@ -2604,6 +2743,14 @@ PrefabInstance:
     - target: {fileID: 7743998912389168906, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_text
       value: "\u6E38\u620F\u7A97\u53E3\u5927\u5C0F\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203581893968500302, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+    - target: {fileID: 8203581893968500302, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8227060579198363731, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_Pivot.x
@@ -2726,6 +2873,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8227060579198363731, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
   m_PrefabInstance: {fileID: 5037227873228116120}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5493081022179799752 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 710596884464542288, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+  m_PrefabInstance: {fileID: 5037227873228116120}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158888111662784074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e8a039fbec44b3949ecaba226b88ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6644469590150133242 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1860604488385946978, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
@@ -2737,6 +2895,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7158888111662784074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2791860963338882770, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+  m_PrefabInstance: {fileID: 5037227873228116120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6269923307866062366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158888111662784074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d51f3a7c41ab0346b49ae50d456bece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarkType: 0
+  CustomComponentName: ScreenSizeDropdown
+  CustomComment: 
+  mComponentName: Draconia.UIToolkit.SettingOptions
 --- !u!1001 &6154082060615476816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2758,7 +2937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2791860963338882770, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_Name
-      value: SettingOptions (2)
+      value: ConfirmTipsToggle
       objectReference: {fileID: 0}
     - target: {fileID: 5568288936235933944, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_fontColor.b
@@ -2952,6 +3131,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6682001674289333248 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 710596884464542288, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+  m_PrefabInstance: {fileID: 6154082060615476816}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8347738320973785218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e8a039fbec44b3949ecaba226b88ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8347738320973785218 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2791860963338882770, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+  m_PrefabInstance: {fileID: 6154082060615476816}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6248392582667787390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8347738320973785218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d51f3a7c41ab0346b49ae50d456bece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarkType: 0
+  CustomComponentName: ConfirmTipsToggle
+  CustomComment: 
+  mComponentName: Draconia.UIToolkit.SettingOptions
 --- !u!1001 &8092980037152333316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2969,7 +3180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2791860963338882770, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_Name
-      value: SettingOptions
+      value: FullscreenToggle
       objectReference: {fileID: 0}
     - target: {fileID: 5568288936235933944, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_fontColor.b
@@ -3140,6 +3351,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6264125234229727446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2791860963338882770, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+  m_PrefabInstance: {fileID: 8092980037152333316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5012497838535450818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6264125234229727446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d51f3a7c41ab0346b49ae50d456bece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarkType: 0
+  CustomComponentName: FullscreenToggle
+  CustomComment: 
+  mComponentName: Draconia.UIToolkit.SettingOptions
 --- !u!114 &7602704661039496038 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1860604488385946978, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
@@ -3149,6 +3381,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8758523186054233172 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 710596884464542288, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+  m_PrefabInstance: {fileID: 8092980037152333316}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6264125234229727446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e8a039fbec44b3949ecaba226b88ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &8700370542648875304
@@ -3176,7 +3419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2791860963338882770, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_Name
-      value: SettingOptions (3)
+      value: MainVolumeSlider
       objectReference: {fileID: 0}
     - target: {fileID: 5568288936235933944, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
       propertyPath: m_fontColor.b
@@ -3355,6 +3598,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Slider: {fileID: 7021073361487150154}
   Text: {fileID: 3889814442842487248}
+--- !u!1 &6774331005919811578 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2791860963338882770, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+  m_PrefabInstance: {fileID: 8700370542648875304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &696946988657236072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6774331005919811578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d51f3a7c41ab0346b49ae50d456bece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarkType: 0
+  CustomComponentName: MainVolumeSlider
+  CustomComment: 
+  mComponentName: Draconia.UIToolkit.SettingOptions
 --- !u!114 &7021073361487150154 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1860604488385946978, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
@@ -3364,5 +3628,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8169917785180863352 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 710596884464542288, guid: 34ca4df236339334785aff6ac80f9be3, type: 3}
+  m_PrefabInstance: {fileID: 8700370542648875304}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6774331005919811578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e8a039fbec44b3949ecaba226b88ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

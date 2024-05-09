@@ -27,7 +27,7 @@ namespace  Draconia.ViewController
     public class CharacterViewController : MyViewController
     {
         public HPBar HpBar;
-
+        public string Alias;
         private int _currHp;
 
         protected int CurrHP
@@ -202,7 +202,7 @@ namespace Draconia.ViewController
         public PlayerAnimator PlayerAnimator;
         public PlayerInfo PlayerInfo;
 
-        public string Alias;
+        
 
         public void Init(Player player, bool isBattle = true)
         {
@@ -214,10 +214,11 @@ namespace Draconia.ViewController
             PlayerInfo = playerInfo;
             Alias = playerInfo.Alias;
             
-            CharacterAtlas = ResLoadSystem.LoadSync<SpriteAtlas>(playerInfo.Alias);
+            CharacterAtlas = ResLoadSystem.LoadSync<SpriteAtlas>("Zhouzhou");
+            
             //CharacterImage.sprite = CharacterAtlas.GetSprite("Idle");
             //CharacterImage.SetNativeSize();
-            CardImageSprite = ResLoadSystem.LoadSync<Sprite>("CardImage_" + playerInfo.Alias);
+            CardImageSprite = ResLoadSystem.LoadSync<Sprite>("CardImage_Zhouzhou");
 
             CurrHP = player.Hp;
             HpBar.Init(player.MaxHp, player.Hp);
@@ -229,7 +230,7 @@ namespace Draconia.ViewController
                 MyPointer = UIKit.GetPanel<UIBattlePanel>().TimeBar.AddCharacter(this);
                 TriggerDanger = () => { };
                 TriggerDanger += Player.EnterDangerArea;
-                
+                CharacterDisplayBar.gameObject.SetActive(false);
                 BattleStart();
             }
             else

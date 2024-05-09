@@ -85,6 +85,7 @@ namespace Draconia.ViewController
             UIBattlePanel = UIKit.GetPanel<UIBattlePanel>();
             if (UIBattlePanel != null) _hands = UIKit.GetPanel<UIBattlePanel>().Hands;
             CardPosition = cardPosition;
+            if (cardPosition == CardPosition.Battle) IsViewMode = false;
 
             _cardInfo = cardInfo;
             Properties = cardInfo.Properties;
@@ -159,9 +160,9 @@ namespace Draconia.ViewController
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (_cardState == CardState.Listen && CardPosition == CardPosition.Battle)
+            if (CardPosition == CardPosition.Battle)
                 Hover();
-            if (IsViewMode && CardPosition != CardPosition.Bought)
+            else if (IsViewMode && CardPosition != CardPosition.Bought)
             {
                 CardBorder.gameObject.SetActive(true);
             }
@@ -169,9 +170,9 @@ namespace Draconia.ViewController
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            if (_cardState == CardState.Listen && CardPosition == CardPosition.Battle)
+            if (CardPosition == CardPosition.Battle)
                 UnHover();
-            if (IsViewMode && CardPosition != CardPosition.Bought)
+            else if (IsViewMode && CardPosition != CardPosition.Bought)
             {
                 CardBorder.gameObject.SetActive(false);
             }
@@ -431,7 +432,7 @@ namespace Draconia.ViewController
 
         public void Hover()
         {
-            if (IsViewMode) return;
+
             var transform1 = transform;
             _localScale = transform1.localScale;
             _localPos = transform1.localPosition;
@@ -449,7 +450,6 @@ namespace Draconia.ViewController
 
         public void UnHover()
         {
-            if (IsViewMode) return;
             transform.SetParent(_hands.OngoingPlayerHands.transform);
             transform.localScale = _localScale;
             transform.localPosition = _localPos;

@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 2341907567567350599}
   - component: {fileID: 9015610884211588417}
   - component: {fileID: 4302673248395088423}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Item Checkmark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 8975444023805154268}
   - component: {fileID: 5273881930941309882}
   - component: {fileID: 929761561523396229}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Template
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 2060303328931923502}
   - component: {fileID: 569715920852314053}
   - component: {fileID: 3181982803717235869}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Item Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,7 +542,7 @@ GameObject:
   - component: {fileID: 1752136523728803220}
   - component: {fileID: 1115611166000229904}
   - component: {fileID: 5088526792865419802}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 3625134634284305208}
   - component: {fileID: 6867378817550884714}
   - component: {fileID: 336007394337887703}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Viewport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -877,7 +877,7 @@ GameObject:
   - component: {fileID: 8448158322252450339}
   - component: {fileID: 2727933551290635826}
   - component: {fileID: 950923364964304724}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Scrollbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1004,6 +1004,7 @@ GameObject:
   - component: {fileID: 1596064448596294755}
   - component: {fileID: 6384389852200839937}
   - component: {fileID: 8920712108381779598}
+  - component: {fileID: 710596884464542288}
   m_Layer: 0
   m_Name: SettingOptions
   m_TagString: Untagged
@@ -1111,6 +1112,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &710596884464542288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2791860963338882770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e8a039fbec44b3949ecaba226b88ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Toggle: {fileID: 172695694472430256}
+  Slider: {fileID: 1860604488385946978}
+  SliderTxt: {fileID: 5568288936235933944}
+  Dropdown: {fileID: 277464739518196273}
 --- !u!1 &3330703292324459733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,7 +1311,7 @@ GameObject:
   - component: {fileID: 4909258746457483544}
   - component: {fileID: 4339008250292925099}
   - component: {fileID: 8203581893968500302}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Item Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1427,7 +1444,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2262040674282313876}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1599,7 +1616,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3657041501252395381}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sliding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1777,7 +1794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1492508821588090727}
   - component: {fileID: 7659432790744886294}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2184,6 +2201,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df20cefab65ff294c84aec7bb3c49b26, type: 3}
+--- !u!114 &172695694472430256 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3423113445160812506, guid: df20cefab65ff294c84aec7bb3c49b26, type: 3}
+  m_PrefabInstance: {fileID: 3307012509087087978}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6153322052480422862 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8682979204851363492, guid: df20cefab65ff294c84aec7bb3c49b26, type: 3}

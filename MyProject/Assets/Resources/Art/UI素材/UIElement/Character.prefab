@@ -429,6 +429,7 @@ MonoBehaviour:
   HitTextPrefab: {fileID: 874472295046470626, guid: d3ab2f314b0f4e948aedb9fe91eb9e4c, type: 3}
   CriticalHitTextPrefab: {fileID: 874472295046470626, guid: 6fc68aca3fd613d40b56165e8e23f107, type: 3}
   NotificationTextPrefab: {fileID: 2899543023783627009}
+  SkeletonGraphic: {fileID: 6799194178550839736}
   CharacterImage: {fileID: 0}
   CharacterAtlas: {fileID: 0}
 --- !u!114 &6813661187802785325
@@ -464,6 +465,7 @@ MonoBehaviour:
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
   HpBar: {fileID: 3560528407222337041}
+  Alias: 
   MyPointer: {fileID: 0}
   DamageDangerModifier: 1
   IsPlayer: 0
@@ -474,7 +476,6 @@ MonoBehaviour:
   NotificationTextField: {fileID: 148496692707872775}
   BuffManager: {fileID: 0}
   PlayerAnimator: {fileID: 3934012111695030347}
-  Alias: 
   EnergyBar: {fileID: 0}
   RestCardNum: {fileID: 2626879283856591081}
   ChooseBracelet: {fileID: 4643453363303231752}
@@ -961,7 +962,7 @@ RectTransform:
   m_GameObject: {fileID: 5859382728299606334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4643217332729036549}

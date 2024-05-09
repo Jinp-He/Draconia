@@ -24,7 +24,11 @@ namespace Draconia.System
         
         //     确定提示
         // 打开后不再额外提示确定页面
-        public bool BuyingPreference;
+        public bool FullScreen;
+        
+        //     确定提示
+        // 打开后不再额外提示确定页面
+        public bool ConfirmTips;
         
         //     屏幕震动       
         // 角色受伤时的屏幕抖动
@@ -74,8 +78,15 @@ namespace Draconia.System
         {
             //Game Setting On GameTest
             GameSetting = new GameSetting();
-            GameSetting.BuyingPreference = false;
-            
+            GameSetting.ConfirmTips = false;
+            GameSetting.FullScreen = false;
+            GameSetting.IsHarmShake = true;
+            GameSetting.Width = 1600;
+            GameSetting.Height = 900;
+            GameSetting.MainVolume = 50;
+            GameSetting.EnvironmentVolume = 50;
+            GameSetting.SoundVolume = 50;
+            GameSetting.Language = GameLanguage.CHI;
             
             Money = new BindableProperty<int>();
             Players = new List<Player>();

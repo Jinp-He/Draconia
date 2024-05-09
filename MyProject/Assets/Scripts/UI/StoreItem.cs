@@ -26,7 +26,7 @@ namespace Draconia.UI
             
             GetComponent<Button>().onClick.AddListener(() =>
             {
-                if(this.GetSystem<GameSystem>().GameSetting.BuyingPreference)
+                if(this.GetSystem<GameSystem>().GameSetting.ConfirmTips)
                     this.GetSystem<GameSystem>().BuyCard(CardVc, price);
                 else
                 {

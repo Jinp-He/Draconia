@@ -5,7 +5,7 @@ using QFramework;
 
 namespace Draconia.UI
 {
-	// Generate Id:d1b9334b-9751-42bc-a122-f7ae3f6c36a9
+	// Generate Id:88c2799f-75d4-4ae7-998d-effa5b908daf
 	public partial class UIStorePanel
 	{
 		public const string Name = "UIStorePanel";
@@ -14,6 +14,16 @@ namespace Draconia.UI
 		public TMPro.TextMeshProUGUI MoneyTxt;
 		[SerializeField]
 		public RectTransform Store;
+		[SerializeField]
+		public UnityEngine.UI.Button CardBinButton;
+		[SerializeField]
+		public RectTransform ConfirmBuyPanel;
+		[SerializeField]
+		public UnityEngine.UI.Button ConfirmButton;
+		[SerializeField]
+		public UnityEngine.UI.Button CancelButton;
+		[SerializeField]
+		public UnityEngine.UI.Toggle ConfirmBuyToggle;
 		
 		private UIStorePanelData mPrivateData = null;
 		
@@ -21,6 +31,11 @@ namespace Draconia.UI
 		{
 			MoneyTxt = null;
 			Store = null;
+			CardBinButton = null;
+			ConfirmBuyPanel = null;
+			ConfirmButton = null;
+			CancelButton = null;
+			ConfirmBuyToggle = null;
 			
 			mData = null;
 		}

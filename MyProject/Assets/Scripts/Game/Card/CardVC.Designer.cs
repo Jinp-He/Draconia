@@ -1,5 +1,6 @@
 // Generate Id:c4f2719f-e71a-4652-9531-5fa16ebcae46
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Draconia.ViewController
 {
@@ -21,6 +22,8 @@ namespace Draconia.ViewController
 		public TMPro.TextMeshProUGUI CardDesc;
 
 		public UnityEngine.UI.Image  CardBorder;
+
+		public CanvasGroup ImageGroup;
 
 	}
 }

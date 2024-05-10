@@ -124,8 +124,9 @@ namespace Draconia.ViewController
             {
                 return;
             }
+            //TODO OtherFrontImage
             FrontImage.sprite = this.GetSystem<ResLoadSystem>()
-                .LoadSprite("FrontGround_" + OnGoingPlayerViewController.Player.PlayerInfo.Alias);
+                .LoadSprite("FrontGround_Zhouzhou");
         }
 
         private void CleanRemovedCard()

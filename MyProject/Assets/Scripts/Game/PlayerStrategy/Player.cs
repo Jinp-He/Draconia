@@ -143,7 +143,7 @@ namespace Draconia.ViewController
 				case "Timbuktu":
 					return new Timbuktu();
 				default:
-					Debug.LogErrorFormat("没有找到对应角色：{0}",playerInfo.Alias);
+					//Debug.LogErrorFormat("没有找到对应角色：{0}",playerInfo.Alias);
 					return new Zhouzhou();
 			}
 		}

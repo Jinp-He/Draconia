@@ -14,14 +14,29 @@ namespace Draconia.UI
 	}
 	public partial class UIStorePanel : UIPanel, ICanGetSystem
 	{
+		public Button SettingBtn;
 
 		public StoreItem StoreItemPrefab;
 		protected override void OnInit(IUIData uiData = null)
 		{
 			mData = uiData as UIStorePanelData ?? new UIStorePanelData();
 			// please add init code here
+			
+			SettingBtn.onClick.AddListener(() =>
+			{
+				UIKit.OpenPanel<UISettingPanel>();
+			});
 
+			ConfirmBuyToggle.isOn = this.GetSystem<GameSystem>().GameSetting.ConfirmTips;
 			List<Tuple<CardInfo,int>> res = this.GetSystem<GameSystem>().GetStoreItem();
+			CancelButton.onClick.AddListener(() =>
+			{
+				ConfirmBuyPanel.gameObject.SetActive(false);
+			});
+			ConfirmBuyToggle.onValueChanged.AddListener((value) =>
+			{
+				this.GetSystem<GameSystem>().GameSetting.ConfirmTips = value;
+			});
 			GenerateCard(res);
 		}
 
@@ -32,7 +47,7 @@ namespace Draconia.UI
 			foreach (var tuple in res)
 			{
 				StoreItem storeItem = Instantiate(StoreItemPrefab, Store);
-				storeItem.Init(tuple.Item1, tuple.Item2);
+				storeItem.Init(tuple.Item1, tuple.Item2, this);
 			}
 		}
 		protected override void OnOpen(IUIData uiData = null)

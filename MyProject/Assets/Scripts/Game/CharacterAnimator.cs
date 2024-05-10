@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections;
 using cfg;
-using Draconia.Controller;
 using Draconia.MyComponent;
 using QFramework;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Draconia.System;
+using Spine.Unity;
 
 namespace Draconia.ViewController
 {
@@ -23,21 +24,43 @@ namespace Draconia.ViewController
         public TextMeshProUGUI CriticalHitTextPrefab;
         public CanvasGroup NotificationTextPrefab;
 
+        public SkeletonGraphic SkeletonGraphic;
+
         public Image CharacterImage;
         public virtual void Init(CharacterViewController characterViewController)
         {
             CharacterViewController = characterViewController;
             CharacterImage = characterViewController.CharacterImage;
+
+            if (SkeletonGraphic != null)
+            {
+                SkeletonGraphic.Clear();
+                SkeletonGraphic.skeletonDataAsset = this.GetSystem<ResLoadSystem>().LoadSync<SkeletonDataAsset>
+                ("Skeleton_" + CharacterViewController.Alias);
+                SkeletonGraphic.Initialize(true);
+
+            }
         }
         
         public void IsChosen()
         {
+
+            if (SkeletonGraphic != null)
+            {
+                SkeletonGraphic.skeletonDataAsset = this.GetSystem<ResLoadSystem>().LoadSync<SkeletonDataAsset>
+                ("Skeleton_" + CharacterViewController.Alias);
+                Debug.Log("#DEBUG# 被选中了");
+                SkeletonGraphic.AnimationState.SetAnimation(0,"idle2",true);
+            }
             //CharacterImage.sprite = _chosenSprite;
             //CharacterImage.SetNativeSize();
         }
         
         public void EndChosen()
         {
+            Debug.Log("#DEBUG# 取消选中");
+            if (SkeletonGraphic != null)
+                SkeletonGraphic.AnimationState.SetAnimation(0,"idle",true);
             //CharacterImage.sprite = _idleSprite;
             //CharacterImage.SetNativeSize();
         }
@@ -48,6 +71,21 @@ namespace Draconia.ViewController
 
         public void IsHit(int damage,  AttackType attackType, int armorDamage = 0, bool isCritical = false)
         {
+            if(SkeletonGraphic != null)
+            {
+
+                ActionKit.Sequence()
+                    .Callback(() => {StartCoroutine(SendHitText(damage, attackType, isCritical)); })
+                    .Callback(() => {if(armorDamage != 0) StartCoroutine(SendHitText(armorDamage, attackType, isCritical, true)); })
+                    .Callback(() => {                 
+                        SkeletonGraphic.AnimationState.SetAnimation(0,"shouji",false);
+                    })
+                    .Delay(_attackAnimationTime)
+                    .Callback(() => {                         
+                        SkeletonGraphic.AnimationState.SetAnimation(0,"idle",true);
+                    })
+                    .Start(this);
+            }
             ActionKit.Sequence()
                 .Callback(() => {StartCoroutine(SendHitText(damage, attackType, isCritical)); })
                 .Callback(() => {if(armorDamage != 0) StartCoroutine(SendHitText(armorDamage, attackType, isCritical, true)); })

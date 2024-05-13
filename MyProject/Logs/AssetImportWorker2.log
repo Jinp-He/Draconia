@@ -15,7 +15,7 @@ C:/Users/lofnh/Documents/GitHub/Draconia/MyProject
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-49499
+50272
 Successfully changed project path to: C:/Users/lofnh/Documents/GitHub/Draconia/MyProject
 C:/Users/lofnh/Documents/GitHub/Draconia/MyProject
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,12 +47,12 @@ C:/Users/lofnh/Documents/GitHub/Draconia/MyProject
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [15332] Host "[IP] 192.168.123.10 [Port] 0 [Flags] 2 [Guid] 2391126405 [EditorId] 2391126405 [Version] 1048832 [Id] WindowsEditor(7,James_Workspace) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [19188] Host "[IP] 192.168.123.10 [Port] 0 [Flags] 2 [Guid] 2718964915 [EditorId] 2718964915 [Version] 1048832 [Id] WindowsEditor(7,James_Workspace) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [15332] Host "[IP] 192.168.123.10 [Port] 0 [Flags] 2 [Guid] 2391126405 [EditorId] 2391126405 [Version] 1048832 [Id] WindowsEditor(7,James_Workspace) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [19188] Host "[IP] 192.168.123.10 [Port] 0 [Flags] 2 [Guid] 2718964915 [EditorId] 2718964915 [Version] 1048832 [Id] WindowsEditor(7,James_Workspace) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 AS: AutoStreaming module initializing.
-Refreshing native plugins compatible for Editor in 99.25 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 128.56 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.21f1c1 (08fa194de70f)
 [Subsystems] Discovering subsystems at path D:/Program Files/2021.3.21f1c1/Editor/Data/Resources/UnitySubsystems
@@ -68,83 +68,83 @@ Initialize mono
 Mono path[0] = 'D:/Program Files/2021.3.21f1c1/Editor/Data/Managed'
 Mono path[1] = 'D:/Program Files/2021.3.21f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Program Files/2021.3.21f1c1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56708
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56752
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Program Files/2021.3.21f1c1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: D:/Program Files/2021.3.21f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001942 seconds.
+Registered in 0.001987 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 85.16 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 125.22 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.423 seconds
+- Completed reload, in  0.582 seconds
 Domain Reload Profiling:
-	ReloadAssembly (423ms)
-		BeginReloadAssembly (54ms)
+	ReloadAssembly (582ms)
+		BeginReloadAssembly (78ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (0ms)
-		EndReloadAssembly (310ms)
-			LoadAssemblies (52ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (424ms)
+			LoadAssemblies (76ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (67ms)
+			SetupTypeCache (98ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (17ms)
-			SetupLoadedEditorAssemblies (194ms)
+			SetupLoadedEditorAssemblies (269ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (85ms)
+				RefreshPlugins (125ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (77ms)
-				ProcessInitializeOnLoadMethodAttributes (27ms)
+				ProcessInitializeOnLoadAttributes (102ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.016803 seconds.
+Registered in 0.020061 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-0000017B4BE22010 doesn't match image C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\Library\ScriptAssemblies\Assembly-CSharp.dll
+Symbol file data-000001DD46A17CF0 doesn't match image C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\Library\ScriptAssemblies\Assembly-CSharp.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017B4BBC2040 doesn't match image C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+Symbol file data-000001DD46A17CF0 doesn't match image C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Symbol file LoadedFromMemory doesn't match image C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 84.65 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 85.92 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
 Mono: successfully reloaded assembly
-- Completed reload, in  1.280 seconds
+- Completed reload, in  1.152 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1281ms)
-		BeginReloadAssembly (75ms)
+	ReloadAssembly (1153ms)
+		BeginReloadAssembly (69ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (12ms)
-		EndReloadAssembly (1127ms)
-			LoadAssemblies (140ms)
+			CreateAndSetChildDomain (13ms)
+		EndReloadAssembly (1011ms)
+			LoadAssemblies (68ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (215ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (58ms)
-			SetupLoadedEditorAssemblies (682ms)
+			SetupTypeCache (208ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (52ms)
+			SetupLoadedEditorAssemblies (649ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (3ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (85ms)
-				BeforeProcessingInitializeOnLoad (68ms)
-				ProcessInitializeOnLoadAttributes (298ms)
-				ProcessInitializeOnLoadMethodAttributes (223ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (86ms)
+				BeforeProcessingInitializeOnLoad (74ms)
+				ProcessInitializeOnLoadAttributes (294ms)
+				ProcessInitializeOnLoadMethodAttributes (189ms)
 				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -152,12 +152,12 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Refreshing native plugins compatible for Editor in 0.83 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 0.91 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 6483 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 87 unused Assets / (2.7 MB). Loaded Objects now: 6972.
-Memory consumption went from 258.4 MB to 255.7 MB.
-Total: 12.056900 ms (FindLiveObjects: 0.342800 ms CreateObjectMapping: 0.125000 ms MarkObjects: 10.733700 ms  DeleteObjects: 0.854200 ms)
+Unloading 87 unused Assets / (2.9 MB). Loaded Objects now: 6972.
+Memory consumption went from 258.5 MB to 255.6 MB.
+Total: 11.717600 ms (FindLiveObjects: 0.312000 ms CreateObjectMapping: 0.147300 ms MarkObjects: 10.408700 ms  DeleteObjects: 0.848600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -172,191 +172,43 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1760638.269931 seconds.
-  path: Assets/Resources/Art/新建文件夹/Irene 1.psb
-  artifactKey: Guid(e776c14077f82524d95dc471aaa4ce8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Art/新建文件夹/Irene 1.psb using Guid(e776c14077f82524d95dc471aaa4ce8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80e353c639f4a5910c68d5d156ef72d5') in 0.133520 seconds 
+  Time since last request: 1761091.202012 seconds.
+  path: Assets/Resources/Art/UI素材/Prefab/SettingBtn.prefab
+  artifactKey: Guid(36cf20328484fae4c85e9daf838517fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Art/UI素材/Prefab/SettingBtn.prefab using Guid(36cf20328484fae4c85e9daf838517fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bd80fd3ddacd23d7f96a1694d64f1d1') in 0.042495 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.892204 seconds.
-  path: Assets/Resources/Art/新建文件夹/Irene 1.psb
-  artifactKey: Guid(e776c14077f82524d95dc471aaa4ce8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Art/新建文件夹/Irene 1.psb using Guid(e776c14077f82524d95dc471aaa4ce8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0c47a392c8b726c0337b11efcdf89c9') in 0.061205 seconds 
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/Art/UI素材/Prefab/Toggle.prefab
+  artifactKey: Guid(df20cefab65ff294c84aec7bb3c49b26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Art/UI素材/Prefab/Toggle.prefab using Guid(df20cefab65ff294c84aec7bb3c49b26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bf93af17482c02e81c64d207a0d8f8e') in 0.008612 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.359509 seconds.
-  path: Assets/Resources/Art/新建文件夹/字魂扁桃体.ttf
-  artifactKey: Guid(9c8defbe1cc639842aafd87969779bde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Art/新建文件夹/字魂扁桃体.ttf using Guid(9c8defbe1cc639842aafd87969779bde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '127dfa489399b9029162e01901eabd23') in 0.049131 seconds 
+  Time since last request: 26.086734 seconds.
+  path: Assets/CharacterAnimation/ZhouZhou/Zhouzhou_new/Skeleton_Zhouzhou.asset
+  artifactKey: Guid(e9b66e35512722c4e98a3e8bbdb4da65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CharacterAnimation/ZhouZhou/Zhouzhou_new/Skeleton_Zhouzhou.asset using Guid(e9b66e35512722c4e98a3e8bbdb4da65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c32c6c388b2d4660893031a27d9a0339') in 0.245956 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 7.599436 seconds.
-  path: Assets/Resources/Art/新建文件夹/开始界面.gif
-  artifactKey: Guid(b6546cf79fc75d3409c88f16fb22bfe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Art/新建文件夹/开始界面.gif using Guid(b6546cf79fc75d3409c88f16fb22bfe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '009724ea71fed80d4f68e09397dda34d') in 0.052819 seconds 
+  Time since last request: 1.424745 seconds.
+  path: Assets/Resources/Art/人物素材/Zhouzhou 1.psb
+  artifactKey: Guid(82973481ba038e343a234f054a96d0b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Art/人物素材/Zhouzhou 1.psb using Guid(82973481ba038e343a234f054a96d0b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b101f4cdecb18c1b22f168c2a24de96a') in 0.035450 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.393881 seconds.
-  path: Assets/Resources/Art/新建文件夹/牌库底纹.psb
-  artifactKey: Guid(6257379222703fc44adf59febc9e0035) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Art/新建文件夹/牌库底纹.psb using Guid(6257379222703fc44adf59febc9e0035) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '537fa7d745199ec5d93e9eb724a1c07f') in 0.094327 seconds 
+  Time since last request: 16.095594 seconds.
+  path: Assets/Resources/Art/UI素材/UIElement/BasicCardPrefab.prefab
+  artifactKey: Guid(f6d73112dd61d4f4f909d5e72bd919bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Art/UI素材/UIElement/BasicCardPrefab.prefab using Guid(f6d73112dd61d4f4f909d5e72bd919bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c419ba55910e34d718e0acd0b48a1847') in 0.969072 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.605700 seconds.
-  path: Assets/Resources/Art/新建文件夹/设置界面下拉.gif
-  artifactKey: Guid(58afc8ec509056c4c981b59bbfbcf4cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Art/新建文件夹/设置界面下拉.gif using Guid(58afc8ec509056c4c981b59bbfbcf4cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aae73a9aceb7730244aaa3909ab588da') in 0.024577 seconds 
+  Time since last request: 17.840723 seconds.
+  path: Assets/Resources/Art/人物素材/Zhouzhou.spriteatlas
+  artifactKey: Guid(f3a346eb568b54841bb6f6a300f0d048) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Art/人物素材/Zhouzhou.spriteatlas using Guid(f3a346eb568b54841bb6f6a300f0d048) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c0951a3e5c052de932d9ccf76203d03') in 0.008701 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.887387 seconds.
-  path: Assets/Resources/Art/新建文件夹/钱.psb
-  artifactKey: Guid(5e205f2a1ad7347478ad09a493ffa5f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Art/新建文件夹/钱.psb using Guid(5e205f2a1ad7347478ad09a493ffa5f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb026f00b5a1198c685b24ba93fd8b85') in 0.067992 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 85.442317 seconds.
-  path: Assets/Resources/Art/战斗界面素材/百相底图.psb
-  artifactKey: Guid(242cc537a749ecb4bb537f9af6d0b4ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Art/战斗界面素材/百相底图.psb using Guid(242cc537a749ecb4bb537f9af6d0b4ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ec164873918759766f5ad0d0cc81ef5') in 0.038319 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 17.670913 seconds.
-  path: Assets/Resources/Art/新建文件夹/设置页面/设置动画.psb
-  artifactKey: Guid(a5c85dd25919e404eb3fd15e8a9feb25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Art/新建文件夹/设置页面/设置动画.psb using Guid(a5c85dd25919e404eb3fd15e8a9feb25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b43bb6281da0f2d7439494254016e7c') in 0.059577 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Resources/Art/新建文件夹/设置页面/设置标题.png
-  artifactKey: Guid(480fc4fe364ab8641a318f5bdb663a82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Art/新建文件夹/设置页面/设置标题.png using Guid(480fc4fe364ab8641a318f5bdb663a82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55a35d1194aa8468c88ee85b58de2929') in 0.015033 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Resources/Art/新建文件夹/设置页面/选项动画.psb
-  artifactKey: Guid(fb2eda8d82d1a0e45bcca285052fb1d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Art/新建文件夹/设置页面/选项动画.psb using Guid(fb2eda8d82d1a0e45bcca285052fb1d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9612dda2b5c7ce27d46552d7faefd324') in 0.027478 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.023063 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-0000017B4A891020 doesn't match image C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\Library\ScriptAssemblies\Assembly-CSharp.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017B4C924000 doesn't match image C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file LoadedFromMemory doesn't match image C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.86 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.989 seconds
-Domain Reload Profiling:
-	ReloadAssembly (990ms)
-		BeginReloadAssembly (105ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (3ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (39ms)
-		EndReloadAssembly (819ms)
-			LoadAssemblies (70ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (200ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (33ms)
-			SetupLoadedEditorAssemblies (480ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (54ms)
-				ProcessInitializeOnLoadAttributes (270ms)
-				ProcessInitializeOnLoadMethodAttributes (147ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 3.40 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 6371 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 75 unused Assets / (2.7 MB). Loaded Objects now: 7077.
-Memory consumption went from 253.6 MB to 250.9 MB.
-Total: 11.628200 ms (FindLiveObjects: 0.436500 ms CreateObjectMapping: 0.126700 ms MarkObjects: 10.264700 ms  DeleteObjects: 0.798800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.016675 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-0000017B4C05A020 doesn't match image C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\Library\ScriptAssemblies\Assembly-CSharp.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017B4D3C1010 doesn't match image C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file LoadedFromMemory doesn't match image C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.88 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.022 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1022ms)
-		BeginReloadAssembly (113ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (3ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (39ms)
-		EndReloadAssembly (848ms)
-			LoadAssemblies (75ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (236ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (33ms)
-			SetupLoadedEditorAssemblies (476ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (54ms)
-				ProcessInitializeOnLoadAttributes (277ms)
-				ProcessInitializeOnLoadMethodAttributes (136ms)
-				AfterProcessingInitializeOnLoad (4ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 3.11 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 6371 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 75 unused Assets / (2.7 MB). Loaded Objects now: 7080.
-Memory consumption went from 253.6 MB to 250.9 MB.
-Total: 11.814100 ms (FindLiveObjects: 0.294700 ms CreateObjectMapping: 0.100400 ms MarkObjects: 10.450800 ms  DeleteObjects: 0.967000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  Time since last request: 5.896019 seconds.
+  path: Assets/Resources/Art/UI素材/UIElement/Character.prefab
+  artifactKey: Guid(e3a9723dbb3d3f1458288207e54a62cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Art/UI素材/UIElement/Character.prefab using Guid(e3a9723dbb3d3f1458288207e54a62cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '783628cda942e9699c7df9e428a5583a') in 0.728574 seconds 

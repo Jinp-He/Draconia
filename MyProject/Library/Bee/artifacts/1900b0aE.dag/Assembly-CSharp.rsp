@@ -569,6 +569,8 @@
 "Assets/Scripts/UI/UIMapPanel.Designer.cs"
 "Assets/Scripts/UI/UISettingPanel.cs"
 "Assets/Scripts/UI/UISettingPanel.Designer.cs"
+"Assets/Scripts/UI/UIStartPanel.cs"
+"Assets/Scripts/UI/UIStartPanel.Designer.cs"
 "Assets/Scripts/UI/UIStorePanel.cs"
 "Assets/Scripts/UI/UIStorePanel.Designer.cs"
 "Assets/Scripts/UI/UITestSkeletonPanel.cs"

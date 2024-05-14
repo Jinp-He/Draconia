@@ -155,6 +155,20 @@ namespace Draconia.System
         {
             
         }
+
+        public void ContinueGame()
+        {
+            
+        }
+
+        public void ExitGame()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+        }
         
         public void Save()
         {

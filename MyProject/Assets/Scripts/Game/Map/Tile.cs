@@ -39,10 +39,10 @@ namespace Draconia.ViewController
 
     public partial class Tile : QFramework.ViewController, IBeginDragHandler, IDragHandler, IEndDragHandler, ICanRegisterEvent, ICanGetSystem
     {
-        
-        
-        
 
+
+        public TextMeshProUGUI TestText;
+        
         //是否固定在地图上了
         public bool IsFixed;
         //是否在抓握

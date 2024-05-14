@@ -20,7 +20,8 @@ namespace Draconia.UI
 		protected override void OnInit(IUIData uiData = null)
 		{
 			mData = uiData as UIMapPanelData ?? new UIMapPanelData();
-			TileDroppers = MyToolKit<TileDropper>.ConvertTo2DArray(Grid.GetComponentsInChildren<TileDropper>(),5,14);
+			TileDroppers = MyToolKit<TileDropper>.
+				ConvertTo2DArray(Grid.GetComponentsInChildren<TileDropper>(),5,14);
 	
 			SettingBtn.GetComponent<Button>().onClick.AddListener(() =>
 			{

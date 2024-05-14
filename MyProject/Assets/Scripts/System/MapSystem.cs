@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using cfg;
 using Draconia.Controller;
@@ -45,6 +46,8 @@ namespace Draconia.System
         private Tile _playerCurrentTile;
         private List<Tile> _playerExploredTiles;
 
+        private List<TileDropper> _exploredTileDroppers;
+
         public int RestTileNum
         {
             get => _restTileNum;
@@ -71,6 +74,7 @@ namespace Draconia.System
         /// </summary>
         public void TestInit()
         {
+            
             _uiMapPanel = UIKit.OpenPanel<UIMapPanel>();
             RestTileNum = 25;
             _playerPointer = _uiMapPanel.CharacterPointer;
@@ -101,6 +105,7 @@ namespace Draconia.System
 
         public void StartNewMap()
         {
+            Debug.Log("#DEBUG# TestInit On MapSystem");
             TileStore = new List<Tile>();
             _playerExploredTiles = new List<Tile>();
             TileDroppers =
@@ -273,41 +278,58 @@ namespace Draconia.System
                 _playerExploredTiles.Add(tile);
                 if (tile.Row - 1 >= 0 && tile.TileDirections.Contains(TileDirection.S))
                 {
-                    OpenTileDroppers.Add(TileDroppers[tile.Row - 1, tile.Col]);
+                    
                     TileDroppers[tile.Row - 1, tile.Col].Directions.Add(TileDirection.N);
                     if (Tiles[tile.Row - 1, tile.Col] != null && !_playerExploredTiles.Contains(Tiles[tile.Row - 1, tile.Col]))
                     {
                         AddTileOnOpenTileDroppers(Tiles[tile.Row - 1, tile.Col]);
                     }
+                    else
+                    {
+                        OpenTileDroppers.Add(TileDroppers[tile.Row - 1, tile.Col]);
+                    }
+                    
                 }
 
                 if (tile.Row + 1 < Row && tile.TileDirections.Contains(TileDirection.N))
                 {
-                    OpenTileDroppers.Add(TileDroppers[tile.Row + 1, tile.Col]);
+                    
                     TileDroppers[tile.Row + 1, tile.Col].Directions.Add(TileDirection.S);
                     if (Tiles[tile.Row + 1, tile.Col] != null && !_playerExploredTiles.Contains(Tiles[tile.Row + 1, tile.Col]))
                     {
                         AddTileOnOpenTileDroppers(Tiles[tile.Row + 1, tile.Col]);
                     }
+                    else
+                    {
+                        OpenTileDroppers.Add(TileDroppers[tile.Row + 1, tile.Col]);
+                    }
                 }
 
                 if (tile.Col - 1 >= 0 && tile.TileDirections.Contains(TileDirection.W))
                 {
-                    OpenTileDroppers.Add(TileDroppers[tile.Row, tile.Col - 1]);
+                    
                     TileDroppers[tile.Row, tile.Col - 1].Directions.Add(TileDirection.E);
                     if (Tiles[tile.Row, tile.Col - 1] != null&& !_playerExploredTiles.Contains(Tiles[tile.Row, tile.Col - 1]))
                     {
                         AddTileOnOpenTileDroppers(Tiles[tile.Row, tile.Col - 1]);
                     }
+                    else
+                    {
+                        OpenTileDroppers.Add(TileDroppers[tile.Row, tile.Col - 1]);
+                    }
                 }
 
                 if (tile.Col + 1 < Col && tile.TileDirections.Contains(TileDirection.E))
                 {
-                    OpenTileDroppers.Add(TileDroppers[tile.Row, tile.Col + 1]);
+                    
                     TileDroppers[tile.Row, tile.Col + 1].Directions.Add(TileDirection.W);
                     if (Tiles[tile.Row, tile.Col + 1] != null&& !_playerExploredTiles.Contains(Tiles[tile.Row, tile.Col + 1]))
                     {
                         AddTileOnOpenTileDroppers(Tiles[tile.Row, tile.Col + 1]);
+                    }
+                    else
+                    {
+                        OpenTileDroppers.Add(TileDroppers[tile.Row, tile.Col + 1]);
                     }
                 }
             }
@@ -349,7 +371,7 @@ namespace Draconia.System
         private void MovePlayer(Tile targetTile)
         {
             
-            Debug.Log("DEBUG Move to Tile" + targetTile.Row + " " + targetTile.Col);
+            //Debug.Log("DEBUG Move to Tile" + targetTile.Row + " " + targetTile.Col);
             //Dictionary<Tile, List<Tile>> connectedTiles = new Dictionary<Tile, List<Tile>>();
             Tile playerPrevTile = _playerCurrentTile;
             _playerCurrentTile = targetTile;
@@ -409,7 +431,6 @@ namespace Draconia.System
                     tile.G = 0;
                     tile.H = 0;
                 }
-     
             }
             while (openList.Count != 0)
             {
@@ -453,11 +474,17 @@ namespace Draconia.System
                     return;
                 }
 
-                foreach (var tile in ConnectedTiles[currentTile])
+                foreach (var tile in currentTile.ConnectedTiles.Where(tile => !closeList.Contains(tile)))
                 {
-                    if (closeList.Contains(tile))
-                        continue;
-                    if (openList.Contains(tile))
+                    if (!openList.Contains(tile))
+                    {
+                        tile.G = currentTile.G + 1;
+                        tile.H = math.abs(tile.Row - playerPrevTile.Row) + math.abs(tile.Col - playerPrevTile.Col);
+                        tile.F = tile.G + tile.H;
+                        tile.Parent = currentTile;
+                        openList.Add(tile);
+                    }
+                    else
                     {
                         if (tile.G > currentTile.G + 1)
                         {
@@ -466,15 +493,15 @@ namespace Draconia.System
                             tile.Parent = currentTile;
                         }
                     }
-                    else
-                    {
-                        tile.G = currentTile.G + 1;
-                        tile.H = math.abs(tile.Row - targetTile.Row) + math.abs(tile.Col - targetTile.Col);
-                        tile.F = tile.G + tile.H;
-                        tile.Parent = currentTile;
-                        openList.Add(tile);
-                    }
                 }
+                
+            }
+
+
+            foreach (var pair in _playerExploredTiles)
+            {
+                pair.TestText.text = "G" + pair.G + "F" + pair.F + "H" + pair.H;
+
             }
         }
 
@@ -491,6 +518,8 @@ namespace Draconia.System
 
         private void ExecuteEvent(Tile tile)
         {
+            Debug.Log("#DEBUG# ExecuteEvent");
+            this.GetSystem<BattleSystem>().InitBattle();
             switch (tile.EventIndex)
             {
                 case TileEventEnum.None:
@@ -498,6 +527,7 @@ namespace Draconia.System
                     break;
                 case TileEventEnum.NormalEnemy:
                     Debug.Log("NormalEnemy");
+                    this.GetSystem<BattleSystem>().InitBattle();
                     CheckMapEvent();
                     break;
                 case TileEventEnum.EliteEnemy:
@@ -542,7 +572,7 @@ namespace Draconia.System
             
             if (tile.MapEventIndex != MapEventEnum.None && tile.MapEventIndex != MapEventEnum.Explored)
             {
-                tile.MapEventIndex = MapEventEnum.Explored;
+                tile.MapEventIndex = MapEventEnum.None;
                 //tile.DirectionImage.gameObject.SetActive(true);
                 tile.MapEventImage.sprite = tile.IconAtlas.GetSprite("Icon_Explored");
                 //tile.Map.sprite = tile.IconAtlas.GetSprite("Icon_Explored");

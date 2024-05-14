@@ -12,17 +12,40 @@ namespace Draconia
 
     public class Root : MonoBehaviour, ICanGetSystem
     {
+        public Texture2D Cursor;
+
+        public Texture2D Cursor_Click;
         // Start is called before the first frame update
         void Start()
         {
+            UnityEngine.Cursor.SetCursor(Cursor, Vector2.zero, CursorMode.Auto);
+            
             ResKit.Init();
-            this.GetSystem<BattleSystem>().TestInit();
+            UIKit.OpenPanel<UIStartPanel>();
         }
 
+        private bool isClick;
+
+        private float timer;
         // Update is called once per frame
         void Update()
         {
+            if (isClick)
+            {
+                timer += Time.deltaTime;
+                if (timer >= .1f && !Input.GetMouseButton(0))
+                {
+                    timer = 0f;
+                    isClick = false;
+                    UnityEngine.Cursor.SetCursor(Cursor, Vector2.zero, CursorMode.Auto);
+                }
+            }
 
+            if (Input.GetMouseButtonDown(0) && !isClick)
+            {
+                isClick = true;
+                UnityEngine.Cursor.SetCursor(Cursor_Click, Vector2.zero, CursorMode.Auto);
+            }
         }
 
         public IArchitecture GetArchitecture()

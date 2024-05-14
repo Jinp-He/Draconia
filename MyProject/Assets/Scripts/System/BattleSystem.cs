@@ -108,6 +108,32 @@ namespace Draconia.System
             
             UIKit.OpenPanel<UIBattlePanel>(new UIBattlePanelData() { StageInfo = stageInfo });
             UIBattlePanel = UIKit.GetPanel<UIBattlePanel>();
+            UIKit.ShowPanel<UIBattlePanel>();
+            Hands = UIBattlePanel.Hands;
+            Players = UIBattlePanel.Characters;
+            Enemies = UIBattlePanel.Enemies;
+            Energy = new BindableProperty<int>(InitEnergy);
+            Energy.Register(e =>
+            {
+                UIBattlePanel.EnergyCounter.Energy.text = e.ToString();
+                //Debug.Log(Energy.Value);
+            });
+            Energy.Value = InitEnergy;
+            BattleState = BattleState.Enemy;
+            TimeBar = UIBattlePanel.TimeBar;
+            TimeBar.Init();
+            //默认使用角色成为第一个
+            OngoingPlayerViewController = Players[0];
+            this.SendEvent<BattleStartEvent>();
+        }
+
+        public void InitBattle()
+        {
+            StageInfo stageInfo = this.GetSystem<ResLoadSystem>().Table.TbStageInfo[0];
+            //UIKit.OpenPanel<UISettingPanel>();
+            
+            UIKit.OpenPanel<UIBattlePanel>(new UIBattlePanelData() { StageInfo = stageInfo });
+            UIBattlePanel = UIKit.GetPanel<UIBattlePanel>();
             Hands = UIBattlePanel.Hands;
             Players = UIBattlePanel.Characters;
             Enemies = UIBattlePanel.Enemies;

@@ -11,5 +11,6 @@ namespace Game.Player
         public HPBar HpBar;
         public TextMeshProUGUI Level;
         public RectTransform ExperienceBar;
+        public TextMeshProUGUI Name;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using cfg;
+using Draconia.UI;
 using Draconia.ViewController;
 using QFramework;
 using Sirenix.OdinInspector;
@@ -153,12 +154,14 @@ namespace Draconia.System
 
         public void StartGame()
         {
-            
+            this.GetSystem<MapSystem>().TestInit();
+            this.GetSystem<SaveSystem>().SaveByJson();
         }
 
         public void ContinueGame()
         {
-            
+            this.GetSystem<SaveSystem>().LoadByJson();
+            this.GetSystem<MapSystem>().TestInit();
         }
 
         public void ExitGame()

@@ -47,7 +47,26 @@ namespace Draconia.System
             File.WriteAllBytes(datapath, dateStr);
 
         }
-        public void LoadByJson()
+
+        public bool CanBeLoadable()
+        {
+            string path = Application.dataPath + "/SaveFiles";
+            if(!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            string datePath = Application.dataPath + "/SaveFiles" + "/PlayerData.bin";
+
+            if (File.Exists(datePath)) //判断这个路径里面是否为空
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool LoadByJson()
         {
             string path = Application.dataPath + "/SaveFiles";
             if(!Directory.Exists(path))
@@ -67,11 +86,14 @@ namespace Draconia.System
                 {
                     player.PlayerInfo = this.GetSystem<ResLoadSystem>().Table.TbPlayerInfo[player.Alias];
                 }
-                
+
+                return true;
+
             }
             else
             {
                 Debug.Log("------未找到文件------");
+                return false;
             }
         }
 

@@ -199,7 +199,7 @@ ScriptedImporter:
   characterMode: 0
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
-  importHiddenLayers: 1
+  importHiddenLayers: 0
   layerMappingOption: 2
   generatePhysicsShape: 0
   paperDollMode: 0

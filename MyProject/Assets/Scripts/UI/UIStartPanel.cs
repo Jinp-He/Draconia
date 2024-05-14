@@ -23,6 +23,10 @@ namespace Draconia.UI
 			{
 				this.GetSystem<GameSystem>().StartGame();
 			});
+			if (!this.GetSystem<SaveSystem>().CanBeLoadable())
+			{
+				ContinueGameBtn.interactable = false;
+			}
 			
 			ContinueGameBtn.onClick.AddListener(() =>
 			{

@@ -1,10 +1,11 @@
 ﻿using QFramework;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Game.Player
 {
-    public partial class CharacterDisplayBar : ViewController
+    public partial class CharacterDisplayBar : ViewController, IPointerEnterHandler, IPointerExitHandler
     {
         public void Init(Draconia.ViewController.Player player)
         {
@@ -14,6 +15,8 @@ namespace Game.Player
 
         public void UpdateBar(Draconia.ViewController.Player player)
         {
+            Name.text = player.Alias;
+            Name.gameObject.SetActive(false);
             Level.text = "LV." + player.Level;
             ExperienceBar.DestroyChildren();
             for (int i = 0; i < player.Exp; i++)
@@ -25,6 +28,16 @@ namespace Game.Player
             {
                 Image bulb = Instantiate(ExperienceBulbPrefab, ExperienceBar);
             }
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            Name.gameObject.SetActive(true);
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            Name.gameObject.SetActive(false);
         }
     }
 }

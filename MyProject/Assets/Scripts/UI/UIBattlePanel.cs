@@ -27,8 +27,11 @@ namespace Draconia.UI
 		public Enemy EnemyPrefab;
 		public List<PlayerViewController> Characters;
 		public List<Enemy> Enemies;
+		public Animation OpenAnimation;
+		
 		protected override void OnInit(IUIData uiData = null)
 		{
+			OpenAnimation.Play();
 			mData = uiData as UIBattlePanelData ?? new UIBattlePanelData();
 			Characters = new List<PlayerViewController>();
 			Enemies = new List<Enemy>();

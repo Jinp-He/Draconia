@@ -542,6 +542,7 @@
 "Assets/Scripts/Game/PlayerStrategy/Zhouzhou.cs"
 "Assets/Scripts/Game/TimeBar.cs"
 "Assets/Scripts/Game/TimeBar.Designer.cs"
+"Assets/Scripts/Image/materialForCircle.cs"
 "Assets/Scripts/MyComponent/MyViewController.cs"
 "Assets/Scripts/MyToolkit/BelzierArrows/BezierArrows.cs"
 "Assets/Scripts/MyToolkit/MyCanvasScaler.cs"

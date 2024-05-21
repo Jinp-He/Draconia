@@ -1,33 +1,3 @@
-{{~
-    name = x.name
-    namespace = x.namespace
-    tables = x.tables
-~}}
-
-package {{namespace}}
-
-import "{{assembly.args.go_bright_module_name}}/serialization"
-
-type ByteBufLoader func(string) (*serialization.ByteBuf, error)
-
-type {{name}} struct {
-    {{~for table in tables ~}}
-    {{table.name}} *{{table.go_full_name}}
-    {{~end~}}
-}
-
-func NewTables(loader ByteBufLoader) (*{{name}}, error) {
-    var err error
-    var buf *serialization.ByteBuf
-
-    tables := &{{name}}{}
-    {{~for table in tables ~}}
-    if buf, err = loader("{{table.output_data_file}}") ; err != nil {
-        return nil, err
-    }
-    if tables.{{table.name}}, err = New{{table.go_full_name}}(buf) ; err != nil {
-        return nil, err
-    }
-    {{~end~}}
-    return tables, nil
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:dffc1e8afbb4969b2806457f4a464adb5254c6c43902507a33aa51a54d3c1e88
+size 763

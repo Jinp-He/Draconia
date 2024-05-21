@@ -1,24 +1,3 @@
-{{~
-    name = x.name
-    namespace_with_top_module = x.namespace_with_top_module
-    comment = x.comment
-    items = x.items
-~}}
-
-{{~if comment != '' ~}}
-'''
-{{comment | html.escape}}
-'''
-{{~end~}}
-class {{x.py_full_name}}(Enum):
-    {{~ for item in items ~}}
-{{~if item.comment != '' ~}}
-    '''
-    {{item.escape_comment}}
-    '''
-{{~end~}}
-    {{item.name}} = {{item.value}}
-    {{~end~}}
-    {{~if (items == empty)~}}
-    pass
-    {{~end~}}
+version https://git-lfs.github.com/spec/v1
+oid sha256:cc42d0bf182631a78c78d2be8374278185e7b93b2635acef765049da9356e41e
+size 446

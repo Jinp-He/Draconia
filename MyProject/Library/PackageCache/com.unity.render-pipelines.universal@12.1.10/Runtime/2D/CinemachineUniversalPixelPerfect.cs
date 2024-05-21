@@ -1,20 +1,3 @@
-using UnityEngine.Scripting.APIUpdating;
-
-namespace UnityEngine.Rendering.Universal
-{
-    /// <summary>
-    /// (Deprecated) An add-on module for Cinemachine Virtual Camera that tweaks the orthographic size
-    /// of the virtual camera. It detects the presence of the Pixel Perfect Camera component and use the
-    /// settings from that Pixel Perfect Camera to correct the orthographic size so that pixel art
-    /// sprites would appear pixel perfect when the virtual camera becomes live.
-    /// </summary>
-    [AddComponentMenu("")] // Hide in menu
-    [MovedFrom("UnityEngine.Experimental.Rendering.Universal")]
-    public class CinemachineUniversalPixelPerfect : MonoBehaviour
-    {
-        void OnEnable()
-        {
-            Debug.LogError("CinemachineUniversalPixelPerfect is now deprecated and doesn't function properly. Instead, use the one from Cinemachine v2.4.0 or newer.");
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:9bb5a876067bb275b717354b3c5c864fa86053bda64fb3e27aa27e30503a8eca
+size 910

@@ -1,10 +1,3 @@
-#!/bin/zsh
-GEN_CLIENT=../Tools/Luban.ClientServer/Luban.ClientServer.dll
-
-dotnet ${GEN_CLIENT} -j cfg --\
- -d Defines/__root__.xml \
- --input_data_dir Datas \
- --output_data_dir output_json \
- --output_code_dir Gen \
- --gen_types code_cs_unity_json,data_json \
- -s all 
+version https://git-lfs.github.com/spec/v1
+oid sha256:c8c1eda93e54c88bb4e1a8b466c9ff15147a0aa9c07d0281e9490a0f7a315dbe
+size 270

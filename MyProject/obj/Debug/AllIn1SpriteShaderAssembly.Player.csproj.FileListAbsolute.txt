@@ -1,4 +1,3 @@
-C:\Users\lofnh\Documents\GitHub\Draconia\My project\obj\Debug\AllIn1SpriteShaderAssembly.Player.csproj.AssemblyReference.cache
-C:\Users\lofnh\Documents\GitHub\Draconia\My project\obj\Debug\AllIn1SpriteShaderAssembly.Player.csproj.CoreCompileInputs.cache
-C:\Users\lofnh\Documents\GitHub\Draconia\My project\obj\Debug\AllIn1SpriteShaderAssembly.dll
-C:\Users\lofnh\Documents\GitHub\Draconia\My project\obj\Debug\AllIn1SpriteShaderAssembly.pdb
+version https://git-lfs.github.com/spec/v1
+oid sha256:a6c134ac24b373d459b0b3e8fe64b30e33e72d75cba7dc7e9e0b3f74c139f322
+size 440

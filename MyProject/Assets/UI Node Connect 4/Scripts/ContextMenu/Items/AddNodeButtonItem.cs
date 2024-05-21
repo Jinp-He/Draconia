@@ -1,36 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-
-namespace MeadowGames.UINodeConnect4.UICContextMenu
-{
-    public class AddNodeButtonItem : ContextItem
-    {
-        Button _button;
-        public Node node;
-
-        public void AddNode()
-        {
-            Node newNode = ContextMenu.GraphManager.InstantiateNode(node, node.transform.position);
-            ContextMenu.GraphManager.UnselectAllElements();
-            newNode.Select();
-        }
-
-        protected override void Awake()
-        {
-            base.Awake();
-            _button = GetComponent<Button>();
-        }
-
-        void OnEnable()
-        {
-            _button.onClick.AddListener(AddNode);
-        }
-
-        void OnDisable()
-        {
-            _button.onClick.RemoveAllListeners();
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f3924e22f0d4751d1a06c7de016ed7b9db8171e3f12f7196bab7c881421f68a5
+size 836

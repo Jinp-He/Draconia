@@ -1,15 +1,3 @@
-
-    type ProtocolFactory = () => Protocol
-
-    export class {{name}} {
-        static readonly Factories = new Map<number, ProtocolFactory>([
-
-        {{~ for proto in protos ~}}
-            [{{proto.full_name}}.__ID__, () => new {{proto.full_name}}()],
-        {{~end~}}
-
-        {{~ for rpc in rpcs ~}}
-            // TODO RPC .. [{{rpc.full_name}}.__ID__] = () => new {{rpc.full_name}}(),
-        {{~end~}}
-        ])
-    }
+version https://git-lfs.github.com/spec/v1
+oid sha256:31f6c2a2bb5131e1ad77afd48c92695aae3532115614eb2f27d3cc0cd4a053d7
+size 428

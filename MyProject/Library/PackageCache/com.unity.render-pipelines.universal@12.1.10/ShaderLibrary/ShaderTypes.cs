@@ -1,16 +1,3 @@
-namespace UnityEngine.Rendering.Universal
-{
-    public static partial class ShaderInput
-    {
-        [GenerateHLSL(PackingRules.Exact, false)]
-        public struct LightData
-        {
-            public Vector4 position;
-            public Vector4 color;
-            public Vector4 attenuation;
-            public Vector4 spotDirection;
-            public Vector4 occlusionProbeChannels;
-            public uint layerMask;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:edc43f69b74ce6bd5fcb2cc80c687c92cd8dfc99ba61f7004eee927a9828c146
+size 443

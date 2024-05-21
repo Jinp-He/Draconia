@@ -1,19 +1,3 @@
-ManifestFileVersion: 0
-CRC: 682403334
-Hashes:
-  AssetFileHash:
-    serializedVersion: 2
-    Hash: 498a48a8a6ff4e19df49f42c3572b78c
-  TypeTreeHash:
-    serializedVersion: 2
-    Hash: f267fd2d8bcb1179236b6179ac5313bc
-HashAppended: 0
-ClassTypes:
-- Class: 28
-  Script: {instanceID: 0}
-- Class: 213
-  Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers: []
-Assets:
-- Assets/Resources/Art/EnemyIntention/Intention_Defense.png
-Dependencies: []
+version https://git-lfs.github.com/spec/v1
+oid sha256:5905be2b94c4884660322ea28d13895c9d96ba48290e8b728853f24369125d6d
+size 444

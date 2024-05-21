@@ -1,17 +1,3 @@
-namespace MeadowGames.UINodeConnect4.UICSerialization
-{
-    public static class SerializationEvents
-    {
-        public static UICEvent<SerializableGraph> OnGraphSerialize = new UICEvent<SerializableGraph>();
-        public static UICEvent<GraphManager> OnGraphDeserialize = new UICEvent<GraphManager>();
-
-        public static UICEvent<SerializableNode> OnNodeSerialize = new UICEvent<SerializableNode>();
-        public static UICEvent<Node> OnNodeDeserialize = new UICEvent<Node>();
-
-        public static UICEvent<SerializablePort> OnPortSerialize = new UICEvent<SerializablePort>();
-        public static UICEvent<Port> OnPortDeserialize = new UICEvent<Port>();
-
-        public static UICEvent<SerializableConnection> OnConnectionSerialize = new UICEvent<SerializableConnection>();
-        public static UICEvent<Connection> OnConnectionDeserialize = new UICEvent<Connection>();
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:07045bf03e2c3adebb150a6fd74db953610e146ce20e783d0a122e0894cdefb0
+size 893

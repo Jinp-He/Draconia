@@ -1,6 +1,3 @@
-# Contributing
-
-## All contributions are subject to the [Unity Contribution Agreement(UCA)](https://unity3d.com/legal/licenses/Unity_Contribution_Agreement)
-By making a pull request, you are confirming agreement to the terms and conditions of the UCA, including that your Contributions are your original creation and that you have complete right and authority to make your Contributions.
-
-## Once you have a change ready following these ground rules. Simply make a pull request!
+version https://git-lfs.github.com/spec/v1
+oid sha256:ff65e2d2d73fcc6ade27065c6788437ed6b5fc2ddc6fd89dde2bc0a55722acc6
+size 478

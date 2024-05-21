@@ -1,27 +1,3 @@
-/**********************************************************************************************************************/
-/* RigToolbar                                                                                                         */
-/**********************************************************************************************************************/
-
-#CopyRigImage {
-    background-image: url("Icons/Light/Copy.png");
-}
-
-#PasteRigImage {
-    background-image: url("Icons/Light/Paste.png");
-}
-
-.Dark #CopyRigImage {
-    background-image: url("Icons/Dark/d_Copy.png");
-}
-
-.Dark #PasteRigImage {
-    background-image: url("Icons/Dark/d_Paste.png");
-}
-
-.Checked #CopyRigImage{
-    background-image: url("Icons/Selected/Copy.png");
-}
-
-.Checked #PasteRigImage {
-    background-image: url("Icons/Selected/Paste.png");
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:abca5a286a47a7c16d1a7b8c030a223b8d1765c2137de353a3886b7ff0fbd745
+size 825

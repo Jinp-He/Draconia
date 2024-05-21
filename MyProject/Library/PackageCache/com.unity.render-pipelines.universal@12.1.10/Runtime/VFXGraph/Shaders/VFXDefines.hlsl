@@ -1,13 +1,3 @@
-#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
-#if defined(FOG_LINEAR) || defined(FOG_EXP) || defined(FOG_EXP2)
-#define USE_FOG 1
-#endif
-
-// this is only necessary for the old VFXTarget pathway
-// it defines the macro used to access hybrid instanced properties
-// (new HDRP/URP Target pathway overrides the type so this is never used)
-#define UNITY_ACCESS_HYBRID_INSTANCED_PROP(name, type) name
-
-
-//Unlit can use the DepthNormal pass which creates a discrepancy while computing depth
-#define FORCE_NORMAL_OUTPUT_UNLIT_VERTEX_SHADER 1
+version https://git-lfs.github.com/spec/v1
+oid sha256:ce39d04139195e3eb69683634cf295b53beeefff175310ddc55728bb3cd24cc7
+size 568

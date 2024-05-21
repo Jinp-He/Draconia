@@ -1,17 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace MeadowGames.UINodeConnect4.Extension
-{
-    /// <summary>
-    /// label port0.node : port1.node
-    /// </summary>
-    public class StartPlusEndNodeIDsRule : ConnectionLabelRule
-    {
-        public override void ExecuteRule(Connection connection)
-        {
-            connection.SetLabel(connection.port0.node.ID + " : " + connection.port1.node.ID);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:681c5196b358ad759ce95aee2807980bfa0bb8b7187eb8ebf0dcd1280854fdbe
+size 458

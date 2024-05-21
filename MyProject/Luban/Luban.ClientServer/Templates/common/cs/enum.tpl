@@ -1,30 +1,3 @@
-{{~
-    name = x.name
-    namespace_with_top_module = x.namespace_with_top_module
-    comment = x.comment
-    items = x.items
-~}}
-
-
-{{cs_start_name_space_grace x.namespace_with_top_module}} 
-{{~if comment != '' ~}}
-    /// <summary>
-    /// {{comment | html.escape}}
-    /// </summary>
-{{~end~}}
-    {{~if x.is_flags~}}
-    [System.Flags]
-    {{~end~}}
-    public enum {{name}}
-    {
-        {{~ for item in items ~}}
-{{~if item.comment != '' ~}}
-        /// <summary>
-        /// {{item.escape_comment}}
-        /// </summary>
-{{~end~}}
-        {{item.name}} = {{item.value}},
-        {{~end~}}
-    }
-
-{{cs_end_name_space_grace x.namespace_with_top_module}} 
+version https://git-lfs.github.com/spec/v1
+oid sha256:19ceb5ebbb958d8e5de9deeef69646f862237f0ab4a7d73cce3cc8b2fd937885
+size 660

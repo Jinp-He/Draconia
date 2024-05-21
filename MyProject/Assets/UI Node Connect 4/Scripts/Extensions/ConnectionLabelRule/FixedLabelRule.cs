@@ -1,20 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace MeadowGames.UINodeConnect4.Extension
-{
-    /// <summary>
-    /// get label p0 : p1
-    /// </summary>
-    [ExecuteInEditMode]
-    public class FixedLabelRule : ConnectionLabelRule
-    {
-        public string label = "Connection";
-
-        public override void ExecuteRule(Connection connection)
-        {
-            connection.SetLabel(label);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0bfa72aec62847f59734894efcf73c39e47fc440f2968c091bc0209870f57c7f
+size 452

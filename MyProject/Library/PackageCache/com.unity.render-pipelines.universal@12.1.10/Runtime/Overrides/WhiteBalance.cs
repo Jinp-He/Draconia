@@ -1,18 +1,3 @@
-using System;
-
-namespace UnityEngine.Rendering.Universal
-{
-    [Serializable, VolumeComponentMenuForRenderPipeline("Post-processing/White Balance", typeof(UniversalRenderPipeline))]
-    public sealed class WhiteBalance : VolumeComponent, IPostProcessComponent
-    {
-        [Tooltip("Sets the white balance to a custom color temperature.")]
-        public ClampedFloatParameter temperature = new ClampedFloatParameter(0f, -100, 100f);
-
-        [Tooltip("Sets the white balance to compensate for a green or magenta tint.")]
-        public ClampedFloatParameter tint = new ClampedFloatParameter(0f, -100, 100f);
-
-        public bool IsActive() => temperature.value != 0f || tint.value != 0f;
-
-        public bool IsTileCompatible() => true;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:992b0474f0b5fa2471bccb3f66735c34d50cdab4d0a61496a5074ea9d74f231b
+size 747

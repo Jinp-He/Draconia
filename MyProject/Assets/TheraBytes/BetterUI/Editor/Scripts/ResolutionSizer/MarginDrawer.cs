@@ -1,32 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEditor;
-using UnityEngine;
-
-namespace TheraBytes.BetterUi
-{
-    [CustomPropertyDrawer(typeof(Margin))]
-    public class MarginDrawer : PropertyDrawer
-    {
-        bool foldout;
-
-        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
-        {
-            var margin = fieldInfo.GetValue(property.serializedObject.targetObject)
-                       as Margin;
-
-            foldout = EditorGUILayout.Foldout(foldout, "Margin");
-
-            if (foldout)
-            {
-                margin.Left = EditorGUILayout.IntField("left", margin.Left);
-                margin.Right = EditorGUILayout.IntField("right", margin.Right);
-                margin.Top = EditorGUILayout.IntField("top", margin.Top);
-                margin.Bottom = EditorGUILayout.IntField("bottom", margin.Bottom);
-            }
-
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:5508073c649abaeab45e94a86bbf2a542a2c3af8f11e8e209563afdf2bdc4bfa
+size 955

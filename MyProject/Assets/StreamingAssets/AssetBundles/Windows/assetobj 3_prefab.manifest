@@ -1,19 +1,3 @@
-ManifestFileVersion: 0
-CRC: 1438451016
-Hashes:
-  AssetFileHash:
-    serializedVersion: 2
-    Hash: 411e5bf433faf828107396b3ac5ec914
-  TypeTreeHash:
-    serializedVersion: 2
-    Hash: ae8c52309304dbced62e9359e7a02dec
-HashAppended: 0
-ClassTypes:
-- Class: 1
-  Script: {instanceID: 0}
-- Class: 4
-  Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers: []
-Assets:
-- Assets/QFramework/Toolkits/ResKit/Example/1.AsyncLoad/AssetObj 3.prefab
-Dependencies: []
+version https://git-lfs.github.com/spec/v1
+oid sha256:c0918ee95dbad1f73374768b37664b65c9d8c8aae2c7250a5ea09df38a114fde
+size 456

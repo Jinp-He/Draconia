@@ -1,27 +1,3 @@
-
-Gauge.png
-size: 1024,64
-format: RGBA8888
-filter: Linear,Linear
-repeat: none
-Background
-  rotate: false
-  xy: 254, 30
-  size: 224, 32
-  orig: 224, 32
-  offset: 0, 0
-  index: -1
-Bar
-  rotate: false
-  xy: 480, 30
-  size: 224, 32
-  orig: 224, 32
-  offset: 0, 0
-  index: -1
-Border
-  rotate: false
-  xy: 2, 2
-  size: 250, 60
-  orig: 250, 60
-  offset: 0, 0
-  index: -1
+version https://git-lfs.github.com/spec/v1
+oid sha256:595cb02a7717ef0d5779949d4dbd20edceeb18047edb7c51926f789f6036b5c9
+size 363

@@ -1,34 +1,3 @@
-// Copyright (c) Rotorz Limited. All rights reserved.
-// Licensed under the MIT license. See LICENSE file in the project root.
-
-using UnityEngine;
-
-namespace TheraBytes.BetterUi.Editor.ThirdParty
-{
-
-	/// <summary>
-	/// Interface for a menu interface.
-	/// </summary>
-	public interface IElementAdderMenu {
-
-		/// <summary>
-		/// Gets a value indicating whether the menu contains any items.
-		/// </summary>
-		/// <value>
-		/// <c>true</c> if the menu contains one or more items; otherwise, <c>false</c>.
-		/// </value>
-		bool IsEmpty { get; }
-
-		/// <summary>
-		/// Displays the drop-down menu inside an editor GUI.
-		/// </summary>
-		/// <remarks>
-		/// <para>This method should only be used during <b>OnGUI</b> and <b>OnSceneGUI</b>
-		/// events; for instance, inside an editor window, a custom inspector or scene view.</para>
-		/// </remarks>
-		/// <param name="position">Position of menu button in the GUI.</param>
-		void DropDown(Rect position);
-
-	}
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:5a78936b416d22b2d680bef21f0bf84ea394e1c1abda8b010a09d88e95dc4c6f
+size 957

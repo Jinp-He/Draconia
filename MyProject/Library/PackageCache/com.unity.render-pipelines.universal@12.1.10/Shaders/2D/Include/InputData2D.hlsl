@@ -1,31 +1,3 @@
-
-#ifndef INPUT_DATA_2D_INCLUDED
-#define INPUT_DATA_2D_INCLUDED
-
-struct InputData2D
-{
-    float2 uv;
-    half2 lightingUV;
-
-    #if defined(DEBUG_DISPLAY)
-    float3 positionWS;
-    float4 texelSize;
-    float4 mipInfo;
-    uint mipCount;
-    #endif
-};
-
-void InitializeInputData(float2 uv, half2 lightingUV, out InputData2D inputData)
-{
-    inputData = (InputData2D)0;
-
-    inputData.uv = uv;
-    inputData.lightingUV = lightingUV;
-}
-
-void InitializeInputData(float2 uv, out InputData2D inputData)
-{
-    InitializeInputData(uv, 0, inputData);
-}
-
-#endif
+version https://git-lfs.github.com/spec/v1
+oid sha256:92e3a0dd017a1c7095150e2622e3576fc138285a142aa15054522670918ecfbe
+size 552

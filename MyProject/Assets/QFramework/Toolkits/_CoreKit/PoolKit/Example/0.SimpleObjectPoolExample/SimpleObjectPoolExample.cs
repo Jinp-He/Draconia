@@ -1,36 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace QFramework
-{
-    public class SimpleObjectPoolExample : MonoBehaviour
-    {
-        private SimpleObjectPool<GameObject> mObjectPool;
-
-        void Start()
-        {
-            mObjectPool = new SimpleObjectPool<GameObject>(() =>
-            {
-                var gameObj = new GameObject();
-                gameObj.SetActive(false);
-                return gameObj;
-            }, gameObj => { gameObj.SetActive(false); }, 5);
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                var obj = mObjectPool.Allocate();
-                obj.SetActive(true);
-            }
-
-            if (Input.GetMouseButtonDown(1))
-            {
-                mObjectPool.Clear(o => { Destroy(o); });
-            }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:8bd5a7153c7908a40487eacbda88136956980762fdcf7cf4550e5afd189e7e01
+size 915

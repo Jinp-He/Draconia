@@ -1,16 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-using MeadowGames.UINodeConnect4.Extension;
-
-namespace MeadowGames.UINodeConnect4.SampleScene.SerializationSample
-{
-    public class CustomPortMatchRule : PortMatchRule
-    {
-        public override bool ExecuteRule(Port draggedPort, Port foundPort)
-        {
-            return draggedPort.ID == foundPort.ID ? true: false;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b9dea19e6ecc50d7f1a1583cd1dcc9ebc388dfdb9b1ff524d81b157185f629ca
+size 422

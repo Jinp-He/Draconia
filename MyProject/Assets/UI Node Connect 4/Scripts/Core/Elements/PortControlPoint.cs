@@ -1,30 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace MeadowGames.UINodeConnect4
-{
-    public class PortControlPoint : MonoBehaviour
-    {
-        Transform _transform;
-        public Transform Transform
-        {
-            get
-            {
-                if (!_transform)
-                    _transform = transform;
-                return _transform;
-            }
-        }
-        public Vector3 Position
-        {
-            get => Transform.position;
-            set => Transform.position = value;
-        }
-        public Vector3 LocalPosition
-        {
-            get => Transform.localPosition;
-            set => Transform.localPosition = value;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:86b109b70b1b4e9e2c9500b281dd28918bedce2940d14f23e5c83161b17cf1ff
+size 714

@@ -1,34 +1,3 @@
-using System.Collections.Generic;
-using JetBrains.Annotations;
-using TMPro;
-using UnityEngine;
-
-namespace Utility
-{
-    public class MyTooltip : MonoBehaviour
-    {
-        public TextMeshProUGUI Title;
-        public TextMeshProUGUI Description;
-        public TextMeshProUGUI Passive;
-
-        public string TitleText;
-        public string DescriptionText;
-        public string PassiveText;
-        public void Start()
-        {
-            //Title.text = TitleText;
-            //Description.text = DescriptionText;
-            //Passive.text = PassiveText;
-        }
-        public void Initialize(Tooltip lists)
-        {
-            
-            Title.text = lists.Name;
-            Description.text = lists.Desc;
-            Passive.text = lists.Type;
-        }
-        
-    }
-    
-    
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:baf8fb76c88ef5afe26698526ac745c12390a6a17107d89272149de51fa1d39f
+size 797

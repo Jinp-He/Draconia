@@ -1,13 +1,3 @@
-namespace UnityEngine.Rendering.Universal
-{
-    [System.Serializable]
-    public class StencilStateData
-    {
-        public bool overrideStencilState = false;
-        public int stencilReference = 0;
-        public CompareFunction stencilCompareFunction = CompareFunction.Always;
-        public StencilOp passOperation = StencilOp.Keep;
-        public StencilOp failOperation = StencilOp.Keep;
-        public StencilOp zFailOperation = StencilOp.Keep;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:eb874b6a9a54967d3d03d5e578a30987eaeea25f8c23d97cd653fa2776d62944
+size 461

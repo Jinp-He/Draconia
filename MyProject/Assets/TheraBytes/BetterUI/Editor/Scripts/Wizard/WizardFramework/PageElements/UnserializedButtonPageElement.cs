@@ -1,33 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-
-namespace TheraBytes.BetterUi.Editor
-{
-    public class UnserializedButtonPageElement : WizardPageElementBase
-    {
-        GUIContent buttonContent;
-        Action buttonCallback;
-
-        public UnserializedButtonPageElement(string buttonContent, Action buttonCallback, bool completeImmediately = true)
-            : this(new GUIContent(buttonContent), buttonCallback, completeImmediately)
-        { }
-
-        public UnserializedButtonPageElement(GUIContent buttonContent, Action buttonCallback, bool completeImmediately = true)
-        {
-            this.buttonContent = buttonContent;
-            this.buttonCallback = buttonCallback;
-            base.markCompleteImmediately = completeImmediately;
-        }
-
-        public override void DrawGui()
-        {
-            if(GUILayout.Button(buttonContent) && buttonCallback != null)
-            {
-                buttonCallback();
-            }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:bbddfd74d08e0d699d51dc03eea1155f367778d0538031b6d5f7359d7f28719b
+size 1027

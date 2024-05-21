@@ -1,23 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEditor;
-
-namespace TheraBytes.BetterUi.Editor
-{
-    [CustomPropertyDrawer(typeof(FloatSizeModifier))]
-    public class FloatSizeModifierDrawer : ScreenDependentSizeDrawer<float>
-    {
-        protected override void DrawModifiers(SerializedProperty property)
-        {
-            var mod = property.FindPropertyRelative("Mod");
-            DrawModifierList(mod, "Size Modification");
-        }
-
-        protected override string GetValueString(float obj)
-        {
-            return obj.ToString();
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:df7344253c6574d667e0f075c9704358aead2a27f5d10255e85278227bc2af26
+size 616

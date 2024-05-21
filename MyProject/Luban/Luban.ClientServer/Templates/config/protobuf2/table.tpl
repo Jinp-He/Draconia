@@ -1,9 +1,3 @@
-{{~
-    name = x.name
-    key_type = x.key_ttype
-    value_type =  x.value_ttype
-~}}
-
-message {{x.pb_full_name}} {
-    repeated {{protobuf_define_type value_type}} data_list = 1 [packed = false];
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f7b3d737bd7610cac906a43dd93a2cbc1a06298b1b96c04d3639101bf529f58c
+size 197

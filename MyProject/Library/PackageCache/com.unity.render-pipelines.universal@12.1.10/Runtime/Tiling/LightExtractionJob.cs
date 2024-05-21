@@ -1,35 +1,3 @@
-using Unity.Burst;
-using Unity.Collections;
-using Unity.Jobs;
-using Unity.Mathematics;
-
-namespace UnityEngine.Rendering.Universal
-{
-    [BurstCompile]
-    struct LightExtractionJob : IJobFor
-    {
-        [ReadOnly]
-        public NativeArray<VisibleLight> lights;
-
-        public NativeArray<LightType> lightTypes;
-
-        public NativeArray<float> radiuses;
-
-        public NativeArray<float3> directions;
-
-        public NativeArray<float3> positions;
-
-        public NativeArray<float> coneRadiuses;
-
-        public void Execute(int index)
-        {
-            var light = lights[index];
-            var localToWorldMatrix = (float4x4)light.localToWorldMatrix;
-            lightTypes[index] = light.lightType;
-            radiuses[index] = light.range;
-            directions[index] = localToWorldMatrix.c2.xyz;
-            positions[index] = localToWorldMatrix.c3.xyz;
-            coneRadiuses[index] = math.tan(math.radians(light.spotAngle * 0.5f)) * light.range;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:8ecca0a4aee2733d5a9f95567e266cd0ccac1880b55dcba89a9af487afa41f97
+size 990

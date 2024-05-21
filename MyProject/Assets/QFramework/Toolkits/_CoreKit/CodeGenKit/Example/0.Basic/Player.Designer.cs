@@ -1,16 +1,3 @@
-// Generate Id:a3df1937-7d73-4199-9baf-ce8e8660af7f
-using UnityEngine;
-
-// 1.请在菜单 编辑器扩展/Namespace Settings 里设置命名空间
-// 2.命名空间更改后，生成代码之后，需要把逻辑代码文件（非 Designer）的命名空间手动更改
-namespace QFramework.Example
-{
-	public partial class Player
-	{
-
-		public QFramework.Example.Weapon Weapon;
-
-		public Transform GroundCheck;
-
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:feb22a16313353bf2f2cf9150d37e12cd43c5ca35b133c5f8cf9b5bbcd73c645
+size 416

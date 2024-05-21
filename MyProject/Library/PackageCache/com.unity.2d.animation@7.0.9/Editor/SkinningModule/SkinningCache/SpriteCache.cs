@@ -1,28 +1,3 @@
-using UnityEngine;
-
-namespace UnityEditor.U2D.Animation
-{
-    internal class SpriteCache : TransformCache
-    {
-        [SerializeField]
-        string m_ID;
-        [SerializeField]
-        Rect m_TextureRect;
-        [SerializeField]
-        Vector2 m_PivotNormalized;
-
-        public string id
-        {
-            get => m_ID;
-            internal set => m_ID = value;
-        }
-
-        public Rect textureRect
-        {
-            get => m_TextureRect;
-            set => m_TextureRect = value;
-        }
-        
-        public Vector2 pivotRectSpace => Vector2.Scale(textureRect.size, m_PivotNormalized);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:8d46339ad36ad33d0ce99c2493be4ef1086c584f991633a6f5b6bbdd7498cc08
+size 623

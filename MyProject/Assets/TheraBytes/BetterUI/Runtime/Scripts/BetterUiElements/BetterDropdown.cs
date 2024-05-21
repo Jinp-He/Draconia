@@ -1,32 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-using UnityEngine.UI;
-
-namespace TheraBytes.BetterUi
-{
-    [HelpURL("https://documentation.therabytes.de/better-ui/BetterDropdown.html")]
-    [AddComponentMenu("Better UI/Controls/Better Dropdown", 30)]
-    public class BetterDropdown : Dropdown, IBetterTransitionUiElement
-    {
-        public List<Transitions> BetterTransitions { get { return betterTransitions; } }
-
-        [SerializeField, DefaultTransitionStates]
-        List<Transitions> betterTransitions = new List<Transitions>();
-
-        protected override void DoStateTransition(SelectionState state, bool instant)
-        {
-            base.DoStateTransition(state, instant);
-
-            if (!(base.gameObject.activeInHierarchy))
-                return;
-
-            foreach (var info in betterTransitions)
-            {
-                info.SetState(state.ToString(), true);
-            }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:06d3414267310ffadaf245453ed39e6056ecb73de6a3c4e6b70254661fb4a6aa
+size 978

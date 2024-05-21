@@ -1,17 +1,3 @@
-#ifndef UNITY_DECLARE_DEPTH_TEXTURE_INCLUDED
-#define UNITY_DECLARE_DEPTH_TEXTURE_INCLUDED
-#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
-
-TEXTURE2D_X_FLOAT(_CameraDepthTexture);
-SAMPLER(sampler_CameraDepthTexture);
-
-float SampleSceneDepth(float2 uv)
-{
-    return SAMPLE_TEXTURE2D_X(_CameraDepthTexture, sampler_CameraDepthTexture, UnityStereoTransformScreenSpaceTex(uv)).r;
-}
-
-float LoadSceneDepth(uint2 uv)
-{
-    return LOAD_TEXTURE2D_X(_CameraDepthTexture, uv).r;
-}
-#endif
+version https://git-lfs.github.com/spec/v1
+oid sha256:a1260dc8d6ef8b94a56bd4b97f0de13e1e2f682634e3b8cd90a1bc97d620f0dc
+size 509

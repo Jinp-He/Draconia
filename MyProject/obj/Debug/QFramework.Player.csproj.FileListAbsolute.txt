@@ -1,4 +1,3 @@
-C:\Users\lofnh\Documents\GitHub\Draconia\My project\obj\Debug\QFramework.Player.csproj.AssemblyReference.cache
-C:\Users\lofnh\Documents\GitHub\Draconia\My project\obj\Debug\QFramework.Player.csproj.CoreCompileInputs.cache
-C:\Users\lofnh\Documents\GitHub\Draconia\My project\obj\Debug\QFramework.dll
-C:\Users\lofnh\Documents\GitHub\Draconia\My project\obj\Debug\QFramework.pdb
+version https://git-lfs.github.com/spec/v1
+oid sha256:7d1662ccd17dc4d3a453bd3fa8386e6d33548233b417e770c6b6d9a70996f921
+size 376

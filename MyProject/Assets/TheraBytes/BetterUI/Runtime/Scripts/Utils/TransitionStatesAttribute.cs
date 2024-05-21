@@ -1,26 +1,3 @@
-﻿using System;
-
-namespace TheraBytes.BetterUi
-{
-    public class DefaultTransitionStatesAttribute : TransitionStatesAttribute
-    {
-        public DefaultTransitionStatesAttribute()
-            : base("Normal", "Highlighted", "Pressed",
-#if UNITY_2019_1_OR_NEWER
-            "Selected",
-#endif
-            "Disabled")
-        { }
-    }
-
-    public class TransitionStatesAttribute : Attribute
-    {
-        string[] states;
-        public string[] States { get { return states; } }
-
-        public TransitionStatesAttribute(params string[] states)
-        {
-            this.states = states;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:cef228d2e1c14d1c40d80f52f257e7ee4f82abefb19d4287235bfc241b7360ba
+size 611

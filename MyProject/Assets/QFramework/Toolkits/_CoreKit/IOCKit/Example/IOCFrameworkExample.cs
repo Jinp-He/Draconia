@@ -1,30 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace QFramework.Example
-{
-	public class IOCFrameworkExample : MonoBehaviour
-	{
-
-		[Inject]
-		public INetworkExampleService NetworkExampleService { get; set; }
-
-		// Use this for initialization
-		void Start()
-		{
-			// 将模块注入 
-			// 这种方式比较方便
-			MainContainer.Container.Inject(this);
-
-			NetworkExampleService.Request();
-
-
-			// 或者 不通过注入，直接获得 实例
-			// 这种方式性能更好
-			var networkExampleService = MainContainer.Container.Resolve<INetworkExampleService>();
-
-			networkExampleService.Request();
-		}
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:4dffd46f8b48b4ba0cfa21f5baae4d7bd510c9ead23e81af60667899d0aa8d1e
+size 651

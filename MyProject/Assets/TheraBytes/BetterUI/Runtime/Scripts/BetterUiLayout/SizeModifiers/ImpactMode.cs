@@ -1,22 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace TheraBytes.BetterUi
-{
-    public enum ImpactMode
-    {
-        PixelHeight,
-        PixelWidth,
-        AspectRatio,
-        InverseAspectRatio,
-        Dpi,
-
-        StaticMethod1,
-        StaticMethod2,
-        StaticMethod3,
-        StaticMethod4,
-        StaticMethod5,
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:965ae783a2ca462f3dbf88f2fbdddc885dc41247175f4617b6f6d846b786217d
+size 379

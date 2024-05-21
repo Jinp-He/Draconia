@@ -1,17 +1,3 @@
-namespace UnityEngine.Rendering.Universal
-{
-    internal static class DecalShaderPassNames
-    {
-        public const string DecalPreview = "DecalPreview";
-
-        public const string DBufferProjector = "DBufferProjector";
-        public const string DecalProjectorForwardEmissive = "DecalProjectorForwardEmissive";
-        public const string DecalScreenSpaceProjector = "DecalScreenSpaceProjector";
-        public const string DecalGBufferProjector = "DecalGBufferProjector";
-
-        public const string DBufferMesh = "DBufferMesh";
-        public const string DecalMeshForwardEmissive = "DecalMeshForwardEmissive";
-        public const string DecalScreenSpaceMesh = "DecalScreenSpaceMesh";
-        public const string DecalGBufferMesh = "DecalGBufferMesh";
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:11a4983cd2157afc6bcca4b87cf67e931c19dfde2cab0de8b96de29c381616de
+size 770

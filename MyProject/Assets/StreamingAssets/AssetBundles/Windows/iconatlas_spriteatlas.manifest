@@ -1,22 +1,3 @@
-ManifestFileVersion: 0
-CRC: 3222870030
-Hashes:
-  AssetFileHash:
-    serializedVersion: 2
-    Hash: 10c95190010b55c390688dfb6373ff45
-  TypeTreeHash:
-    serializedVersion: 2
-    Hash: 0d677c6dec2405a43fe6dd294cca7c3e
-HashAppended: 0
-ClassTypes:
-- Class: 28
-  Script: {instanceID: 0}
-- Class: 213
-  Script: {instanceID: 0}
-- Class: 687078895
-  Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers: []
-Assets:
-- Assets/Resources/Art/ICON/IconAtlas.spriteatlas
-Dependencies:
-- "C:/Users/lofnh/Documents/GitHub/Draconia/MyProject/AssetBundles/Windows/\u5730\u56FE\u5730\u5757\u6837\u5F0F_psb"
+version https://git-lfs.github.com/spec/v1
+oid sha256:3e1fd483d722cfff277b7d2d9fa2014695ad837d61a19f9e0ad77c5c3149b7d2
+size 594

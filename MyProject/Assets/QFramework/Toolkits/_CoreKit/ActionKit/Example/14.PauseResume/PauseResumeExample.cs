@@ -1,27 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-
-namespace QFramework.Example
-{
-    public class PauseResumeExample : MonoBehaviour
-    {
-        // Start is called before the first frame update
-        IEnumerator Start()
-        {
-            // NOT Support Yet
-            var action = ActionKit.Repeat()
-                .Delay(0.5f)
-                .Callback(() => Debug.Log(Time.time))
-                .Start(this);
-
-            yield return new WaitForSeconds(3.0f);
-            action.Pause();
-
-            yield return new WaitForSeconds(2.0f);
-            action.Resume();
-
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2a305aa6183fa6e29d9fa5155146ac91be574a3c6de9a277177bd05999ce6d8b
+size 636

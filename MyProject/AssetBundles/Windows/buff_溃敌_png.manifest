@@ -1,20 +1,3 @@
-ManifestFileVersion: 0
-CRC: 3277762844
-Hashes:
-  AssetFileHash:
-    serializedVersion: 2
-    Hash: 3334a87340dc68c8b48c35cacc83b934
-  TypeTreeHash:
-    serializedVersion: 2
-    Hash: f267fd2d8bcb1179236b6179ac5313bc
-HashAppended: 0
-ClassTypes:
-- Class: 28
-  Script: {instanceID: 0}
-- Class: 213
-  Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers: []
-Assets:
-- "Assets/Resources/Art/\u6218\u6597\u754C\u9762\u7D20\u6750/Buff/buff_\u84C4\u529B.png"
-- "Assets/Resources/Art/\u6218\u6597\u754C\u9762\u7D20\u6750/Buff/buff_\u6E83\u654C.png"
-Dependencies: []
+version https://git-lfs.github.com/spec/v1
+oid sha256:aa37f293c3987e2d9d283c0a33218902b563ec7daf74cac8ee69e20f3b9d6736
+size 563

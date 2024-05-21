@@ -1,27 +1,3 @@
-namespace UnityEditor.Rendering.Universal.Internal
-{
-    /// <summary>
-    /// Contains a database of built-in resource GUIds. These are used to load built-in resource files.
-    /// </summary>
-    public static class ResourceGuid
-    {
-        /// <summary>
-        /// GUId for the <c>ScriptableRendererFeature</c> template file.
-        /// </summary>
-        public static readonly string rendererTemplate = "51493ed8d97d3c24b94c6cffe834630b";
-    }
-}
-
-namespace UnityEditor.Rendering.Universal
-{
-    static partial class EditorUtils
-    {
-        internal enum Unit { Metric, Percent }
-
-        internal class Styles
-        {
-            //Measurements
-            public static float defaultLineSpace = EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:090b3a5174761ec0fc3b5bf61ebc11d728472cf146ac8d8acde13fa7ad13a7c0
+size 806

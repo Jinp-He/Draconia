@@ -1,23 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEditor;
-using UnityEngine;
-
-namespace TheraBytes.BetterUi.Editor
-{
-    public class SeparatorWizardPageElement : WizardPageElementBase
-    {
-        public SeparatorWizardPageElement()
-        {
-            markCompleteImmediately = true;
-        }
-
-        public override void DrawGui()
-        {
-            EditorGUILayout.Separator();
-        }
-
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6ce36850e2e9a31d5c6d204d8e84f98b39cb3c3318535d48fdf01ba663560048
+size 459

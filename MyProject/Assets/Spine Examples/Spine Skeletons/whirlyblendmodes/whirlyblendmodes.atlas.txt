@@ -1,13 +1,3 @@
-
-whirlyblendmodes.png
-size: 512,512
-format: RGBA8888
-filter: Linear,Linear
-repeat: none
-whirly
-  rotate: false
-  xy: 2, 2
-  size: 256, 256
-  orig: 256, 256
-  offset: 0, 0
-  index: -1
+version https://git-lfs.github.com/spec/v1
+oid sha256:b3054d6d13ad32a6113e1db0d787ffe5679d5e2ca8868c5bdc70b94bce12c290
+size 183

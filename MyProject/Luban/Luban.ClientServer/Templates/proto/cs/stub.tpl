@@ -1,19 +1,3 @@
-using Bright.Serialization;
-
-namespace {{namespace}}
-{
-    public static class {{name}}
-    {
-        public static System.Collections.Generic.Dictionary<int, Bright.Net.Codecs.ProtocolCreator> Factories { get; } = new System.Collections.Generic.Dictionary<int, Bright.Net.Codecs.ProtocolCreator>
-        {
-        {{~ for proto in protos ~}}
-            [{{proto.full_name}}.__ID__] = () => new {{proto.full_name}}(),
-        {{~end~}}
-
-        {{~ for rpc in rpcs ~}}
-            [{{rpc.full_name}}.__ID__] = () => new {{rpc.full_name}}(),
-        {{~end~}}
-        };
-    }
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:4a886ff5d8848b9b22679b2e3327e8d277d479e866f26c6654fdf5a892f8f6f8
+size 580

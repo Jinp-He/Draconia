@@ -1,13 +1,3 @@
-{{
-    name = x.name
-    namespace = x.namespace
-    tables = x.tables
-}}
-{{~ for table in tables ~}}
-var {{table.name}}: {{table.gdscript_full_name}}
-{{~end~}}
-
-func _init(loader) -> void:
-    {{~for table in tables ~}}
-    self.{{table.name}} = {{table.gdscript_full_name}}.new(loader.call('{{table.output_data_file}}'))
-    {{~end~}}
+version https://git-lfs.github.com/spec/v1
+oid sha256:1fb8fd2e44d58873c99fa263558032416601abfb9eb46e2123d9dd94db80acc1
+size 336

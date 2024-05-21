@@ -1,21 +1,3 @@
-ManifestFileVersion: 0
-CRC: 332814687
-Hashes:
-  AssetFileHash:
-    serializedVersion: 2
-    Hash: 9fed55b94b85a3678041abc7c64819af
-  TypeTreeHash:
-    serializedVersion: 2
-    Hash: 0d677c6dec2405a43fe6dd294cca7c3e
-HashAppended: 0
-ClassTypes:
-- Class: 28
-  Script: {instanceID: 0}
-- Class: 213
-  Script: {instanceID: 0}
-- Class: 687078895
-  Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers: []
-Assets:
-- Assets/QFramework/Toolkits/ResKit/Example/5.LoadSpriteAtlasExample/spriteatlas.spriteatlas
-Dependencies: []
+version https://git-lfs.github.com/spec/v1
+oid sha256:36a10a949b3f77c44de52a078c0334c9896a0404f45165a06d4f26660db07d94
+size 522

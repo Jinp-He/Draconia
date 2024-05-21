@@ -1,35 +1,3 @@
-ManifestFileVersion: 0
-CRC: 1473189229
-Hashes:
-  AssetFileHash:
-    serializedVersion: 2
-    Hash: 191453230f5983d5b8c668c1449959e9
-  TypeTreeHash:
-    serializedVersion: 2
-    Hash: ca8216a02bb8e307bcc3eb91fd7efcff
-HashAppended: 0
-ClassTypes:
-- Class: 1
-  Script: {instanceID: 0}
-- Class: 28
-  Script: {instanceID: 0}
-- Class: 114
-  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: e8ac7758eec724bd6a202fef4b23c9c8, type: 3}
-- Class: 115
-  Script: {instanceID: 0}
-- Class: 213
-  Script: {instanceID: 0}
-- Class: 222
-  Script: {instanceID: 0}
-- Class: 224
-  Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers:
-- AssemblyName: UnityEngine.CoreModule
-  ClassName: UnityEngine.Events.PersistentCallGroup
-- AssemblyName: UnityEngine.UI
-  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
-Assets:
-- Assets/QFramework/Toolkits/UIKit/Tests/LoadImagePrefabTest/Art/UIPrefab/UIPanelWithImagePrefab.prefab
-Dependencies: []
+version https://git-lfs.github.com/spec/v1
+oid sha256:796c879516d3b6ee7d7a9bb16de2cb51dc3672e47f913360adf67ea5fb6bd561
+size 1010

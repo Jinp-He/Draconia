@@ -1,26 +1,3 @@
-// Helper API to create custom XR layout
-
-#if ENABLE_VR && ENABLE_XR_MODULE
-
-namespace UnityEngine.Rendering.Universal
-{
-    internal struct XRLayout
-    {
-        internal Camera camera;
-        internal XRSystem xrSystem;
-
-        internal XRPass CreatePass(XRPassCreateInfo passCreateInfo)
-        {
-            XRPass pass = XRPass.Create(passCreateInfo);
-            xrSystem.AddPassToFrame(pass);
-            return pass;
-        }
-
-        internal void AddViewToPass(XRViewCreateInfo viewCreateInfo, XRPass pass)
-        {
-            pass.AddView(viewCreateInfo.projMatrix, viewCreateInfo.viewMatrix, viewCreateInfo.viewport, viewCreateInfo.textureArraySlice);
-        }
-    }
-}
-
-#endif
+version https://git-lfs.github.com/spec/v1
+oid sha256:fd1a0e1bfdd9bc27524f7ee0b4f4e25425c83365374b9a67f5d0b38a77b87149
+size 696

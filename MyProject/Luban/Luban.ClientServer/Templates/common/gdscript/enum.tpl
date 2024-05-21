@@ -1,20 +1,3 @@
-{{~
-    name = x.name
-    namespace_with_top_module = x.namespace_with_top_module
-    comment = x.comment
-    items = x.items
-~}}
-
-{{~if comment != '' ~}}
-
-# {{comment | html.escape}}
-{{~end~}}
-enum {{x.gdscript_full_name}}{
-    {{~ for item in items ~}}
-{{~if item.comment != '' ~}}
-    {{item.name}} = {{item.int_value}}, # {{item.escape_comment}}
-{{~else~}}
-    {{item.name}} = {{item.int_value}},
-{{~end~}}
-    {{~end~}}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f0ce80962164554dcd7ea389d4aa2035eb1f106846c938d9aa191178211282ea
+size 426

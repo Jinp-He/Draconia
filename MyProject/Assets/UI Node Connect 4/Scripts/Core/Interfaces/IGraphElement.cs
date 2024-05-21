@@ -1,14 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace MeadowGames.UINodeConnect4
-{
-    public interface IGraphElement : IElement
-    {
-        string ID { get; set; }
-	// v4.1 - added string SID property to IGraphElement to facilitate serialization
-        string SID { get; set; }
-        Color ElementColor { get; set; }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:174850ccc065b8650f3912ac0bb22eb6a68838d9e73d41c20bc881f56f788ea9
+size 367

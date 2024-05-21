@@ -1,17 +1,3 @@
-package {{namespace}}
-
-import "bright/net"
-
-type ProtocolFactory = func () net.Protocol
-
-var ProtocolStub map[int]ProtocolFactory
-
-func init() {
-	ProtocolStub = make(map[int]ProtocolFactory)
-	{{~for p in protos~}}
-	ProtocolStub[{{p.id}}] = func () net.Protocol { return &{{p.go_full_name}}{} }
-	{{~end~}}
-	{{~for r in rpcs~}}
-	ProtocolStub[{{r.id}}] = func () net.Protocol { return &{{r.go_full_name}}{} }
-	{{~end~}}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f706a49259352643a20732bd045b3cb9ffefa5f7e3a993cad9b30bbaef671bc4
+size 419

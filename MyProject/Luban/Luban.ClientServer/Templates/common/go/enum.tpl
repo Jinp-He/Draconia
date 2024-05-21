@@ -1,14 +1,3 @@
-{{~
-    name = x.name
-    namespace_with_top_module = x.namespace_with_top_module
-    comment = x.comment
-    items = x.items
-~}}
-
-package {{x.top_module}}
-
-const (
-    {{~for item in items ~}}
-    {{x.go_full_name}}_{{item.name}} = {{item.int_value}}
-    {{~end~}}
-)
+version https://git-lfs.github.com/spec/v1
+oid sha256:d57718425fa5791a38f4627fa78d8a0e5d08112111fb09df8e589a88fa02aed9
+size 268

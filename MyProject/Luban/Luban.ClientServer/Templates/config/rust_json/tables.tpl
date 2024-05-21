@@ -1,32 +1,3 @@
-{{
-    name = x.name
-    namespace = x.namespace
-    tables = x.tables
-}}
-
-type JsonLoader = fn(&str) -> Result<json::JsonValue, LoadError>;
-
-#[allow(non_camel_case_types)]
-pub struct {{name}} {
-    {{~ for table in tables ~}}
-
-{{~if table.comment != '' ~}}
-    /**
-     * {{table.escape_comment}}
-     */
-{{~end~}}
-    pub {{string.downcase table.name}}: {{table.rust_full_name}},
-    {{~end~}}
-}
-
-impl {{name}} {
-    #[allow(dead_code)]
-    pub fn new(loader: JsonLoader) -> std::result::Result<Tables, LoadError> {
-        let tables = Tables {
-        {{~for table in tables ~}}
-            {{string.downcase table.name}}: {{table.rust_full_name}}::new(&loader("{{table.output_data_file}}")?)?,
-        {{~end~}}
-        };
-        return Ok(tables);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:dca3ee63f0b583c8d3bd4863a1e87659989268cea1b662aa8eb7ccdfc1b7a916
+size 763

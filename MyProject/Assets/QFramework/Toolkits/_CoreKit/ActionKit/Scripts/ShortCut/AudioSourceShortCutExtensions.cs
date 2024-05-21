@@ -1,33 +1,3 @@
-﻿/****************************************************************************
- * Copyright (c) 2016 - 2023 liangxiegame UNDER MIT License
- * 
- * https://qframework.cn
- * https://github.com/liangxiegame/QFramework
- * https://gitee.com/liangxiegame/QFramework
- ****************************************************************************/
-
-using UnityEngine;
-
-namespace QFramework
-{
-    public static class AudioSourceShortCutExtensions
-    {
-        public static IAction PlayAction(this AudioSource self)
-        {
-            return ActionKit.Custom<AudioSource>(api =>
-            {
-                api.OnStart(() =>
-                {
-                    api.Data = self;
-                    self.Play();
-                }).OnExecute(_ =>
-                {
-                    if (api.Data && !api.Data.isPlaying)
-                    {
-                        api.Finish();
-                    }
-                });
-            });
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:e61efaee8eca26aa4ff160806b501de802b258950bfa60d0f0d0cb6d621a0478
+size 954

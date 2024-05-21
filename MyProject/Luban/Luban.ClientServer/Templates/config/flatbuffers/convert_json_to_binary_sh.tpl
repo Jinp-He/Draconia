@@ -1,16 +1,3 @@
-{{~
-    name = x.name
-    namespace = x.namespace
-    tables = x.tables
-~}}
-
-@echo off
-
-FLATC=$1
-SCHEMA_FILE=$2
-DATA_DIR=$3
-OUTPUT_DIR=$4
-
-{{~for table in tables~}}
-$FLATC -o $OUTPUT_DIR -b $SCHEMA_FILE --root-type {{if namespace != ''}}{{namespace}}.{{end}}{{table.flat_buffers_full_name}} $DATA_DIR/{{table.output_data_file}}.json
-{{~end~}}
+version https://git-lfs.github.com/spec/v1
+oid sha256:264d8d8cdcfc1c1fe85c7a2eda9a190db208646ba510b5c562ddd8c82b5bafd9
+size 342

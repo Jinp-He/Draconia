@@ -1,7 +1,3 @@
-SkipWizard=False
-optimizedResolution=1920:1080
-isFallbackLandscape=False
-supportBothOrientations=False
-responsiveDesign=0
-TextMeshPro=<null>
-asmdef=<null>
+version https://git-lfs.github.com/spec/v1
+oid sha256:d15d5960a5ce44b86af21876b0f394dee52a4f0b838fa3f716e7a9fcf1c72dca
+size 155

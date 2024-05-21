@@ -1,21 +1,3 @@
-ManifestFileVersion: 0
-CRC: 2027340703
-Hashes:
-  AssetFileHash:
-    serializedVersion: 2
-    Hash: 2449f4789fca95545f12a314bd6af893
-  TypeTreeHash:
-    serializedVersion: 2
-    Hash: 0d677c6dec2405a43fe6dd294cca7c3e
-HashAppended: 0
-ClassTypes:
-- Class: 28
-  Script: {instanceID: 0}
-- Class: 213
-  Script: {instanceID: 0}
-- Class: 687078895
-  Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers: []
-Assets:
-- "Assets/Resources/Art/\u5730\u56FE\u754C\u9762\u7D20\u6750/\u64CD\u63A7\u5730\u5757\u90E8\u5206.psb"
-Dependencies: []
+version https://git-lfs.github.com/spec/v1
+oid sha256:6d209d64753a7b5effe1dd877f8cdb5d046e9f4a5f6d30f44b0b85ed094ccbcb
+size 533

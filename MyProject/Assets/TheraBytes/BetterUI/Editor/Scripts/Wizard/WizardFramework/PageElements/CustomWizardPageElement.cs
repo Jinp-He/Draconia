@@ -1,30 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-
-namespace TheraBytes.BetterUi.Editor
-{
-    public class CustomWizardPageElement : WizardPageElementBase
-    {
-        Action<CustomWizardPageElement> drawGuiCallback;
-
-        public CustomWizardPageElement(Action<CustomWizardPageElement> drawGuiCallback)
-        {
-            this.drawGuiCallback = drawGuiCallback;
-        }
-
-        public override void DrawGui()
-        {
-            if(drawGuiCallback == null)
-            {
-                Debug.LogError("No gui callback assigned for wizard element.");
-                State = WizardElementState.Complete;
-                return;
-            }
-
-            drawGuiCallback(this);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:40a118414b78d69d603375089f51a569a63b93432d3804eb9df331c6b73490d8
+size 766

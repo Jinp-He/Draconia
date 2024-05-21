@@ -1,27 +1,3 @@
-﻿using UnityEngine;
-
-namespace QFramework.Example
-{
-    public class DelayFrameExample : MonoBehaviour
-    {
-        void Start()
-        {
-            Debug.Log("Delay Frame Start FrameCount:" + Time.frameCount);
-            
-            ActionKit.DelayFrame(1, () => { Debug.Log("Delay Frame Finish FrameCount:" + Time.frameCount); })
-                .Start(this);
-
-
-            ActionKit.Sequence()
-                .DelayFrame(10)
-                .Callback(() => Debug.Log("Sequence Delay FrameCount:" + Time.frameCount))
-                .Start(this);
-
-            // ActionKit.Sequence()
-            //      .NextFrame()
-            //      .Start(this);
-
-            ActionKit.NextFrame(() => { }).Start(this);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:294368c61dac450d9e0fd848e5b852efa651fdcb280c87c98037062f9da61aa1
+size 735

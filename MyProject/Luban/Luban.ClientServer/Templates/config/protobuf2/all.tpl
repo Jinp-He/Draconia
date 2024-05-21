@@ -1,36 +1,3 @@
-﻿syntax = "proto2";
-
-package {{x.namespace}};
-
-// luban internal types begin
-message Vector2 {
-    required float x = 1;
-    required float y = 2;
-}
-
-message Vector3 {
-    required float x = 1;
-    required float y = 2;
-    required float z = 3;
-}
-
-message Vector4 {
-    required float x = 1;
-    required float y = 2;
-    required float z = 3;
-    required float w = 4;
-}
-// luban internal types end
-
-{{~for enum in x.enums ~}}
-{{enum}}
-{{~end~}}
-
-{{~for bean in x.beans~}}
-{{bean}}
-{{~end~}}
-
-{{~for table in x.tables~}}
-{{table}}
-{{~end~}}
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:60aa3b2a6482f773cc00cb8efc8da914e58b11e88c16e1debd47d0e88a67e050
+size 546

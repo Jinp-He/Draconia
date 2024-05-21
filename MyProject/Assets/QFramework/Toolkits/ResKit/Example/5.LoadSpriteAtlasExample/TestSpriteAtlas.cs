@@ -1,36 +1,3 @@
-using System.Collections;
-using UnityEngine;
-using UnityEngine.U2D;
-using UnityEngine.UI;
-
-namespace QFramework
-{
-	/// <inheritdoc />
-	/// <summary>
-	/// 参考:http://www.cnblogs.com/TheChenLin/p/9763710.html
-	/// </summary>
-	public class TestSpriteAtlas : MonoBehaviour
-	{
-		[SerializeField] private Image mImage;
-
-		// Use this for initialization
-		private IEnumerator Start()
-		{
-			var loader = ResLoader.Allocate();
-
-			ResKit.Init();
-
-			var spriteAtlas = loader.LoadSync<SpriteAtlas>("spriteatlas");
-			var square = spriteAtlas.GetSprite("shop");
-			
-			loader.AddObjectForDestroyWhenRecycle2Cache(square);
-
-			mImage.sprite = square;
-
-			yield return new WaitForSeconds(5.0f);
-
-			loader.Recycle2Cache();
-			loader = null;
-		}
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:eb493b6939a27db6c4ae2d2209cff98f10566d6f1fc8bcc87ba96d1668758a5f
+size 740

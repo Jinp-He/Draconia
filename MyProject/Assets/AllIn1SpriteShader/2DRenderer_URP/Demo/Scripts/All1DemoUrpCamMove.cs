@@ -1,25 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AllIn1SpriteShader
-{
-    public class All1DemoUrpCamMove : MonoBehaviour
-    {
-        [SerializeField] private float speed = 5;
-        private Vector2 input = Vector3.zero;
-        private Rigidbody2D rb;
-
-        public void Start()
-        {
-            rb = GetComponent<Rigidbody2D>();
-        }
-
-        public void FixedUpdate()
-        {
-            input.x = Input.GetAxis("Horizontal");
-            input.y = Input.GetAxis("Vertical");
-            rb.velocity = input * speed * Time.fixedDeltaTime;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0144af97b65e3b98043e1cd17b84cbbe5b02c839f5184201f1263df67d7194ba
+size 620

@@ -1,12 +1,3 @@
-{{~
-    name = x.name
-    key_type = x.key_ttype
-    value_type =  x.value_ttype
-~}}
-
-table {{x.flat_buffers_full_name}} {
-    // WARN! The name 'data_list' is used by FlatBuffersJsonExporter. don't modify it!
-    data_list:[{{flat_buffers_define_type value_type}}](required);
-}
-
-root_type {{x.flat_buffers_full_name}};
+version https://git-lfs.github.com/spec/v1
+oid sha256:b7ba36243cd03aac9562c3549b944c6ab783245107228b98ab6aab4824d8bc0a
+size 319

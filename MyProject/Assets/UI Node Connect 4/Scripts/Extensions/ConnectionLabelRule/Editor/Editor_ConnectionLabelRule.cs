@@ -1,20 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
-
-namespace MeadowGames.UINodeConnect4.Extension
-{
-    [CustomEditor(typeof(ConnectionLabelRule), true), CanEditMultipleObjects]
-    public class Editor_ConnectionLabelRule : Editor
-    {
-        public override void OnInspectorGUI()
-        {
-            ConnectionLabelRule labelRule = (ConnectionLabelRule)target;
-
-            ConnectionLabelRule.warnMultipleRulesInScene = EditorGUILayout.Toggle("Warn Multiple Rules In Scene",ConnectionLabelRule.warnMultipleRulesInScene);
-
-            DrawDefaultInspector();
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2352c99f55bd048ecf919697772aeba848e63005163b341b2ad105232a8050a3
+size 629

@@ -1,15 +1,3 @@
-﻿{{~
-    name = x.name
-    namespace_with_top_module = x.namespace_with_top_module
-    comment = x.comment
-    items = x.items
-~}}
-
-enum {{x.pb_full_name}} {
-    {{~for item in items ~}}
-    {{x.pb_full_name}}_{{item.name}} = {{item.int_value}};
-    {{~end~}}
-    {{~if items.empty?}}
-    {{x.pb_full_name}}_EMPTY_PLACEHOLDER = 0;
-    {{~end~}}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0db72252132bd3e1b1f11d8c0c78b3973c54f26b574cbe73df5ca827e31cf8ee
+size 348

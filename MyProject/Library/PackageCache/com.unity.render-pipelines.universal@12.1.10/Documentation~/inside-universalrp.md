@@ -1,8 +1,3 @@
-# Insid the Universal Render Pipeline
-
-In the following sections, you can read more about the technology inside the Universal Render Pipeline (URP):
-
-- [The URP Asset](universalrp-asset.md)
-- [Shader stripping](shader-stripping.md)
-- [Built-in Render Pipeline/URP comparison](universalrp-builtin-feature-comparison.md)
-- [Shading Models in URP](shading-model.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:5029e68144f266a45fc30fde306dec01d4b0522477d25a4a14ace3bb8648e997
+size 363

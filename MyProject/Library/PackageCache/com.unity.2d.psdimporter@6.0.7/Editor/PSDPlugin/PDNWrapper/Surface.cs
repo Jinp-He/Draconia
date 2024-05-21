@@ -1,34 +1,3 @@
-using Unity.Collections;
-using Unity.Collections.LowLevel.Unsafe;
-using UnityEngine;
-
-namespace PDNWrapper
-{
-    internal class Surface
-    {
-        NativeArray<Color32> m_Color;
-        public Surface(int w, int h)
-        {
-            width = w;
-            height = h;
-            m_Color = new NativeArray<Color32>(width * height, Allocator.Persistent);
-        }
-
-        public void Dispose()
-        {
-            if (m_Color.IsCreated)
-            {
-                m_Color.Dispose();
-                m_Color = default;
-            }
-        }
-
-        public NativeArray<Color32> color
-        {
-            get { return m_Color; }
-        }
-
-        public int width { get; private set; }
-        public int height { get; private set; }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d9e4b26e952de680bc4dc078079c020965540238606514462c81d63e735e3bf8
+size 757

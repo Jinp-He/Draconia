@@ -1,10 +1,3 @@
-# SpeedTree Shaders
-
-The Universal Render Pipeline uses the SpeedTree system for tree Shaders.  To read more about that, [read the SpeedTree documentation in the Unity main manual](https://docs.unity3d.com/Manual/SpeedTree.html).
-
-When you use SpeedTree Shaders in URP, keep the following in mind:
-
-* There is no Global Illumination on trees in URP.
-
-* Trees cannot receive shadows in URP.
-* In URP, you can configure whether lights should be per vertex of per pixel in the [URP Asset](universalrp-asset.md).
+version https://git-lfs.github.com/spec/v1
+oid sha256:3ac306d7c9701a1d0c952f56f7dff1c5cccfd02202eb3e92104004772c61de1c
+size 509

@@ -1,21 +1,3 @@
-﻿namespace QFramework.Example
-{
-	public class MainContainer : QFrameworkContainer, ISingleton
-	{
-		private MainContainer()
-		{
-		}
-
-		public static IQFrameworkContainer Container
-		{
-			get { return SingletonProperty<MainContainer>.Instance; }
-		}
-
-
-		void ISingleton.OnSingletonInit()
-		{
-			// 注册网络服务模块
-			RegisterInstance<INetworkExampleService>(new NetworkExampleService());
-		}
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:10be0d4beceb7cd12e0b0c4170002725df6b28841e20923394c392088cd0cf96
+size 405

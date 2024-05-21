@@ -1,28 +1,3 @@
-using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
-
-namespace UnityEditor.Rendering.Universal
-{
-    using CED = CoreEditorDrawer<UniversalRenderPipelineSerializedCamera>;
-
-    static partial class UniversalRenderPipelineCameraUI
-    {
-        static readonly ExpandedState<Expandable, Camera> k_ExpandedStatePreset = new(0, "URP-preset");
-
-        public static readonly CED.IDrawer PresetInspector = CED.Group(
-            CED.Group((serialized, owner) =>
-                EditorGUILayout.HelpBox(CameraUI.Styles.unsupportedPresetPropertiesMessage, MessageType.Info)),
-            CED.Group((serialized, owner) => EditorGUILayout.Space()),
-            CED.FoldoutGroup(
-                CameraUI.Styles.projectionSettingsHeaderContent,
-                Expandable.Projection,
-                k_ExpandedStatePreset,
-                FoldoutOption.Indent,
-                CED.Group(
-                    CameraUI.Drawer_Projection),
-                PhysicalCamera.Drawer),
-            Rendering.DrawerPreset
-        );
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0a1c3a75ad72bd4e9b75348ccdeabb748e265944b897134fc3617d06554fb152
+size 1057

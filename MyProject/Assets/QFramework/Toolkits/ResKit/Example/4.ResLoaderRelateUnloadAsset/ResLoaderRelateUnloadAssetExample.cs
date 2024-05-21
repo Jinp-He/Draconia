@@ -1,35 +1,3 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.UI;
-
-namespace QFramework.Example
-{
-    public class ResLoaderRelateUnloadAssetExample : MonoBehaviour
-    {
-        // Use this for initialization
-        IEnumerator Start()
-        {
-            var image = transform.Find("Image").GetComponent<Image>();
-
-            ResKit.Init();
-
-            var resLoader = ResLoader.Allocate();
-            
-            var texture2D = resLoader.LoadSync<Texture2D>("TextureExample1");
-
-            // create Sprite 扩展
-            var sprite = Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.one * 0.5f);
-
-            image.sprite = sprite;
-
-            // 添加关联的 Sprite
-            resLoader.AddObjectForDestroyWhenRecycle2Cache(sprite);
-
-            yield return new WaitForSeconds(5.0f);
-            
-            // 当释放时 sprite 也会销毁
-            resLoader.Recycle2Cache();
-            resLoader = null;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:5c3f8d0f51ac89bf3ee7b637d43962402e29868146b710c64d4b35db1bda239c
+size 994

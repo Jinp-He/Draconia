@@ -1,15 +1,3 @@
-{{
-    name = x.name
-    namespace = x.namespace
-    tables = x.tables
-}}
-
-class {{name}}:
-    {{~ for table in tables ~}}
-    #def {{table.name}} : return self._{{table.name}}
-    {{~end~}}
-
-    def __init__(self, loader):
-        {{~for table in tables ~}}
-        self.{{table.name}} = {{table.py_full_name}}(loader('{{table.output_data_file}}')); 
-        {{~end~}}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b6e140883b1b93bcc1287c98ef1a44f2fb7bf66049e459ab83995e8fbbde4f61
+size 370

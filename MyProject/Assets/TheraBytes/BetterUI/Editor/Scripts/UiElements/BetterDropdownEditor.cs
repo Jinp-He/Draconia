@@ -1,35 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEditor;
-using UnityEditor.UI;
-using UnityEditorInternal;
-using UnityEngine;
-using UnityEngine.UI;
-
-namespace TheraBytes.BetterUi.Editor
-{
-    [CustomEditor(typeof(BetterDropdown)), CanEditMultipleObjects]
-    public class BetterDropDownEditor : DropdownEditor
-    {
-        BetterElementHelper<Dropdown, BetterDropdown> helper =
-            new BetterElementHelper<Dropdown, BetterDropdown>();
-
-        public override void OnInspectorGUI()
-        {
-            base.OnInspectorGUI();
-
-            helper.DrawGui(serializedObject);
-
-            serializedObject.ApplyModifiedProperties();
-        }
-
-        [MenuItem("CONTEXT/Dropdown/♠ Make Better")]
-        public static void MakeBetter(MenuCommand command)
-        {
-            Dropdown sel = command.context as Dropdown;
-            Betterizer.MakeBetter<Dropdown, BetterDropdown>(sel);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:fd695bce96f5f799d78dec6df319f2c2668f379add3050a1c1ada2016a60a027
+size 962

@@ -1,30 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using MeadowGames.UINodeConnect4;
-using UnityEngine;
-
-namespace MeadowGames.UINodeConnect4.Extension
-{
-    // v4.1 - PortMatchRule extension added to facilitate the implementation of custom rules for connect ports by dragging
-    public abstract class PortMatchRule : MonoBehaviour
-    {
-        [SerializeField] static PortMatchRule _instance;
-        public static PortMatchRule Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = FindObjectOfType<PortMatchRule>();
-                }
-                return _instance;
-            }
-            set => _instance = value;
-        }
-
-        public virtual bool ExecuteRule(Port draggedPort, Port foundPort)
-        {
-            return true;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ba95a9b00bbc845011063adab33498cc10b4248292cfe04a6985181edf086ac1
+size 855

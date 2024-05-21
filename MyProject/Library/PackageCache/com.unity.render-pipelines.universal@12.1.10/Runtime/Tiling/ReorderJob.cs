@@ -1,27 +1,3 @@
-using Unity.Burst;
-using Unity.Collections;
-using Unity.Jobs;
-using Unity.Mathematics;
-
-namespace UnityEngine.Rendering.Universal
-{
-    [BurstCompile]
-    struct ReorderJob<T> : IJobFor
-        where T : struct
-    {
-        [ReadOnly]
-        public NativeArray<int> indices;
-
-        [ReadOnly]
-        public NativeArray<T> input;
-
-        [NativeDisableParallelForRestriction]
-        public NativeArray<T> output;
-
-        public void Execute(int index)
-        {
-            var newIndex = indices[index];
-            output[newIndex] = input[index];
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:5a6f2e70f4c9435feee2192dcafe7b7946545ad44459359b2655161b19cf7cec
+size 575

@@ -1,15 +1,3 @@
-using System;
-
-namespace UnityEngine.Rendering.Universal
-{
-    [Serializable, VolumeComponentMenuForRenderPipeline("Post-processing/Chromatic Aberration", typeof(UniversalRenderPipeline))]
-    public sealed class ChromaticAberration : VolumeComponent, IPostProcessComponent
-    {
-        [Tooltip("Use the slider to set the strength of the Chromatic Aberration effect.")]
-        public ClampedFloatParameter intensity = new ClampedFloatParameter(0f, 0f, 1f);
-
-        public bool IsActive() => intensity.value > 0f;
-
-        public bool IsTileCompatible() => false;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:75176766f21ff4f99246d027d2db8f5a1eed7e5917a49005b6dc5d0545b4d72f
+size 575

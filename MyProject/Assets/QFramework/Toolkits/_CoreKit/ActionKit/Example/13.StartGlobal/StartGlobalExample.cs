@@ -1,29 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace QFramework.Example
-{
-    public class StartGlobalExample : MonoBehaviour
-    {
-        // Start is called before the first frame update
-        void Start()
-        {
-
-            var action = ActionKit.Repeat()
-                .Delay(1.0f)
-                .Callback(() => Debug.Log("wait"))
-                .StartGlobal();
-            
-            // action.Pause();
-            // action.Resume();
-            // action.Deinit(); // Stop
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0dc47ce24a7345262975252392af15ebf441d50a1e3087dab4d8e04806bd16d7
+size 637

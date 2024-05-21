@@ -1,22 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace MeadowGames.UINodeConnect4.SampleScene.LogicGates
-{
-    public class ANDGate : Gate
-    {
-        public override void Solve()
-        {
-            GetInputs();
-
-            if (inputs.Count == 0)
-            {
-                Output = false;
-                return;
-            }
-
-            Output = inputs[0] && inputs[1];
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ea396511c1f55bbd486af0c7a71ed04d18995363463b9cea1a88d4f4eee6ba2f
+size 438

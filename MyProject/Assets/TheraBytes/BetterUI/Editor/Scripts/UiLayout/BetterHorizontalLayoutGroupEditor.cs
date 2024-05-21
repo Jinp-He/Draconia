@@ -1,26 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEditor;
-using UnityEngine;
-using UnityEngine.UI;
-
-namespace TheraBytes.BetterUi.Editor
-{
-#pragma warning disable 0618
-
-    [CustomEditor(typeof(BetterHorizontalLayoutGroup)), CanEditMultipleObjects]
-    public class BetterHorizontalLayoutGroupEditor
-        : BetterHorizontalOrVerticalLayoutGroupEditor<HorizontalLayoutGroup, BetterHorizontalLayoutGroup>
-    {
-
-        public override void OnInspectorGUI()
-        {
-            base.DrawObsoleteWarning();
-            base.OnInspectorGUI();
-        }
-    }
-#pragma warning restore 0618
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:796f2957220e4073caabc498139036757c5d0b1ee6a07dbd11430c9685653e9f
+size 639

@@ -1,8 +1,3 @@
-fileFormatVersion: 2
-guid: 7c8286e73fefabb43ac48d400f9f1d81
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 11400000
-  userData: 
-  assetBundleName: skeleton_rocket_asset
-  assetBundleVariant: 
+version https://git-lfs.github.com/spec/v1
+oid sha256:3518a60174cd61655107252fd3bc5c72f55d5f0ac793ff37ab27528feecdf932
+size 210

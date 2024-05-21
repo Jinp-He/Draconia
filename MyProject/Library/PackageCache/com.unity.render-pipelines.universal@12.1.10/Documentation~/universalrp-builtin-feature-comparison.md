@@ -1,3 +1,3 @@
-# Feature comparison table
-
-For an overview of the features supported in the Universal Render Pipeline (URP) compared to the other Unity render pipelines, refer to the page [Render pipeline feature comparison](https://docs.unity3d.com/2021.3/Documentation/Manual/render-pipelines-feature-comparison.html).
+version https://git-lfs.github.com/spec/v1
+oid sha256:2786ce1d022b2d56c5e1593ee5e682bf123190892dcba25085502967d3efb0ef
+size 305

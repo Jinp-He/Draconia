@@ -1,16 +1,3 @@
-﻿/****************************************************************************
- * Copyright (c) 2017 ~ 2023 liangxie UNDER MIT LICENSE
- * 
- * https://qframework.cn
- * https://github.com/liangxiegame/QFramework
- ****************************************************************************/
-
-using UnityEngine;
-
-namespace QFramework
-{
-    [AddComponentMenu("QFramework/CodeGenKit/Bind")]
-    public class Bind : AbstractBind
-    {
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ccf45f0fa1313ed9f9b5e2d9b0011c53853881894dc5328e87890e11f6136049
+size 438

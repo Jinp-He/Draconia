@@ -1,14 +1,3 @@
-[
-  {
-    "ID": 0,
-    "CharacterList": [
-      "Zhouzhou",
-      "Rocket",
-      "Irene"
-    ],
-    "EnemyList": [
-      20001,
-      20002
-    ]
-  }
-]
+version https://git-lfs.github.com/spec/v1
+oid sha256:9e7465d52e9327a412c5bd85cdaef27e1bd45016ad0715e79203f041040c31a5
+size 152

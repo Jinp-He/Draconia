@@ -1,23 +1,3 @@
-# How to add a Renderer Feature to a Renderer
-
-To add a Renderer Feature to a Renderer:
-
-1. In the __Project__ window, select a Renderer.
-
-    ![Select a Renderer.](Images/post-proc/ssao/ssao-select-renderer.png)
-
-    The Inspector window shows the the Renderer properties.
-
-    ![Inspector window shows the Renderer properties.](Images\post-proc\ssao\ssao-inspector-no-rend-features.png)
-
-2. In the Inspector window, select __Add Renderer Feature__. In the list, select a Renderer Feature.
-
-    ![Select __Add Renderer Feature__, then select a Renderer Feature.](Images/urp-assets/urp-select-renderer-feature.png)
-
-    Unity adds the selected Renderer Feature to the Renderer.
-
-    ![New Renderer Feature added.](Images/urp-assets/urp-renderer-feature-render-objects.png)
-
-Unity shows Renderer Features as child items of the Renderer in the Project Window:
-
-![Renderer Feature as child item of the Renderer in the Project Window](Images/urp-assets/urp-renderer-feature-in-project-window.png)
+version https://git-lfs.github.com/spec/v1
+oid sha256:f48bb12bd1653b2726eafb4dc90d7391ac6ec96dc7e166a73f344f8d59717a7b
+size 993

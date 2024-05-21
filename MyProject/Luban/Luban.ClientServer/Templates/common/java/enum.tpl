@@ -1,23 +1,3 @@
-{{~
-    name = x.name
-    namespace_with_top_module = x.namespace_with_top_module
-    comment = x.comment
-    items = x.items
-~}}
-
-package {{namespace_with_top_module}};
-{{~if comment != '' ~}}
-/**
- * {{comment | html.escape}}
- */
-{{~end~}}
-public final class {{name}} {
-    {{~ for item in items ~}}
-{{~if item.comment != '' ~}}
-    /**
-     * {{item.escape_comment}}
-     */
-{{~end~}}
-    public static final int {{item.name}} = {{item.int_value}};
-    {{~end~}}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b2c4898414fb2834f249738d73b573b4cb4659a5f6fa4e880a2f87aec595dab1
+size 467

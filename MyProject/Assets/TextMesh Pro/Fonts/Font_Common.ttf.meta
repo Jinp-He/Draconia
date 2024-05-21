@@ -1,21 +1,3 @@
-fileFormatVersion: 2
-guid: a21dc9a906084244bac421d3c8bb5f10
-TrueTypeFontImporter:
-  externalObjects: {}
-  serializedVersion: 4
-  fontSize: 16
-  forceTextureCase: -2
-  characterSpacing: 0
-  characterPadding: 1
-  includeFontData: 1
-  fontNames:
-  - LXGW WenKai
-  fallbackFontReferences: []
-  customCharacters: 
-  fontRenderingMode: 0
-  ascentCalculationMode: 1
-  useLegacyBoundsCalculation: 0
-  shouldRoundAdvanceValue: 1
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+version https://git-lfs.github.com/spec/v1
+oid sha256:62d6b22ef176a408b42ee769abbfc3aae749a8e727c9b16f59b4ef86d61a2286
+size 476

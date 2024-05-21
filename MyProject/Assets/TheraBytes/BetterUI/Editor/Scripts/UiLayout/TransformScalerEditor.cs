@@ -1,25 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEditor;
-
-namespace TheraBytes.BetterUi.Editor
-{
-    [CustomEditor(typeof(TransformScaler)), CanEditMultipleObjects]
-    public class TransformScalerEditor : UnityEditor.Editor
-    {
-        SerializedProperty scaleSizerFallback, scaleSizerCollection;
-
-        void OnEnable()
-        {
-            scaleSizerFallback = serializedObject.FindProperty("scaleSizerFallback");
-            scaleSizerCollection = serializedObject.FindProperty("customScaleSizers");
-        }
-
-        public override void OnInspectorGUI()
-        {
-            ScreenConfigConnectionHelper.DrawSizerGui("Scale Settings", scaleSizerCollection, ref scaleSizerFallback);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:82a87c69afd125b1bcb73a290fbe0c2e742d36d69130289a1259c9f1176e3c1e
+size 763

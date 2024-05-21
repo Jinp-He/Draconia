@@ -1,17 +1,3 @@
-﻿using System.Net;
-
-namespace FlyingWormConsole3.LiteNetLib.Layers
-{
-    public abstract class PacketLayerBase
-    {
-        public readonly int ExtraPacketSizeForLayer;
-
-        protected PacketLayerBase(int extraPacketSizeForLayer)
-        {
-            ExtraPacketSizeForLayer = extraPacketSizeForLayer;
-        }
-
-        public abstract void ProcessInboundPacket(IPEndPoint endPoint, ref byte[] data, ref int offset, ref int length);
-        public abstract void ProcessOutBoundPacket(IPEndPoint endPoint, ref byte[] data, ref int offset, ref int length);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:47782a304c077cbcde980ad8847eec0cc119b2986adbbb1838cc5cef8318738b
+size 571

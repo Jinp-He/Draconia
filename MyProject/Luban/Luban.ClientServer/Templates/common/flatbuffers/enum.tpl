@@ -1,15 +1,3 @@
-﻿{{~
-    name = x.name
-    namespace_with_top_module = x.namespace_with_top_module
-    comment = x.comment
-    items = x.items
-~}}
-
-enum {{x.flat_buffers_full_name}}:int {
-    {{~if !x.has_zero_value_item~}}
-    __GENERATE_DEFAULT_VALUE = 0,
-    {{~end~}}
-    {{~for item in items ~}}
-    {{x.pb_full_name}}_{{item.name}} = {{item.int_value}},
-    {{~end~}}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:773c21e76e349ceb90dec2e76b050874e205fea4ebd7f8b0330965e96aa12b6b
+size 361

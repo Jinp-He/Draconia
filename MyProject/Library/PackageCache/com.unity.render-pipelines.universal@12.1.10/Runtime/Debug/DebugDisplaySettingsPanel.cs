@@ -1,22 +1,3 @@
-using System.Collections.Generic;
-
-namespace UnityEngine.Rendering.Universal
-{
-    public abstract class DebugDisplaySettingsPanel : IDebugDisplaySettingsPanelDisposable
-    {
-        private readonly List<DebugUI.Widget> m_Widgets = new List<DebugUI.Widget>();
-
-        public abstract string PanelName { get; }
-        public DebugUI.Widget[] Widgets => m_Widgets.ToArray();
-
-        protected void AddWidget(DebugUI.Widget widget)
-        {
-            m_Widgets.Add(widget);
-        }
-
-        public void Dispose()
-        {
-            m_Widgets.Clear();
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0da3a784e07d4771f872cee785199d5318930e1bd058408fcea0c2e1dee9d7cb
+size 579

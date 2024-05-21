@@ -1,16 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace MeadowGames.UINodeConnect4.SampleScene.LogicGates
-{
-    public class ValueGate : Gate
-    {
-        public bool value;
-
-        public override void Solve()
-        {
-            Output = value;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:27490184641b193f7f9bf3bcbcea3cb2934975b6999f4148e68976df7901cbd5
+size 305

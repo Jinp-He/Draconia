@@ -1,32 +1,3 @@
-{{
-    name = x.name
-    namespace = x.namespace
-    tables = x.tables
-
-}}
-
-type JsonLoader = (file: string) => any
-
-export class {{name}} {
-    {{~ for table in tables ~}}
-    private _{{table.name}}: {{table.full_name}}
-{{~if table.comment != '' ~}}
-    /**
-     * {{table.escape_comment}}
-     */
-{{~end~}}
-    get {{table.name}}(): {{table.full_name}}  { return this._{{table.name}};}
-    {{~end~}}
-
-    constructor(loader: JsonLoader) {
-        let tables = new Map<string, any>()
-        {{~for table in tables ~}}
-        this._{{table.name}} = new {{table.full_name}}(loader('{{table.output_data_file}}'))
-        tables.set('{{table.full_name}}', this._{{table.name}})
-        {{~end~}}
-
-        {{~ for table in tables ~}}
-        this._{{table.name}}.resolve(tables)
-        {{~end~}}
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:3af85eb784f0b3f4189948967fbe5dfe788dc4717e5397c610e5c71a588a6db3
+size 804

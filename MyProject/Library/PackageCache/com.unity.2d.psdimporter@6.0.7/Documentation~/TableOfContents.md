@@ -1,5 +1,3 @@
-* [PSD Importer Overview](index)
-* [PSD Importer Inspector properties](PSD-importer-properties)
-* [Skeleton sharing](skeleton-sharing)
-* [How SpriteRect data is used](PSD-importer-SpriteRect)
-* [PSD File Importer Override](PSD-override)
+version https://git-lfs.github.com/spec/v1
+oid sha256:3f0605927fc3ac6fd5a1aa12d848c01607aec4f47c2c5650b09a7cc4b00cdd28
+size 237

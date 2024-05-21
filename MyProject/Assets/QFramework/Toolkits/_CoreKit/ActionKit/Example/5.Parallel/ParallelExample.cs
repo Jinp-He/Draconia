@@ -1,21 +1,3 @@
-﻿using UnityEngine;
-
-namespace QFramework.Example
-{
-    public class ParallelExample : MonoBehaviour
-    {
-        void Start()
-        {
-            Debug.Log("Parallel Start:" + Time.time);
-
-            ActionKit.Parallel()
-                .Delay(1.0f, () => { Debug.Log(Time.time); })
-                .Delay(2.0f, () => { Debug.Log(Time.time); })
-                .Delay(3.0f, () => { Debug.Log(Time.time); })
-                .Start(this, () =>
-                {
-                    Debug.Log("Parallel Finish:" + Time.time);
-                });
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d210c0709d5de7b723a376e619ff0bad12c3cc04f07d11b9e6b1db3f05c6f3a7
+size 567

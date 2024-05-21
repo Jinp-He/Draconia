@@ -1,35 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEditor;
-using UnityEditor.UI;
-using UnityEditorInternal;
-using UnityEngine;
-using UnityEngine.UI;
-
-namespace TheraBytes.BetterUi.Editor
-{
-    [CustomEditor(typeof(BetterButton)), CanEditMultipleObjects]
-    public class BetterButtonEditor : ButtonEditor
-    {
-        BetterElementHelper<Button, BetterButton> helper =
-            new BetterElementHelper<Button, BetterButton>();
-
-        public override void OnInspectorGUI()
-        {
-            base.OnInspectorGUI();
-
-            helper.DrawGui(serializedObject);
-
-            serializedObject.ApplyModifiedProperties();
-        }
-
-        [MenuItem("CONTEXT/Button/♠ Make Better")]
-        public static void MakeBetter(MenuCommand command)
-        {
-            Button btn = command.context as Button;
-            Betterizer.MakeBetter<Button, BetterButton>(btn);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:7755f44eaefd4b301b81073042355d9041a3b3ac8dba85735c6b8648e1d664dc
+size 938

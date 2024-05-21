@@ -1,32 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using MeadowGames.UINodeConnect4;
-using UnityEngine;
-
-namespace MeadowGames.UINodeConnect4.Extra
-{
-    public class ConstantUpdateLines : MonoBehaviour
-    {
-        public GraphManager graphManager;
-
-        void OnEnable()
-        {
-            graphManager = GetComponentInParent<GraphManager>();
-            if (graphManager)
-                UICSystemManager.AddToUpdate(OnUpdate);
-        }
-
-        void OnDisable()
-        {
-            UICSystemManager.RemoveFromUpdate(OnUpdate);
-        }
-
-        void OnUpdate()
-        {
-            foreach (Connection conn in UICSystemManager.Connections)
-            {
-                conn.UpdateLine();
-            }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:99283007b506930b1f1a3c83c3774fcb35c8363b86fb5853247c879676c2f5bd
+size 744

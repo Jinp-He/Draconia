@@ -1,25 +1,3 @@
-{{~
-    name = x.name
-    namespace_with_top_module = x.namespace_with_top_module
-    comment = x.comment
-    items = x.items
-~}}
-
-{{~if comment != '' ~}}
-/**
- * {{comment | html.escape}}
- */
-{{~end~}}
-#[allow(dead_code)]
-#[allow(non_camel_case_types)]
-pub enum {{x.rust_full_name}} {
-    {{~for item in items ~}}
-{{~if item.comment != '' ~}}
-    /**
-     * {{item.escape_comment}}
-     */
-{{~end~}}
-    {{item.name}} = {{item.int_value}},
-    {{~end~}}
-}
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:e354f517e2757b52b88988f5f28ba56a1ac5a3629a0c56d7a7579a92ace90b80
+size 457

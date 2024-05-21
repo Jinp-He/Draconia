@@ -1,11 +1,3 @@
-namespace UnityEngine.Rendering.Universal
-{
-    public interface IDebugDisplaySettingsData : IDebugDisplaySettingsQuery
-    {
-        /// <summary>
-        /// Creates the debug UI panel needed for these debug settings.
-        /// </summary>
-        /// <returns>The debug UI panel created.</returns>
-        IDebugDisplaySettingsPanelDisposable CreatePanel();
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:1241d84b1b339ff09213743dbd8bbf80c9097419547adc9cb6c4b0daf6ed84f3
+size 370

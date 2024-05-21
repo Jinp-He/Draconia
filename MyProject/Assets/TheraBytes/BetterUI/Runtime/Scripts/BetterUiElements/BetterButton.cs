@@ -1,34 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
-
-namespace TheraBytes.BetterUi
-{   
-    [HelpURL("https://documentation.therabytes.de/better-ui/BetterButton.html")]
-    [AddComponentMenu("Better UI/Controls/Better Button", 30)]
-    public class BetterButton : Button, IBetterTransitionUiElement
-    {
-        public List<Transitions> BetterTransitions { get { return betterTransitions; } }
-
-        [SerializeField, DefaultTransitionStates]
-        List<Transitions> betterTransitions = new List<Transitions>();
-
-        protected override void DoStateTransition(SelectionState state, bool instant)
-        {
-            base.DoStateTransition(state, instant);
-
-            if (!(base.gameObject.activeInHierarchy))
-                return;
-
-            foreach (var info in betterTransitions)
-            {
-                info.SetState(state.ToString(), instant);
-            }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:88ddfdc3aca692a086d357a34792b7bc342c7adaaab865ba3d4ff240ce9d7c3f
+size 1034

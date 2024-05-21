@@ -1,7 +1,3 @@
-using System.Runtime.CompilerServices;
-
-[assembly: InternalsVisibleTo("Unity.2D.Animation.Runtime")]
-[assembly: InternalsVisibleTo("Unity.2D.Animation.Editor")]
-[assembly: InternalsVisibleTo("Unity.2D.Animation.Tests.RuntimeTests")]
-[assembly: InternalsVisibleTo("Unity.2D.IK.Editor")]
-[assembly: InternalsVisibleTo("Unity.2D.PSDImporter.Editor")]
+version https://git-lfs.github.com/spec/v1
+oid sha256:e617a76045ae84963da1e9e7b933eee7d65e64d0c120ddf48655f0b88d7a5ab2
+size 348

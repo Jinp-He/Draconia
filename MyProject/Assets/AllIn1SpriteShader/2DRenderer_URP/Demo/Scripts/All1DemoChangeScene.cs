@@ -1,33 +1,3 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
-
-namespace AllIn1SpriteShader
-{
-    public class All1DemoChangeScene : MonoBehaviour
-    {
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                NextScene();
-            }
-        }
-
-        public void NextScene()
-        {
-            if (SceneManager.sceneCountInBuildSettings <= SceneManager.GetActiveScene().buildIndex + 1)
-            {
-                SceneManager.LoadScene(0);
-            }
-            else
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
-        }
-
-        public void LoadScene(string sceneName)
-        {
-            SceneManager.LoadScene(sceneName);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6698d296c729a9fb4581408f5db0e3d4c41d58924577e80d22cf39d1e90e9a9b
+size 782

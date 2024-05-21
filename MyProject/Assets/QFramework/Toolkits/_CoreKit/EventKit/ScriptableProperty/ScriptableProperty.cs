@@ -1,20 +1,3 @@
-﻿/****************************************************************************
- * Copyright (c) 2016 - 2022 liangxiegame UNDER MIT License
- * 
- * https://qframework.cn
- * https://github.com/liangxiegame/QFramework
- * https://gitee.com/liangxiegame/QFramework
- ****************************************************************************/
-
-using UnityEngine;
-
-namespace QFramework.Experimental
-{
-    public abstract class ScriptableProperty : ScriptableObject
-    {
-        /// <summary>
-        /// Reset the value to it's inital value if it's resettable
-        /// </summary>
-        public abstract void ResetValue();
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:db37f8858e5419a81dba3971170108b1b31bbe66622ab4434cb9e7748b9a340e
+size 631

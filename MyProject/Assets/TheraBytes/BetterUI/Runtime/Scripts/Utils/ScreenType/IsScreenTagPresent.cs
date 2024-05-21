@@ -1,27 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-
-namespace TheraBytes.BetterUi
-{
-    [Serializable]
-    public class IsScreenTagPresent : IScreenTypeCheck
-    {
-        [SerializeField]
-        string screenTag;
-        public string ScreenTag { get { return screenTag; } set { screenTag = value; } }
-
-        [SerializeField]
-        bool isActive;
-
-        public bool IsActive { get { return isActive; } set { isActive = value; } }
-
-        public bool IsScreenType()
-        {
-            var curentTags = ResolutionMonitor.CurrentScreenTags as HashSet<string>;
-            return curentTags.Contains(screenTag);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:080a7410d85f331b3d11234c31f31929bb599b320c5198cd715175fe4eb5f814
+size 695

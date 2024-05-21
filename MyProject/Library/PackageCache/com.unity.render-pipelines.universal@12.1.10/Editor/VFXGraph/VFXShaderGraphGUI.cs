@@ -1,17 +1,3 @@
-#if HAS_VFX_GRAPH
-using UnityEngine;
-using UnityEngine.Rendering;
-
-namespace UnityEditor.Rendering.Universal
-{
-    internal class VFXShaderGraphLitGUI : ShaderGraphLitGUI
-    {
-        protected override uint materialFilter => uint.MaxValue & ~(uint)Expandable.SurfaceInputs;
-    }
-
-    internal class VFXShaderGraphUnlitGUI : ShaderGraphUnlitGUI
-    {
-        protected override uint materialFilter => uint.MaxValue & ~(uint)Expandable.SurfaceInputs;
-    }
-}
-#endif
+version https://git-lfs.github.com/spec/v1
+oid sha256:6082f688edc91ce13c1c23d0025a1da40aa8263b2848e6f93cac47c7940ab78a
+size 467

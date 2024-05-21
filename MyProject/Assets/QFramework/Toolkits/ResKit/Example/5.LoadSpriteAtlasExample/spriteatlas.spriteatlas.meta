@@ -1,10 +1,3 @@
-fileFormatVersion: 2
-guid: dee09b55b94b045b695df597fdf24175
-timeCreated: 1544453919
-licenseType: Pro
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 4343727234628468602
-  userData: 
-  assetBundleName: spriteatlas_spriteatlas
-  assetBundleVariant: 
+version https://git-lfs.github.com/spec/v1
+oid sha256:960253d618dfc0e1d3a27abb7c28bc8dddcb181e144c58edb1798b76c3eba84f
+size 264

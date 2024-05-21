@@ -1,21 +1,3 @@
-using UnityEngine;
-using UnityEditor.ShaderGraph;
-
-namespace UnityEditor.Rendering.Universal.ShaderGraph
-{
-    static class UniversalBlockFields
-    {
-        [GenerateBlocks("Universal Render Pipeline")]
-        public struct SurfaceDescription
-        {
-            public static string name = "SurfaceDescription";
-            public static BlockFieldDescriptor SpriteMask = new BlockFieldDescriptor(SurfaceDescription.name, "SpriteMask", "Sprite Mask", "SURFACEDESCRIPTION_SPRITEMASK",
-                new ColorRGBAControl(new Color(1, 1, 1, 1)), ShaderStage.Fragment);
-
-            public static BlockFieldDescriptor NormalAlpha = new BlockFieldDescriptor(SurfaceDescription.name, "NormalAlpha", "Normal Alpha", "SURFACEDESCRIPTION_NORMALALPHA",
-                new FloatControl(1.0f), ShaderStage.Fragment);
-            public static BlockFieldDescriptor MAOSAlpha = new BlockFieldDescriptor(SurfaceDescription.name, "MAOSAlpha", "MAOS Alpha", "SURFACEDESCRIPTION_MAOSALPHA",
-                new FloatControl(1.0f), ShaderStage.Fragment);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:4a82291bb0e764de1f461b0631633f067a87d1e060277ee29f9b7059612e47c6
+size 1063

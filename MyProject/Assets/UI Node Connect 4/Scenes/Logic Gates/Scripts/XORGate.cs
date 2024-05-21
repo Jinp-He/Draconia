@@ -1,22 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace MeadowGames.UINodeConnect4.SampleScene.LogicGates
-{
-    public class XORGate : Gate
-    {
-        public override void Solve()
-        {
-            GetInputs();
-
-            if (inputs.Count == 0)
-            {
-                Output = false;
-                return;
-            }
-
-            Output = inputs[0] ^ inputs[1];
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:addda1e786720e8ce5d8d4cadc19b8314bed99f6632290a57e4ca5b0c3be68db
+size 437

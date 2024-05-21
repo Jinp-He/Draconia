@@ -1,20 +1,3 @@
-﻿namespace QFramework
-{
-    internal class PackageMakerModel
-    {
-        public static void InitState()
-        {
-            InEditorView.Value = true;
-            InFinishView.Value = false;
-            InUploadingView.Value = false;
-            NoticeMessage.Value = "";
-            UpdateResult.Value = "";
-        }
-        
-        public static BindableProperty<bool> InEditorView = new BindableProperty<bool>(true);
-        public static BindableProperty<bool> InFinishView = new BindableProperty<bool>(true);
-        public static BindableProperty<bool> InUploadingView = new BindableProperty<bool>(true);
-        public static BindableProperty<string> NoticeMessage = new BindableProperty<string>("");
-        public static BindableProperty<string> UpdateResult = new BindableProperty<string>("");
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:3a0308372b6ed4d3986011f3c516cf93e3f3e6533de0cad29272e10a5ed3dcc3
+size 819

@@ -1,24 +1,3 @@
-﻿using UnityEngine;
-
-namespace QFramework.Example
-{
-    public class EventTriggerExample : MonoBehaviour
-    {
-        void Start()
-        {
-            GameObject.Find("Ground").OnTriggerEnter2DEvent(collider2D1 =>
-            {
-                Debug.Log(collider2D1.name + ": entered");
-                
-            }).UnRegisterWhenGameObjectDestroyed(gameObject);
-
-            var uiImage = GameObject.Find("Canvas/Image");
-
-            uiImage.OnPointerDownEvent(data =>
-            {
-                Debug.Log("Click");
-                
-            }).UnRegisterWhenGameObjectDestroyed(gameObject);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:12de394e8cd199ecea286d30a3f2adee09479fbb53a443b847e6bf91d998dac8
+size 626

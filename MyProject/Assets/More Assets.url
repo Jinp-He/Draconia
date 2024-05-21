@@ -1,9 +1,3 @@
-[DEFAULT]
-BASEURL=http://www.cgsoso.com/
-[InternetShortcut]
-URL=http://www.cgsoso.com/
-IDList=
-IconFile=http://www.cgsoso.com/favicon.ico
-IconIndex=1
-[{000214A0-0000-0000-C000-000000000046}]
-Prop3=19,2
+version https://git-lfs.github.com/spec/v1
+oid sha256:55f64a719e6d6d33fc6dee7b559a646fb9a1f3923483204da4ecd5bbf2382a64
+size 201

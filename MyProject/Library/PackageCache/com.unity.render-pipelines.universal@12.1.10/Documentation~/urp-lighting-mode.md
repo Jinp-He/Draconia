@@ -1,9 +1,3 @@
-# Lighting Mode
-
-The [Lighting Mode](https://docs.unity3d.com/Manual/lighting-mode.html) that you choose in the Lighting window determines the behavior of all Mixed Lights in the current Scene.
-
-URP supports the following Lighting Modes:
-
-* [Baked Indirect](https://docs.unity3d.com/Manual/LightMode-Mixed-BakedIndirect.html)
-* [Subtractive](https://docs.unity3d.com/Manual/LightMode-Mixed-Subtractive.html)
-* [Shadowmask](https://docs.unity3d.com/Manual/LightMode-Mixed-Shadowmask.html)
+version https://git-lfs.github.com/spec/v1
+oid sha256:5fd1730859b600d834590dbab0452ab694dc0fafb3d9272ab5bb1a254c71d588
+size 488

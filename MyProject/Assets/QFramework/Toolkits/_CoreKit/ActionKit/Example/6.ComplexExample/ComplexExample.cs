@@ -1,31 +1,3 @@
-using UnityEngine;
-
-namespace QFramework.Example
-{
-    public class ComplexExample : MonoBehaviour
-    {
-        private void Start()
-        {
-            ActionKit.Sequence()
-                .Callback(() => Debug.Log("Sequence Start"))
-                .Callback(() => Debug.Log("Parallel Start"))
-                .Parallel(p =>
-                {
-                    p.Delay(1.0f, () => Debug.Log("Delay 1s Finished"))
-                        .Delay(2.0f, () => Debug.Log("Delay 2s Finished"));
-                })
-                .Callback(() => Debug.Log("Parallel Finished"))
-                .Callback(() => Debug.Log("Check Mouse Clicked"))
-                .Sequence(s =>
-                {
-                    s.Condition(() => Input.GetMouseButton(0))
-                        .Callback(() => Debug.Log("Mouse Clicked"));
-                })
-                .Start(this, () =>
-                {
-                    Debug.Log("Finish");
-                    
-                });
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:27f21550d2614902a78de28a938c0bd5c602ceeeefed851d50d7193ab2bf33f0
+size 997

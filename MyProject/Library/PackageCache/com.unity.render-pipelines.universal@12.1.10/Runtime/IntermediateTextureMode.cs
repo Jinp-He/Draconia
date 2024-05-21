@@ -1,17 +1,3 @@
-namespace UnityEngine.Rendering.Universal
-{
-    /// <summary>
-    /// Controls when URP renders via an intermediate texture.
-    /// </summary>
-    public enum IntermediateTextureMode
-    {
-        /// <summary>
-        /// Uses information declared by active Renderer Features to automatically determine whether to render through an intermediate texture or not.
-        /// </summary>
-        Auto,
-        /// <summary>
-        /// Forces rendering via an intermediate texture if any Renderer Feature is active, enabling compatibility with renderer features that do not declare their needed inputs, but can have a significant performance impact on some platforms.
-        /// </summary>
-        Always
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:154857554e47be3a658014c6e05f14363bc096a6359b384a65a636968d78d9c8
+size 712

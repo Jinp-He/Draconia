@@ -11990,3 +11990,9 @@ MyProject/Assets/_Resources/Art/Font filter=lfs diff=lfs merge=lfs -text
 /MyProject/Library/Artifacts/fe/fe6f707d77742020750eef106e17b6cb filter=lfs diff=lfs merge=lfs -text
 /MyProject/Library/Artifacts/fe/fee1f151920ae6a75d418ccbf6559329 filter=lfs diff=lfs merge=lfs -text
 /MyProject/Library/AtlasCache/13/130b65aaea682edec4f797f3f9cad4d1 filter=lfs diff=lfs merge=lfs -text
+/MyProject/Library/Artifacts/34/3481e94e7077db2ee007d3d8e8679f8c filter=lfs diff=lfs merge=lfs -text
+/MyProject/Library/Artifacts/5a/5a70668835d2c0bb6d36d6953f9c3e07 filter=lfs diff=lfs merge=lfs -text
+/MyProject/Library/Artifacts/61/61cdd2d7b6b119b3f21f59cff1a03a98 filter=lfs diff=lfs merge=lfs -text
+/MyProject/Library/Artifacts/af/afc56ccbabad34c3d0d177d468802de4 filter=lfs diff=lfs merge=lfs -text
+/MyProject/Library/Artifacts/c1/c154322b80a4851a389a6d9efa9a9ba6 filter=lfs diff=lfs merge=lfs -text
+/tory filter=lfs diff=lfs merge=lfs -text

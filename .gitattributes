@@ -19,6 +19,9 @@ MyProject/Assets/_Resources/Art/Font/BianTaOSDF.asset filter=lfs diff=lfs merge=
 MyProject/Assets/_Resources/Art/Font/MapPanel/MapPanelFontSDF.asset filter=lfs diff=lfs merge=lfs -text
 MyProject/Assets/_Resources/Art/Font/MapPanel/MapPanelDescFontSDF.asset filter=lfs diff=lfs merge=lfs -text
 MyProject/Assets/_Resources/Art/Font/DouyinSansBoldSDF.asset filter=lfs diff=lfs merge=lfs -text
+MyProject/Assets/_Resources/Art/Font/DouyinSansBold filter=lfs diff=lfs merge=lfs -text
+MyProject/Assets/_Resources/Art/Font/DouyinSansBold_SDF.asset filter=lfs diff=lfs merge=lfs -text
+MyProject/Assets/_Resources/Art/Font filter=lfs diff=lfs merge=lfs -text
 *.gitignore filter=lfs diff=lfs merge=lfs -text
 *.xml filter=lfs diff=lfs merge=lfs -text
 *.xlsx filter=lfs diff=lfs merge=lfs -text

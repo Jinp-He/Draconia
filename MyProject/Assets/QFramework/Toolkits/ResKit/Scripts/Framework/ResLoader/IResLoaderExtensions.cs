@@ -32,9 +32,17 @@ var texture =mResLoader.LoadSync<Texture2D>(""MyAsset"");
 texture = mResLoader.LoadSync<Texture2D>(""MyBundle"",""MyAsset"");
 ")]
 #endif
+        public static bool CheckLoad<T>(this IResLoader self, string assetName) where T : Object
+        {
+            var resSearchKeys = ResSearchKeys.Allocate(assetName, null, typeof(T));
+            //Debug.Log("#ResLoadSystem# " + resSearchKeys);
+            return ResMgr.Instance.CheckCreate(resSearchKeys);
+        }
+        
         public static T LoadSync<T>(this IResLoader self, string assetName) where T : Object
         {
             var resSearchKeys = ResSearchKeys.Allocate(assetName, null, typeof(T));
+            Debug.Log("#ResLoadSystem# " + resSearchKeys);
             var retAsset = self.LoadAssetSync(resSearchKeys) as T;
             resSearchKeys.Recycle2Cache();
             return retAsset;
@@ -47,6 +55,8 @@ texture = mResLoader.LoadSync<Texture2D>(""MyBundle"",""MyAsset"");
             resSearchKeys.Recycle2Cache();
             return retAsset;
         }
+        
+        
         
 #if UNITY_EDITOR
         [MethodAPI]

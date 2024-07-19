@@ -1,3 +1,42 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:317182917096c94a08d50f37c15fa2cc9d39bec60c96a2ba8cc6018613676348
-size 869
+[
+  {
+    "Index": 1,
+    "TileName": "一向地图块",
+    "NoEventRate": 0.5,
+    "NormalEnemyRate": 0,
+    "EliteEnemyRate": 0,
+    "RandomEventRate": 0.5
+  },
+  {
+    "Index": 2,
+    "TileName": "二向地图块1",
+    "NoEventRate": 0.3,
+    "NormalEnemyRate": 0.3,
+    "EliteEnemyRate": 0.1,
+    "RandomEventRate": 0.3
+  },
+  {
+    "Index": 3,
+    "TileName": "二向地图块2",
+    "NoEventRate": 0.3,
+    "NormalEnemyRate": 0.3,
+    "EliteEnemyRate": 0.1,
+    "RandomEventRate": 0.3
+  },
+  {
+    "Index": 4,
+    "TileName": "三向地图块",
+    "NoEventRate": 0.2,
+    "NormalEnemyRate": 0.5,
+    "EliteEnemyRate": 0.1,
+    "RandomEventRate": 0.2
+  },
+  {
+    "Index": 5,
+    "TileName": "四向地图块",
+    "NoEventRate": 0,
+    "NormalEnemyRate": 0.5,
+    "EliteEnemyRate": 0.4,
+    "RandomEventRate": 0.1
+  }
+]

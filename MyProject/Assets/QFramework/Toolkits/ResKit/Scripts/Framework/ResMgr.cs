@@ -142,6 +142,16 @@ namespace QFramework
                 yield return null;
             }
         }
+        
+        public bool CheckCreate(ResSearchKeys resSearchKeys)
+        {
+            var retRes = ResFactory.mResCreators
+                .Where(creator => creator.Match(resSearchKeys))
+                .Select(creator => creator.Create(resSearchKeys))
+                .FirstOrDefault();
+
+            return retRes != null;
+        }
 
         public void InitResMgr()
         {

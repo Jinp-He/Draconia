@@ -19,10 +19,10 @@
       103,
       104,
       105,
-      106,
       107,
-      108,
-      109
+      110,
+      109,
+      116
     ],
     "NormalAttackCard": [
       100,
@@ -108,5 +108,43 @@
     "BackNum": 4,
     "Passive": "",
     "PassiveDesc": ""
+  },
+  {
+    "id": 10004,
+    "Name": "廷巴克图",
+    "AttackPower": 3,
+    "AttackPreCD": 12,
+    "AttackPostCD": 55,
+    "AttackRange": 2,
+    "AttackRecover": 2,
+    "Speed": 33,
+    "InitialHP": 25,
+    "CriticalHitRate": 0.2,
+    "CriticalDamage": 2,
+    "HitRate": 1,
+    "DodgeRate": 0.1,
+    "Armor": 0,
+    "MagicResist": 0,
+    "InitialCards": [
+      103,
+      104,
+      105,
+      107,
+      110,
+      109,
+      116
+    ],
+    "NormalAttackCard": [
+      100,
+      101,
+      102
+    ],
+    "PassiveModifier": 1,
+    "HitDecreaseRate": 1,
+    "Alias": "Timbuktu",
+    "DrawCardNum": 3,
+    "BackNum": 3,
+    "Passive": "避柳",
+    "PassiveDesc": "场上有单位进入危险区时减少自身*PassiveModifier*费用。一次行动只能触发一次。（直到下个回合无法触发）"
   }
 ]

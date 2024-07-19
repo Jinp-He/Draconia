@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:770f59daa955a55c9f98311a427b7d4e6412b9f1aba4c6e46d5c0a843295ba38
-size 180
+fileFormatVersion: 2
+guid: 5541fb7f7c57be94aad8d5e9c53aa96e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: uitestskeletonpanel_prefab
+  assetBundleVariant: 

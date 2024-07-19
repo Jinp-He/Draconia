@@ -1,3 +1,44 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c277145c27109e36b0789ec13dc9d7a17b5314125a55b8ecdca59cf5db64d784
-size 924
+[
+  {
+    "id": 1,
+    "BuffName": "轻盈",
+    "IsConsis": true,
+    "Description": "所有基础卡费用-1",
+    "IsPose": false
+  },
+  {
+    "id": 2,
+    "BuffName": "溃敌",
+    "IsConsis": true,
+    "Description": "基础卡可以生效两次",
+    "IsPose": false
+  },
+  {
+    "id": 3,
+    "BuffName": "飞鸟式",
+    "IsConsis": true,
+    "Description": "周周的基础牌强化不会消耗。强化不可叠加。",
+    "IsPose": true
+  },
+  {
+    "id": 4,
+    "BuffName": "扶摇式",
+    "IsConsis": true,
+    "Description": "每使用3张基础牌，全队-1费用。",
+    "IsPose": true
+  },
+  {
+    "id": 5,
+    "BuffName": "苦难残留",
+    "IsConsis": true,
+    "Description": "受到真实伤害",
+    "IsPose": false
+  },
+  {
+    "id": 6,
+    "BuffName": "蓄力",
+    "IsConsis": true,
+    "Description": "回合开始时施放",
+    "IsPose": false
+  }
+]

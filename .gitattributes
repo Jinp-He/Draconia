@@ -9,3 +9,8 @@ resources.assets.resS filter=lfs diff=lfs merge=lfs -text
 MyProject/Assets/Resources/Art/Font filter=lfs diff=lfs merge=lfs -text
 MyProject/Assets/Resources/Art/Font/* filter=lfs diff=lfs merge=lfs -text
 MyProject/Assets/Resources/Art/Font/** filter=lfs diff=lfs merge=lfs -text
+BianTaoSDF.asset filter=lfs diff=lfs merge=lfs -text
+ImpactSDF filter=lfs diff=lfs merge=lfs -text
+ImpactSDF.asset filter=lfs diff=lfs merge=lfs -text
+DouyinSansBoldSDF.asset filter=lfs diff=lfs merge=lfs -text
+MapSDF.asset filter=lfs diff=lfs merge=lfs -text

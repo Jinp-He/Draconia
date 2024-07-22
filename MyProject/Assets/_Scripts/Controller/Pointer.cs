@@ -44,15 +44,15 @@ namespace Draconia.Controller
             
             
             PosX = new BindableProperty<float>(transform.localPosition.x);
-            Pos = new BindableProperty<int>(GetPos(PosX));
+            Pos = new BindableProperty<int>(GetPos(PosX.Value));
             PosDiff = new BindableProperty<int>(0);
             
             
             PosX.Register(e =>
             {
                 transform.localPosition = new Vector3(e, transform.position.y, transform.position.z);
-                int diff = Pos.Value - GetPos(PosX);
-                Pos.Value = GetPos(PosX);
+                int diff = Pos.Value - GetPos(PosX.Value);
+                Pos.Value = GetPos(PosX.Value );
                 PosDiff.Value = diff;
             });
 
@@ -72,7 +72,7 @@ namespace Draconia.Controller
             _isPlayer = false;
            
             PosX = new BindableProperty<float>(transform.localPosition.x);
-            Pos = new BindableProperty<int>(GetPos(PosX));
+            Pos = new BindableProperty<int>(GetPos(PosX.Value));
             PosDiff = new BindableProperty<int>(0);
             
             //TODO: 更改初始位置
@@ -81,7 +81,7 @@ namespace Draconia.Controller
             PosX.Register(e =>
             {
                 transform.localPosition = new Vector3(e, transform.position.y, transform.position.z);
-                Pos.Value = GetPos(PosX);
+                Pos.Value = GetPos(PosX.Value);
                 
             });
             Pos.Register(e =>
@@ -121,7 +121,7 @@ namespace Draconia.Controller
         {
             if (_isPlayer)
             {
-                if (PosX > 0)
+                if (PosX.Value  > 0)
                 {
                     PosX.Value = 0;
                 }
@@ -133,12 +133,12 @@ namespace Draconia.Controller
             }
             else
             {
-                if (PosX < 0)
+                if (PosX.Value  < 0)
                 {
                     PosX.Value = 0;
                 }
 
-                if (PosX > TimeBar.TimeBarEdge)
+                if (PosX.Value > TimeBar.TimeBarEdge)
                 {
                     PosX.Value = TimeBar.TimeBarEdge;
                 }

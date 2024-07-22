@@ -359,6 +359,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/QFramework.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/QFramework/Toolkits/AudioKit/Scripts/Action/PlaySound.cs"
 "Assets/QFramework/Toolkits/AudioKit/Scripts/AudioKit.cs"
 "Assets/QFramework/Toolkits/AudioKit/Scripts/AudioKitSettings.cs"
 "Assets/QFramework/Toolkits/AudioKit/Scripts/AudioManager.cs"

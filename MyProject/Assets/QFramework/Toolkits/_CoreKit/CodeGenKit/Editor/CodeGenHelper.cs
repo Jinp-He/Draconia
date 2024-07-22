@@ -67,7 +67,7 @@ namespace QFramework
         
         public static bool IsUIPanel(this Component component)
         {
-            if (component.GetComponent("QFramework.UIPanel"))
+            if (component.GetComponent("UIPanel"))
             {
                 return true;
             }

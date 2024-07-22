@@ -241,23 +241,41 @@ var degree = 1.57f.Rad2Deg();
         {
             return self * Mathf.Rad2Deg;
         }
-
+        
 #if UNITY_EDITOR
-        // Added in v1.0.32
+        // Added in v1.0.129
         [MethodAPI]
-        [APIDescriptionCN("new Vector3(vec2.x,vec2.y,0 or z)")]
-        [APIDescriptionEN("new Vector3(vec2.x,vec2.y,0 or z)")]
+        [APIDescriptionCN("将欧拉角转换为方向向量(Vector2)")]
+        [APIDescriptionEN("Convert Degree To Direction(Vector2)")]
         [APIExampleCode(@"
-
-var vec3 = new Vector2(1,1).ToVector3();
-// vec3 is (1,1,0)
-vec3 = new Vector2(1,1).ToVector3(1);
-// vec3 is (1,1,1)
+var direction = 90.AngleToDirection2D();
+// Vector2(1,0)
 ")]
 #endif
-        public static Vector3 ToVector3(this Vector2 self,float z = 0)
+                
+        public static Vector2 AngleToDirection2D(this int self)
         {
-            return new Vector3(self.x, self.y, z);
+            return new Vector2(self.CosAngle(), self.SinAngle());
+        }
+        
+        public static Vector2 AngleToDirection2D(this float self)
+        {
+            return new Vector2(self.CosAngle(), self.SinAngle());
+        }
+        
+#if UNITY_EDITOR
+        // Added in v1.0.129
+        [MethodAPI]
+        [APIDescriptionCN("将方向(Vector2)转换为欧拉角")]
+        [APIDescriptionEN("Convert Direction To Degrees")]
+        [APIExampleCode(@"
+var direction = Vector2.right.ToAngle();
+// Vector2(1,0)
+")]
+#endif
+        public static float ToAngle(this Vector2 self)
+        {
+            return Mathf.Atan2(self.y, self.x).Rad2Deg();
         }
     }
 

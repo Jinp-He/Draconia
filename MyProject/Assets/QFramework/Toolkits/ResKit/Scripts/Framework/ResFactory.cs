@@ -49,8 +49,6 @@ namespace QFramework
 
             return retRes;
         }
-        
-        
 
         public static void AddResCreator<T>() where T : IResCreator, new()
         {

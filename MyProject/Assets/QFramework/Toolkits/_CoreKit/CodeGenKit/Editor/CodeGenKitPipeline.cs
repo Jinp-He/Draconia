@@ -68,10 +68,8 @@ namespace QFramework
             CurrentTask.Status = CodeGenTaskStatus.Search;
             BindSearchHelper.Search(task);
             CurrentTask.Status = CodeGenTaskStatus.Gen;
-
-
-            // var writer = File.CreateText(scriptFile);
-
+            var viewController = task.GameObject.GetComponent<ViewController>();
+            
             var writer = new StringBuilder();
             writer.AppendLine("using UnityEngine;");
             writer.AppendLine("using QFramework;");
@@ -86,8 +84,15 @@ namespace QFramework
             writer.AppendLine(
                 $"namespace {((string.IsNullOrWhiteSpace(task.Namespace)) ? CodeGenKit.Setting.Namespace : task.Namespace)}");
             writer.AppendLine("{");
-            writer.AppendLine($"\tpublic partial class {task.ClassName} : ViewController");
-            writer.AppendLine("\t{");
+            if (viewController.ViewControllerFullTypeName.IsNotNullAndEmpty())
+            {
+                writer.AppendLine(
+                    $"\tpublic partial class {task.ClassName} : {viewController.ViewControllerFullTypeName}");
+            }
+            else
+            {
+                writer.AppendLine($"\tpublic partial class {task.ClassName} : ViewController");
+            }            writer.AppendLine("\t{");
             writer.AppendLine("\t\tvoid Start()");
             writer.AppendLine("\t\t{");
             writer.AppendLine("\t\t\t// Code Here");
@@ -111,7 +116,14 @@ namespace QFramework
             writer.AppendLine(
                 $"namespace {(string.IsNullOrWhiteSpace(task.Namespace) ? CodeGenKit.Setting.Namespace : task.Namespace)}");
             writer.AppendLine("{");
-            writer.AppendLine($"\tpublic partial class {task.ClassName}");
+            if (viewController.ArchitectureFullTypeName.IsNotNullAndEmpty())
+            {
+                writer.AppendLine($"\tpublic partial class {task.ClassName} : QFramework.IController");
+            }
+            else
+            {
+                writer.AppendLine($"\tpublic partial class {task.ClassName}");
+            }
             writer.AppendLine("\t{");
 
             foreach (var bindData in task.BindInfos)
@@ -142,6 +154,11 @@ namespace QFramework
             }
 
             writer.AppendLine();
+            if (viewController.ArchitectureFullTypeName.IsNotNullAndEmpty())
+            {
+                writer.AppendLine(
+                    $"\t\tQFramework.IArchitecture QFramework.IBelongToArchitecture.GetArchitecture()=>{viewController.ArchitectureFullTypeName}.Interface;");
+            }
             writer.AppendLine("\t}");
             writer.AppendLine("}");
             task.DesignerCode = writer.ToString();
@@ -233,13 +250,14 @@ namespace QFramework
                     serializedObject.FindProperty("GeneratePrefab").boolValue = codeGenerateInfo.GeneratePrefab;
                     serializedObject.FindProperty("ScriptName").stringValue = codeGenerateInfo.ScriptName;
                     serializedObject.FindProperty("Namespace").stringValue = codeGenerateInfo.Namespace;
-
+                    serializedObject.FindProperty("ArchitectureFullTypeName").stringValue = codeGenerateInfo.ArchitectureFullTypeName;
+                    
                     var generatePrefab = codeGenerateInfo.GeneratePrefab;
                     var prefabFolder = codeGenerateInfo.PrefabFolder;
 
                     if (codeGenerateInfo.GetType() != type)
                     {
-                        DestroyImmediate(codeGenerateInfo, false);
+                        DestroyImmediate(codeGenerateInfo, true);
                     }
 
                     serializedObject.ApplyModifiedProperties();
@@ -267,10 +285,11 @@ namespace QFramework
                     serializedObject.ApplyModifiedProperties();
                     serializedObject.UpdateIfRequiredOrScript();
                 }
+                
+                EditorUtility.SetDirty(gameObject);
 
-                EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
-
-
+                // EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
+                
                 CurrentTask.Status = CodeGenTaskStatus.Complete;
                 CurrentTask = null;
             }

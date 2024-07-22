@@ -49,6 +49,57 @@ namespace QFramework
     {
     }
 
+    public abstract class AbstractAction<T> : IAction where T : AbstractAction<T>,new()
+    {
+        protected AbstractAction(){}
+        
+        private static readonly SimpleObjectPool<T> mPool =
+            new SimpleObjectPool<T>(() => new T(), null, 10);
+
+        public static T Allocate()
+        {
+            var retNode = mPool.Allocate();
+            retNode.ActionID = ActionKit.ID_GENERATOR++;
+            retNode.Deinited = false;
+            retNode.Reset();
+            return retNode;
+        }
+
+        public ulong ActionID { get; set; }
+        public ActionStatus Status { get; set; }
+        
+        public virtual void OnStart() {}
+
+        public virtual void OnExecute(float dt) {}
+
+        public virtual void OnFinish() { }
+
+        protected virtual void OnReset(){}
+        
+        protected virtual void OnDeinit(){}
+
+        public void Reset()
+        {
+            Status = ActionStatus.NotStart;
+            Paused = false;
+            OnReset();
+        }
+
+        public bool Paused { get; set; }
+
+        public void Deinit()
+        {
+            if (!Deinited)
+            {
+                Deinited = true;
+                OnDeinit();
+                ActionQueue.AddCallback(new ActionQueueRecycleCallback<T>(mPool,this as T));
+            }
+        }
+        
+        public bool Deinited { get; set; }
+    }
+
     public struct ActionController : IActionController
     {
         public ulong ActionID { get; set; }
@@ -103,35 +154,25 @@ namespace QFramework
                 ActionID = self.ActionID,
             };
         }
+        
+        public static IActionController StartCurrentScene(this IAction self, Action<IActionController> onFinish = null)
+        {
+            return self.Start(ActionKitCurrentScene.SceneComponent, onFinish);
+        }
+        
+        public static IActionController StartCurrentScene(this IAction self, Action onFinish)
+        {
+            return self.Start(ActionKitCurrentScene.SceneComponent, onFinish);
+        }
 
         public static IActionController StartGlobal(this IAction self, Action<IActionController> onFinish = null)
         {
-            IActionExecutor executor = null;
-            if (executor.UpdateAction(self, 0, onFinish))
-            {
-                return new ActionController()
-                {
-                    Action = self,
-                    ActionID = self.ActionID,
-                };
-            }
-
-            void Update()
-            {
-                if (executor.UpdateAction(self, Time.deltaTime, onFinish))
-                {
-                    ActionKit.OnUpdate.UnRegister(Update);
-                }
-            }
-
-            ActionKit.OnUpdate.Register(Update);
-
-
-            return new ActionController()
-            {
-                Action = self,
-                ActionID = self.ActionID,
-            };
+            return self.Start(ActionKitMonoBehaviourEvents.Instance, onFinish);
+        }
+        
+        public static IActionController StartGlobal(this IAction self, Action onFinish)
+        {
+            return self.Start(ActionKitMonoBehaviourEvents.Instance, onFinish);
         }
 
 

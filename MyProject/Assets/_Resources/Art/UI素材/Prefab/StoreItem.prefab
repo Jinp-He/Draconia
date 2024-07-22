@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 120
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+  m_sharedMaterial: {fileID: -4018336051990092739, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -195,6 +195,7 @@ MonoBehaviour:
   PrefabFolder: Assets/Art/Prefab
   Price: {fileID: 8180768963382343401}
   CardVc: {fileID: 190230029128502085}
+  UIStorePanel: {fileID: 0}
 --- !u!114 &3570956659678683831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,6 +323,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2892649612750608925}
     m_Modifications:
+    - target: {fileID: 418484032390317317, guid: 8a5e06ae85e07d24dba36d7e50dd1954, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+    - target: {fileID: 418484032390317317, guid: 8a5e06ae85e07d24dba36d7e50dd1954, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4018336051990092739, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
     - target: {fileID: 1358174228734903284, guid: 8a5e06ae85e07d24dba36d7e50dd1954, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -426,10 +435,42 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3879021484856206305, guid: 8a5e06ae85e07d24dba36d7e50dd1954, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+    - target: {fileID: 3879021484856206305, guid: 8a5e06ae85e07d24dba36d7e50dd1954, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4018336051990092739, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+    - target: {fileID: 4392160589594528052, guid: 8a5e06ae85e07d24dba36d7e50dd1954, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+    - target: {fileID: 4392160589594528052, guid: 8a5e06ae85e07d24dba36d7e50dd1954, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4018336051990092739, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
     - target: {fileID: 5645331371730933292, guid: 8a5e06ae85e07d24dba36d7e50dd1954, type: 3}
       propertyPath: m_Name
       value: CardPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 6050741864578776755, guid: 8a5e06ae85e07d24dba36d7e50dd1954, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+    - target: {fileID: 6050741864578776755, guid: 8a5e06ae85e07d24dba36d7e50dd1954, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4018336051990092739, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+    - target: {fileID: 8331749133798504553, guid: 8a5e06ae85e07d24dba36d7e50dd1954, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+    - target: {fileID: 8331749133798504553, guid: 8a5e06ae85e07d24dba36d7e50dd1954, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4018336051990092739, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a5e06ae85e07d24dba36d7e50dd1954, type: 3}
 --- !u!114 &190230029128502085 stripped

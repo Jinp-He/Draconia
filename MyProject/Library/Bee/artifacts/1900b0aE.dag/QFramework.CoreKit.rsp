@@ -670,8 +670,6 @@
 "Assets/QFramework/Toolkits/_CoreKit/PackageKit/PackageManager/Utilities/UrlHelper.cs"
 "Assets/QFramework/Toolkits/_CoreKit/PackageKit/PackageManager/View/PackageManagerView.cs"
 "Assets/QFramework/Toolkits/_CoreKit/PackageKit/QFramework.PackageKit.cs"
-"Assets/QFramework/Toolkits/_CoreKit/PoolKit/Example/0.SimpleObjectPoolExample/SimpleObjectPoolExample.cs"
-"Assets/QFramework/Toolkits/_CoreKit/PoolKit/Example/CallPool.cs"
 "Assets/QFramework/Toolkits/_CoreKit/PoolKit/Scripts/Deprecated.cs"
 "Assets/QFramework/Toolkits/_CoreKit/PoolKit/Scripts/DictionaryPool.cs"
 "Assets/QFramework/Toolkits/_CoreKit/PoolKit/Scripts/Factory/CustomObjectFactory.cs"

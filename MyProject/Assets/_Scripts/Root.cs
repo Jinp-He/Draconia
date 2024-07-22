@@ -22,6 +22,8 @@ namespace Draconia
             
             ResKit.Init();
             UIKit.OpenPanel<UIStartPanel>();
+            
+            //GetComponent<ChangeAllFont>().ChangeAllFonts();
         }
 
         private bool isClick;

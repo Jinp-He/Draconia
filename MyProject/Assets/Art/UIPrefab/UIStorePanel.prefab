@@ -769,7 +769,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93790b778cbde594b82936a2ba1aa92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SettingBtn: {fileID: 0}
   StoreItemPrefab: {fileID: 6376114107444198711, guid: e18b1153da44485439b3ae7acf07d218, type: 3}
   MoneyTxt: {fileID: 7782401317485367383}
   Store: {fileID: 641082503602275830}
@@ -1062,8 +1061,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+  m_sharedMaterial: {fileID: -4018336051990092739, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1237,8 +1236,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u79BB\u5F00\u5546\u5E97\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 41f15b7a76b4413429d2f66eac3eb653, type: 2}
-  m_sharedMaterial: {fileID: -7688234643839553339, guid: 41f15b7a76b4413429d2f66eac3eb653, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+  m_sharedMaterial: {fileID: -4018336051990092739, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2205,6 +2204,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2346431859610494505}
     m_Modifications:
+    - target: {fileID: 545008940603350599, guid: d87ef50957e3693488820b5aa26811ae, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+    - target: {fileID: 545008940603350599, guid: d87ef50957e3693488820b5aa26811ae, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4018336051990092739, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
     - target: {fileID: 1354395739918370658, guid: d87ef50957e3693488820b5aa26811ae, type: 3}
       propertyPath: m_Name
       value: Money

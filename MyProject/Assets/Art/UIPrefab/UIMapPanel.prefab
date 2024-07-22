@@ -1738,8 +1738,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 14
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9d013f5218694064abc855b594335a44, type: 2}
-  m_sharedMaterial: {fileID: -2188277798573473981, guid: 9d013f5218694064abc855b594335a44, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+  m_sharedMaterial: {fileID: -4018336051990092739, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8599,6 +8599,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5510957479082891819}
     m_Modifications:
+    - target: {fileID: 545008940603350599, guid: d87ef50957e3693488820b5aa26811ae, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+    - target: {fileID: 545008940603350599, guid: d87ef50957e3693488820b5aa26811ae, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4018336051990092739, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
     - target: {fileID: 1354395739918370658, guid: d87ef50957e3693488820b5aa26811ae, type: 3}
       propertyPath: m_Name
       value: Money

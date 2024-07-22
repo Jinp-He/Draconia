@@ -15,7 +15,7 @@ E:/Github/Draconia/MyProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58863
+50534
 Successfully changed project path to: E:/Github/Draconia/MyProject
 E:/Github/Draconia/MyProject
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,12 +47,12 @@ E:/Github/Draconia/MyProject
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [18368] Host "[IP] 169.254.38.146 [Port] 0 [Flags] 2 [Guid] 174902093 [EditorId] 174902093 [Version] 1048832 [Id] WindowsEditor(7,James_Workspace) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [20472] Host "[IP] 192.168.123.13 [Port] 0 [Flags] 2 [Guid] 929038930 [EditorId] 929038930 [Version] 1048832 [Id] WindowsEditor(7,James_Workspace) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [18368] Host "[IP] 169.254.38.146 [Port] 0 [Flags] 2 [Guid] 174902093 [EditorId] 174902093 [Version] 1048832 [Id] WindowsEditor(7,James_Workspace) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [20472] Host "[IP] 192.168.123.13 [Port] 0 [Flags] 2 [Guid] 929038930 [EditorId] 929038930 [Version] 1048832 [Id] WindowsEditor(7,James_Workspace) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 AS: AutoStreaming module initializing.
-Refreshing native plugins compatible for Editor in 85.66 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 84.07 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.21f1c1 (08fa194de70f)
 [Subsystems] Discovering subsystems at path D:/Program Files/2021.3.21f1c1/Editor/Data/Resources/UnitySubsystems
@@ -68,212 +68,212 @@ Initialize mono
 Mono path[0] = 'D:/Program Files/2021.3.21f1c1/Editor/Data/Managed'
 Mono path[1] = 'D:/Program Files/2021.3.21f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Program Files/2021.3.21f1c1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56984
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56664
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Program Files/2021.3.21f1c1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: D:/Program Files/2021.3.21f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002283 seconds.
+Registered in 0.001640 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 79.40 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 81.29 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
 - Completed reload, in  0.388 seconds
 Domain Reload Profiling:
-	ReloadAssembly (388ms)
-		BeginReloadAssembly (48ms)
+	ReloadAssembly (389ms)
+		BeginReloadAssembly (49ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (0ms)
-		EndReloadAssembly (284ms)
+		EndReloadAssembly (287ms)
 			LoadAssemblies (47ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (56ms)
+			SetupTypeCache (57ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (15ms)
 			SetupLoadedEditorAssemblies (183ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (79ms)
+				RefreshPlugins (81ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (73ms)
-				ProcessInitializeOnLoadMethodAttributes (25ms)
+				ProcessInitializeOnLoadAttributes (69ms)
+				ProcessInitializeOnLoadMethodAttributes (27ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.011347 seconds.
+Registered in 0.012345 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-0000013E469A9090 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file data-0000023C4F6B71C0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E469A9090 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file data-0000023C4F6B71C0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E469A9090 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll
+Symbol file data-0000023C4F92A430 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4647C010 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file data-0000023C4FB96430 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\PsdPlugin.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E464B2820 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file data-0000023C4FBCCC40 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E464B2820 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\spine-unity-examples.dll
+Symbol file data-0000023C4F790010 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\spine-unity-examples.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E469EA830 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file data-0000023C4F7A5620 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E44D89B70 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Searcher.Editor.dll
+Symbol file data-0000023C50293C80 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Searcher.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E468B0DC0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file data-0000023C50347330 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E469A9090 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file data-0000023C4F92A430 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E43E00080 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file data-0000023C5035C540 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\UnityEditor.UI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E469A9090 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.ShaderGraph.Utilities.dll
+Symbol file data-0000023C4F92A430 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.ShaderGraph.Utilities.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E469A9090 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll
+Symbol file data-0000023C4F92A430 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E469A9090 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Sirenix.OdinInspector.Modules.UnityMathematics.dll
+Symbol file data-0000023C4DF430E0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Sirenix.OdinInspector.Modules.UnityMathematics.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E447E0A10 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file data-0000023C50388620 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\UnityEngine.UI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E447E0A10 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file data-0000023C50388620 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46A7C020 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll
+Symbol file data-0000023C4F6CC830 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E43E23420 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\AllIn1SpriteShaderAssembly.dll
+Symbol file data-0000023C5039E030 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\AllIn1SpriteShaderAssembly.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E43E2C830 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\AudioKit.dll
+Symbol file data-0000023C4E158400 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\AudioKit.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E43E2C830 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll
+Symbol file data-0000023C503A7440 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E43E2C830 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file data-0000023C503A7440 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E43E32640 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file data-0000023C4F7FCD50 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E43E36C50 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\QFramework.dll
+Symbol file data-0000023C4F7FCD50 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\QFramework.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E43E3F660 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file data-0000023C4E160E10 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E460A3010 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\QFramework.CoreKit.dll
+Symbol file data-0000023C4F73C240 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\QFramework.CoreKit.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E43E48C70 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll
+Symbol file data-0000023C4F745850 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E44A65DE0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file data-0000023C4F754550 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46AEBA30 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\spine-unity-examples-editor.dll
+Symbol file data-0000023C4F7FCD50 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\spine-unity-examples-editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E44A65DE0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file data-0000023C4E04A280 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E460ED020 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file data-0000023C4E1AAE20 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E448B8FF0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\ResKit.dll
+Symbol file data-0000023C4E04A280 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\ResKit.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E448B8FF0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll
+Symbol file data-0000023C5001EE20 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46246A20 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\PPv2URPConverters.dll
+Symbol file data-0000023C4F7FCD50 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\PPv2URPConverters.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4494B020 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\spine-unity.dll
+Symbol file data-0000023C4FE10C50 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\spine-unity.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4494B020 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file data-0000023C4FE31860 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Timeline.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4494B020 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file data-0000023C4E1C1C30 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E449A9E30 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file data-0000023C5002CC60 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.TextMeshPro.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E449A9E30 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Burst.Editor.dll
+Symbol file data-0000023C5002CC60 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Burst.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E449D4840 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file data-0000023C50057670 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E449F3050 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file data-0000023C50057670 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E43E57370 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file data-0000023C4F6B71C0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4675CA20 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll
+Symbol file data-0000023C4E29FC60 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E467AD830 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file data-0000023C4E2F0A70 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E44A09860 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll
+Symbol file data-0000023C4E2F0A70 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E465C7C80 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\UIKit.dll
+Symbol file data-0000023C4E2FB680 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\UIKit.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E441C1620 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file data-0000023C4DA81E30 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46AEBA30 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\ResKit.Editor.dll
+Symbol file data-0000023C4E07F390 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\ResKit.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E44273630 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file data-0000023C4DA81E30 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Mathematics.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4418AA50 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll
+Symbol file data-0000023C4DAD4440 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E43E57370 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file data-0000023C4E07F390 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E465C7C80 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file data-0000023C4DADF850 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E47D05790 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file data-0000023C51541270 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E442FB1B0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
+Symbol file data-0000023C4DAE4380 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E465C7C80 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file data-0000023C4DAEED90 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E465C7C80 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\UIKit.Editor.dll
+Symbol file data-0000023C4DAF5BA0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\UIKit.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46802640 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file data-0000023C51541270 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4419EE60 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\spine-unity-editor.dll
+Symbol file data-0000023C4DB09FB0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\spine-unity-editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E47DCF3C0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll
+Symbol file data-0000023C51606E90 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46802640 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file data-0000023C51606E90 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46802640 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file data-0000023C51606E90 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Symbol file LoadedFromMemory doesn't match image E:\Github\Draconia\MyProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image E:\Github\Draconia\MyProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 78.34 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 79.43 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
 Mono: successfully reloaded assembly
-- Completed reload, in  1.077 seconds
+- Completed reload, in  1.102 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1077ms)
-		BeginReloadAssembly (71ms)
+	ReloadAssembly (1102ms)
+		BeginReloadAssembly (70ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (12ms)
-		EndReloadAssembly (944ms)
+		EndReloadAssembly (968ms)
 			LoadAssemblies (66ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (189ms)
+			SetupTypeCache (186ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (50ms)
-			SetupLoadedEditorAssemblies (615ms)
+			RebuildScriptCaches (52ms)
+			SetupLoadedEditorAssemblies (640ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (2ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (78ms)
-				BeforeProcessingInitializeOnLoad (65ms)
-				ProcessInitializeOnLoadAttributes (283ms)
-				ProcessInitializeOnLoadMethodAttributes (182ms)
-				AfterProcessingInitializeOnLoad (4ms)
+				RefreshPlugins (79ms)
+				BeforeProcessingInitializeOnLoad (62ms)
+				ProcessInitializeOnLoadAttributes (314ms)
+				ProcessInitializeOnLoadMethodAttributes (177ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (4ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Refreshing native plugins compatible for Editor in 0.89 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 0.92 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 6539 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 88 unused Assets / (2.8 MB). Loaded Objects now: 7028.
 Memory consumption went from 259.1 MB to 256.3 MB.
-Total: 11.813000 ms (FindLiveObjects: 0.331700 ms CreateObjectMapping: 0.134100 ms MarkObjects: 10.499300 ms  DeleteObjects: 0.846600 ms)
+Total: 11.703600 ms (FindLiveObjects: 0.304600 ms CreateObjectMapping: 0.115800 ms MarkObjects: 10.420900 ms  DeleteObjects: 0.861400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -286,548 +286,4 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 628255.821234 seconds.
-  path: Assets/CharacterAnimation/Rocket/skeleton.json
-  artifactKey: Guid(787713945d2c1fc49a570c552ac57454) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CharacterAnimation/Rocket/skeleton.json using Guid(787713945d2c1fc49a570c552ac57454) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a46519bf06299527862ccdf6a2de43a7') in 0.051506 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.230531 seconds.
-  path: Assets/CharacterAnimation/Aileen/skeleton.json
-  artifactKey: Guid(c03b82dca3943f74896e959a69cc808a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CharacterAnimation/Aileen/skeleton.json using Guid(c03b82dca3943f74896e959a69cc808a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5a02ae60562e60d4094ba4a76e76c88') in 0.006654 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.163303 seconds.
-  path: Assets/CharacterAnimation/Aileen/skeleton.atlas.txt
-  artifactKey: Guid(647151dcbd3de39429f07951cfe92bf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CharacterAnimation/Aileen/skeleton.atlas.txt using Guid(647151dcbd3de39429f07951cfe92bf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b5b425dca9e8a5fadb65d142d8c5579') in 0.025933 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 38.430914 seconds.
-  path: Assets/CharacterAnimation/召唤兽
-  artifactKey: Guid(c99f0c50825fac9419d93a5c2c4718c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CharacterAnimation/召唤兽 using Guid(c99f0c50825fac9419d93a5c2c4718c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dc331a22aadfc2d9a09160e88748726') in 0.008232 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.031080 seconds.
-  path: Assets/CharacterAnimation/召唤兽/skeleton.png
-  artifactKey: Guid(00a80236f0b15be4095f2e06328c7cca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CharacterAnimation/召唤兽/skeleton.png using Guid(00a80236f0b15be4095f2e06328c7cca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b75116f04b72692b23839e338200d74f') in 0.044309 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/CharacterAnimation/召唤兽/skeleton_SkeletonData.asset
-  artifactKey: Guid(937bc3118e7bacc418ea4bbc95629084) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CharacterAnimation/召唤兽/skeleton_SkeletonData.asset using Guid(937bc3118e7bacc418ea4bbc95629084) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '587a091c293ecf932501f4ba4e043550') in 0.267967 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.433982 seconds.
-  path: Assets/CharacterAnimation/ZhouZhou/Zhouzhou_new
-  artifactKey: Guid(3a7db19f220c7914dba0b8d1fe149d77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CharacterAnimation/ZhouZhou/Zhouzhou_new using Guid(3a7db19f220c7914dba0b8d1fe149d77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6fc6b7177c50939ad5a5bcb810b15a8') in 0.013027 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.022678 seconds.
-  path: Assets/CharacterAnimation/ZhouZhou/Zhouzhou_new/skeleton.png
-  artifactKey: Guid(62029885438dbf440ad97124dd3077ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CharacterAnimation/ZhouZhou/Zhouzhou_new/skeleton.png using Guid(62029885438dbf440ad97124dd3077ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20697c0853cb5119ffd36a837099b5e6') in 0.017328 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 50.206654 seconds.
-  path: Assets/CharacterAnimation/Aileen/skeleton.png
-  artifactKey: Guid(4565ef7a8ebfe87488ae63315123abe1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CharacterAnimation/Aileen/skeleton.png using Guid(4565ef7a8ebfe87488ae63315123abe1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f37a81a9f8277d6c393e1f13033486eb') in 0.015829 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/CharacterAnimation/Aileen/skeleton_Material.mat
-  artifactKey: Guid(37ed4e8c16761cf43a14f1a60ae9d3a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CharacterAnimation/Aileen/skeleton_Material.mat using Guid(37ed4e8c16761cf43a14f1a60ae9d3a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d489da2986e581a371401d68aad0d44') in 0.020619 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 42.684661 seconds.
-  path: Assets/CharacterAnimation/Rocket/skeleton.png
-  artifactKey: Guid(72123492e4d984e4b939c0a2672156fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CharacterAnimation/Rocket/skeleton.png using Guid(72123492e4d984e4b939c0a2672156fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab452c54ed4813b5c1ae769855cad627') in 0.013159 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/CharacterAnimation/Rocket/skeleton_Material.mat
-  artifactKey: Guid(eb0a80b97d3fc764cb9755a59f595e69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CharacterAnimation/Rocket/skeleton_Material.mat using Guid(eb0a80b97d3fc764cb9755a59f595e69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fe0c0eb55ed4ebae8ba39d35b7ff224') in 0.011424 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 30.513802 seconds.
-  path: Assets/CharacterAnimation/ZhouZhou/skeleton.atlas.txt
-  artifactKey: Guid(ea1cd7b7a29caa744a1b62908124e9fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CharacterAnimation/ZhouZhou/skeleton.atlas.txt using Guid(ea1cd7b7a29caa744a1b62908124e9fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '978e05bb9dd91f06dd1428294f8ba9a2') in 0.011952 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.723439 seconds.
-  path: Assets/CharacterAnimation/ZhouZhou/skeleton.png
-  artifactKey: Guid(51952fa76ecb10d4684d86ef111033a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CharacterAnimation/ZhouZhou/skeleton.png using Guid(51952fa76ecb10d4684d86ef111033a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f86fcc323d4c89ae2f81b6a345927a57') in 0.013507 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/CharacterAnimation/ZhouZhou/skeleton_Material.mat
-  artifactKey: Guid(b94753fb217efb343a058b58bedc6ffb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CharacterAnimation/ZhouZhou/skeleton_Material.mat using Guid(b94753fb217efb343a058b58bedc6ffb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d38617d225998d5517f9c61b1af1934') in 0.013144 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 27.127493 seconds.
-  path: Assets/_Resources/Art/UI素材/Prefab/Money.prefab
-  artifactKey: Guid(1d2e2c8527b668f45a8988696f6cfdb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/UI素材/Prefab/Money.prefab using Guid(1d2e2c8527b668f45a8988696f6cfdb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb8dbd0424a77ecec4e493bcf2df0c3b') in 0.043680 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.213053 seconds.
-  path: Assets/_Resources/Art/ICON/CharacterPointers.psb
-  artifactKey: Guid(23bda6cd68fa31c4691625338c4453c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/ICON/CharacterPointers.psb using Guid(23bda6cd68fa31c4691625338c4453c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f85aa76f17e0d6f95a08e78f200e80d') in 0.084990 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/_Resources/Art/ICON/IconAtlas.spriteatlas
-  artifactKey: Guid(969c50096f63bd341bd5c66218a0992d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/ICON/IconAtlas.spriteatlas using Guid(969c50096f63bd341bd5c66218a0992d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c8b21c61c554387ae673cb7ca36e533') in 0.015434 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/_Resources/Art/ICON/Icon_Store.png
-  artifactKey: Guid(00b968f499c418e43b5c0c2cd3539710) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/ICON/Icon_Store.png using Guid(00b968f499c418e43b5c0c2cd3539710) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fbff874341927b47c2b3bab34c35ad5') in 0.029131 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/_Resources/Art/ICON/KaidePoint.psb
-  artifactKey: Guid(acc2320e2a166404d9a5d5ff57618070) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/ICON/KaidePoint.psb using Guid(acc2320e2a166404d9a5d5ff57618070) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b004cfa6a42dc60424b08ceb70077ba') in 0.027322 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.194071 seconds.
-  path: Assets/_Resources/Art/人物素材/Irene 1.psb
-  artifactKey: Guid(28ef74a97360cf84987abf8520386482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/人物素材/Irene 1.psb using Guid(28ef74a97360cf84987abf8520386482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cadd45a7fad174192fd810fd05ca8a0a') in 0.039238 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/_Resources/Art/人物素材/rocket 1.psb
-  artifactKey: Guid(2efb6e9e10c761745aacee1db893ce69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/人物素材/rocket 1.psb using Guid(2efb6e9e10c761745aacee1db893ce69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84fd79ff92eeea8418d0bb8f1b7d3d0e') in 0.042565 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/_Resources/Art/人物素材/Zhouzhou 1.psb
-  artifactKey: Guid(d1761453dcc1aab40840fcfd3675e9fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/人物素材/Zhouzhou 1.psb using Guid(d1761453dcc1aab40840fcfd3675e9fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8e3c45b0de18bd4d90c61b91bace42a') in 0.048439 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.573764 seconds.
-  path: Assets/_Resources/Art/敌人素材/Dog01.psb
-  artifactKey: Guid(3a70faf34083f3041abea5b84b342882) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/敌人素材/Dog01.psb using Guid(3a70faf34083f3041abea5b84b342882) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f1ba575f2f2edb62cbb62ece28339f0') in 0.039055 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.370457 seconds.
-  path: Assets/_Resources/Art/新建文件夹/卡牌白边.psb
-  artifactKey: Guid(fc4a940a6d3295546829e1ab3b888f7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/新建文件夹/卡牌白边.psb using Guid(fc4a940a6d3295546829e1ab3b888f7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e911b68aa7b386c82a8ea4318d9268a') in 0.046663 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/_Resources/Art/新建文件夹/鼠标.psb
-  artifactKey: Guid(01e0adbee273aa849996c89c0284893d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/新建文件夹/鼠标.psb using Guid(01e0adbee273aa849996c89c0284893d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cec9dee6e8c0ad0688cd6fd182b0a838') in 0.028897 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.130067 seconds.
-  path: Assets/_Resources/Art/新的美术素材/卡牌白边.psb
-  artifactKey: Guid(17477aa46bf0df1459d9a63b605ae84c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/新的美术素材/卡牌白边.psb using Guid(17477aa46bf0df1459d9a63b605ae84c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01f044840b32b93b1ebc1f4e3a2e0120') in 0.032460 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.519505 seconds.
-  path: Assets/_Resources/Art/_UI界面/商店界面素材/出售按钮.png
-  artifactKey: Guid(68b05e490e421874e975e6985c6f6d22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/_UI界面/商店界面素材/出售按钮.png using Guid(68b05e490e421874e975e6985c6f6d22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93479a4b281e9dbef20afb2083823109') in 0.064902 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/_Resources/Art/_UI界面/商店界面素材/钱.psb
-  artifactKey: Guid(d51903cd6ba4a24468d3b1d87e21098d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/_UI界面/商店界面素材/钱.psb using Guid(d51903cd6ba4a24468d3b1d87e21098d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acaa83892eb7146d5a25e0c9a9da0c7a') in 0.033397 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/_Resources/Art/_UI界面/商店界面素材/确定按钮.png
-  artifactKey: Guid(d94b16407f5e1cf4694107bddbcb6b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/_UI界面/商店界面素材/确定按钮.png using Guid(d94b16407f5e1cf4694107bddbcb6b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f97316581f9c1d2830986022c0a6f000') in 0.033326 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/_Resources/Art/_UI界面/商店界面素材/方向动画.psb
-  artifactKey: Guid(b700a4f26e276a1458534e385c139f26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/_UI界面/商店界面素材/方向动画.psb using Guid(b700a4f26e276a1458534e385c139f26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d540c6af4a23c2016bb2524ec1f020e') in 0.040453 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/_Resources/Art/_UI界面/商店界面素材/强化按钮.png
-  artifactKey: Guid(cbf7c4512abc25c4b901bad28c196920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/_UI界面/商店界面素材/强化按钮.png using Guid(cbf7c4512abc25c4b901bad28c196920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c3a399ab77d41db52f200b521c5f53a') in 0.027359 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.171873 seconds.
-  path: Assets/_Resources/Art/_UI界面/设置界面素材/下拉菜单动画01.psb
-  artifactKey: Guid(c2d7ba1e6e693ec4582b469e92cab49e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/_UI界面/设置界面素材/下拉菜单动画01.psb using Guid(c2d7ba1e6e693ec4582b469e92cab49e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '097548b011a80046d19feb331cd7faca') in 0.029972 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.012342 seconds.
-  path: Assets/_Resources/Art/_UI界面/战斗界面素材/fire.psb
-  artifactKey: Guid(a1ea545152b959346a858485eb534093) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/_UI界面/战斗界面素材/fire.psb using Guid(a1ea545152b959346a858485eb534093) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df84fe86d3cedde7c5cb89e319144e7a') in 0.048088 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/_Resources/Art/_UI界面/战斗界面素材/弃牌堆按钮.psb
-  artifactKey: Guid(49923bd5fa832234bb3940e17796d31c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/_UI界面/战斗界面素材/弃牌堆按钮.psb using Guid(49923bd5fa832234bb3940e17796d31c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43f610d311abdc08b65379c504483fe2') in 0.030749 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/_Resources/Art/_UI界面/战斗界面素材/百相底图.psb
-  artifactKey: Guid(6031afaff66a6ca4b9709e79682eee6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/_UI界面/战斗界面素材/百相底图.psb using Guid(6031afaff66a6ca4b9709e79682eee6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3179d235cd4973f24936c217b47360bb') in 0.054959 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/_Resources/Art/_UI界面/战斗界面素材/时间条.psb
-  artifactKey: Guid(94fbf32305595e24397eeb5244cac333) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/_UI界面/战斗界面素材/时间条.psb using Guid(94fbf32305595e24397eeb5244cac333) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b19abf9240c641c9aeebb47a8f8d4577') in 0.052497 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.808723 seconds.
-  path: Assets/_Resources/Art/_UI界面/战斗界面素材/角色卡按钮.psb
-  artifactKey: Guid(78738ad31ee252742a41fa8cd255eb1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/_UI界面/战斗界面素材/角色卡按钮.psb using Guid(78738ad31ee252742a41fa8cd255eb1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32cd06bb3fc73d4379d8af35f25c6b6b') in 0.038385 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.372493 seconds.
-  path: Assets/_Resources/Art/Font/impact SDF.asset
-  artifactKey: Guid(9d013f5218694064abc855b594335a44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/Font/impact SDF.asset using Guid(9d013f5218694064abc855b594335a44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '402d83367a22fe4c2b0a960f5aecdddd') in 0.041832 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.260637 seconds.
-  path: Assets/_Resources/Art/MapPanel/地图ui.png
-  artifactKey: Guid(3ff5ce2ca3b6d1c4f891374d9aca73d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/MapPanel/地图ui.png using Guid(3ff5ce2ca3b6d1c4f891374d9aca73d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e55b38a0844c12d3d0f44d04f96b7bb4') in 0.186398 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.227888 seconds.
-  path: Assets/_Resources/Art/Pointer/Pointer_02.png
-  artifactKey: Guid(d2c95360e78ffe24da0c2227916b77d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/Pointer/Pointer_02.png using Guid(d2c95360e78ffe24da0c2227916b77d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eda8e01719967e27a92d3aeb1131e972') in 0.028593 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.430039 seconds.
-  path: Assets/_Resources/Art/PSB/时间条.png
-  artifactKey: Guid(6a77d9a818c6d044c90c14bb7fe475ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/PSB/时间条.png using Guid(6a77d9a818c6d044c90c14bb7fe475ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ce2d729aea8acd7eabf64a6872b8700') in 0.026633 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.250584 seconds.
-  path: Assets/_Resources/Art/UI素材/Prefab/BuffBar.prefab
-  artifactKey: Guid(968b5ff6d24d1ca47b977c6bbc9621d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/UI素材/Prefab/BuffBar.prefab using Guid(968b5ff6d24d1ca47b977c6bbc9621d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e864c88bc2793e84a975f51463dc07d4') in 0.039237 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/_Resources/Art/UI素材/Prefab/Toggle.prefab
-  artifactKey: Guid(7a02dfce62aff724596d647e876c645b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/UI素材/Prefab/Toggle.prefab using Guid(7a02dfce62aff724596d647e876c645b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6213a24e7840e0693b5f30913c96650b') in 0.020438 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/_Resources/Art/UI素材/Prefab/HPBar.prefab
-  artifactKey: Guid(137f90449a5b9734f9c40f1fe1f8d467) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/UI素材/Prefab/HPBar.prefab using Guid(137f90449a5b9734f9c40f1fe1f8d467) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1e52031f5e6eb6f7c5bcfdb7d278543') in 0.193524 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.456644 seconds.
-  path: Assets/_Resources/Art/UI素材/牌库ui/牌库滚动条.psb
-  artifactKey: Guid(8498fcff2b317294fb6431ce38b3462e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/UI素材/牌库ui/牌库滚动条.psb using Guid(8498fcff2b317294fb6431ce38b3462e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f93911973b0f892c257daf77c7c72f9') in 0.041893 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.461449 seconds.
-  path: Assets/_Resources/Art/卡牌美术素材/卡牌介绍说明.png
-  artifactKey: Guid(fcc7b96450efc2846a631c78124bfd7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/卡牌美术素材/卡牌介绍说明.png using Guid(fcc7b96450efc2846a631c78124bfd7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9442b15d275ae69669103bc82ae566a') in 0.114609 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 53.430496 seconds.
-  path: Assets/_Resources/Art/_UI界面/战斗界面素材/Buff/buff_溃敌.png
-  artifactKey: Guid(7366308a1bdb72b49beced871321a657) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/_UI界面/战斗界面素材/Buff/buff_溃敌.png using Guid(7366308a1bdb72b49beced871321a657) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9c4af6abc125948c1cb48e837353f97') in 0.021850 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.521791 seconds.
-  path: Assets/_Resources/Art/_UI界面/战斗界面素材/前景底纹/Frontground_Rocket.png
-  artifactKey: Guid(93e178e55d9d7b543bce280aaba19b1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/_UI界面/战斗界面素材/前景底纹/Frontground_Rocket.png using Guid(93e178e55d9d7b543bce280aaba19b1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13d3024711dfd73ea679123a3167337b') in 0.037375 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.440546 seconds.
-  path: Assets/_Resources/Art/_UI界面/设置界面素材/设置页面/设置标题.png
-  artifactKey: Guid(1d3cc5610ef6cf648a3b7b14f5bc8f46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/_UI界面/设置界面素材/设置页面/设置标题.png using Guid(1d3cc5610ef6cf648a3b7b14f5bc8f46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1cd3eeacc655b322019d2d96daf9059') in 0.047794 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 50.101850 seconds.
-  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
-  artifactKey: Guid(2e498d1c8094910479dc3e1b768306a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset using Guid(2e498d1c8094910479dc3e1b768306a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75c03ef0685716eb49c849513d3fc62c') in 0.045593 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.387977 seconds.
-  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF.asset
-  artifactKey: Guid(5302535af1044152a457ed104f1f4b91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF.asset using Guid(5302535af1044152a457ed104f1f4b91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9298329429c2df1a412560bfdc6a1393') in 0.022756 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.717749 seconds.
-  path: Assets/TextMesh Pro/Fonts/FangzhengSong SDF.asset
-  artifactKey: Guid(f106f3c2241b4cf4fae04dfbf13c8a21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TextMesh Pro/Fonts/FangzhengSong SDF.asset using Guid(f106f3c2241b4cf4fae04dfbf13c8a21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a26ab83e6136e70b677d80e2688f2ebf') in 0.212580 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.110695 seconds.
-  path: Assets/Resources/Art/Font/BianTaO SDF.asset
-  artifactKey: Guid(41f15b7a76b4413429d2f66eac3eb653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Art/Font/BianTaO SDF.asset using Guid(41f15b7a76b4413429d2f66eac3eb653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e51acf99f0f12c71664d57e898c0a9ff') in 0.608711 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 127.936040 seconds.
-  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
-  artifactKey: Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat using Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbc723b4d92438e292ff2d812b1da67f') in 0.067283 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 51.933060 seconds.
-  path: Assets/_Resources/Art/UI素材/Prefab/Money.prefab
-  artifactKey: Guid(1d2e2c8527b668f45a8988696f6cfdb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Resources/Art/UI素材/Prefab/Money.prefab using Guid(1d2e2c8527b668f45a8988696f6cfdb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b8dccc770fb0fe27fbfb62c670388c3') in 0.013309 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 188.546180 seconds.
-  path: Assets/Sprites/Cards/BlueCard.png
-  artifactKey: Guid(e2b78d2fe5dcb4955931f4e60683e9df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Cards/BlueCard.png using Guid(e2b78d2fe5dcb4955931f4e60683e9df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0697bfa0ef1ad1d4ded23b678ba3df37') in 0.036345 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Resources/Art/卡牌美术素材/CardImage/CardImage_Timbuktu.png
-  artifactKey: Guid(cb4baa4d65bcc4445b26d04eab21e5d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Art/卡牌美术素材/CardImage/CardImage_Timbuktu.png using Guid(cb4baa4d65bcc4445b26d04eab21e5d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '394073b5ba98b8b08c15aa0f93834b9a') in 0.042658 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.566927 seconds.
-  path: Assets/Resources/Art/卡牌美术素材/CardImage/CardImage_Zhouzhou.png
-  artifactKey: Guid(6f08001187298464cb632485bf29a735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Art/卡牌美术素材/CardImage/CardImage_Zhouzhou.png using Guid(6f08001187298464cb632485bf29a735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ddf85bfbb907f539463315122fed0ab') in 0.028859 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.009693 seconds.
-  path: Assets/Sprites/UI/DiscardPile.png
-  artifactKey: Guid(335ba9d7780ee40059b25de817ac06a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/UI/DiscardPile.png using Guid(335ba9d7780ee40059b25de817ac06a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '118355bcced141dcf44cc03c86b84c91') in 0.021239 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.153021 seconds.
-  path: Assets/Sprites/Cards/GreenCard.png
-  artifactKey: Guid(2167aee18f2224578a0318015edd9fb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Cards/GreenCard.png using Guid(2167aee18f2224578a0318015edd9fb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df2b75b4d80b36850510f454aff8e129') in 0.044759 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Sprites/Cards/RedCard.png
-  artifactKey: Guid(52a697883a69443f9b29f737abaecb8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Cards/RedCard.png using Guid(52a697883a69443f9b29f737abaecb8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da53ce36907b0c045c61b00b5d18caad') in 0.035106 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.482351 seconds.
-  path: Assets/Resources/Art/卡牌美术素材/卡牌介绍说明.png
-  artifactKey: Guid(c6a6bfc8885bb7c499f67c56b30df1d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Art/卡牌美术素材/卡牌介绍说明.png using Guid(c6a6bfc8885bb7c499f67c56b30df1d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04ec434b46e96e332d634e9fabbcd4a4') in 0.074680 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.850195 seconds.
-  path: Assets/Resources/Art/卡牌美术素材/卡牌特性背景.png
-  artifactKey: Guid(24e3ae6c6e010374181d868597e7b176) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Art/卡牌美术素材/卡牌特性背景.png using Guid(24e3ae6c6e010374181d868597e7b176) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a77863a89bfd03b8cd3c771466140a2') in 0.023731 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.015974 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-0000013E4EAC00A0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46CE06E0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46CE06E0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E44312FE0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\PsdPlugin.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E47BAB020 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E44312FE0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\spine-unity-examples.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E44312FE0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46CE06E0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Searcher.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4B140050 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4431C9F0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4B140050 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\UnityEditor.UI.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4431C9F0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.ShaderGraph.Utilities.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4A71DC30 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4B1495D0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Sirenix.OdinInspector.Modules.UnityMathematics.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4D5B6030 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\UnityEngine.UI.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4B1495D0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46A7C020 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E475D1020 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\AllIn1SpriteShaderAssembly.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4EA97290 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\AudioKit.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4431C9F0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4431C9F0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4431C9F0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E475DA430 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\QFramework.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46D31080 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4474A430 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\QFramework.CoreKit.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E49FD8010 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46C07010 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46AEBA30 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\spine-unity-examples-editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46389010 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46C07010 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46389010 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\ResKit.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4A452010 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46AEBA30 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\PPv2URPConverters.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46389010 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\spine-unity.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4C406020 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Timeline.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4A765010 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46389010 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.TextMeshPro.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4D594010 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Burst.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4D594010 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E463B3A20 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46C1DE20 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E44360810 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E44360810 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4AFEB830 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4AFEB830 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\UIKit.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4A452010 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46D3A690 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\ResKit.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4A765010 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Mathematics.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4B657180 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46C1DE20 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4AFEB830 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E49F4E040 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E446088A0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4AFEB830 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46D3A690 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\UIKit.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4A01C440 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E482878F0 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\spine-unity-editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E4B657180 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E50B1EF90 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000013E46D3A690 doesn't match image E:\Github\Draconia\MyProject\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file LoadedFromMemory doesn't match image E:\Github\Draconia\MyProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image E:\Github\Draconia\MyProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.76 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.846 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1851ms)
-		BeginReloadAssembly (809ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (94ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (1ms)
-			CreateAndSetChildDomain (297ms)
-		EndReloadAssembly (934ms)
-			LoadAssemblies (290ms)
-			RebuildTransferFunctionScriptingTraits (1ms)
-			SetupTypeCache (213ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (38ms)
-			SetupLoadedEditorAssemblies (510ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (50ms)
-				ProcessInitializeOnLoadAttributes (299ms)
-				ProcessInitializeOnLoadMethodAttributes (147ms)
-				AfterProcessingInitializeOnLoad (4ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
 AssetImportWorkerClient::OnTransportError - code=10054 error=Զ������ǿ�ȹر���һ�����е����ӡ�

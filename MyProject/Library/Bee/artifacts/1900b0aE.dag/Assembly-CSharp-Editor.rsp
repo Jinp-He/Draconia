@@ -427,6 +427,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Editor/ChangePrefabFontsEditor.cs"
+"Assets/Editor/QuickAccessLogEditor.cs"
 "Assets/QFramework/Toolkits/SupportOldQF/UIKitCreateService/Editor/UIKitCreateServiceView.cs"
 "Assets/TheraBytes/BetterUI/Editor/Scripts/Helpers/BetterElementHelper.cs"
 "Assets/TheraBytes/BetterUI/Editor/Scripts/Helpers/Betterizer.cs"

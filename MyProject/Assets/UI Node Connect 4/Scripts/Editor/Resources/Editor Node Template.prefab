@@ -28,6 +28,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2065932382193933135}
   m_RootOrder: 0
@@ -65,8 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5762495268120750890, guid: eb11ac9a06fb4792b393db9b83ab43b4,
-    type: 3}
+  m_Sprite: {fileID: 5762495268120750890, guid: eb11ac9a06fb4792b393db9b83ab43b4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -106,6 +106,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1686077740049608547}
   - {fileID: 1686077739851140144}
@@ -145,8 +146,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -551197957320400947, guid: eb11ac9a06fb4792b393db9b83ab43b4,
-    type: 3}
+  m_Sprite: {fileID: -551197957320400947, guid: eb11ac9a06fb4792b393db9b83ab43b4, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: Node
+  _sID: 
   ports: []
   rectTransform: {fileID: 909935208010426548}
   graphManager: {fileID: 0}
@@ -222,6 +223,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.2121801, y: 2.2121801, z: 2.2121801}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2065932382193933135}
   m_RootOrder: 1
@@ -271,6 +273,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2065932382354941913}
   m_RootOrder: 0
@@ -308,8 +311,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5762495268120750890, guid: eb11ac9a06fb4792b393db9b83ab43b4,
-    type: 3}
+  m_Sprite: {fileID: 5762495268120750890, guid: eb11ac9a06fb4792b393db9b83ab43b4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -347,6 +349,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2065932381130425750}
   m_RootOrder: 2
@@ -386,8 +389,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: In/Out
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 16855df82bca4fb9a9873bc5dfffac2c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 16855df82bca4fb9a9873bc5dfffac2c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+  m_sharedMaterial: {fileID: -4018336051990092739, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -480,6 +483,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.2121801, y: 2.2121801, z: 2.2121801}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2065932382354941913}
   m_RootOrder: 1
@@ -528,6 +532,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.2121801, y: 2.2121801, z: 2.2121801}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2065932381130425750}
   m_RootOrder: 1
@@ -577,6 +582,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2065932381130425750}
   m_RootOrder: 0
@@ -614,8 +620,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2892737170341545671, guid: eb11ac9a06fb4792b393db9b83ab43b4,
-    type: 3}
+  m_Sprite: {fileID: -2892737170341545671, guid: eb11ac9a06fb4792b393db9b83ab43b4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -653,6 +658,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2065932382354941913}
   m_RootOrder: 2
@@ -692,8 +698,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Out
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 16855df82bca4fb9a9873bc5dfffac2c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 16855df82bca4fb9a9873bc5dfffac2c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+  m_sharedMaterial: {fileID: -4018336051990092739, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -787,6 +793,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2065932382193933135}
   m_RootOrder: 2
@@ -826,8 +833,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: In
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 16855df82bca4fb9a9873bc5dfffac2c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 16855df82bca4fb9a9873bc5dfffac2c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+  m_sharedMaterial: {fileID: -4018336051990092739, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -921,6 +928,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1686077740049608547}
   m_RootOrder: 0
@@ -960,8 +968,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Node A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 16855df82bca4fb9a9873bc5dfffac2c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 16855df82bca4fb9a9873bc5dfffac2c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
+  m_sharedMaterial: {fileID: -4018336051990092739, guid: 94b67cfcc3619544aa047b8f9bdf6853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1053,6 +1061,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2065932382193933135}
   - {fileID: 2065932382354941913}
@@ -1091,6 +1100,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1686077739739998306}
   m_Father: {fileID: 909935208010426548}
@@ -1129,6 +1139,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1686077739108529137}
   - {fileID: 1686077738979446881}
@@ -1165,16 +1176,19 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
   _id: Port (1)
+  _sID: 
   rectTransform: {fileID: 2065932381130425750}
   graphManager: {fileID: 0}
   node: {fileID: 909935208010426549}
   _polarity: 2
   maxConnections: 0
-  iconUnconnected: {fileID: -2892737170341545671, guid: eb11ac9a06fb4792b393db9b83ab43b4,
-    type: 3}
-  iconConnected: {fileID: 5124879146011779999, guid: eb11ac9a06fb4792b393db9b83ab43b4,
-    type: 3}
+  iconUnconnected: {fileID: -2892737170341545671, guid: eb11ac9a06fb4792b393db9b83ab43b4, type: 3}
+  iconConnected: {fileID: 5124879146011779999, guid: eb11ac9a06fb4792b393db9b83ab43b4, type: 3}
   iconColorDefault: {r: 0.98, g: 0.94, b: 0.84, a: 1}
   iconColorHover: {r: 1, g: 0.81, b: 0.3, a: 1}
   iconColorSelected: {r: 1, g: 0.58, b: 0.04, a: 1}
@@ -1213,6 +1227,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 909935207972628875}
   - {fileID: 909935208727873858}
@@ -1249,16 +1264,19 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
   _id: Port
+  _sID: 
   rectTransform: {fileID: 2065932382193933135}
   graphManager: {fileID: 0}
   node: {fileID: 909935208010426549}
   _polarity: 0
   maxConnections: 0
-  iconUnconnected: {fileID: 5762495268120750890, guid: eb11ac9a06fb4792b393db9b83ab43b4,
-    type: 3}
-  iconConnected: {fileID: -832133180265710657, guid: eb11ac9a06fb4792b393db9b83ab43b4,
-    type: 3}
+  iconUnconnected: {fileID: 5762495268120750890, guid: eb11ac9a06fb4792b393db9b83ab43b4, type: 3}
+  iconConnected: {fileID: -832133180265710657, guid: eb11ac9a06fb4792b393db9b83ab43b4, type: 3}
   iconColorDefault: {r: 0.98, g: 0.94, b: 0.84, a: 1}
   iconColorHover: {r: 1, g: 0.81, b: 0.3, a: 1}
   iconColorSelected: {r: 1, g: 0.58, b: 0.04, a: 1}
@@ -1297,6 +1315,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1686077738062916563}
   - {fileID: 1686077738515081388}
@@ -1333,16 +1352,19 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
   _id: Port
+  _sID: 
   rectTransform: {fileID: 2065932382354941913}
   graphManager: {fileID: 0}
   node: {fileID: 909935208010426549}
   _polarity: 1
   maxConnections: 0
-  iconUnconnected: {fileID: 5762495268120750890, guid: eb11ac9a06fb4792b393db9b83ab43b4,
-    type: 3}
-  iconConnected: {fileID: -832133180265710657, guid: eb11ac9a06fb4792b393db9b83ab43b4,
-    type: 3}
+  iconUnconnected: {fileID: 5762495268120750890, guid: eb11ac9a06fb4792b393db9b83ab43b4, type: 3}
+  iconConnected: {fileID: -832133180265710657, guid: eb11ac9a06fb4792b393db9b83ab43b4, type: 3}
   iconColorDefault: {r: 0.98, g: 0.94, b: 0.84, a: 1}
   iconColorHover: {r: 1, g: 0.81, b: 0.3, a: 1}
   iconColorSelected: {r: 1, g: 0.58, b: 0.04, a: 1}

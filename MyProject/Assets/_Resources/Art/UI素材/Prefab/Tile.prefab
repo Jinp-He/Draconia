@@ -310,9 +310,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Namespace: Draconia.ViewController
   ScriptName: Tile
-  ScriptsFolder: Assets/Scripts/Game
+  ScriptsFolder: Assets\_Scripts\Game\Map
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
+  ArchitectureFullTypeName: 
+  ViewControllerFullTypeName: 
   TestText: {fileID: 7207507108468334547}
   IsFixed: 0
   IsDrag: 0
@@ -998,7 +1000,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8788149558763356046, guid: 02fc10de4342d7b48b713d0a257ab324, type: 3}
+  m_Sprite: {fileID: -2402293873392825863, guid: f3358c37f272bfa4e95e7d3e1248e3b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -91,7 +91,8 @@ ScriptedImporter:
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
     spritePosition: {x: 0, y: 0}
-  mosaicSpriteImportData:
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
   - name: rocket
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -103,7 +104,7 @@ ScriptedImporter:
       y: 4
       width: 44
       height: 38
-    spriteID: c81449cf1029a2642914555b7520f7ac
+    spriteID: 9216c79fb01a1c14e82b7f870c8db707
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -114,51 +115,6 @@ ScriptedImporter:
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 4}
     spritePosition: {x: 3, y: 4}
-  rigSpriteImportData:
-  - name: Timbuktu
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 42
-      height: 42
-    spriteID: 42b14b9d7e0804548b8c92bae0a7e3bd
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 4, y: 4}
-  - name: Zhouzhou
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 54
-      width: 37
-      height: 40
-    spriteID: e2c0ccfbea906e44bb32ec733500ea4f
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 54}
-    spritePosition: {x: 7, y: 5}
   characterData:
     bones: []
     parts: []
@@ -172,53 +128,9 @@ ScriptedImporter:
     dimension: {x: 0, y: 0}
     characterGroups: []
     boneReadOnly: 0
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Server
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: WebGL
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   mosaicLayers: 1
-  characterMode: 0
+  characterMode: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
@@ -231,14 +143,15 @@ ScriptedImporter:
     categories: []
   spritePackingTag: 
   resliceFromLayer: 0
-  mosaicPSDLayers:
+  mosaicPSDLayers: []
+  rigPSDLayers:
   - name: Timbuktu
-    spriteName: Timbuktu
+    spriteName: 
     isGroup: 0
     parentIndex: -1
-    spriteID: d6d3dec9f6197c2479e30e070ed2046f
+    spriteID: 7d669d29c1d4e0b4db1de0eaf5ded5cb
     layerID: 3
-    mosaicPosition: {x: 4, y: 4}
+    mosaicPosition: {x: 0, y: 0}
     flatten: 0
     isImported: 0
     isVisible: 0
@@ -246,19 +159,19 @@ ScriptedImporter:
     spriteName: rocket
     isGroup: 0
     parentIndex: -1
-    spriteID: c81449cf1029a2642914555b7520f7ac
+    spriteID: 9216c79fb01a1c14e82b7f870c8db707
     layerID: 30
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
   - name: Elin00
-    spriteName: Elin00
+    spriteName: 
     isGroup: 0
     parentIndex: -1
-    spriteID: 2b8d5d281d82d684c99cad5e99e55f7c
+    spriteID: 099d777bbab96374c84d458475dda144
     layerID: 26
-    mosaicPosition: {x: 4, y: 4}
+    mosaicPosition: {x: 0, y: 0}
     flatten: 0
     isImported: 0
     isVisible: 0
@@ -266,43 +179,22 @@ ScriptedImporter:
     spriteName: 
     isGroup: 0
     parentIndex: -1
-    spriteID: f92c0eaffb105e44384ed190a5a9e804
+    spriteID: bdf3d1211a74915478c5d156614e5353
     layerID: 27
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
     isImported: 0
     isVisible: 0
   - name: Zhouzhou
-    spriteName: Zhouzhou
+    spriteName: 
     isGroup: 0
     parentIndex: -1
-    spriteID: 9e0854cf1769d114690ce3227c11dca9
+    spriteID: 9932ecc507c518f408ff80d12b290ba5
     layerID: 2
-    mosaicPosition: {x: 4, y: 54}
+    mosaicPosition: {x: 0, y: 0}
     flatten: 0
     isImported: 0
     isVisible: 0
-  rigPSDLayers:
-  - name: Timbuktu
-    spriteName: Timbuktu
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 42b14b9d7e0804548b8c92bae0a7e3bd
-    layerID: 3
-    mosaicPosition: {x: 4, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Zhouzhou
-    spriteName: Zhouzhou
-    isGroup: 0
-    parentIndex: -1
-    spriteID: e2c0ccfbea906e44bb32ec733500ea4f
-    layerID: 2
-    mosaicPosition: {x: 4, y: 54}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
   generateGOHierarchy: 0

@@ -1,4 +1,5 @@
 using Draconia.System;
+using Draconia.ViewController;
 using UnityEngine;
 using UnityEngine.UI;
 using QFramework;
@@ -19,6 +20,7 @@ namespace Draconia.UI
 		
 		protected override void OnOpen(IUIData uiData = null)
 		{
+			Instantiate(this.GetSystem<ResLoadSystem>().LoadSync<Tile>("Tile"));
 			StartGameBtn.onClick.AddListener(() =>
 			{
 				this.GetSystem<GameSystem>().StartGame();

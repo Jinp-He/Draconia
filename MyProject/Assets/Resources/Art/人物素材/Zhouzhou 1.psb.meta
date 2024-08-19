@@ -91,7 +91,8 @@ ScriptedImporter:
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
     spritePosition: {x: 0, y: 0}
-  mosaicSpriteImportData:
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
   - name: Pointer
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -103,7 +104,7 @@ ScriptedImporter:
       y: 862
       width: 37
       height: 47
-    spriteID: 42f368c1d476e2947b822dc5f5f03be8
+    spriteID: 10f15e742a4fc554eb76b9fd0cc65356
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -125,7 +126,7 @@ ScriptedImporter:
       y: 4
       width: 400
       height: 261
-    spriteID: d087324f67b44ab43aa6b3085b35ce56
+    spriteID: 0d7aa706b3653894da56afdfdcbbdf20
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,7 +148,7 @@ ScriptedImporter:
       y: 4
       width: 400
       height: 282
-    spriteID: d5233346d3492984a84c5eeb8b6dc582
+    spriteID: 9518127ba895636439c1f9ec0e279baa
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -169,7 +170,7 @@ ScriptedImporter:
       y: 580
       width: 400
       height: 274
-    spriteID: 6c912f58f228ca441bba450d21a971b0
+    spriteID: f1b767edd2080f24e9ae56b0b104eaac
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -191,118 +192,7 @@ ScriptedImporter:
       y: 294
       width: 400
       height: 278
-    spriteID: 8bab99b5ecb8bfa48b4cba0fed714117
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 294}
-    spritePosition: {x: 0, y: 0}
-  rigSpriteImportData:
-  - name: Zhouzhou_Pointer
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 862
-      width: 37
-      height: 47
-    spriteID: a37659a773c33bb4aa6b3761378218d2
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 862}
-    spritePosition: {x: 4, y: 352}
-  - name: Zhouzhou_Melee
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 412
-      y: 4
-      width: 400
-      height: 261
-    spriteID: c3fc1d5b45150434aaaf40272b5911ec
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 412, y: 4}
-    spritePosition: {x: 0, y: 0}
-  - name: Zhouzhou_Idle
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 400
-      height: 282
-    spriteID: 3ba55a28d13ff9c42a36c2b6bbcd777b
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 0, y: 0}
-  - name: Zhouzhou_OnHit
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 580
-      width: 400
-      height: 274
-    spriteID: 66a7794f474b9bc42b6d7b139596d70d
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 580}
-    spritePosition: {x: 0, y: 0}
-  - name: Zhouzhou_Chosen
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 294
-      width: 400
-      height: 278
-    spriteID: 274daf2c146a666408ce3b1dfe006b00
+    spriteID: 036440f7bd6420e42a4275c5fb99271f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -326,56 +216,12 @@ ScriptedImporter:
     dimension: {x: 0, y: 0}
     characterGroups: []
     boneReadOnly: 0
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Server
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: WebGL
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   mosaicLayers: 1
-  characterMode: 0
+  characterMode: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
-  importHiddenLayers: 1
+  importHiddenLayers: 0
   layerMappingOption: 2
   generatePhysicsShape: 0
   paperDollMode: 0
@@ -385,12 +231,13 @@ ScriptedImporter:
     categories: []
   spritePackingTag: 
   resliceFromLayer: 0
-  mosaicPSDLayers:
+  mosaicPSDLayers: []
+  rigPSDLayers:
   - name: Pointer
     spriteName: Pointer
     isGroup: 0
     parentIndex: -1
-    spriteID: 42f368c1d476e2947b822dc5f5f03be8
+    spriteID: 10f15e742a4fc554eb76b9fd0cc65356
     layerID: 6
     mosaicPosition: {x: 4, y: 862}
     flatten: 0
@@ -400,7 +247,7 @@ ScriptedImporter:
     spriteName: Melee
     isGroup: 0
     parentIndex: -1
-    spriteID: d087324f67b44ab43aa6b3085b35ce56
+    spriteID: 0d7aa706b3653894da56afdfdcbbdf20
     layerID: 5
     mosaicPosition: {x: 412, y: 4}
     flatten: 0
@@ -410,7 +257,7 @@ ScriptedImporter:
     spriteName: Idle
     isGroup: 0
     parentIndex: -1
-    spriteID: d5233346d3492984a84c5eeb8b6dc582
+    spriteID: 9518127ba895636439c1f9ec0e279baa
     layerID: 64
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
@@ -420,7 +267,7 @@ ScriptedImporter:
     spriteName: OnHit
     isGroup: 0
     parentIndex: -1
-    spriteID: 6c912f58f228ca441bba450d21a971b0
+    spriteID: f1b767edd2080f24e9ae56b0b104eaac
     layerID: 3
     mosaicPosition: {x: 4, y: 580}
     flatten: 0
@@ -430,58 +277,7 @@ ScriptedImporter:
     spriteName: Chosen
     isGroup: 0
     parentIndex: -1
-    spriteID: 8bab99b5ecb8bfa48b4cba0fed714117
-    layerID: 2
-    mosaicPosition: {x: 4, y: 294}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  rigPSDLayers:
-  - name: Zhouzhou_Pointer
-    spriteName: Zhouzhou_Pointer
-    isGroup: 0
-    parentIndex: -1
-    spriteID: a37659a773c33bb4aa6b3761378218d2
-    layerID: 6
-    mosaicPosition: {x: 4, y: 862}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Zhouzhou_Melee
-    spriteName: Zhouzhou_Melee
-    isGroup: 0
-    parentIndex: -1
-    spriteID: c3fc1d5b45150434aaaf40272b5911ec
-    layerID: 5
-    mosaicPosition: {x: 412, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Zhouzhou_Idle
-    spriteName: Zhouzhou_Idle
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 3ba55a28d13ff9c42a36c2b6bbcd777b
-    layerID: 64
-    mosaicPosition: {x: 4, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Zhouzhou_OnHit
-    spriteName: Zhouzhou_OnHit
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 66a7794f474b9bc42b6d7b139596d70d
-    layerID: 3
-    mosaicPosition: {x: 4, y: 580}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Zhouzhou_Chosen
-    spriteName: Zhouzhou_Chosen
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 274daf2c146a666408ce3b1dfe006b00
+    spriteID: 036440f7bd6420e42a4275c5fb99271f
     layerID: 2
     mosaicPosition: {x: 4, y: 294}
     flatten: 0

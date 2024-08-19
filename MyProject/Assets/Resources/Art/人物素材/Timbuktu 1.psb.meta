@@ -91,7 +91,8 @@ ScriptedImporter:
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
     spritePosition: {x: 0, y: 0}
-  mosaicSpriteImportData:
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
   - name: OnHit
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -103,7 +104,7 @@ ScriptedImporter:
       y: 299
       width: 400
       height: 285
-    spriteID: 6c1ce1677135d93469e85c836d325828
+    spriteID: 5f494df025cffab4ba8f31363caf7a6d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -125,7 +126,7 @@ ScriptedImporter:
       y: 885
       width: 42
       height: 48
-    spriteID: af9ac210693b7b3439ce2c2a91a90ac6
+    spriteID: 3f64ad575ed437741ba58a4a830f655a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,7 +148,7 @@ ScriptedImporter:
       y: 4
       width: 400
       height: 250
-    spriteID: 584c8f77b834e5a45bbc943b70def8c8
+    spriteID: 37a9aded009d394479cc54f1d2eee8fa
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -169,7 +170,7 @@ ScriptedImporter:
       y: 4
       width: 400
       height: 287
-    spriteID: 32110e0194a14b94ca5c6c83f1e4e06c
+    spriteID: 3de82680799fb5b49b714abff6824654
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -191,118 +192,7 @@ ScriptedImporter:
       y: 592
       width: 400
       height: 285
-    spriteID: e54cfd69ef8f21348946c0a59515f010
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 592}
-    spritePosition: {x: 0, y: 0}
-  rigSpriteImportData:
-  - name: Timbuktu_OnHit
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 299
-      width: 400
-      height: 285
-    spriteID: c6b5e9b5781f25840a6ba68b29091b24
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 299}
-    spritePosition: {x: 0, y: 0}
-  - name: Timbuktu_Pointer
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 885
-      width: 42
-      height: 48
-    spriteID: 0e3c56db1675b984587e7ba19d4f1857
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 885}
-    spritePosition: {x: 1, y: 352}
-  - name: Timbuktu_Melee
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 412
-      y: 4
-      width: 400
-      height: 250
-    spriteID: 772f045e8dde4d64baa7d3fe94ef2694
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 412, y: 4}
-    spritePosition: {x: 0, y: 0}
-  - name: Timbuktu_Idle
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 400
-      height: 287
-    spriteID: 5a0cc6702b6df5f449c1a2476f378e9d
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 0, y: 0}
-  - name: Timbuktu_Chosen
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 592
-      width: 400
-      height: 285
-    spriteID: c34b8095278e068448de5451bcc14f1a
+    spriteID: fa6b7fa40a86ca24f84a5cc5a1a39f25
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -326,56 +216,12 @@ ScriptedImporter:
     dimension: {x: 0, y: 0}
     characterGroups: []
     boneReadOnly: 0
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Server
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: WebGL
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   mosaicLayers: 1
-  characterMode: 0
+  characterMode: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
-  importHiddenLayers: 1
+  importHiddenLayers: 0
   layerMappingOption: 2
   generatePhysicsShape: 0
   paperDollMode: 0
@@ -385,12 +231,13 @@ ScriptedImporter:
     categories: []
   spritePackingTag: 
   resliceFromLayer: 0
-  mosaicPSDLayers:
+  mosaicPSDLayers: []
+  rigPSDLayers:
   - name: OnHit
     spriteName: OnHit
     isGroup: 0
     parentIndex: -1
-    spriteID: 6c1ce1677135d93469e85c836d325828
+    spriteID: 5f494df025cffab4ba8f31363caf7a6d
     layerID: 75
     mosaicPosition: {x: 4, y: 299}
     flatten: 0
@@ -400,7 +247,7 @@ ScriptedImporter:
     spriteName: Pointer
     isGroup: 0
     parentIndex: -1
-    spriteID: af9ac210693b7b3439ce2c2a91a90ac6
+    spriteID: 3f64ad575ed437741ba58a4a830f655a
     layerID: 74
     mosaicPosition: {x: 4, y: 885}
     flatten: 0
@@ -410,7 +257,7 @@ ScriptedImporter:
     spriteName: Melee
     isGroup: 0
     parentIndex: -1
-    spriteID: 584c8f77b834e5a45bbc943b70def8c8
+    spriteID: 37a9aded009d394479cc54f1d2eee8fa
     layerID: 73
     mosaicPosition: {x: 412, y: 4}
     flatten: 0
@@ -420,7 +267,7 @@ ScriptedImporter:
     spriteName: Idle
     isGroup: 0
     parentIndex: -1
-    spriteID: 32110e0194a14b94ca5c6c83f1e4e06c
+    spriteID: 3de82680799fb5b49b714abff6824654
     layerID: 72
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
@@ -430,58 +277,7 @@ ScriptedImporter:
     spriteName: Chosen
     isGroup: 0
     parentIndex: -1
-    spriteID: e54cfd69ef8f21348946c0a59515f010
-    layerID: 71
-    mosaicPosition: {x: 4, y: 592}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  rigPSDLayers:
-  - name: Timbuktu_OnHit
-    spriteName: Timbuktu_OnHit
-    isGroup: 0
-    parentIndex: -1
-    spriteID: c6b5e9b5781f25840a6ba68b29091b24
-    layerID: 75
-    mosaicPosition: {x: 4, y: 299}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Timbuktu_Pointer
-    spriteName: Timbuktu_Pointer
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 0e3c56db1675b984587e7ba19d4f1857
-    layerID: 74
-    mosaicPosition: {x: 4, y: 885}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Timbuktu_Melee
-    spriteName: Timbuktu_Melee
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 772f045e8dde4d64baa7d3fe94ef2694
-    layerID: 73
-    mosaicPosition: {x: 412, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Timbuktu_Idle
-    spriteName: Timbuktu_Idle
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 5a0cc6702b6df5f449c1a2476f378e9d
-    layerID: 72
-    mosaicPosition: {x: 4, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Timbuktu_Chosen
-    spriteName: Timbuktu_Chosen
-    isGroup: 0
-    parentIndex: -1
-    spriteID: c34b8095278e068448de5451bcc14f1a
+    spriteID: fa6b7fa40a86ca24f84a5cc5a1a39f25
     layerID: 71
     mosaicPosition: {x: 4, y: 592}
     flatten: 0

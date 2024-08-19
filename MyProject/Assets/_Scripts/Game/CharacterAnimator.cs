@@ -30,7 +30,7 @@ namespace Draconia.ViewController
         public virtual void Init(CharacterViewController characterViewController)
         {
             CharacterViewController = characterViewController;
-            CharacterImage = characterViewController.CharacterImage;
+            //CharacterImage = characterViewController.CharacterImage;
 
             if (SkeletonGraphic != null)
             {

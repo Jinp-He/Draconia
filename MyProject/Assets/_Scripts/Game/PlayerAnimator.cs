@@ -20,9 +20,9 @@ namespace Draconia.ViewController
         public override void Init(CharacterViewController characterViewController)
         {
             base.Init(characterViewController);
-            _isHitSprite = characterViewController.CharacterAtlas.GetSprite("OnHit");
-            _idleSprite = characterViewController.CharacterAtlas.GetSprite("Idle");
-            _chosenSprite = characterViewController.CharacterAtlas.GetSprite("Chosen");
+            //_isHitSprite = characterViewController.CharacterAtlas.GetSprite("OnHit");
+            //_idleSprite = characterViewController.CharacterAtlas.GetSprite("Idle");
+            //_chosenSprite = characterViewController.CharacterAtlas.GetSprite("Chosen");
 
         }
         

@@ -91,183 +91,7 @@ ScriptedImporter:
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
     spritePosition: {x: 0, y: 0}
-  mosaicSpriteImportData:
-  - name: Melee01
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 412
-      y: 4
-      width: 400
-      height: 153
-    spriteID: bad07367ee2ebae4dae6f87bf51ffacf
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 412, y: 4}
-    spritePosition: {x: 0, y: 0}
-  - name: OnHit01
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 486
-      width: 400
-      height: 136
-    spriteID: 74953373240ca2f428aa39a4e620872c
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 486}
-    spritePosition: {x: 0, y: 0}
-  - name: Melee02
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 412
-      y: 486
-      width: 400
-      height: 134
-    spriteID: 59e91aa3474112f409ab3cc250558887
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 412, y: 486}
-    spritePosition: {x: 0, y: 0}
-  - name: OnHit02
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 412
-      y: 335
-      width: 400
-      height: 138
-    spriteID: a8a4a71731f46214e8cf25b1e47e686b
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 412, y: 335}
-    spritePosition: {x: 0, y: 0}
-  - name: Melee03
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 412
-      y: 176
-      width: 400
-      height: 150
-    spriteID: 28796bc7066dc3d4da9785f3b0dbcfbb
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 412, y: 176}
-    spritePosition: {x: 0, y: 0}
-  - name: OnHit03
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 176
-      width: 400
-      height: 151
-    spriteID: 7452b41190de1804ca13f61ea15a9f72
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 176}
-    spritePosition: {x: 0, y: 0}
-  - name: Melee04
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 400
-      height: 164
-    spriteID: af42d6208ba58f6488f6001fcd1c1860
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 0, y: 0}
-  - name: OnHit04
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 335
-      width: 400
-      height: 143
-    spriteID: 2d9a32b7dfcda33479899340181fbe8b
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 335}
-    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
   rigSpriteImportData:
   - name: Melee01
     originalName: 
@@ -280,7 +104,7 @@ ScriptedImporter:
       y: 4
       width: 400
       height: 153
-    spriteID: 5a5f5dbf35c43864386feadd624388df
+    spriteID: 98f3dfa8f8580d541a891ae91d75993f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -302,7 +126,7 @@ ScriptedImporter:
       y: 486
       width: 400
       height: 136
-    spriteID: 47105499d1f83b1469d2066831ebd21e
+    spriteID: 7c5376f4e9372cf4ba94ab52a0cea045
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -324,7 +148,7 @@ ScriptedImporter:
       y: 486
       width: 400
       height: 134
-    spriteID: fc38673e97d3ce5488d11e06a45d6f5d
+    spriteID: 5a75f84d91df7204eaa46d2bcd26c2fe
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -346,7 +170,7 @@ ScriptedImporter:
       y: 335
       width: 400
       height: 138
-    spriteID: 98f55e0e62e3da245a4f6cfb005b95d1
+    spriteID: 6c7425b7d8fd8f04fad69faabae4efa2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -368,7 +192,7 @@ ScriptedImporter:
       y: 176
       width: 400
       height: 150
-    spriteID: 9a4491c076db32447b2af692d6ed29d5
+    spriteID: 06658d5393e29a649acb8fcdd030f83e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -390,7 +214,7 @@ ScriptedImporter:
       y: 176
       width: 400
       height: 151
-    spriteID: e36188e9400388f408e30e80015373e6
+    spriteID: 70b2335998526744c9a127fe051d3fa9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -412,7 +236,7 @@ ScriptedImporter:
       y: 4
       width: 400
       height: 164
-    spriteID: d9cf4d04b5df5d44f91a8e0367de92c0
+    spriteID: 8245d0f23ac1a574fa9363710f8444a8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -434,7 +258,7 @@ ScriptedImporter:
       y: 335
       width: 400
       height: 143
-    spriteID: 2f8f3550cff67ec47b990414d2af0bb0
+    spriteID: 05d0193454130844fbc6c1b715b7f34f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -458,53 +282,9 @@ ScriptedImporter:
     dimension: {x: 0, y: 0}
     characterGroups: []
     boneReadOnly: 0
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Server
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: WebGL
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   mosaicLayers: 1
-  characterMode: 0
+  characterMode: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
@@ -517,93 +297,13 @@ ScriptedImporter:
     categories: []
   spritePackingTag: 
   resliceFromLayer: 0
-  mosaicPSDLayers:
-  - name: Melee01
-    spriteName: Melee01
-    isGroup: 0
-    parentIndex: -1
-    spriteID: bad07367ee2ebae4dae6f87bf51ffacf
-    layerID: 85
-    mosaicPosition: {x: 412, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: OnHit01
-    spriteName: OnHit01
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 74953373240ca2f428aa39a4e620872c
-    layerID: 84
-    mosaicPosition: {x: 4, y: 486}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Melee02
-    spriteName: Melee02
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 59e91aa3474112f409ab3cc250558887
-    layerID: 83
-    mosaicPosition: {x: 412, y: 486}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: OnHit02
-    spriteName: OnHit02
-    isGroup: 0
-    parentIndex: -1
-    spriteID: a8a4a71731f46214e8cf25b1e47e686b
-    layerID: 82
-    mosaicPosition: {x: 412, y: 335}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Melee03
-    spriteName: Melee03
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 28796bc7066dc3d4da9785f3b0dbcfbb
-    layerID: 87
-    mosaicPosition: {x: 412, y: 176}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: OnHit03
-    spriteName: OnHit03
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 7452b41190de1804ca13f61ea15a9f72
-    layerID: 86
-    mosaicPosition: {x: 4, y: 176}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Melee04
-    spriteName: Melee04
-    isGroup: 0
-    parentIndex: -1
-    spriteID: af42d6208ba58f6488f6001fcd1c1860
-    layerID: 81
-    mosaicPosition: {x: 4, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: OnHit04
-    spriteName: OnHit04
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 2d9a32b7dfcda33479899340181fbe8b
-    layerID: 80
-    mosaicPosition: {x: 4, y: 335}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
+  mosaicPSDLayers: []
   rigPSDLayers:
   - name: Melee01
     spriteName: Melee01
     isGroup: 0
     parentIndex: -1
-    spriteID: 5a5f5dbf35c43864386feadd624388df
+    spriteID: 98f3dfa8f8580d541a891ae91d75993f
     layerID: 85
     mosaicPosition: {x: 412, y: 4}
     flatten: 0
@@ -613,7 +313,7 @@ ScriptedImporter:
     spriteName: OnHit01
     isGroup: 0
     parentIndex: -1
-    spriteID: 47105499d1f83b1469d2066831ebd21e
+    spriteID: 7c5376f4e9372cf4ba94ab52a0cea045
     layerID: 84
     mosaicPosition: {x: 4, y: 486}
     flatten: 0
@@ -623,7 +323,7 @@ ScriptedImporter:
     spriteName: Melee02
     isGroup: 0
     parentIndex: -1
-    spriteID: fc38673e97d3ce5488d11e06a45d6f5d
+    spriteID: 5a75f84d91df7204eaa46d2bcd26c2fe
     layerID: 83
     mosaicPosition: {x: 412, y: 486}
     flatten: 0
@@ -633,7 +333,7 @@ ScriptedImporter:
     spriteName: OnHit02
     isGroup: 0
     parentIndex: -1
-    spriteID: 98f55e0e62e3da245a4f6cfb005b95d1
+    spriteID: 6c7425b7d8fd8f04fad69faabae4efa2
     layerID: 82
     mosaicPosition: {x: 412, y: 335}
     flatten: 0
@@ -643,7 +343,7 @@ ScriptedImporter:
     spriteName: Melee03
     isGroup: 0
     parentIndex: -1
-    spriteID: 9a4491c076db32447b2af692d6ed29d5
+    spriteID: 06658d5393e29a649acb8fcdd030f83e
     layerID: 87
     mosaicPosition: {x: 412, y: 176}
     flatten: 0
@@ -653,7 +353,7 @@ ScriptedImporter:
     spriteName: OnHit03
     isGroup: 0
     parentIndex: -1
-    spriteID: e36188e9400388f408e30e80015373e6
+    spriteID: 70b2335998526744c9a127fe051d3fa9
     layerID: 86
     mosaicPosition: {x: 4, y: 176}
     flatten: 0
@@ -663,7 +363,7 @@ ScriptedImporter:
     spriteName: Melee04
     isGroup: 0
     parentIndex: -1
-    spriteID: d9cf4d04b5df5d44f91a8e0367de92c0
+    spriteID: 8245d0f23ac1a574fa9363710f8444a8
     layerID: 81
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
@@ -673,7 +373,7 @@ ScriptedImporter:
     spriteName: OnHit04
     isGroup: 0
     parentIndex: -1
-    spriteID: 2f8f3550cff67ec47b990414d2af0bb0
+    spriteID: 05d0193454130844fbc6c1b715b7f34f
     layerID: 80
     mosaicPosition: {x: 4, y: 335}
     flatten: 0

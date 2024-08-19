@@ -104,7 +104,7 @@ ScriptedImporter:
       y: 4
       width: 196
       height: 680
-    spriteID: 846762e865084684eac3277c52b85278
+    spriteID: e65f5a3ba54efe3448b788e24e401610
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -126,7 +126,7 @@ ScriptedImporter:
       y: 4
       width: 207
       height: 680
-    spriteID: 797f547ae60cab148872b6e2b44ba159
+    spriteID: dfc6c942ee6584944abb3456ea16cf99
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -171,7 +171,7 @@ ScriptedImporter:
     spriteName: "\u7EC4 1 \u62F7\u8D1D 5"
     isGroup: 0
     parentIndex: -1
-    spriteID: 846762e865084684eac3277c52b85278
+    spriteID: e65f5a3ba54efe3448b788e24e401610
     layerID: 364
     mosaicPosition: {x: 219, y: 4}
     flatten: 0
@@ -181,7 +181,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 0
     parentIndex: -1
-    spriteID: da6484c5baa19f44190f02935f012d3e
+    spriteID: 0ba183d098af8244db26dd033dad89e5
     layerID: 377
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
@@ -191,7 +191,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 0
     parentIndex: -1
-    spriteID: b7eea720206a9b44c82684368e144fc3
+    spriteID: 24633cad4aaf3ab4ebd5979487220c4d
     layerID: 376
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
@@ -201,7 +201,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 0
     parentIndex: -1
-    spriteID: 28f2c06182515d24c9e4057ff979274d
+    spriteID: 542b49d4408e74f4fafa38af205003a8
     layerID: 375
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
@@ -211,7 +211,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 0
     parentIndex: -1
-    spriteID: 662f76f80bee863479229f6d474f0bca
+    spriteID: 0304d60920cdc064899fcb5bbb507076
     layerID: 374
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
@@ -221,7 +221,7 @@ ScriptedImporter:
     spriteName: 01
     isGroup: 0
     parentIndex: -1
-    spriteID: 797f547ae60cab148872b6e2b44ba159
+    spriteID: dfc6c942ee6584944abb3456ea16cf99
     layerID: 373
     mosaicPosition: {x: 4, y: 4}
     flatten: 0

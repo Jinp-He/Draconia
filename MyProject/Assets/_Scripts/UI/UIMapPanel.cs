@@ -23,11 +23,12 @@ namespace Draconia.UI
 			TileDroppers = MyToolKit<TileDropper>.
 				ConvertTo2DArray(Grid.GetComponentsInChildren<TileDropper>(),5,14);
 			
-			// foreach (var player in this.GetSystem<GameSystem>().Players)
-			// {
-			// 	PlayerViewController p = Instantiate(PlayerPrefab, TeamBar);
-			// 	p.Init(player,false);
-			// }
+			foreach (var player in this.GetSystem<GameSystem>().Players)
+			{
+				Debug.Log("#DEBUG# PlayerAlias: " + player.Alias);
+				PlayerViewController p = Instantiate(PlayerPrefab, TeamBar);
+				p.Init(player,false);
+			}
 			// please add init code here
 		}
 		
@@ -57,17 +58,17 @@ namespace Draconia.UI
 		public Tile AddTile(int tileType, int row, int col, MapEventEnum mapEvent = MapEventEnum.None, string tileName = "")
 		{
 		//Debug.Log(row + " " + col);
-			Tile t = Instantiate(TilePrefab, TileDroppers[row,col].transform);
+			Tile t = Instantiate(this.GetSystem<ResLoadSystem>().LoadSync<Tile>("Tile"), TileDroppers[row,col].transform);
 			
-			TileDroppers[row,col].DropTile(t);
-			if(tileName != "")
-				t.Init(tileType, TileEventEnum.None,mapEvent,tileName);
-			else
-			{
-				t.Init(tileType, TileEventEnum.None,mapEvent);
-			}
-			t.IsFixed = true;
-			t.DropTile();
+			// TileDroppers[row,col].DropTile(t);
+			// if(tileName != "")
+			// 	t.Init(tileType, TileEventEnum.None,mapEvent,tileName);
+			// else
+			// {
+			// 	t.Init(tileType, TileEventEnum.None,mapEvent);
+			// }
+			// t.IsFixed = true;
+			// t.DropTile();
 			return t;
 		}
 

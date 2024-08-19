@@ -125,6 +125,9 @@ namespace Draconia.System
 
 
             PrepareTileOnMap(1);
+            MapInfo mapInfo = this.GetSystem<ResLoadSystem>().Table.TbMapInfo[1];
+            //Tiles[0, 0] = _uiMapPanel.AddTile(5, 0, 0, MapEventEnum.Start);
+            //ConnectedTiles.Add(Tiles[0,0], new HashSet<Tile>());
             
             _playerCurrentTile = Tiles[0, 0];
             OpenTileDroppers.Add(TileDroppers[0, 1]);
@@ -138,7 +141,7 @@ namespace Draconia.System
             AddNewTileOnStore();
             AddNewTileOnStore();
 
-            HelpFunction();
+            //HelpFunction();
         }
 
 

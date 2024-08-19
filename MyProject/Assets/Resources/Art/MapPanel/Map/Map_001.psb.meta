@@ -91,29 +91,7 @@ ScriptedImporter:
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
     spritePosition: {x: 0, y: 0}
-  mosaicSpriteImportData:
-  - name: "\u51EF\u5FB7\u57CE\u5730\u56FE"
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 1549
-      height: 741
-    spriteID: fc92ea0d25509ef448c12831936c97c4
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 23, y: 100}
+  mosaicSpriteImportData: []
   rigSpriteImportData:
   - name: "\u51EF\u5FB7\u57CE\u5730\u56FE"
     originalName: 
@@ -126,7 +104,7 @@ ScriptedImporter:
       y: 4
       width: 1549
       height: 741
-    spriteID: 566f791c289ab7a47842d8658b3697d1
+    spriteID: 2f1daddbcff858948a813f1724e87f87
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -150,53 +128,9 @@ ScriptedImporter:
     dimension: {x: 0, y: 0}
     characterGroups: []
     boneReadOnly: 0
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Server
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: WebGL
-    overridden: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   mosaicLayers: 1
-  characterMode: 0
+  characterMode: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
@@ -209,23 +143,13 @@ ScriptedImporter:
     categories: []
   spritePackingTag: 
   resliceFromLayer: 0
-  mosaicPSDLayers:
-  - name: "\u51EF\u5FB7\u57CE\u5730\u56FE"
-    spriteName: "\u51EF\u5FB7\u57CE\u5730\u56FE"
-    isGroup: 0
-    parentIndex: -1
-    spriteID: fc92ea0d25509ef448c12831936c97c4
-    layerID: 2
-    mosaicPosition: {x: 4, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
+  mosaicPSDLayers: []
   rigPSDLayers:
   - name: "\u51EF\u5FB7\u57CE\u5730\u56FE"
     spriteName: "\u51EF\u5FB7\u57CE\u5730\u56FE"
     isGroup: 0
     parentIndex: -1
-    spriteID: 566f791c289ab7a47842d8658b3697d1
+    spriteID: 2f1daddbcff858948a813f1724e87f87
     layerID: 2
     mosaicPosition: {x: 4, y: 4}
     flatten: 0

@@ -423,9 +423,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Namespace: Draconia.ViewController
   ScriptName: Character
-  ScriptsFolder: Assets/Scripts/Game
+  ScriptsFolder: Assets\_Scripts\Game
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
+  ArchitectureFullTypeName: 
+  ViewControllerFullTypeName: 
   HitTextPrefab: {fileID: 874472295046470626, guid: d3ab2f314b0f4e948aedb9fe91eb9e4c, type: 3}
   CriticalHitTextPrefab: {fileID: 874472295046470626, guid: 6fc68aca3fd613d40b56165e8e23f107, type: 3}
   NotificationTextPrefab: {fileID: 2899543023783627009}
@@ -461,9 +463,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Namespace: Draconia.ViewController
   ScriptName: Character
-  ScriptsFolder: Assets/Scripts/Game
+  ScriptsFolder: Assets\_Scripts\Game\Player
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
+  ArchitectureFullTypeName: 
+  ViewControllerFullTypeName: 
   HpBar: {fileID: 3560528407222337041}
   Alias: 
   MyPointer: {fileID: 0}
@@ -745,6 +749,8 @@ MonoBehaviour:
   ScriptsFolder: Assets/Scripts/Game
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
+  ArchitectureFullTypeName: 
+  ViewControllerFullTypeName: 
   ExperienceBulbPrefab: {fileID: 789939177497475327, guid: 9b092627a9af03845b7c8b8f198a46ff, type: 3}
   HpBar: {fileID: 5029730202196662700}
   Level: {fileID: 4462927353670423896}
@@ -1025,7 +1031,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  skeletonDataAsset: {fileID: 11400000, guid: e9b66e35512722c4e98a3e8bbdb4da65, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 9031988deb64257499f01b597be502cb, type: 2}
   initialSkinName: 
   initialFlipX: 0
   initialFlipY: 0
@@ -2337,7 +2343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8317509050590803144, guid: 1d2e1ef665d04e04aa3d635917c671e9, type: 3}
       propertyPath: m_fontSize
-      value: 24.55
+      value: 26.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d2e1ef665d04e04aa3d635917c671e9, type: 3}

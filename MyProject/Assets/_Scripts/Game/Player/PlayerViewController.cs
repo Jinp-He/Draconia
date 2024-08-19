@@ -216,11 +216,11 @@ namespace Draconia.ViewController
             PlayerInfo = playerInfo;
             Alias = playerInfo.Alias;
             
-            CharacterAtlas = ResLoadSystem.LoadSync<SpriteAtlas>("Zhouzhou");
+            //CharacterAtlas = ResLoadSystem.LoadSync<SpriteAtlas>("Zhouzhou");
             //CharacterImage.sprite = CharacterAtlas.GetSprite("Idle");
             //CharacterImage.SetNativeSize();
-            CardImageSprite = ResLoadSystem.LoadSync<Sprite>("CardImage_Zhouzhou");
-
+            //CardImageSprite = ResLoadSystem.LoadSync<Sprite>("CardImage_Zhouzhou");
+            
             CurrHP = player.Hp;
             HpBar.Init(player.MaxHp, player.Hp);
 

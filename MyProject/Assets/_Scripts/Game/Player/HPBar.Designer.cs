@@ -2,7 +2,7 @@
 
 using UnityEngine.UI;
 
-namespace Game.Player
+namespace _Scripts.Game.Player
 {
 	public partial class HPBar
 	{

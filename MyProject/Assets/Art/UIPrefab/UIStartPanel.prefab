@@ -486,10 +486,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6271894474036913836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7eaf9f609f1d81c4e9840bd00cc85b31, type: 3}
+  m_Script: {fileID: 11500000, guid: 8254240c114526144bda2151a2f0dab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SettingBtn: {fileID: 0}
+  SettingBtn: {fileID: 3085192683673900149}
   StartGameBtn: {fileID: 1974200974278869909}
   ContinueGameBtn: {fileID: 6771748423520286700}
   InformationBtn: {fileID: 7768926934263245800}
@@ -743,6 +743,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile
       objectReference: {fileID: 0}
+    - target: {fileID: 2499843149650452143, guid: 2d71e6d0b5d971b4899d033ec780fee2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d71e6d0b5d971b4899d033ec780fee2, type: 3}
 --- !u!224 &861863831397092105 stripped
@@ -847,6 +851,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35596eb2bd2e99346952f62f0ea51260, type: 3}
+--- !u!114 &3085192683673900149 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 366901138657859182, guid: 35596eb2bd2e99346952f62f0ea51260, type: 3}
+  m_PrefabInstance: {fileID: 3442914787743695387}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3088846278443493905 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 367739984252135434, guid: 35596eb2bd2e99346952f62f0ea51260, type: 3}

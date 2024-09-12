@@ -1,17 +1,12 @@
-using System;
 using System.Collections.Generic;
-
-using UnityEngine;
+using _Scripts.Game.Event;
+using _Scripts.Game.Player;
+using _Scripts.System;
 using cfg;
-using Draconia.Controller;
-using Draconia.MyComponent;
-using Draconia.System;
-using Draconia.ViewController;
-using Draconia.ViewController.Event;
 using QFramework;
+using UnityEngine;
 
-
-namespace Draconia.Game.Buff
+namespace _Scripts.Game.Buff
 {
     public class BuffManager : MonoBehaviour, ICanGetSystem,ICanSendEvent
     {
@@ -76,7 +71,7 @@ namespace Draconia.Game.Buff
 
         public IArchitecture GetArchitecture()
         {
-            return Draconia.Interface;
+            return Draconia.Draconia.Interface;
         }
     }
 }

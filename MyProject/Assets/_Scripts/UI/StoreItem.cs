@@ -1,11 +1,10 @@
-﻿using cfg;
-using Draconia.System;
-using Draconia.ViewController;
+﻿using _Scripts.Game.Card;
+using _Scripts.System;
+using cfg;
 using QFramework;
 using UnityEngine.UI;
-using NotImplementedException = System.NotImplementedException;
 
-namespace Draconia.UI
+namespace _Scripts.UI
 {
     
     
@@ -44,7 +43,7 @@ namespace Draconia.UI
 
         public IArchitecture GetArchitecture()
         {
-            return Draconia.Interface;
+            return Draconia.Draconia.Interface;
         }
     }
 }

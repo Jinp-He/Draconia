@@ -1,9 +1,8 @@
 ﻿using System.Linq;
-using Draconia.ViewController.Event;
+using _Scripts.Game.Event;
 using QFramework;
-using Unity.VisualScripting;
 
-namespace Draconia.Game.Buff.Pose
+namespace _Scripts.Game.Buff.Pose
 {
     public class Feiniao : Pose
     {

@@ -1,9 +1,6 @@
-using System;
 using UnityEngine;
-using UnityEngine.UI;
-using QFramework;
 
-namespace Draconia.UI
+namespace _Scripts.UI
 {
 	// Generate Id:88c2799f-75d4-4ae7-998d-effa5b908daf
 	public partial class UIStorePanel

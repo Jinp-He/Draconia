@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections;
-using DG.Tweening;
-using Draconia.MyComponent;
-using Draconia.UI;
+﻿using DG.Tweening;
 using QFramework;
 using TMPro;
 using UnityEngine;
 
-
-namespace Draconia.ViewController
+namespace _Scripts.Game
 {
     public class EnemyAnimator : CharacterAnimator
     {

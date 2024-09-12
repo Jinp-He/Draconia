@@ -351,3 +351,7 @@ C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\obj\Debug\spine-unity.csproj.
 C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\obj\Debug\spine-unity.csproj.CopyComplete
 C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\obj\Debug\spine-unity.dll
 C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\obj\Debug\spine-unity.pdb
+E:\Github\Draconia\MyProject\obj\Debug\spine-unity.csproj.AssemblyReference.cache
+E:\Github\Draconia\MyProject\obj\Debug\spine-unity.csproj.CoreCompileInputs.cache
+E:\Github\Draconia\MyProject\obj\Debug\spine-unity.dll
+E:\Github\Draconia\MyProject\obj\Debug\spine-unity.pdb

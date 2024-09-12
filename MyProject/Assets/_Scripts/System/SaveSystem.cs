@@ -1,19 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using cfg;
-using Draconia.ViewController;
+using _Scripts.Game.PlayerStrategy;
 using QFramework;
-using Newtonsoft.Json;
-using LitJson;
-using SimpleJSON;
 using Sirenix.Serialization;
-using UnityEditor;
 using UnityEngine;
-using NotImplementedException = System.NotImplementedException;
 using SerializationUtility = Sirenix.Serialization.SerializationUtility;
 
 
-namespace Draconia.System
+namespace _Scripts.System
 {
     public class TestData : ICanGetSystem
     {
@@ -25,7 +19,7 @@ namespace Draconia.System
 
         public IArchitecture GetArchitecture()
         {
-            return Draconia.Interface;
+            return Draconia.Draconia.Interface;
         }
     }
     //你好

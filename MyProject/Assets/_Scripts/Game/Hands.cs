@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using _Scripts.Game.Card;
+using _Scripts.Game.Event;
+using _Scripts.Game.Player;
+using _Scripts.System;
 using cfg;
-using Draconia.System;
-using Draconia.ViewController.Event;
 using QFramework;
 using Sirenix.OdinInspector;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.UI;
 using Utility;
-using static UnityEngine.Screen;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game
 {
     public class Hands : MonoBehaviour, ICanGetSystem, ICanSendEvent
     {
@@ -322,7 +319,7 @@ namespace Draconia.ViewController
 
         public IArchitecture GetArchitecture()
         {
-            return Draconia.Interface;
+            return Draconia.Draconia.Interface;
         }
     }
 }

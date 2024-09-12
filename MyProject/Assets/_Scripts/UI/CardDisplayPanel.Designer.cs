@@ -1,9 +1,6 @@
-using System;
 using UnityEngine;
-using UnityEngine.UI;
-using QFramework;
 
-namespace Draconia.UI
+namespace _Scripts.UI
 {
 	// Generate Id:2be9ce16-9d08-4c22-a648-667005603db5
 	public partial class CardDisplayPanel

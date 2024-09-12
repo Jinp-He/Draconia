@@ -1,8 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game.Map
 {
     public partial class Tile
     {

@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using cfg;
-using UnityEngine;
+using _Scripts.Game.Player;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game.Card
 {
     public class Card102 : Card
     {

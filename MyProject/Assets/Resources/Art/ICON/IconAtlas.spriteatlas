@@ -36,6 +36,10 @@ SpriteAtlas:
     - {fileID: 21300000, guid: 9cca75957200e324b8493b7c8bb6ba98, type: 3}
     - {fileID: 2800000, guid: 00b968f499c418e43b5c0c2cd3539710, type: 3}
     - {fileID: -8328923581568760697, guid: 503ec33e172300f46988e4290f3d67c5, type: 3}
+    - {fileID: 3785091471273262838, guid: 42286f7de7b4b4d4fa93e137a2e91ba0, type: 3}
+    - {fileID: 7909548693551061532, guid: acc2320e2a166404d9a5d5ff57618070, type: 3}
+    - {fileID: 943985259672852041, guid: acc2320e2a166404d9a5d5ff57618070, type: 3}
+    - {fileID: -684432016892484705, guid: acc2320e2a166404d9a5d5ff57618070, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -43,10 +47,18 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 00b968f499c418e43b5c0c2cd3539710, type: 3}
   - {fileID: 21300000, guid: 9cca75957200e324b8493b7c8bb6ba98, type: 3}
+  - {fileID: 3785091471273262838, guid: 42286f7de7b4b4d4fa93e137a2e91ba0, type: 3}
+  - {fileID: 943985259672852041, guid: acc2320e2a166404d9a5d5ff57618070, type: 3}
+  - {fileID: -684432016892484705, guid: acc2320e2a166404d9a5d5ff57618070, type: 3}
+  - {fileID: 7909548693551061532, guid: acc2320e2a166404d9a5d5ff57618070, type: 3}
   - {fileID: 2780557060245603802, guid: 503ec33e172300f46988e4290f3d67c5, type: 3}
   m_PackedSpriteNamesToIndex:
   - Icon_Store
   - Icon_Rest
+  - Icon_Explored
+  - fatknight
+  - dog01
+  - MasterChief
   - MasterChief
   m_RenderDataMap: {}
   m_Tag: IconAtlas

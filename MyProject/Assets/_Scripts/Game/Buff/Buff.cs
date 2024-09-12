@@ -1,16 +1,13 @@
 ﻿using System.Collections.Generic;
-
-using TMPro;
-using UnityEngine.UI;
+using _Scripts.System;
 using cfg;
 using Draconia.MyComponent;
-using Draconia.System;
-using Draconia.ViewController.Event;
 using QFramework;
+using TMPro;
 using UnityEngine.Events;
 using Utility;
 
-namespace Draconia.Game.Buff
+namespace _Scripts.Game.Buff
 {
     public class Buff : MyViewController, ICanRegisterEvent
     {

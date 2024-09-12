@@ -336,7 +336,6 @@ GameObject:
   - component: {fileID: 4643217332729036549}
   - component: {fileID: 7471493248543370913}
   - component: {fileID: 4145654044191042368}
-  - component: {fileID: 3934012111695030347}
   - component: {fileID: 6813661187802785325}
   - component: {fileID: 7330537626139674394}
   m_Layer: 5
@@ -409,31 +408,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3934012111695030347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3441602297555421592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7ee23a99c104ed4a194912b3284c8a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Namespace: Draconia.ViewController
-  ScriptName: Character
-  ScriptsFolder: Assets\_Scripts\Game
-  GeneratePrefab: 0
-  PrefabFolder: Assets/Art/Prefab
-  ArchitectureFullTypeName: 
-  ViewControllerFullTypeName: 
-  HitTextPrefab: {fileID: 874472295046470626, guid: d3ab2f314b0f4e948aedb9fe91eb9e4c, type: 3}
-  CriticalHitTextPrefab: {fileID: 874472295046470626, guid: 6fc68aca3fd613d40b56165e8e23f107, type: 3}
-  NotificationTextPrefab: {fileID: 2899543023783627009}
-  SkeletonGraphic: {fileID: 6799194178550839736}
-  CharacterImage: {fileID: 0}
-  CharacterAtlas: {fileID: 0}
 --- !u!114 &6813661187802785325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,11 +449,11 @@ MonoBehaviour:
   IsPlayer: 0
   CharacterAtlas: {fileID: 0}
   CharacterImage: {fileID: 0}
-  CharacterAnimator: {fileID: 3934012111695030347}
+  CharacterAnimator: {fileID: 0}
   DamageTextField: {fileID: 8478509514297992399}
   NotificationTextField: {fileID: 148496692707872775}
   BuffManager: {fileID: 0}
-  PlayerAnimator: {fileID: 3934012111695030347}
+  PlayerAnimator: {fileID: 5702520371844343429}
   EnergyBar: {fileID: 0}
   RestCardNum: {fileID: 2626879283856591081}
   ChooseBracelet: {fileID: 4643453363303231752}
@@ -976,6 +950,7 @@ GameObject:
   - component: {fileID: 5937591579625729601}
   - component: {fileID: 7555070426370231842}
   - component: {fileID: 6799194178550839736}
+  - component: {fileID: 5702520371844343429}
   m_Layer: 0
   m_Name: CharacterAnimator
   m_TagString: Untagged
@@ -1057,6 +1032,31 @@ MonoBehaviour:
       calculateTangents: 0
       addNormals: 0
       immutableTriangles: 0
+--- !u!114 &5702520371844343429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5859382728299606334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f8661e55194705b953d3de9e2e41c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Namespace: QFramework.Example
+  ScriptName: CharacterAnimator
+  ScriptsFolder: Assets\_Scripts\Game
+  GeneratePrefab: 0
+  PrefabFolder: Assets/Art/Prefab
+  ArchitectureFullTypeName: 
+  ViewControllerFullTypeName: 
+  HitTextPrefab: {fileID: 874472295046470626, guid: d3ab2f314b0f4e948aedb9fe91eb9e4c, type: 3}
+  CriticalHitTextPrefab: {fileID: 874472295046470626, guid: 440644bef5ac2274abd392fef20e37fb, type: 3}
+  NotificationTextPrefab: {fileID: 6479125858327709472, guid: 6fc68aca3fd613d40b56165e8e23f107, type: 3}
+  SkeletonGraphic: {fileID: 6799194178550839736}
+  CharacterImage: {fileID: 4145654044191042368}
+  CharacterAtlas: {fileID: 0}
 --- !u!1 &6046023478754269137
 GameObject:
   m_ObjectHideFlags: 0

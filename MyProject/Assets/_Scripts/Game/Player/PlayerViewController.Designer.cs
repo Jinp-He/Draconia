@@ -1,21 +1,8 @@
 // Generate Id:9964f028-b0f7-4392-bbf2-61645677e1ea
 
-using System;
-using System.Collections.Generic;
-using cfg;
-using Draconia.ViewController;
-using DG.Tweening;
-using Draconia.Controller;
-using Draconia.Game.Buff;
-using Draconia.UI;
-using Draconia.ViewController.Event;
-using Game.Player;
-using QFramework;
-using TMPro;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game.Player
 {
 	public partial class PlayerViewController : CharacterViewController
 	{
@@ -38,9 +25,9 @@ namespace Draconia.ViewController
 		
 		[HideInInspector]
 		public Sprite CardImageSprite;
-		private Player _player;
+		private PlayerStrategy.Player _player;
 		
-		public Player Player
+		public PlayerStrategy.Player Player
 		{
 			get { return _player; }
 			set { _player = value; }

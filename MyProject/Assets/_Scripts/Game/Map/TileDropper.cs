@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
-using Draconia.System;
-using Draconia.ViewController.Event;
+using _Scripts.Game.Event;
+using _Scripts.System;
 using QFramework;
-using UnityEngine;
 using UnityEngine.EventSystems;
-using NotImplementedException = System.NotImplementedException;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game.Map
 {
     public class TileDropper : QFramework.ViewController, IDropHandler, ICanSendEvent, ICanGetSystem
     {
@@ -54,7 +52,7 @@ namespace Draconia.ViewController
 
         public IArchitecture GetArchitecture()
         {
-            return Draconia.Interface;
+            return Draconia.Draconia.Interface;
         }
     }
 }

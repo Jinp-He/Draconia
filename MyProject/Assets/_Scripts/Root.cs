@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using Draconia.System;
+using _Scripts.UI;
 using Draconia.UI;
 using QFramework;
 using UnityEngine;
 using NotImplementedException = System.NotImplementedException;
+using UIStartPanel = _Scripts.UI.UIStartPanel;
 
 namespace Draconia
 {
@@ -21,8 +22,9 @@ namespace Draconia
             UnityEngine.Cursor.SetCursor(Cursor, Vector2.zero, CursorMode.Auto);
             
             ResKit.Init();
+            //UIKit.OpenPanel<UIStartPanel>();
             UIKit.OpenPanel<UIStartPanel>();
-            
+
             //GetComponent<ChangeAllFont>().ChangeAllFonts();
         }
 

@@ -1,8 +1,8 @@
 // Generate Id:c4f2719f-e71a-4652-9531-5fa16ebcae46
-using UnityEngine;
-using UnityEngine.UI;
 
-namespace Draconia.ViewController
+using UnityEngine;
+
+namespace _Scripts.Game.Card
 {
 	public partial class CardVC
 	{

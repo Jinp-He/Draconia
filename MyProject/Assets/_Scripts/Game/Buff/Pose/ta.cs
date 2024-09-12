@@ -1,11 +1,9 @@
-﻿using System.Linq;
+﻿using _Scripts.Game.Event;
+using _Scripts.Game.Player;
 using cfg;
-using Draconia.ViewController;
-using Draconia.ViewController.Event;
 using QFramework;
-using Unity.VisualScripting;
 
-namespace Draconia.Game.Buff.Pose
+namespace _Scripts.Game.Buff.Pose
 {
     public class Ta : Pose
     {

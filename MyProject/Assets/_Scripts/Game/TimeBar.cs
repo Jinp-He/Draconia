@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Draconia.Controller;
-using Draconia.ViewController.Event;
-using UnityEngine;
+using _Scripts.Game.Event;
+using _Scripts.Game.Player;
+using _Scripts.Game.PlayerStrategy;
 using QFramework;
+using UnityEngine;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game
 {
 	/// <summary>
 	/// 时间轴，控制角色的行动顺序
@@ -15,10 +16,10 @@ namespace Draconia.ViewController
 	{
 		public static int Length = 500;
 
-		public Pointer PointerPrefab;
-		public List<Pointer> Pointers;
-		public List<Pointer> Players;
-		public List<Pointer> Enemies;
+		public MyPointer MyPointerPrefab;
+		public List<MyPointer> Pointers;
+		public List<MyPointer> Players;
+		public List<MyPointer> Enemies;
 		public bool IsInit, IsStart;
 
 		public int DangerAreaPlayer, DangerAreaEnemy;
@@ -39,25 +40,25 @@ namespace Draconia.ViewController
 		}
 
 
-		public Pointer AddCharacter(PlayerViewController playerViewController)
+		public MyPointer AddCharacter(PlayerViewController playerViewController)
 		{
-			Pointer pointer = Instantiate(PointerPrefab,PlayerSlot.transform);
-			pointer.LocalPosition(0, 0, 0);
-			pointer.Init(playerViewController,this);
-			Pointers.Add(pointer);
-			Players.Add(pointer);
+			MyPointer myPointer = Instantiate(MyPointerPrefab,PlayerSlot.transform);
+			myPointer.LocalPosition(0, 0, 0);
+			myPointer.Init(playerViewController,this);
+			Pointers.Add(myPointer);
+			Players.Add(myPointer);
 			
-			return pointer;
+			return myPointer;
 		}
 
-		public Pointer AddEnemy(Enemy enemy)
+		public MyPointer AddEnemy(Enemy enemy)
 		{
-			Pointer pointer = Instantiate(PointerPrefab,EnemySlot.transform);
-			pointer.LocalPosition(0, 0, 0);
-			pointer.Init(enemy,this);
-			Pointers.Add(pointer);
-			Enemies.Add(pointer);
-			return pointer;
+			MyPointer myPointer = Instantiate(MyPointerPrefab,EnemySlot.transform);
+			myPointer.LocalPosition(0, 0, 0);
+			myPointer.Init(enemy,this);
+			Pointers.Add(myPointer);
+			Enemies.Add(myPointer);
+			return myPointer;
 		}
 
 		public void RemoveCharacter(PlayerViewController playerViewController)
@@ -74,7 +75,7 @@ namespace Draconia.ViewController
 			enemy.MyPointer.gameObject.DestroySelf();
 		}
 
-		public int GetPosition(Pointer pointer)
+		public int GetPosition(MyPointer myPointer)
 		{
 			//获得角色的位置
 			return 0;
@@ -131,10 +132,10 @@ namespace Draconia.ViewController
 			}  
 		}
 
-		public QFramework.Tuple<int, int> TransferLocalPosition(Pointer pointer)
+		public QFramework.Tuple<int, int> TransferLocalPosition(MyPointer myPointer)
 		{
 			//获得绝对位置
-			float h = Math.Abs(pointer.PosX.Value);
+			float h = Math.Abs(myPointer.PosX.Value);
 			//Debug.LogFormat("h is {0} TimeBarS擦了 is {1}",h,TimeBarScale);
 			int min = (int)h / (int)TimeBarScale;
 			//Debug.LogFormat("获取的位置为 {0} {1}",min,min+1);
@@ -147,62 +148,62 @@ namespace Draconia.ViewController
 
 
 
-		public void MoveRelativeTimePosition(Pointer pointer, float cost)
+		public void MoveRelativeTimePosition(MyPointer myPointer, float cost)
 		{
-			if (pointer._isPlayer)
+			if (myPointer._isPlayer)
 			{
-				pointer.PosX.Value -= cost * TimeBarScale;
+				myPointer.PosX.Value -= cost * TimeBarScale;
 			}
 			else
 			{
-				pointer.PosX.Value += cost * TimeBarScale;
+				myPointer.PosX.Value += cost * TimeBarScale;
 			}
-			pointer.Regulate();
-			if(IsInDangerArea(pointer))
-				pointer.CharacterViewController.TriggerDanger.Invoke();
+			myPointer.Regulate();
+			if(IsInDangerArea(myPointer))
+				myPointer.CharacterViewController.TriggerDanger.Invoke();
 		}
 		public void MoveRelativeTimePosition(PlayerViewController player, float cost)
 		{
-			Pointer pointer = player.MyPointer;
-			if (pointer._isPlayer)
+			MyPointer myPointer = player.MyPointer;
+			if (myPointer._isPlayer)
 			{
-				pointer.PosX.Value -= cost * TimeBarScale;
+				myPointer.PosX.Value -= cost * TimeBarScale;
 			}
 			else
 			{
-				pointer.PosX.Value += cost * TimeBarScale;
+				myPointer.PosX.Value += cost * TimeBarScale;
 			}
-			pointer.Regulate();
-			if(IsInDangerArea(pointer))
-				pointer.CharacterViewController.TriggerDanger.Invoke();
+			myPointer.Regulate();
+			if(IsInDangerArea(myPointer))
+				myPointer.CharacterViewController.TriggerDanger.Invoke();
 		}
 		
 		public void MoveRelativeTimePosition(Enemy enemy, float cost)
 		{
-			Pointer pointer = enemy.MyPointer;
-			if (pointer._isPlayer)
+			MyPointer myPointer = enemy.MyPointer;
+			if (myPointer._isPlayer)
 			{
-				pointer.PosX.Value -= cost * TimeBarScale;
+				myPointer.PosX.Value -= cost * TimeBarScale;
 			}
 			else
 			{
-				pointer.PosX.Value += cost * TimeBarScale;
+				myPointer.PosX.Value += cost * TimeBarScale;
 			}
-			pointer.Regulate();
-			if(IsInDangerArea(pointer))
-				pointer.CharacterViewController.TriggerDanger.Invoke();
+			myPointer.Regulate();
+			if(IsInDangerArea(myPointer))
+				myPointer.CharacterViewController.TriggerDanger.Invoke();
 		}
 
 
-		public void MoveAbsoluteTimePosition(Pointer pointer, float pos, bool isInit = false)
+		public void MoveAbsoluteTimePosition(MyPointer myPointer, float pos, bool isInit = false)
 		{
 			
-			pointer.PosX.Value = TransferPosition(pos, pointer._isPlayer);
+			myPointer.PosX.Value = TransferPosition(pos, myPointer._isPlayer);
 //			Debug.Log("DEBUG PositionValue" +pointer.PosX.Value);
 			if (isInit) return;
-			pointer.Regulate();
-			if(IsInDangerArea(pointer))
-				pointer.CharacterViewController.TriggerDanger.Invoke();
+			myPointer.Regulate();
+			if(IsInDangerArea(myPointer))
+				myPointer.CharacterViewController.TriggerDanger.Invoke();
 		}
 
 		public void Move()
@@ -210,9 +211,9 @@ namespace Draconia.ViewController
 			
 		}
 
-		public bool IsValidMove(Pointer pointer, int cost)
+		public bool IsValidMove(MyPointer myPointer, int cost)
 		{
-			if (TransferLocalPosition(pointer).Item2 + cost > 8)
+			if (TransferLocalPosition(myPointer).Item2 + cost > 8)
 			{
 				return false;
 			}
@@ -220,21 +221,21 @@ namespace Draconia.ViewController
 		}
 
 
-		public bool IsInDangerArea(Pointer pointer)
+		public bool IsInDangerArea(MyPointer myPointer)
 		{
-			QFramework.Tuple<int, int> range = TransferLocalPosition(pointer);
+			QFramework.Tuple<int, int> range = TransferLocalPosition(myPointer);
 			//Debug.LogFormat("位置为{0} {1}", range.Item1, range.Item2);
 			//Debug.LogFormat("Dangerarea {0}", DangerAreaPlayer);
-			if (pointer._isPlayer)
+			if (myPointer._isPlayer)
 			{
 				if (range.Item1 > DangerAreaPlayer)
 				{
-					this.SendEvent(new EnterDangerAreaEvent() { CharacterViewController = pointer.CharacterViewController });
+					this.SendEvent(new EnterDangerAreaEvent() { CharacterViewController = myPointer.CharacterViewController });
 					return true;
 				}
 				else if (range.Item1 == DangerAreaPlayer && range.Item1 != range.Item2)
 				{
-					this.SendEvent(new EnterDangerAreaEvent() { CharacterViewController = pointer.CharacterViewController });
+					this.SendEvent(new EnterDangerAreaEvent() { CharacterViewController = myPointer.CharacterViewController });
 					return true;
 				}
 					
@@ -243,12 +244,12 @@ namespace Draconia.ViewController
 			{
 				if (range.Item1 > DangerAreaEnemy)
 				{
-					this.SendEvent(new EnterDangerAreaEvent() { CharacterViewController = pointer.CharacterViewController });
+					this.SendEvent(new EnterDangerAreaEvent() { CharacterViewController = myPointer.CharacterViewController });
 					return true;
 				}
 				else if (range.Item1 == DangerAreaEnemy && range.Item1 != range.Item2)
 				{
-					this.SendEvent(new EnterDangerAreaEvent() { CharacterViewController = pointer.CharacterViewController });
+					this.SendEvent(new EnterDangerAreaEvent() { CharacterViewController = myPointer.CharacterViewController });
 					return true;
 				}
 			}
@@ -287,7 +288,7 @@ namespace Draconia.ViewController
 
 		public IArchitecture GetArchitecture()
 		{
-			return Draconia.Interface;
+			return Draconia.Draconia.Interface;
 		}
 	}
 }

@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using cfg;
-using QFramework;
-using SimpleJSON;
-using UnityEngine;
-using NotImplementedException = System.NotImplementedException;
-using Object = UnityEngine.Object;
+﻿using QFramework;
 
-namespace Draconia.System
+namespace _Scripts.System
 {
     public class TextHandleSystem : AbstractSystem
     {

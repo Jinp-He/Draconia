@@ -1,11 +1,10 @@
-﻿using Draconia.System;
+﻿using _Scripts.System;
 using QFramework;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using NotImplementedException = System.NotImplementedException;
 
-namespace Draconia.UI
+namespace _Scripts.UI
 {
     public class BagButton : Button, ICanGetSystem
 
@@ -20,7 +19,7 @@ namespace Draconia.UI
 
     public IArchitecture GetArchitecture()
     {
-        return Draconia.Interface;
+        return Draconia.Draconia.Interface;
     }
     }
 }

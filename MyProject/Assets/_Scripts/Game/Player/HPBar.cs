@@ -1,6 +1,6 @@
 using UnityEngine.EventSystems;
 
-namespace Game.Player
+namespace _Scripts.Game.Player
 {
 	public partial class HPBar : QFramework.ViewController, IPointerEnterHandler, IPointerExitHandler
 	{

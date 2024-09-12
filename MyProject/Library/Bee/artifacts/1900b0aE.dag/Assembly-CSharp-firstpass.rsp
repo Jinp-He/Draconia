@@ -355,6 +355,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/spine-unity-examples-editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/spine-unity-examples.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/spine-unity.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/SupportOldQF.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UIKit.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UIKit.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Animation.Editor.ref.dll"

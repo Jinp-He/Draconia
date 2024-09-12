@@ -322,9 +322,29 @@ MonoBehaviour:
   Col: 0
   EventIndex: 0
   MapEventIndex: 0
-  TileType: {fileID: 4343727234628468602, guid: f57a4e7f061ce8640a1ef207d0507238, type: 2}
-  MapTileType: {fileID: 4343727234628468602, guid: 4ecc3fdbf63862946a194b1e48c83980, type: 2}
-  IconAtlas: {fileID: 4343727234628468602, guid: 4191860886a025c4a8eded575d4fe8b8, type: 2}
+  TileType:
+  - {fileID: -383901261232127250, guid: 1af4865cbfbf33c4895adf22b48a0c39, type: 3}
+  - {fileID: -7229266634939011871, guid: 1af4865cbfbf33c4895adf22b48a0c39, type: 3}
+  - {fileID: 2785033295878205379, guid: 1af4865cbfbf33c4895adf22b48a0c39, type: 3}
+  - {fileID: -7329167073357432668, guid: 1af4865cbfbf33c4895adf22b48a0c39, type: 3}
+  - {fileID: 4274244694844382439, guid: 1af4865cbfbf33c4895adf22b48a0c39, type: 3}
+  - {fileID: -8313845735171924113, guid: 42286f7de7b4b4d4fa93e137a2e91ba0, type: 3}
+  MapTileType:
+  - {fileID: -5412160615800597104, guid: fbf7d3854239a7644b00ac8d1184badb, type: 3}
+  - {fileID: -1053019732066998189, guid: fbf7d3854239a7644b00ac8d1184badb, type: 3}
+  - {fileID: -3150008313739034144, guid: fbf7d3854239a7644b00ac8d1184badb, type: 3}
+  - {fileID: -5081121500676182519, guid: fbf7d3854239a7644b00ac8d1184badb, type: 3}
+  - {fileID: 3275986128507851226, guid: fbf7d3854239a7644b00ac8d1184badb, type: 3}
+  - {fileID: -2402293873392825863, guid: f3358c37f272bfa4e95e7d3e1248e3b2, type: 3}
+  IconAtlas:
+  - {fileID: 21300000, guid: 9cca75957200e324b8493b7c8bb6ba98, type: 3}
+  - {fileID: 21300000, guid: 00b968f499c418e43b5c0c2cd3539710, type: 3}
+  - {fileID: -684432016892484705, guid: acc2320e2a166404d9a5d5ff57618070, type: 3}
+  - {fileID: 943985259672852041, guid: acc2320e2a166404d9a5d5ff57618070, type: 3}
+  - {fileID: 7909548693551061532, guid: acc2320e2a166404d9a5d5ff57618070, type: 3}
+  - {fileID: 21300000, guid: d162dfa4214bf1745962aa4d1eb35fd6, type: 3}
+  - {fileID: 3785091471273262838, guid: 42286f7de7b4b4d4fa93e137a2e91ba0, type: 3}
+  - {fileID: -2402293873392825863, guid: f3358c37f272bfa4e95e7d3e1248e3b2, type: 3}
   TileDirections: 
   EventText: {fileID: 0}
   G: 0
@@ -1121,7 +1141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5501248356230671979
 RectTransform:
   m_ObjectHideFlags: 0

@@ -2205,7 +2205,7 @@ ScriptedImporter:
     mosaicPosition: {x: 4071, y: 409}
     flatten: 0
     isImported: 1
-    isVisible: 1
+    isVisible: 0
   - name: "\u5F002 \u62F7\u8D1D"
     spriteName: "\u5F002 \u62F7\u8D1D"
     isGroup: 0
@@ -2215,7 +2215,7 @@ ScriptedImporter:
     mosaicPosition: {x: 4044, y: 1852}
     flatten: 0
     isImported: 1
-    isVisible: 1
+    isVisible: 0
   - name: "\u5F002"
     spriteName: "\u5F002"
     isGroup: 0
@@ -2225,7 +2225,7 @@ ScriptedImporter:
     mosaicPosition: {x: 3980, y: 292}
     flatten: 0
     isImported: 1
-    isVisible: 1
+    isVisible: 0
   - name: "\u56FE\u5C42 32 \u62F7\u8D1D 2"
     spriteName: "\u56FE\u5C42 32 \u62F7\u8D1D 2"
     isGroup: 0
@@ -2685,7 +2685,7 @@ ScriptedImporter:
     mosaicPosition: {x: 1612, y: 912}
     flatten: 0
     isImported: 1
-    isVisible: 1
+    isVisible: 0
   rigPSDLayers:
   - name: "\u7EC4 1"
     spriteName: 

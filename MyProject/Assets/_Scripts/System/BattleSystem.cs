@@ -1,22 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
+using _Scripts.Game;
+using _Scripts.Game.Card;
+using _Scripts.Game.Event;
+using _Scripts.Game.Player;
+using _Scripts.UI;
 using cfg;
-using Draconia.Controller;
-using Draconia.UI;
-using Draconia.ViewController;
-using Draconia.ViewController.Event;
 using QFramework;
-using Unity.Mathematics;
-using DG;
-using UnityEngine.UIElements;
 using Utility;
 using Debug = UnityEngine.Debug;
-using NotImplementedException = System.NotImplementedException;
 using Random = UnityEngine.Random;
-namespace Draconia.System
+namespace _Scripts.System
 {
     public enum BattleState
     {

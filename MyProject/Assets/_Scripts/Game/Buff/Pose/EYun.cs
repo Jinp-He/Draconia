@@ -1,11 +1,4 @@
-﻿using System.Linq;
-using cfg;
-using Draconia.ViewController;
-using Draconia.ViewController.Event;
-using QFramework;
-using Unity.VisualScripting;
-
-namespace Draconia.Game.Buff.Pose
+﻿namespace _Scripts.Game.Buff.Pose
 {
     public class EYun : Pose
     {

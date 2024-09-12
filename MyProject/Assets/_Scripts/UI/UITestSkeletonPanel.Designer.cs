@@ -1,9 +1,6 @@
-using System;
 using UnityEngine;
-using UnityEngine.UI;
-using QFramework;
 
-namespace Draconia.UI
+namespace _Scripts.UI
 {
 	// Generate Id:0a5d4ab6-5e84-49d9-af0c-3c8fd8aaff23
 	public partial class UITestSkeletonPanel

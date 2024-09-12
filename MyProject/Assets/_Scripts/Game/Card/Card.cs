@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Scripts.Game.Player;
+using _Scripts.System;
 using cfg;
-using Draconia.System;
-using Draconia.UI;
 using QFramework;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using NotImplementedException = System.NotImplementedException;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game.Card
 {
     public class Card : ICanGetSystem
     {
@@ -137,7 +136,7 @@ namespace Draconia.ViewController
 
         public IArchitecture GetArchitecture()
         {
-            return Draconia.Interface;
+            return Draconia.Draconia.Interface;
         }
     }
 }

@@ -1,23 +1,17 @@
-using System.Collections.Generic;
+using _Scripts.Game.Buff;
+using _Scripts.Game.Event;
+using _Scripts.Game.Player;
+using _Scripts.UI;
 using cfg;
-using Draconia.Controller;
-using Draconia.Game.Buff;
-using Draconia.MyComponent;
-using Draconia.System;
-using Draconia.UI;
-using UnityEngine;
+using DG.Tweening;
 using QFramework;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.U2D;
-using UnityEngine.UI;
-using Utility;
 using DOTween = DG.Tweening.DOTween;
-using DG.Tweening;
-using Draconia.ViewController.Event;
-using NotImplementedException = System.NotImplementedException;
 using Sequence = DG.Tweening.Sequence;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game
 {
 	public partial class Enemy : CharacterViewController,IPointerEnterHandler, IPointerExitHandler
 	{
@@ -52,11 +46,11 @@ namespace Draconia.ViewController
 	
 		public int Position => transform.GetSiblingIndex();
 
-		public EnemyStrategy EnemyStrategy => _enemyStrategy;
+		public EnemyStrategy.EnemyStrategy EnemyStrategy => _enemyStrategy;
 		
 		//public SpriteAtlas EnemyAtlas;
 		public EnemyAnimator _enemyAnimator;
-		public EnemyStrategy _enemyStrategy;
+		public EnemyStrategy.EnemyStrategy _enemyStrategy;
 		public EnemyAnimation EnemyAnimation;
 
 
@@ -85,7 +79,7 @@ namespace Draconia.ViewController
 			TriggerDanger += EnterDangerArea;
 			
 			//Debug.Log("#BattleSystem# Generating 2 " + enemyInfo.Alias);
-			_enemyStrategy = EnemyStrategy.GetEnemyStrategy(this);
+			_enemyStrategy = Game.EnemyStrategy.EnemyStrategy.GetEnemyStrategy(this);
 			//Debug.Log("#BattleSystem# Generating 3 " + enemyInfo.Alias);
 			MaxEnergy = enemyInfo.MaxEnergy;
 

@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections;
+using _Scripts.Game.Player;
+using _Scripts.System;
 using cfg;
+using DG.Tweening;
 using Draconia.MyComponent;
 using QFramework;
+using Spine.Unity;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using DG.Tweening;
-using Draconia.System;
-using Spine.Unity;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game
 {
     public class CharacterAnimator : MyViewController
     {

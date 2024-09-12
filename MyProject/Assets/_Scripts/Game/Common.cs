@@ -1,4 +1,4 @@
-﻿namespace Draconia.ViewController
+﻿namespace _Scripts.Game
 {
     public class Common
     {

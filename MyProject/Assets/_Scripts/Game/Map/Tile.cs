@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Scripts.System;
+using _Scripts.UI;
 using DG.Tweening;
-using Draconia.System;
-using Draconia.UI;
+using Draconia.StaticExtension;
 using QFramework;
-using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.U2D;
-using UnityEngine.UI;
+using Draconia.UI;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game.Map
 {
     public enum TileDirection
     {
@@ -52,9 +52,11 @@ namespace Draconia.ViewController
         public TileEventEnum EventIndex;
         public MapEventEnum MapEventIndex;
         private RectTransform _rectTransform;
-        public SpriteAtlas TileType;
-        public SpriteAtlas MapTileType;
-        public SpriteAtlas IconAtlas;
+   
+        public Sprite[] TileType;
+        public Sprite[] MapTileType;
+        public Sprite[] IconAtlas;
+        
         public List<TileDirection> TileDirections;
         public TextMeshProUGUI EventText;
 
@@ -82,113 +84,117 @@ namespace Draconia.ViewController
             _tileIndex = exits;
             MapEventIndex = mapEvent;
             EventIndex = tileEventType;
-            
-            TileType = this.GetSystem<ResLoadSystem>().LoadSpriteAtlas("StoreTile");
-            MapTileType = this.GetSystem<ResLoadSystem>().LoadSpriteAtlas("MapTile");
-            IconAtlas = this.GetSystem<ResLoadSystem>().LoadSpriteAtlas("IconAtlas");
-            switch (exits)
-            {
-                case 0:
-                    
-                    DirectionImage.sprite = TileType.GetSprite("00");
-                    break;
-                case 1:
-                    TileDirections.Add(TileDirection.W);
-                    DirectionImage.sprite = TileType.GetSprite("01");
-                    break;
-                case 2:
-                    TileDirections.Add(TileDirection.W);
-                    TileDirections.Add(TileDirection.E);
-                    DirectionImage.sprite = TileType.GetSprite("02");
-                    break;
-                case 3:
-                    TileDirections.Add(TileDirection.W);
-                    TileDirections.Add(TileDirection.N);
-                    DirectionImage.sprite = TileType.GetSprite("03");
-                    break;
-                case 4:
-                    TileDirections.Add(TileDirection.E);
-                    TileDirections.Add(TileDirection.N);
-                    TileDirections.Add(TileDirection.S);
-                    DirectionImage.sprite = TileType.GetSprite("04");
-                    break;
-                case 5:
-                    TileDirections.Add(TileDirection.W);
-                    TileDirections.Add(TileDirection.E);
-                    TileDirections.Add(TileDirection.N);
-                    TileDirections.Add(TileDirection.S);
-                    DirectionImage.sprite = TileType.GetSprite("05");
-                    break;
-            }
 
-            EventIndex = tileEventType;
-            switch (tileEventType)
-            {
-                case TileEventEnum.None:
-                    RandomEvent.gameObject.SetActive(false);
-                    break;
-                case TileEventEnum.NormalEnemy:
-                    EventIcon.sprite = IconAtlas.GetSprite("fatknight");
-                    EventTitle.text = "普通敌人";
-                    break;
-                case TileEventEnum.EliteEnemy:
-                    EventIcon.sprite = IconAtlas.GetSprite("dog01");
-                    EventTitle.text = "精英敌人";
-                    break;
-                case TileEventEnum.RandomEvent:
-                    EventTitle.text = "随机事件";
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(tileEventType), tileEventType, null);
-            }
+            DirectionImage.sprite = TileType.GetSprite("01");
+            ChangeAtlas();
 
+             void ChangeAtlas()
+             {
+                 switch (exits)
+                 {
+                     case 0:
             
-            //如果是地图事件
-            if (MapEventIndex != MapEventEnum.None)
-            {
-                DirectionImage.gameObject.SetActive(false);
-                MapEventImage.gameObject.SetActive(true);
-                TileDirections.Add(TileDirection.W);
-                TileDirections.Add(TileDirection.E);
-                TileDirections.Add(TileDirection.N);
-                TileDirections.Add(TileDirection.S);
+                         DirectionImage.sprite = TileType.GetSprite("00");
+                         break;
+                     case 1:
+                         TileDirections.Add(TileDirection.W);
+                         DirectionImage.sprite = TileType.GetSprite("01");
+                         break;
+                     case 2:
+                         TileDirections.Add(TileDirection.W);
+                         TileDirections.Add(TileDirection.E);
+                         DirectionImage.sprite = TileType.GetSprite("02");
+                         break;
+                     case 3:
+                         TileDirections.Add(TileDirection.W);
+                         TileDirections.Add(TileDirection.N);
+                         DirectionImage.sprite = TileType.GetSprite("03");
+                         break;
+                     case 4:
+                         TileDirections.Add(TileDirection.E);
+                         TileDirections.Add(TileDirection.N);
+                         TileDirections.Add(TileDirection.S);
+                         DirectionImage.sprite = TileType.GetSprite("04");
+                         break;
+                     case 5:
+                         TileDirections.Add(TileDirection.W);
+                         TileDirections.Add(TileDirection.E);
+                         TileDirections.Add(TileDirection.N);
+                         TileDirections.Add(TileDirection.S);
+                         DirectionImage.sprite = TileType.GetSprite("05");
+                         break;
+                 }
+
+                 EventIndex = tileEventType;
+                 switch (tileEventType)
+                 {
+                     case TileEventEnum.None:
+                         RandomEvent.gameObject.SetActive(false);
+                         break;
+                     case TileEventEnum.NormalEnemy:
+                         EventIcon.sprite = IconAtlas.GetSprite("fatknight");
+                         EventTitle.text = "普通敌人";
+                         break;
+                     case TileEventEnum.EliteEnemy:
+                         EventIcon.sprite = IconAtlas.GetSprite("dog01");
+                         EventTitle.text = "精英敌人";
+                         break;
+                     case TileEventEnum.RandomEvent:
+                         EventTitle.text = "随机事件";
+                         break;
+                     default:
+                         throw new ArgumentOutOfRangeException(nameof(tileEventType), tileEventType, null);
+                 }
                 
-                switch (MapEventIndex)
-                {
-                    case MapEventEnum.Boss:
-                        //MapEventImage.sprite = IconAtlas.GetSprite("Icon_Store");
-                        MapEventImage.gameObject.SetActive(false);
-                        BossImage.gameObject.SetActive(true);
-                        BossTitle.text = tileName;
-                        BossImage.sprite = IconAtlas.GetSprite("MasterChief");
-                        //MapEventTitle.text = "Boss";
-                        break;
-                    case MapEventEnum.Elite:
-                        MapEventImage.sprite = IconAtlas.GetSprite("fatknight");
-                        MapEventTitle.text = tileName;
-                        break;
-                    case MapEventEnum.Store:
-                        MapEventImage.sprite = IconAtlas.GetSprite("Icon_Store");
-                        MapEventTitle.text = "商店";
-                        break;
-                    case MapEventEnum.Rest:
-                        MapEventImage.sprite = IconAtlas.GetSprite("Icon_Rest");
-                        MapEventTitle.text = "休息处";
-                        break;
-                    case MapEventEnum.Start:
-                        MapEventImage.sprite = IconAtlas.GetSprite("Icon_Explored");
-                        MapEventTitle.text = "起始处";
-                        MapEventIndex = MapEventEnum.None;
-                        break;
-                    case MapEventEnum.BossConnect:
-                        MapEventImage.gameObject.SetActive(false);
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException(nameof(mapEvent), mapEvent, null);
-                }
-                if (tileName != "")
-                {
-                    MapEventTitle.text = tileName;
+                
+                 //如果是地图事件
+                 if (MapEventIndex != MapEventEnum.None)
+                 {
+                     DirectionImage.gameObject.SetActive(false);
+                     MapEventImage.gameObject.SetActive(true);
+                     TileDirections.Add(TileDirection.W);
+                     TileDirections.Add(TileDirection.E);
+                     TileDirections.Add(TileDirection.N);
+                     TileDirections.Add(TileDirection.S);
+                
+                     switch (MapEventIndex)
+                     {
+                         case MapEventEnum.Boss:
+                             //MapEventImage.sprite = IconAtlas.GetSprite("Icon_Store");
+                             MapEventImage.gameObject.SetActive(false);
+                             BossImage.gameObject.SetActive(true);
+                             BossTitle.text = tileName;
+                             BossImage.sprite = IconAtlas.GetSprite("MasterChief");
+                             //MapEventTitle.text = "Boss";
+                             break;
+                         case MapEventEnum.Elite:
+                             MapEventImage.sprite = IconAtlas.GetSprite("fatknight");
+                             MapEventTitle.text = tileName;
+                             break;
+                         case MapEventEnum.Store:
+                             MapEventImage.sprite = IconAtlas.GetSprite("Icon_Store");
+                             MapEventTitle.text = "商店";
+                             break;
+                         case MapEventEnum.Rest:
+                             MapEventImage.sprite = IconAtlas.GetSprite("Icon_Rest");
+                             MapEventTitle.text = "休息处";
+                             break;
+                         case MapEventEnum.Start:
+                             MapEventImage.sprite = IconAtlas.GetSprite("Icon_Explored");
+                             MapEventTitle.text = "起始处";
+                             MapEventIndex = MapEventEnum.None;
+                             break;
+                         case MapEventEnum.BossConnect:
+                             MapEventImage.gameObject.SetActive(false);
+                             break;
+                         default:
+                             throw new ArgumentOutOfRangeException(nameof(mapEvent), mapEvent, null);
+                     }
+
+                     if (tileName != "")
+                     {
+                         MapEventTitle.text = tileName;
+                     }
                 }
             }
         }
@@ -218,9 +224,16 @@ namespace Draconia.ViewController
             {
                 return;
             }
-            Vector3 pos = UIKit.Root.Camera.ScreenToWorldPoint(Input.mousePosition);;
-            pos.z = 0;
-            transform.position = pos;
+
+            Vector2 pos;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            _rectTransform.parent as RectTransform,
+            Input.mousePosition, 
+            eventData.enterEventCamera, 
+            out pos);
+            _rectTransform.localPosition = pos;
+            Debug.Log(Input.mousePosition);
+            Debug.Log(pos);
 
             
             //寻找离鼠标最近的地图块
@@ -322,7 +335,7 @@ namespace Draconia.ViewController
 
         public IArchitecture GetArchitecture()
         {
-            return Draconia.Interface;
+            return Draconia.Draconia.Interface;
         }
     }
 }

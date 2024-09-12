@@ -1,14 +1,7 @@
-﻿using System;
-using DG.Tweening;
-using Draconia.Controller;
-using Draconia.MyComponent;
-using QFramework;
-using TMPro;
-using UnityEngine;
+﻿using _Scripts.Game.Player;
 using UnityEngine.U2D;
 
-
-namespace Draconia.ViewController
+namespace _Scripts.Game
 {
     public class PlayerAnimator : CharacterAnimator
     {

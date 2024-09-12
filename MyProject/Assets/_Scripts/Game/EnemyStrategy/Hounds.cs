@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Linq;
 using cfg;
-using Draconia.System;
-using UnityEngine;
 using Utility;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game.EnemyStrategy
 {
     public class Hounds : EnemyStrategy
     {

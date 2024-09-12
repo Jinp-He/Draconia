@@ -41,6 +41,7 @@ namespace QFramework
         public RectTransform PopUI;
         public RectTransform CanvasPanel;
         public RectTransform TooltipContainer;
+        
         private static UIRoot mInstance;
 
         public static UIRoot Instance
@@ -123,6 +124,11 @@ namespace QFramework
                         panel.Transform.SetParent(PopUI);
                         break;
                 }
+            }
+
+            if (panel.Info != null && panel.Info.Level != level)
+            {
+                panel.Info.Level = level;
             }
         }
 

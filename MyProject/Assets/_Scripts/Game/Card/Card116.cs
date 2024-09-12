@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using cfg;
-using UnityEngine;
+using _Scripts.Game.Player;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game.Card
 {
     public class Card116 : Card
     {

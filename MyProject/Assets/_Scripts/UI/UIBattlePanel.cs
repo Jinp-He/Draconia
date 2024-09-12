@@ -1,20 +1,15 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
+using _Scripts.Game;
+using _Scripts.Game.Player;
+using _Scripts.System;
 using cfg;
 using DG.Tweening;
-using Draconia.Controller;
-using Draconia.System;
-using Draconia.ViewController;
-using Draconia.ViewController.Event;
-using UnityEngine;
-using UnityEngine.UI;
 using QFramework;
+using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
-using Utility;
+using UnityEngine.UI;
 
-namespace Draconia.UI
+namespace _Scripts.UI
 {
 	public class UIBattlePanelData : UIPanelData
 	{
@@ -191,7 +186,7 @@ namespace Draconia.UI
 
 		public IArchitecture GetArchitecture()
 		{
-			return Draconia.Interface;
+			return Draconia.Draconia.Interface;
 		}
 	}
 }

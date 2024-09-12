@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using cfg;
-using Draconia.Controller;
-using Draconia.Game.Buff;
-
-namespace Draconia.ViewController.Event
+﻿namespace _Scripts.Game.Event
 {
     public struct DropTileEvent
     {

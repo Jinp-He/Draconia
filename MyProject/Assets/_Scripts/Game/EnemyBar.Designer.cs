@@ -1,7 +1,8 @@
 // Generate Id:cc00861b-395e-442f-8b9b-b3d2fe88d66e
+
 using UnityEngine;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game
 {
 	public partial class EnemyBar
 	{

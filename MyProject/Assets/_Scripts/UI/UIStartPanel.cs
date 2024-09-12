@@ -1,11 +1,8 @@
-using Draconia.System;
-using Draconia.ViewController;
-using UnityEngine;
-using UnityEngine.UI;
+using _Scripts.System;
 using QFramework;
-using NotImplementedException = System.NotImplementedException;
+using UnityEngine.Tilemaps;
 
-namespace Draconia.UI
+namespace _Scripts.UI
 {
 	public class UIStartPanelData : UIPanelData
 	{
@@ -20,7 +17,7 @@ namespace Draconia.UI
 		
 		protected override void OnOpen(IUIData uiData = null)
 		{
-			Instantiate(this.GetSystem<ResLoadSystem>().LoadSync<Tile>("Tile"));
+			//Instantiate(this.GetSystem<ResLoadSystem>().LoadSync<Tile>("Tile"));
 			StartGameBtn.onClick.AddListener(() =>
 			{
 				this.GetSystem<GameSystem>().StartGame();
@@ -65,7 +62,7 @@ namespace Draconia.UI
 
 		public IArchitecture GetArchitecture()
 		{
-			return Draconia.Interface;
+			return Draconia.Draconia.Interface;
 		}
 	}
 }

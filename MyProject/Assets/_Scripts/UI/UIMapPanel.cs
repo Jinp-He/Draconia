@@ -1,5 +1,6 @@
-using Draconia.System;
-using Draconia.ViewController;
+﻿using _Scripts.Game.Map;
+using _Scripts.Game.Player;
+using _Scripts.System;
 using UnityEngine;
 using UnityEngine.UI;
 using QFramework;
@@ -60,15 +61,15 @@ namespace Draconia.UI
 		//Debug.Log(row + " " + col);
 			Tile t = Instantiate(this.GetSystem<ResLoadSystem>().LoadSync<Tile>("Tile"), TileDroppers[row,col].transform);
 			
-			// TileDroppers[row,col].DropTile(t);
-			// if(tileName != "")
-			// 	t.Init(tileType, TileEventEnum.None,mapEvent,tileName);
-			// else
-			// {
-			// 	t.Init(tileType, TileEventEnum.None,mapEvent);
-			// }
-			// t.IsFixed = true;
-			// t.DropTile();
+			TileDroppers[row,col].DropTile(t);
+			if(tileName != "")
+				t.Init(tileType, TileEventEnum.None,mapEvent,tileName);
+			else
+			{
+				t.Init(tileType, TileEventEnum.None,mapEvent);
+			}
+			t.IsFixed = true;
+			t.DropTile();
 			return t;
 		}
 

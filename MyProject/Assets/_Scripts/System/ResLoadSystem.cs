@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using cfg;
 using QFramework;
@@ -9,7 +8,7 @@ using UnityEngine.U2D;
 using NotImplementedException = System.NotImplementedException;
 using Object = UnityEngine.Object;
 
-namespace Draconia.System
+namespace _Scripts.System
 {
     public class ResLoadSystem : AbstractSystem
     {
@@ -82,6 +81,16 @@ namespace Draconia.System
         private JSONNode Loader(string fileName)
         {
             return JSON.Parse(File.ReadAllText(Application.dataPath + "/../GenerateDatas/json/" + fileName + ".json"));
+        }
+        
+        
+    }
+    
+    public static class ResLoadSystemExtension 
+    {
+        public static bool CheckLoad<T>(this ResLoader self, string name)
+        {
+            return true;
         }
     }
 }

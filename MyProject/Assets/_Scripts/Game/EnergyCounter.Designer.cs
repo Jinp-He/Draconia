@@ -1,7 +1,6 @@
 // Generate Id:631a226d-be0d-4441-9c42-9a0efd23759b
-using UnityEngine;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game
 {
 	public partial class EnergyCounter
 	{

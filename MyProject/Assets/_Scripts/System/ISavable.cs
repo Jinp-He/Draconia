@@ -1,4 +1,4 @@
-﻿namespace Draconia.System
+﻿namespace _Scripts.System
 {
     public class ISavable
     {

@@ -1,7 +1,6 @@
 using UnityEngine;
-using QFramework;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game
 {
 	public partial class Intention : MonoBehaviour
 	{

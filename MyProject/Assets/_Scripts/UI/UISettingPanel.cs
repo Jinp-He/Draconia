@@ -1,11 +1,9 @@
 using System.Collections.Generic;
-using Draconia.System;
-using UnityEngine;
-using UnityEngine.UI;
+using _Scripts.System;
 using QFramework;
-using NotImplementedException = System.NotImplementedException;
+using UnityEngine;
 
-namespace Draconia.UI
+namespace _Scripts.UI
 {
 	public class UISettingPanelData : UIPanelData
 	{
@@ -125,7 +123,7 @@ namespace Draconia.UI
 
 		public IArchitecture GetArchitecture()
 		{
-			return Draconia.Interface;
+			return Draconia.Draconia.Interface;
 		}
 	}
 }

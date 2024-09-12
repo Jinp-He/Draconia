@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using _Scripts.Game.Card;
+using _Scripts.Game.PlayerStrategy;
 using cfg;
-using Draconia.UI;
-using Draconia.ViewController;
 using QFramework;
-using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Rendering.UI;
 using Utility;
-using NotImplementedException = System.NotImplementedException;
 
-namespace Draconia.System
+namespace _Scripts.System
 {
     public enum GameLanguage
     {

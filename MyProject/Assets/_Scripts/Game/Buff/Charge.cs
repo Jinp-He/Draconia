@@ -1,11 +1,7 @@
-﻿using System.Linq;
-using cfg;
-using Draconia.Controller;
-using Draconia.ViewController.Event;
+﻿using _Scripts.Game.Event;
 using QFramework;
-using UnityEngine;
 
-namespace Draconia.Game.Buff
+namespace _Scripts.Game.Buff
 {
     public class Charge : BuffEffect
     {

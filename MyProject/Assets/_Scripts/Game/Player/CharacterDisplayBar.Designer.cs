@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game.Player
+namespace _Scripts.Game.Player
 {
     public partial class CharacterDisplayBar :  ViewController
     {

@@ -1,31 +1,22 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Net;
-using System.Reflection;
-using cfg;
-using Draconia.Controller;
 using Draconia.UI;
-using Draconia.ViewController;
-using Draconia.ViewController.Event;
+using _Scripts.Game.Event;
+using _Scripts.Game.Map;
+using _Scripts.UI;
+using cfg;
+using DG.Tweening;
 using QFramework;
 using Unity.Mathematics;
-using DG;
-using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
 using Utility;
 using Debug = UnityEngine.Debug;
-using Image = UnityEngine.UI.Image;
 using NotImplementedException = System.NotImplementedException;
 using Random = UnityEngine.Random;
 using Sequence = DG.Tweening.Sequence;
 
-namespace Draconia.System
+namespace _Scripts.System
 {
     public class MapSystem : AbstractSystem, ICanSendEvent, ICanRegisterEvent
     {
@@ -577,7 +568,7 @@ namespace Draconia.System
             {
                 tile.MapEventIndex = MapEventEnum.None;
                 //tile.DirectionImage.gameObject.SetActive(true);
-                tile.MapEventImage.sprite = tile.IconAtlas.GetSprite("Icon_Explored");
+                //tile.MapEventImage.sprite = tile.IconAtlas.GetSprite("Icon_Explored");
                 //tile.Map.sprite = tile.IconAtlas.GetSprite("Icon_Explored");
                 //tile.MapEventImage.gameObject.SetActive(false); 
             }

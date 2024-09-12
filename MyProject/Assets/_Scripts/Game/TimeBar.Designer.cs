@@ -1,7 +1,8 @@
 // Generate Id:ce4f5a8f-f9e4-411a-8484-af7b0ca5c686
+
 using UnityEngine;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game
 {
 	public partial class TimeBar
 	{

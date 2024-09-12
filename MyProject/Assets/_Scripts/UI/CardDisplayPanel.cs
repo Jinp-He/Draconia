@@ -1,11 +1,8 @@
-using System.Collections.Generic;
-using Draconia.ViewController;
-using UnityEngine;
-using UnityEngine.UI;
+using _Scripts.Game.Card;
+using _Scripts.Game.Player;
 using QFramework;
-using NotImplementedException = System.NotImplementedException;
 
-namespace Draconia.UI
+namespace _Scripts.UI
 {
 	public class CardDisplayPanelData : UIPanelData
 	{

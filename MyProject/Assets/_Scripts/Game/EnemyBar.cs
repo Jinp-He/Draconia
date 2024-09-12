@@ -1,11 +1,7 @@
 using System.Collections.Generic;
 using cfg;
-using Draconia.UI;
-using UnityEngine;
-using QFramework;
-using UnityEngine.UI;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game
 {
 	public partial class EnemyBar : QFramework.ViewController
 	{

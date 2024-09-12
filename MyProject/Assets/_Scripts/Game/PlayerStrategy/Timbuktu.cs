@@ -1,9 +1,9 @@
-﻿using cfg;
-using Draconia.System;
-using Draconia.ViewController.Event;
+﻿using _Scripts.Game.Event;
+using _Scripts.Game.Player;
+using cfg;
 using QFramework;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game.PlayerStrategy
 {
     public class Timbuktu : Player
     {

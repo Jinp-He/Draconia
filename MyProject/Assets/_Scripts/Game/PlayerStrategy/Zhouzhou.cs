@@ -1,10 +1,10 @@
-﻿using cfg;
-using Draconia.System;
-using Draconia.ViewController.Event;
+﻿using _Scripts.Game.Event;
+using _Scripts.System;
+using cfg;
 using QFramework;
 using UnityEngine;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game.PlayerStrategy
 {
     public class Zhouzhou : Player
     {

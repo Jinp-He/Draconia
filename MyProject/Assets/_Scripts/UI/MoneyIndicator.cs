@@ -1,12 +1,10 @@
-﻿using DG.Tweening;
+﻿using _Scripts.System;
+using DG.Tweening;
 using Draconia.MyComponent;
-using Draconia.System;
 using QFramework;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEngine;
 
-namespace Draconia.UI
+namespace _Scripts.UI
 {
     public class MoneyIndicator : MyViewController
     {

@@ -1,10 +1,7 @@
-using System;
-using Draconia.System;
-using Draconia.UI;
-using UnityEngine;
+using _Scripts.UI;
 using QFramework;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game
 {
 	public partial class EnergyCounter : QFramework.ViewController, ICanGetSystem
 	{
@@ -45,7 +42,7 @@ namespace Draconia.ViewController
 
 		public IArchitecture GetArchitecture()
 		{
-			return Draconia.Interface;
+			return Draconia.Draconia.Interface;
 		}
 	}
 }

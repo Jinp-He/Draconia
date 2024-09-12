@@ -1,16 +1,11 @@
 ﻿using System.Collections.Generic;
+using _Scripts.Game.Event;
+using _Scripts.Game.Player;
+using _Scripts.System;
 using cfg;
-using Draconia.Controller;
-using Draconia.Game.Buff.Pose;
-using Draconia.System;
-using Draconia.ViewController;
-using Draconia.ViewController.Event;
 using QFramework;
-using Unity.VisualScripting;
-using Utility;
-using NotImplementedException = System.NotImplementedException;
 
-namespace Draconia.Game.Buff
+namespace _Scripts.Game.Buff
 {
     public class BuffEffect: ICanRegisterEvent, ICanGetSystem
     {
@@ -80,7 +75,7 @@ namespace Draconia.Game.Buff
 
         public IArchitecture GetArchitecture()
         {
-            return Draconia.Interface;
+            return Draconia.Draconia.Interface;
         }
     }
 }

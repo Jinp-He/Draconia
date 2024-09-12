@@ -690,3 +690,6 @@ C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\obj\Debug\AudioKit.csproj.Cor
 C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\obj\Debug\AudioKit.csproj.CopyComplete
 C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\obj\Debug\AudioKit.dll
 C:\Users\lofnh\Documents\GitHub\Draconia\MyProject\obj\Debug\AudioKit.pdb
+E:\Github\Draconia\MyProject\obj\Debug\AudioKit.csproj.AssemblyReference.cache
+E:\Github\Draconia\MyProject\obj\Debug\AudioKit.csproj.CoreCompileInputs.cache
+E:\Github\Draconia\MyProject\obj\Debug\AudioKit.dll

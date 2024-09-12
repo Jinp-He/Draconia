@@ -1,16 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
+using _Scripts.Game.Event;
+using _Scripts.Game.Player;
+using _Scripts.System;
+using _Scripts.UI;
 using cfg;
 using DG.Tweening;
-using Draconia.Controller;
 using Draconia.MyComponent;
-using Draconia.System;
-using Draconia.UI;
-using Draconia.ViewController.Event;
 using QFramework;
-using Spine;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.U2D;
@@ -18,7 +16,7 @@ using UnityEngine.UI;
 using Utility;
 using NotImplementedException = System.NotImplementedException;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game.Card
 {
     public enum CardState
     {

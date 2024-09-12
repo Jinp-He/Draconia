@@ -1,13 +1,11 @@
 using System.Collections.Generic;
+using _Scripts.Game.Card;
+using _Scripts.System;
 using cfg;
-using Draconia.System;
-using Draconia.ViewController;
-using UnityEngine;
-using UnityEngine.UI;
 using QFramework;
-using NotImplementedException = System.NotImplementedException;
+using UnityEngine;
 
-namespace Draconia.UI
+namespace _Scripts.UI
 {
 	public class UIStorePanelData : UIPanelData
 	{
@@ -63,7 +61,7 @@ namespace Draconia.UI
 
 		public IArchitecture GetArchitecture()
 		{
-			return Draconia.Interface;
+			return Draconia.Draconia.Interface;
 		}
 	}
 }

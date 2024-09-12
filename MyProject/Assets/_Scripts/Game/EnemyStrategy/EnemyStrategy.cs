@@ -1,23 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Scripts.Game.Event;
+using _Scripts.Game.Player;
+using _Scripts.System;
 using cfg;
-using Draconia.System;
-using Draconia.ViewController.Event;
 using QFramework;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 using Utility;
 using ISingleton = QFramework.ISingleton;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game.EnemyStrategy
 {
     public class EnemyStrategy : ICanGetSystem, ICanRegisterEvent, ISingleton
     {
         //public static EnemyStrategy Instance => SingletonProperty<EnemyStrategy>.Instance;
         protected Enemy _enemy;
         protected EnemyAction _currentAction;
+        public CharacterViewController cc;
         protected BattleSystem BattleSystem => this.GetSystem<BattleSystem>();
 
         protected List<int> Range;
@@ -199,7 +199,7 @@ namespace Draconia.ViewController
 
         public IArchitecture GetArchitecture()
         {
-            return Draconia.Interface;
+            return Draconia.Draconia.Interface;
         }
 
         public void OnSingletonInit()

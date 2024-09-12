@@ -1,21 +1,17 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
+using _Scripts.Game.Buff;
+using _Scripts.Game.Card;
+using _Scripts.Game.Event;
+using _Scripts.Game.Player;
+using _Scripts.System;
 using cfg;
 using DG.Tweening;
-using Draconia.Controller;
-using Draconia.Game.Buff;
-using Draconia.System;
-using Draconia.UI;
-using Draconia.ViewController.Event;
 using QFramework;
 using Sirenix.OdinInspector;
-using UnityEngine;
 using UnityEngine.Events;
-using Object = UnityEngine.Object;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game.PlayerStrategy
 {
 	public class Player : SerializedComponent, ICanRegisterEvent, ICanGetSystem
 	{
@@ -253,7 +249,7 @@ namespace Draconia.ViewController
 
 		public IArchitecture GetArchitecture()
 		{
-			return Draconia.Interface;
+			return Draconia.Draconia.Interface;
 		}
 	}
 }

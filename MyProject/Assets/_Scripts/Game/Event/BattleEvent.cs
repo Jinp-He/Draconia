@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
+using _Scripts.Game.Card;
+using _Scripts.Game.Player;
 using cfg;
-using Draconia.Controller;
-using Draconia.Game.Buff;
 
-namespace Draconia.ViewController.Event
+namespace _Scripts.Game.Event
 {
     public struct BattleStartEvent
     {
@@ -12,7 +12,7 @@ namespace Draconia.ViewController.Event
     
     public struct PlayerTurnStartEvent
     {
-        public Player Player;
+        public PlayerStrategy.Player Player;
     }
     
     public struct EnterDangerAreaEvent
@@ -35,7 +35,7 @@ namespace Draconia.ViewController.Event
     public struct AddBuffEvent
     {
         public CharacterViewController CharacterViewController;
-        public Buff Buff;
+        public Buff.Buff Buff;
     }
 
     public struct AttackEvent

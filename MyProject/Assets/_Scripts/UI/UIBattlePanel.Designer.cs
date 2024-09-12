@@ -1,10 +1,8 @@
-using System;
-using Draconia.ViewController;
+using _Scripts.Game;
 using UnityEngine;
 using UnityEngine.UI;
-using QFramework;
 
-namespace Draconia.UI
+namespace _Scripts.UI
 {
 	// Generate Id:a63b4da4-2004-4a7d-8837-0fc144068bea
 	public partial class UIBattlePanel

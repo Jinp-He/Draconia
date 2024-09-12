@@ -1,10 +1,7 @@
-using System;
-using Draconia.UIToolkit;
+using _Scripts.UIToolkit;
 using UnityEngine;
-using UnityEngine.UI;
-using QFramework;
 
-namespace Draconia.UI
+namespace _Scripts.UI
 {
     // Generate Id:960edfd7-3048-4bbe-b290-dcfa129b2230
     public partial class UISettingPanel

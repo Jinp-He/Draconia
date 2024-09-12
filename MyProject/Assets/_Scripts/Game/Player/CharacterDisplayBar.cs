@@ -3,17 +3,17 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Game.Player
+namespace _Scripts.Game.Player
 {
     public partial class CharacterDisplayBar : ViewController, IPointerEnterHandler, IPointerExitHandler
     {
-        public void Init(Draconia.ViewController.Player player)
+        public void Init(PlayerStrategy.Player player)
         {
             HpBar.Init(player.MaxHp, player.Hp);
             UpdateBar(player);
         }
 
-        public void UpdateBar(Draconia.ViewController.Player player)
+        public void UpdateBar(PlayerStrategy.Player player)
         {
             Name.text = player.Alias;
             Name.gameObject.SetActive(false);

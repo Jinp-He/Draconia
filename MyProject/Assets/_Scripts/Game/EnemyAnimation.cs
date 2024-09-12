@@ -1,8 +1,7 @@
-﻿using Draconia.MyComponent;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game
 {
     public class EnemyAnimation : MonoBehaviour
     {

@@ -1,9 +1,8 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Draconia.UIToolkit
+namespace _Scripts.UIToolkit
 {
     public class SliderText : MonoBehaviour
     {

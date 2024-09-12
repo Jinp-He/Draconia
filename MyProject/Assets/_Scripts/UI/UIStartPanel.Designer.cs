@@ -1,9 +1,6 @@
-using System;
 using UnityEngine;
-using UnityEngine.UI;
-using QFramework;
 
-namespace Draconia.UI
+namespace _Scripts.UI
 {
 	// Generate Id:3672eaab-001c-47a6-9c9b-e9eb244c1947
 	public partial class UIStartPanel

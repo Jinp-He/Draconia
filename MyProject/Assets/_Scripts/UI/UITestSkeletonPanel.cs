@@ -1,9 +1,8 @@
-using UnityEngine;
-using UnityEngine.UI;
 using QFramework;
 using Spine.Unity;
+using UnityEngine;
 
-namespace Draconia.UI
+namespace _Scripts.UI
 {
 	public class UITestSkeletonPanelData : UIPanelData
 	{

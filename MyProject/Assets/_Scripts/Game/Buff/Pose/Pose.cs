@@ -1,4 +1,4 @@
-﻿namespace Draconia.Game.Buff.Pose
+﻿namespace _Scripts.Game.Buff.Pose
 {
     public class Pose : BuffEffect
     {

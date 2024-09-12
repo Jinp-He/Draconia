@@ -1,7 +1,6 @@
 ﻿using QFramework;
-using NotImplementedException = System.NotImplementedException;
 
-namespace Draconia.System
+namespace _Scripts.System
 {
     public class GameSettingPreset : AbstractModel
     {

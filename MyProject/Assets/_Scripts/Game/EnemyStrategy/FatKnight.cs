@@ -1,10 +1,8 @@
 ﻿using System;
 using cfg;
-using Draconia.System;
-using UnityEngine;
 using Utility;
 
-namespace Draconia.ViewController
+namespace _Scripts.Game.EnemyStrategy
 {
     public class FatKnight : EnemyStrategy
     {
